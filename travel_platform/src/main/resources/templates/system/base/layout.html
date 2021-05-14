@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]>&lt;!&ndash;!-->
+<html lang="zh" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--[endif] -->
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <title>银杏湖景区乐游系统后端管理系统</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style2.css}"/>
+    <!-- favicon link-->
+    <link rel="shortcut icon" type="image/icon" th:href="@{/images/logo.png}" />
+</head>
+<body>
+
+<div id="wrapper" class="toggled">
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        <ul class="nav sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    导航栏
+                </a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i
+                        class="fa fa-fw fa-plus"></i> 用户模块 <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header">操作</li>
+                    <li><a th:href="@{/system/userListUI}">用户管理</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i
+                        class="fa fa-fw fa-plus"></i> 酒店模块 <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header">操作</li>
+                    <li><a th:href="@{/system/hotelListUI}">酒店管理</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i
+                        class="fa fa-fw fa-plus"></i> 景点模块 <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header">操作</li>
+                    <li><a th:href="@{/system/attractionsListUI}">景点管理</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i
+                        class="fa fa-fw fa-plus"></i> 攻略模块 <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header">操作</li>
+                    <li><a th:href="@{/system/travelStrategyListUI}">审核攻略</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i
+                        class="fa fa-fw fa-plus"></i> 路线模块 <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header">操作</li>
+                    <li><a th:href="@{/system/travelRouteListUI}">路线管理</a></li>
+                </ul>
+            </li>
+            <li>
+                <a th:href="@{/system/logout}"><i class="fa fa-fw fa-list-alt"></i> 登出</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="row clearfix" style="margin-top: 200px;">
+        <div class="col-md-12 column">
+            <h3 class="text-center">
+                银杏湖景区乐游系统后端管理系统
+            </h3>
+        </div>
+    </div>
+    <hr style="height:1px;border:none;border-top:1px solid #555555;"/>
+    <!--预留填充模块-->
+    <div layout:fragment="content">
+
+    </div>
+
+</div>
+<!--main js files 所有可能用到的js-->
+<script th:src="@{/js/jquery_min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/wow.min.js}"></script>
+<script th:src="@{/js/custom.js}"></script>
+<script th:src="@{/plugins/slider-pro/js/jquery.sliderPro.min.js}"></script>
+<script th:src="@{/plugins/owlcarousel/js/owl.carousel.min.js}"></script>
+<script th:src="@{/layer/layer.js}"></script>
+<!--js code-->
+<script th:inline="javascript" type="text/javascript">
+</script>
+</body>
+</html>

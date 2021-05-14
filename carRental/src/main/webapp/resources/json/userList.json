@@ -1,0 +1,17 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 3,
+  "data": [
+    {
+      "usersId": "1",
+      "userName": "admin",
+      "userEmail": "mage@layui.com",
+      "userSex": "男",
+      "userStatus": "0",
+      "userGrade": "4",
+      "userEndTime": "2018-01-31 10:00",
+      "userDesc" : "admin"
+    }
+  ]
+}

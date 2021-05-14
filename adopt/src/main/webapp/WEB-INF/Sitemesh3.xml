@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+    <!-- 默认装饰-->
+    <mapping decorator="animal/navigation.jsp"/>
+
+    <!--配置特定的装饰路径-->
+    <!--<mapping path="/index" decorator="/WEB-INF/view/layouts/default.jsp"></mapping>-->
+
+    <!-- 配置不被装饰的路径 -->
+    <!-- <mapping path="" exclue="true"/>-->
+    <mapping path="/animal/admin/*.jsp" exclue="true"/>
+
+</sitemesh>

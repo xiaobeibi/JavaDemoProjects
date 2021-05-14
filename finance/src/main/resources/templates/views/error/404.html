@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>404界面</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+    <style>
+        body {
+            background-color: #fff;
+        }
+
+        .error-page {
+            height: 100%;
+            position: fixed;
+            width: 100%;
+        }
+
+        .error-body {
+            padding-top: 5%;
+        }
+
+        .error-body h1 {
+            font-size: 210px;
+            font-weight: 700;
+            text-shadow: 4px 4px 0 #f5f6fa, 6px 6px 0 #33cabb;
+            line-height: 210px;
+            color: #33cabb;
+        }
+
+        .error-body h4 {
+            margin: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+<section class="error-page">
+    <div class="error-box">
+        <div class="error-body text-center">
+            <h1>404</h1>
+            <h4>很抱歉，但是那个页面看起来已经不存在了。</h4>
+            <a th:href="@{/toindex.html}"
+               class="btn btn-primary ">返回首页</a>
+        </div>
+    </div>
+</section>
+<!-- 点线粒子插件 -->
+<script color="255,0,255" opacity='0.8'
+        zIndex="9999" count="99"
+        th:src="@{/js/canvas-nest.js}"></script>
+</body>
+</html>

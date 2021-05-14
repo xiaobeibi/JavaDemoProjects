@@ -1,0 +1,35 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /
+  tomcat:
+    accesslog:
+      buffered: true
+      directory: /home/log/tomcat
+      enabled: true
+      file-date-format: .yyyy-MM-dd
+      pattern: '%t | %{X-Real-IP}i | %b | %B | %H | %l | %m | %p | %q | %r | %s | %S | %u | %U | %v | %D | %T | %{Cookie}i | %{User-Agent}i | %{a}r'
+      prefix: access_log
+      rename-on-rotate: false
+      request-attributes-enabled: false
+      rotate: true
+      suffix: .log
+spring:
+  application:
+    name: support
+  datasource:
+    name: test
+    url: jdbc:mysql://192.168.1.117:3306/music?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: tuyong88
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*/*.xml
+  type-aliases-package: com.game.www
+  # spring boot集成mybatis的方式打印sql，需要使用的话可以开启
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  config: classpath:logback-spring.xml
+

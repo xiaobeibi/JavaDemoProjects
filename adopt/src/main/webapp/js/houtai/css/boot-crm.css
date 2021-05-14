@@ -1,0 +1,26 @@
+.table th{ 
+	text-align: center; 
+	height:38px;
+}
+.cla1 {
+	FONT-SIZE: 12px;
+	COLOR: #4b4b4b;
+	LINE-HEIGHT: 18px;
+	TEXT-DECORATION: none
+}
+
+.login_msg {
+	font-family: serif;
+}
+
+.login_msg .msg {
+	background-color: #acf;
+	width: 150px;
+}
+
+.login_msg .btn {
+	background-color: #9be;
+	width: 150px;
+	font-size: 15px;
+	font-family: Î¢ÈíÑÅºÚ;
+}

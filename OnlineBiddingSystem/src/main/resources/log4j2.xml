@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration monitorInterval="1800">
+
+    <properties>
+        <!-- 定义日志输出所在目录,以'/'结尾 -->
+        <property name="filename">/zrh/workfile/log/exportMessage-CMB/</property>
+    </properties>
+
+    <appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <RollingFile name="exportMessage" fileName="${filename}exportMessage.log"
+                     filePattern="${filename}exportMessage.%d{yyyy-MM-dd}.log" append="true">
+            <PatternLayout pattern="%d{MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </appenders>
+
+    <loggers>
+        <root level="debug">
+            <appender-ref ref="exportMessage"/>
+            <AppenderRef level="error" ref="STDOUT"/>
+        </root>
+    </loggers>
+
+
+</configuration>

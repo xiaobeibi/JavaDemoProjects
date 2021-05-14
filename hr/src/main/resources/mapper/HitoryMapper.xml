@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.hospitalhr.mapper.HistoryMapper">
+
+	<sql id="Base_Column_List">
+		id, employee_number, name, gender, birthday, telephone, email, address, photo,
+		education, in_time, out_time, department_number, position_number, status, home, 
+		notes
+	</sql>
+	
+	<select id="selectRetireByPage" resultType="History">
+		select
+		<include refid="Base_Column_List" />
+		from history 
+		where status = "离职" or status = "退休"
+	</select>
+	
+	<select id="selectByNumber" parameterType="java.lang.Integer" resultType="History">
+		select
+		<include refid="Base_Column_List" />
+		from history 
+		where employee_number = #{employeeNumber}
+	</select>
+
+</mapper>

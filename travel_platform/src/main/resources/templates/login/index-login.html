@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{base/layout}">
+<div layout:fragment="content">
+    <!--med_tittle_section-->
+    <div class="med_tittle_section">
+        <div class="med_img_overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="med_tittle_cont_wrapper">
+                        <div class="med_tittle_cont">
+                            <ol class="breadcrumb">
+                                <li><a th:href="@{/}">系统首页</a></li>
+                                <li>登录</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--service section start-->
+    <div class="page-container">
+        <div class="container">
+            <div class="row med_toppadder50 med_bottompadder50">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
+                    <form name="form-submit" id="form-submit" method="post" class="cy-form boxed">
+                        <header>欢迎登录</header>
+                        <fieldset>
+                            <section>
+                                <label class="input state-error">
+                                    <i class="icon-append fa fa-user"></i>
+                                    <input name="username" id="username" type="text" placeholder="用户名/邮箱地址">
+                                    <b class="tooltip tooltip-bottom-right">输入正确的用户名/邮箱地址</b>
+                                </label>
+                                <!--<div class="note note-error">用户名/邮箱地址错误</div>-->
+                            </section>
+                            <section>
+                                <label class="input">
+                                    <i class="icon-append fa fa-lock"></i>
+                                    <input name="password" id="password" type="password" placeholder="密码">
+                                    <b class="tooltip tooltip-bottom-right">建议使用字母加数字或符号组合</b>
+                                </label>
+                                <div class="note"><a href="index-findpw">忘记密码?</a></div>
+                            </section>
+                            <section>
+                                <label class="checkbox"><input type="checkbox"
+                                                               name="checkbox-inline"><i></i>记住登录信息</label>
+                            </section>
+                        </fieldset>
+                        <footer>
+                            <button type="button" onclick="saveForm()" class="button">登 录</button>
+                        </footer>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--service section end-->
+    <script th:inline="javascript">
+
+        function saveForm() {
+            $.ajax({
+                url: '/travel/login',
+                data: $("#form-submit").serialize(),
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code == 200) {
+                        window.location.href = "/travel";
+                    }else {
+                        alert(result.message);
+                    }
+                }
+            })
+        }
+
+
+    </script>
+</div>
+</html>

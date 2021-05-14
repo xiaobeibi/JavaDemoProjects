@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>流浪猫狗</title>
+    <!-- 引入css样式文件 -->
+    <!-- Bootstrap Core CSS -->
+    <link href="../../js/houtai/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="../../js/houtai/css/metisMenu.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="../../js/houtai/css/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../js/houtai/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../../js/houtai/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../js/houtai/css/boot-crm.css" rel="stylesheet" type="text/css">
+    <style>
+        .panel-heading {
+            background-color: #337ab7;
+            border-color: #2e6da4;
+            font-size: 14px;
+            padding-left: 20px;
+            height: 36px;
+            line-height: 36px;
+            color: white;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /*转成手形图标*/
+        .panel-heading span {
+            position: absolute;
+            right: 10px;
+            top: 12px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <!-- 导航栏部分 -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="">流浪猫狗管理系统</a>
+        </div>
+        <!-- 导航栏右侧图标部分 -->
+        <!-- 导航栏右侧图标部分 -->
+        <ul class="nav navbar-top-links navbar-right">
+            <!-- 消息通知 end -->
+            <!-- 用户信息和系统设置 start -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="crmclass/list.action#">
+                    <i class="fa fa-user fa-fw"></i>
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="crmclass/list.action#"><i class="fa fa-user fa-fw"></i>
+                        用户：</a>
+                    </li>
+                    <li><a href="crmclass/list.action#"><i class="fa fa-gear fa-fw"></i> 系统设置</a></li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="logout.action">
+                            <i class="fa fa-sign-out fa-fw"></i>退出登录
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- 用户信息和系统设置结束 -->
+        </ul> <!-- 左侧显示列表部分 start-->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <!-- 教学管理  折叠的分组列表 -->
+                <div class="panel-heading" id="collapseListGroupHeading3" data-toggle="collapse" data-target="#collapseListGroup3" role="tab">
+                    <h4 class="panel-title">
+                        后台管理 <span class="fa fa-chevron-up right"></span>
+                    </h4>
+                </div>
+                <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
+                    <ul class="list-group">
+                        <li class="list-group-item my_font">
+                            <a href="user.html">
+                                <i class="fa fa-flash fa-fw"></i> 用户信息
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="admin.html">
+                                <i class="fa fa-flash fa-fw"></i> 管理员信息
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="pet.html">
+                                <i class="fa fa-sitemap fa-fw"></i> 流浪猫狗管理
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="t_adopt.html">
+                                <i class="fa fa-sitemap fa-fw"></i> 领养管理
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="comment.html">
+                                <i class="fa fa-sitemap fa-fw"></i> 评论管理
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- 左侧显示列表部分 end-->
+    </nav>
+    <!-- 用户信息查询部分  start-->
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">用户评论管理</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="panel panel-default">
+            <!-- 搜索部分 -->
+            <div class="panel-body">
+                <form class="form-inline" method="get" action="#">
+                    <div class="form-group">
+                        <label for="findByName">用户名</label>
+                        <input type="text" class="form-control" id="findByName" value="" name="userName">
+                    </div>
+                    <button type="submit" class="btn btn-primary">查询</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">用户评论列表</div>
+                    <!-- /.panel-heading -->
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>评论编号</th>
+                            <th>评论用户名</th>
+                            <th>评论内容</th>
+                            <th>评论时间</th>
+                            <th>被评论人</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>李白</td>
+                            <td>我爱这只猫</td>
+                            <td>2019年8月22日</td>
+                            <td>pet2</td>
+                            <td>
+                                <a href="" class="btn btn-primary btn-xs" data-toggle="modal"
+                                   data-target="#editComment" onclick="editpinglun(1)">修改</a>
+                                <a href="" class="btn btn-danger btn-xs" onclick="deletepinglun(1)">删除</a>
+                            </td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                    <div class="col-md-12 text-right">
+                        <nav>
+                            <ul class="pagination">
+                                <li class="disabled"><a href="#">首页 </a></li>
+                                <li class="disabled"><a href="crmclass/list.action#">上一页 </a></li>
+                                <li class="active"><a href="crmclass/list.action#">1</spanclass="sr-only"></spanclass
+                                    ="sr-only"></a></li>
+                                <li class="disabled"><a href="crmclass/list.action#">下一页</a></li>
+                                <li class="disabled"><a href="crmclass/list.action#">尾页</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+    <!-- 班级列表查询部分  end-->
+</div>
+
+<!-- 修改评论模态框 -->
+<div class="modal fade" id="editComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabe">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabe">修改用户评论记录</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="edit_pinglun_form">
+                    <input type="hidden" id="edit_pinglunId" name="pinglunId">
+                    <div class="form-group">
+                        <label for="edit_crmUserName" class="col-sm-2 control-label">
+                            用户名
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_crmUserName" placeholder="用户名"
+                                   name="name">
+                        </div>
+                        <label for="edit_commmentTime" class="col-sm-2 control-label">
+                            评论时间
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="datetime-local" class="form-control" id="edit_commmentTime" placeholder="评论时间"
+                                   name="commentTime">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_userNameed" class="col-sm-2 control-label">
+                        被评论人
+                    </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_userNameed" placeholder="评论位置" name="userNameed">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_content" class="col-sm-2 control-label">
+                            内容
+                        </label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="edit_content" placeholder="内容" name="conntent" ></textarea>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="updatePinglun()">保存修改</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 引入js文件 -->
+<!-- jQuery -->
+<script src="../../js/houtai/js/jquery-1.11.3.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../../js/houtai/js/bootstrap.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+<script src="../../js/houtai/js/metisMenu.min.js"></script>
+<!-- DataTables JavaScript -->
+<script src="../../js/houtai/js/jquery.dataTables.min.js"></script>
+<script src="../../js/houtai/js/dataTables.bootstrap.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="../../js/houtai/js/sb-admin-2.js"></script>
+<!-- 编写js代码 -->
+<script type="text/javascript">
+
+    // 通过id获取修改的班级信息
+    function editComment(id) {
+        $.ajax({
+            type: "get",
+            url: "crmclass/getcrmclassById.action",
+            data: {"id": id},
+            success: function (data) {
+                $("#edit_id").val(data.id);
+                $("#edit_userName").val(data.userName);
+                $("#edit_commmentTime").val(data.commentTime);
+                $("#edit_userNameed").val(data.userNameed);
+                $("#edit_content").val(data.content);
+            }
+        });
+    }
+
+    // 执行修改评论操作
+    function updateComment() {
+        $.Post("crmclass/update.action",
+            $("#edit_pinglun_form").serialize(),
+            function (data) {
+                if (data == "OK") {
+                    alert("评论记录更新成功！");
+                    window.location.reload();
+                } else {
+                    alert("评论记录更新失败！");
+                    window.location.reload();
+                }
+            });
+    }
+
+    // 删除班级
+    function deleteComment(id) {
+        if (confirm('确实要删除该评论记录吗?')) {
+            $.Post("crmclass/delete.action", {"id": id},
+                function (data) {
+                    if (data == "OK") {
+                        alert("记录删除成功！");
+                        window.location.reload();
+                    } else {
+                        alert("删除记录失败！");
+                        window.location.reload();
+                    }
+                });
+        }
+    }
+</script>
+
+</body>
+</html>

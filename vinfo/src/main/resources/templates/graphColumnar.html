@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>全国前十累计境外输入条形统计图</title>
+    <script type="text/javascript" src="echarts/echarts.min.js"></script>
+</head>
+<body>
+
+
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div id="main" style="width: 600px;height:400px;"></div>
+
+<!--在js中接收服务端返回数据-->
+<script th:inline="javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    var nameStr = [[${nameList}]];
+    var fromAbroadStr = [[${fromAbroadList}]];
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {  // 标题组件
+            text: '境外输入省市TOP10'
+        },
+        tooltip: {  // 提示框组件
+            trigger: 'axis'
+        },
+        xAxis: {
+            // 转化为json对象
+            data: JSON.parse(nameStr)
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name: '境外输入',
+                type: 'bar',
+                barWidth: '60%',
+                data: JSON.parse(fromAbroadStr)
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+</body>
+</html>

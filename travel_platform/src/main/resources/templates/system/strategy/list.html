@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{system/base/layout}">
+<div layout:fragment="content">
+
+    <div class="container" style="width: 1400px">
+        <h1>景区游玩攻略管理</h1>
+        <div class="row clearfix">
+            <form name="search-form" class="form-inline m-b-10 clearfix" th:action="@{/system/travelStrategyListUI}"
+                  id="search-form">
+            </form>
+
+            <!--<div align="right" style="float:right">
+                <button type="button" onclick="reset()" class="btn btn-default btn-warning">增加</button>
+            </div>-->
+            <div class="col-md-12 column">
+                <table class="table table-hover table-condensed">
+                    <thead>
+                    <tr>
+                        <th width="300px">发布人</th>
+                        <th width="150px">题目</th>
+                        <th width="700px">描述</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="travelStrategy:${page.content}">
+                        <td th:text="${travelStrategy.user.username}"></td>
+                        <td th:text="${travelStrategy.title}"></td>
+                        <td th:text="${travelStrategy.describe}"></td>
+                        <td>
+                            <div th:if="${travelStrategy.status == 1}" align="left">
+                                <button type="button" th:onclick="updateTravelStrategyStatus([[${travelStrategy.id}]])" class="btn btn-default btn-success">审核通过</button>
+                                <button type="button" th:onclick="updateError([[${travelStrategy.id}]])" class="btn btn-default btn-danger">审核不通过</button>
+                            </div>
+                            <div th:if="${travelStrategy.status == 0}" align="left">
+                                <button type="button"  class="btn btn-default btn-success">审核已经通过</button>
+                            </div>
+                            <div th:if="${travelStrategy.status == 2}" align="left">
+                                <button type="button"  class="btn btn-default btn-danger">未通过审核</button>
+                                <button type="button" th:onclick="updateTravelStrategyStatus([[${travelStrategy.id}]])" class="btn btn-default btn-success">重新审核</button>
+                            </div>
+                            <!--<div th:if="${travelStrategy.status == 1}" align="left">-->
+
+                            <!--</div>-->
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div th:insert="~{base/pageable}"></div>
+        <div class="modal fade" id="exampleModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" name="insertTravelStrategyMember"
+                              id="insertTravelStrategyMember" class="form-horizontal">
+                            <!--隐藏的-->
+                            <input type="text" id="id" name="id" hidden>
+
+                            <div class="form-group m-b-10" style="text-align:right">
+                                <label class="col-sm-4 control-label">
+                                    错误理由描述:
+                                </label>
+                                <div class="col-sm-7">
+                                <textarea type="text" rows="7" cols="20" class="form-control" id="errorMessage"
+                                          name="errorMessage">
+                                </textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                        <button type="button" class="btn btn-info" onclick="saveForm()">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--弹框-->
+    <script th:inline="javascript">
+
+
+        function updateError(id) {
+            $.ajax({
+                url: '/travel/system/getTravelStrategyById',
+                data: {"id": id},
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code == 200) {
+                        var travelStrategy = result.data;
+                        //全部清空
+                        $('#exampleModalLabel').text('修改攻略');
+                        //id
+                        $('#id').val(travelStrategy.id);
+                        //describe
+                        $('#describe').val(travelStrategy.describe);
+                        //errorMessage
+                        $('#errorMessage').val(travelStrategy.errorMessage);
+                        //显示模态框
+                        $('#exampleModal').modal('show')
+                    }
+                }
+            });
+        }
+
+        function updateTravelStrategyStatus(id) {
+            $.ajax({
+                url: '/travel/system/updateTravelStrategyStatus',
+                data: {"id": id},
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code === 200) {
+                        window.location.reload();
+                    } else {
+                        layer.open({
+                            title: '错误提示',
+                            content: result.message
+                        });
+                    }
+                }
+            })
+        }
+
+        function saveForm() {
+
+
+            $.ajax({
+                url: '/travel/system/saveTravelStrategy',
+                data: $("#insertTravelStrategyMember").serialize(),
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code === 200) {
+                        window.location.reload();
+                    } else {
+                        layer.open({
+                            title: '错误提示',
+                            content: result.message
+                        });
+                    }
+                }
+            })
+        }
+    </script>
+</div>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{base/layout}">
+<div layout:fragment="content">
+    <!--slider section-->
+    <div class="slider_wrapper">
+        <div class="slider-pro" id="my-slider">
+            <div class="sp-slides">
+
+                <div class="sp-slide">
+                    <h3 class="sp-layer sp-black sp-padding hide-small-screen" data-width="80%" data-position="topRight"
+                        data-horizontal="8%" data-vertical="25%" data-show-transition="right" data-hide-transition="up"
+                        data-show-delay="800" data-hide-delay="100">
+                        <span class="title-aaa">银杏湖景区乐游系统</span>——占地十五平方公里！全省规模最大的生态主题游乐项目。银杏湖乐园分为游乐区、生态休闲区、水世界、商务区、高尔夫球场、酒店别墅区。 该乐园位于江宁谷里街道的银杏湖大道520号，以银杏湖为中心，依山傍水。,你还可以在这里分享你的游玩日记与生活动态,即时分享你的快乐.找攻略、订酒店、查交通全都有,给你提供一站式的旅游社区化服务.
+                        <span class="read-more"><a href="javascript:void(0);">查看更多</a></span>
+                    </h3>
+                </div>
+                <div class="sp-slide">
+                    <h3 class="sp-layer sp-black sp-padding hide-small-screen" data-width="80%" data-position="topRight"
+                        data-horizontal="8%" data-vertical="25%" data-show-transition="right" data-hide-transition="up"
+                        data-show-delay="800" data-hide-delay="100">
+                        <span class="title-aaa">银杏湖景区乐游系统</span>
+                        ——欢迎大家的到来
+                        ——欢迎大家的到来
+                        <span class="read-more"><a href="javascript:void(0);">查看更多</a></span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-page-container">
+        <div class="container">
+            <div class="row med_toppadder30">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="cy-title">
+                        <h2>热门酒店</h2>
+                        <div class="pull-right">
+
+                            <div class="main-tabs">
+                                <ul class="nav nav-tabs">
+                                    <li>
+                                        <a th:href="@{/reserve/reserveHotelListUI}">更多 <i
+                                                class="fa fa-angle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-cont">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="c01">
+                                <div id="oc-news" class="owl-carousel owl-theme">
+                                    <div th:each="hotel:${top10Hotel}" class="item">
+                                        <div class="cy-news-post clearfix">
+                                            <div class="entry-image">
+                                                <a th:href="@{/reserve/hotelDetailsUI(id=${hotel.id})}"><img
+                                                        class="image_fade"
+                                                        th:src="@{'/images/'+ ${hotel.image} +'.jpg'}"
+                                                        alt="Image"></a>
+                                            </div>
+                                            <div class="entry-title">
+                                                <h4><a th:href="@{/reserve/hotelDetailsUI(id=${hotel.id})}"
+                                                       data-toggle="tooltip"
+                                                       data-container="body"
+                                                       th:title="${hotel.name}" th:text="${hotel.name}"></a>
+                                                </h4>
+                                            </div>
+                                            <div class="entry-content">
+                                                <p th:text="${hotel.describe}">
+                                                </p>
+                                            </div>
+                                            <ul class="entry-meta clearfix">
+                                                <li th:text="${#calendars.format(hotel.createDate,'yyyy-MM-dd')}"><i
+                                                        class="fa fa-calendar"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row med_bottompadder30">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="cy-title">
+                        <h2>热门景点</h2>
+                        <div class="pull-right">
+
+                            <div class="main-tabs">
+                                <a th:href="@{/reserve/reserveAttractionsListUI}">更多 <i
+                                        class="fa fa-angle-right"></i></a>
+                                </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-cont">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="cp01">
+                                <div id="oc-kx" class="owl-carousel owl-theme">
+                                    <div th:each="attractions:${top10Attractions}" class="item">
+                                        <div class="cy-kx-post clearfix">
+                                            <a th:href="@{/reserve/attractionsDetailsUI(id=${attractions.id})}">
+                                                <div class="entry-image">
+                                                    <img th:src="@{'/images/'+ ${attractions.image} +'.jpg'}"
+                                                         alt="Image">
+                                                </div>
+                                                <div class="entry-content">
+                                                    <p th:text="${attractions.name}"></p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!--<div class="item">-->
+                                    <!--<div class="cy-kx-post clearfix">-->
+                                    <!--<a href="javascript:void(0);">-->
+                                    <!--<div class="entry-image">-->
+                                    <!--<img class="image_fade" src="images/pic-kx04.jpg" alt="Image">-->
+                                    <!--</div>-->
+                                    <!--<div class="entry-content">-->
+                                    <!--<p>xxxxxxxxxxxx</p>-->
+                                    <!--</div>-->
+                                    <!--</a>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+
+                                </div>
+                            </div>
+                            <!-- <div class="tab-pane" id="c02">...</div> -->
+                        </div>
+                    </div>
+                    <div class="cy-title">
+                        <h2>景区游玩攻略</h2>
+                        <div class="pull-right">
+
+                            <div class="main-tabs">
+                                <ul class="nav nav-tabs">
+                                    <li>
+                                        <a th:href="@{/strategy/travelStrategyListUI}">更多 <i
+                                                class="fa fa-angle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="main-cy-thesis">
+                        <li th:each="strategy:${top10Strategy}"><a th:href="@{/strategy/travelStrategyDetailsUI(id=${strategy.id})}"
+                                                             data-toggle="tooltip" data-container="body"
+                                                             th:title="${strategy.title}" th:text="${strategy.title}">xxxxxxxxxxxx</a>
+                        </li>
+                    </ul>
+
+                    <div class="cy-title">
+                        <h2>热门路线</h2>
+                        <div class="pull-right">
+                            <div class="main-tabs">
+                                <ul class="nav nav-tabs">
+                                    <li>
+                                        <a th:href="@{/route/travelRouteListUI}">更多 <i
+                                                class="fa fa-angle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="main-cy-thesis">
+                        <li th:each="route:${top10Route}"><a th:href="@{/route/travelRouteDetailsUI(id=${route.id})}"
+                                                             data-toggle="tooltip" data-container="body"
+                                                             th:title="${route.name}" th:text="${route.name}">xxxxxxxxxxxx</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="cy-title">
+                        <h2>订阅信息</h2>
+                    </div>
+                    <div class="text-center med_toppadder5">
+                        <img src="images/pic-wx-qrcode1.jpg" width="200px" alt="">
+                        <p class="med_toppadder10">请关注微信号</p>
+                    </div>
+                    <div class="cy-title">
+                        <h2>联系我们</h2>
+                    </div>
+                    <ul class="cy-contact">
+                        <li><i class="fa fa-map-marker"></i> 地址：北京大族企业湾</li>
+                        <li><i class="fa fa-compass"></i> 邮编：434000</li>
+                        <li><i class="fa fa-phone"></i> 电话：158XXXX8644</li>
+                        <li><i class="fa fa-envelope"></i> 电子邮箱：9377XXXXX@qq.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--main section end-->
+    <script src="js/jquery_min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="plugins/slider-pro/js/jquery.sliderPro.min.js"></script>
+    <script src="plugins/owlcarousel/js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!--js code-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#my-slider').sliderPro({
+                arrows: true,
+                waitForLayers: true,
+                autoplay: false,
+                fade: true,
+                buttons: false,
+                autoScaleLayers: false,
+                width: 1170,
+                height: 400
+            });
+            $('.image_fade').hover(function () {
+                $(this).filter(':not(:animated)').animate({opacity: 0.8}, 400);
+            }, function () {
+                $(this).animate({opacity: 1}, 400);
+            });
+            $("#oc-news").owlCarousel({
+                margin: 30,
+                nav: true,
+                loop: true,
+                // autoplay:true,
+                // autoplayTimeout:6000,
+                // autoplayHoverPause: true,
+                dots: false,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                responsive: {
+                    0: {items: 1},
+                    480: {items: 2},
+                    768: {items: 3},
+                    992: {items: 4}
+                }
+            });
+            $("#oc-kx").owlCarousel({
+                margin: 15,
+                nav: true,
+                loop: true,
+                // autoplay:true,
+                // autoplayTimeout:5000,
+                // autoplayHoverPause: true,
+                dots: false,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                responsive: {
+                    0: {items: 1},
+                    480: {items: 2},
+                    768: {items: 3},
+                    992: {items: 4}
+                }
+            });
+
+            setInterval(function () {
+                var buy = $('.sp-previous-arrow')[0];//给你的a标签加一个id :btnBuy
+                buy.click();
+            }, 5000)//后面的500是以毫秒为单位。
+        });
+    </script>
+</div>
+</html>

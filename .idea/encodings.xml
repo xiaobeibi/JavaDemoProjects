@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/src/com/bjpowernode/App.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/src/com/bjpowernode/bean/Admin.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/src/com/bjpowernode/bean/PathConstant.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/src/com/bjpowernode/dao/impl/ChartDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/src/com/bjpowernode/module/charts/PieChart.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/src/com/bjpowernode/module/login/Login.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/src/com/bjpowernode/service/impl/AdminServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/src/com/bjpowernode/util/BeanUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/src/com/bjpowernode/util/InitDataUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/OnlineBiddingSystem/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OnlineBiddingSystem/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/adopt/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/carRental/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/carRental/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/employment-manage/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/employment-manage/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fangkuai/src/com/bjpowernode/fangkuai/help.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/finance/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/finance/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/house/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hr/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hr/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/music/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/music/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pan/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pan/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/travel_platform/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vinfo/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.hospitalhr.mapper.PositionMapper">
+	
+	<sql id="Base_Column_List">
+		id, position_number, name, level, notes
+	</sql>
+	
+	<select id="selectByNumber" parameterType="java.lang.Integer" resultType="Position">
+		select 
+		<include refid="Base_Column_List" />
+		from position
+		where position_number = #{positonNumber}
+	</select>
+
+</mapper>

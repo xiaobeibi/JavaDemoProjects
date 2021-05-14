@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<context:component-scan base-package="com.bjpowernode.hospitalhr" />
+
+	<import resource="spring-datasource.xml" />
+
+	<!-- 用Spring容器来管理sqlSessionFactory，并用MyBatis-Plus替换MyBtis-Spring -->
+	<bean id="sqlSessionFactory"
+		class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+		<!-- 配置数据源 -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- 自动扫描xml文件位置 -->
+		<property name="mapperLocations" value="classpath:mapper/*.xml" />
+		<!-- 配置 Mybatis 配置文件 -->
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<!-- 配置包别名 -->
+		<property name="typeAliasesPackage" value="com.bjpowernode.hospitalhr.entity" />
+
+		<!-- 插件配置 -->
+		<property name="plugins">
+			<array>
+				<!-- 分页插件配置 -->
+				<bean id="paginationInterceptor"
+					class="com.baomidou.mybatisplus.plugins.PaginationInterceptor">
+					<!-- 指定数据库方言 -->
+					<property name="dialectType" value="mysql" />
+				</bean>
+				<!-- 如需要开启其他插件，可配置于此 -->
+			</array>
+		</property>
+
+		<!-- MP全局配置注入 -->
+		<property name="globalConfig" ref="globalConfig" />
+	</bean>
+
+	<!-- 定义MP全局策略 -->
+	<bean id="globalConfig" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
+		<!-- 主键策略配置 -->
+		<!-- 可选参数 AUTO->`0`("数据库ID自增") INPUT->`1`(用户输入ID") ID_WORKER->`2`("全局唯一ID") 
+			UUID->`3`("全局唯一ID") -->
+		<property name="idType" value="0" />
+
+		<!-- 数据库类型配置 -->
+		<!-- 可选参数（默认mysql） MYSQL->`mysql` ORACLE->`oracle` DB2->`db2` H2->`h2` 
+			HSQL->`hsql` SQLITE->`sqlite` POSTGRE->`postgresql` SQLSERVER2005->`sqlserver2005` 
+			SQLSERVER->`sqlserver` -->
+		<property name="dbType" value="mysql" />
+
+		<!-- 全局表为下划线命名设置true -->
+		<property name="dbColumnUnderline" value="true"></property>
+	</bean>
+
+	<!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.bjpowernode.hospitalhr.mapper" />
+	</bean>
+
+	<!-- 事务管理 -->
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- 可通过注解控制事物 -->
+	<tx:annotation-driven transaction-manager="txManager" />
+
+</beans>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>个人理财系统</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--弹出框样式-->
+    <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <div th:replace="user/common/leftbar::#leftbaraside"></div>
+        <!--头部信息-->
+        <div th:replace="user/common/topbar::#topbarheader"></div>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>账户安全</h4>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="oldpwd">旧密码</label>
+                                            <input class="form-control" type="password" id="oldpwd" name="oldpwd" placeholder="输入账号的原登录密码..">
+                                            <span class="help-block"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="newpwd">新密码</label>
+                                            <input class="form-control" type="password" id="newpwd" name="newpwd" placeholder="输入新的密码">
+                                            <span class="help-block"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="confirmpwd">确认新密码</label>
+                                            <input class="form-control" type="password" id="confirmpwd" name="confirmpwd" placeholder="请确认新的密码..">
+                                            <span class="help-block"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-primary" id="submit" type="button">修改密码</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<!--滚动条插件-->
+<script th:src="@{/lyear/js/perfect-scrollbar.min.js}"></script>
+<!--弹出框js-->
+<script th:src="@{/lyear/jconfirm/jquery-confirm.min.js}"></script>
+<!--自定义js脚本-->
+<script th:src="@{/lyear/js/main.min.js}"></script>
+<script th:src="@{/js/md5.js}"></script>
+<script th:inline="javascript">
+
+    $(function() {
+        $("#oldpwd").blur(checkOldpwd);
+        $("#newpwd").blur(checkNewpwd);
+        $("#confirmpwd").blur(checkConfirmpwd);
+        $("#submit").mousedown(function() {
+            if (checkOldpwd() && checkNewpwd() && checkConfirmpwd()) {
+                updatePwd();
+            }
+        });
+    });
+
+    //校验原始密码是否为空
+    function checkOldpwd() {
+        var oldpwd = $("#oldpwd").val();
+        if (oldpwd.length === 0) {
+            show_validate_msg("#oldpwd", "error", "老哥，这里还没填呢");
+            return false;
+        }
+        show_validate_msg("#oldpwd", "success", "你觉得这就是你的原始密码了");
+        return true;
+    }
+
+    //校验新密码
+    function checkNewpwd() {
+        var password = $("#newpwd").val();
+        if (password.length === 0) {
+            show_validate_msg("#newpwd", "error", "密码不能为空哟");
+            return false;
+        }
+        if (password.length < 6 || password.length > 18) {
+            show_validate_msg("#newpwd", "error", "密码必须大于或等于6个字符且小于或等于18个字符哟");
+            return false;
+        }
+        //匹配由英文、数字和下划线组成，长度为6至18的字符串
+        var passwordReg = /\w{5,40}/;
+        if (passwordReg.test(password) === false) {
+            show_validate_msg("#newpwd", "error", "密码不能包含英文、数字和下划线之外的字符哟");
+            return false;
+        }
+        show_validate_msg("#newpwd", "success", "新密码看起来不错哟");
+        return true;
+    }
+
+    //校验重复密码
+    function checkConfirmpwd() {
+        if (checkNewpwd()) {
+            var password = $("#newpwd").val();
+            var confirmpwd = $("#confirmpwd").val();
+            if (confirmpwd === password) {
+                show_validate_msg("#confirmpwd", "success", "哎呀，看起来和前面的一样呢");
+                return true;
+            }else if (confirmpwd==="") {
+                show_validate_msg("#confirmpwd", "error", "小伙子心急了呀，这里还没有填呢");
+                return false;
+            } else {
+                show_validate_msg("#confirmpwd", "error", "哎呀，看起来和前面不一样呢");
+                return false;
+            }
+        } else {
+            show_validate_msg("#confirmpwd", "error", "小伙子心急了呀，前面的还没有填呢");
+            return false;
+        }
+    }
+
+    //ajax修改密码
+    function updatePwd() {
+        var userId = [[${session.loginUser.id}]];
+        var oldpwd = $("#oldpwd").val();
+        $("#oldpwd").val($.md5(oldpwd));
+
+        var newpwd = $("#newpwd").val();
+        $("#newpwd").val($.md5(newpwd));
+        $.ajax({
+            url: "/user/updatePwd",
+            type: "PUT",
+            data: {
+                "id": userId,
+                "oldpwd":$("#oldpwd").val(),
+                "newpwd":$("#newpwd").val()
+            },
+            success: function(result) {
+                if (result.code === 100) {
+                    $.alert('密码修改成功！');
+                    setTimeout(function () {
+                        location.href = "/user/personal/toSecurity.html";
+                    }, 1000);
+                }else {
+                    show_validate_msg("#oldpwd", "error", "很明显，宁这密码不对嘛");
+                }
+            }
+        })
+    }
+
+    //显示校验结果的提示信息
+    function show_validate_msg(ele, status, msg) {
+        //清除当前元素的校验状态
+        $(ele).parent().removeClass("has-success has-error");
+        $(ele).next("span").text("");
+        if ("success" == status) {
+            $(ele).parent().addClass("has-success");
+            $(ele).next("span").text(msg);
+        } else if ("error" == status) {
+            $(ele).parent().addClass("has-error");
+            $(ele).next("span").text(msg);
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>errorPage</title>
+    <script src="/js/jquery.min.js"></script>
+</head>
+<body onload="myFunction()">
+
+<h1>error:<b th:text="${message}">错误</b></h1>
+<div id="errorMessage" ></div>
+<script>
+    var message =window.localStorage.getItem("messgae");
+    function myFunction(){
+        $("#errorMessage").html(message);
+    }
+
+</script>
+
+
+</body>
+</html>

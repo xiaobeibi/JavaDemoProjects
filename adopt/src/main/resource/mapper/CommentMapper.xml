@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecjtu.mapper.CommentMapper">
+
+    <insert id="addComment" parameterType="Comment" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO comment (user_id,admin_id,pet_id,commentTime,content) values(#{user.id},#{admin.id},#{pet.id},#{commentTime},#{content})
+    </insert>
+
+    <delete id="deleteComment" parameterType="int">
+        DELETE FROM comment where id=#{id}
+    </delete>
+
+    <update id="updateComment" parameterType="comment">
+        UPDATE comment SET commentTime=#{commentTime},content=#{content} WHERE id=#{id}
+    </update>
+
+    <update id="updateRelationUser" parameterType="int">
+         UPDATE comment SET user_id=NULL WHERE user_id=#{user_id}
+    </update>
+
+    <update id="updateRelationPet" parameterType="int">
+        UPDATE comment SET pet_id=NULL WHERE pet_id=#{pet_id}
+    </update>
+    <resultMap id="BaseCommentMap" type="comment">
+        <id column="id" property="id"></id>
+        <result column="commentTime" property="commentTime"></result>
+        <result column="content" property="content"></result>
+
+        <association property="user" javaType="users">
+            <id property="id" column="id"></id>
+            <result column="userName" property="userName"></result>
+            <result column="password" property="password"></result>
+            <result column="sex" property="sex"></result>
+            <result column="age" property="age"></result>
+            <result column="telephone" property="telephone"></result>
+            <result column="Email" property="Email"></result>
+            <result column="address" property="address"></result>
+            <result column="pic" property="pic"></result>
+            <result column="state" property="state"></result>
+        </association>
+
+
+        <association property="admin" javaType="admin">
+            <id column="id" property="id"></id>
+            <result column="adminName"  property="adminName"></result>
+            <result column="adminPwd"  property="adminPwd"></result>
+            <result column="realName"  property="realName"></result>
+            <result column="telephone" property="telephone"></result>
+            <result column="Email" property="Email"></result>
+            <result column="birthday" property="birthday"></result>
+            <result column="sex" property="sex"></result>
+            <result column="pic" property="pic"></result>
+            <result column="remark" property="remark"></result>
+        </association>
+
+        <association property="pet" javaType="pet">
+            <id column="id" property="id"></id>
+            <result column="petName" property="petName"></result>
+            <result column="petType" property="petType"></result>
+            <result column="sex" property="sex"></result>
+            <result column="birthday" property="birthday"></result>
+            <result column="pic" property="pic"></result>
+            <result column="state" property="state"></result>
+            <result column="remark" property="remark"></result>
+        </association>
+        <collection property="answer" ofType="answer">
+            <id column="aid" property="id"></id>
+            <result column="answerTime" property="answerTime"></result>
+            <result column="acontent" property="content"></result>
+            <association property="user" javaType="users">
+                <id  column="u2id" property="id"></id>
+                <result column="u2Name" property="userName"></result>
+                <result column="password" property="password"></result>
+                <result column="sex" property="sex"></result>
+                <result column="age" property="age"></result>
+                <result column="telephone" property="telephone"></result>
+                <result column="Email" property="Email"></result>
+                <result column="address" property="address"></result>
+                <result column="u2Pic" property="pic"></result>
+                <result column="state" property="state"></result>
+            </association>
+        </collection>
+    </resultMap>
+
+
+   <select id="getComments" resultMap="BaseCommentMap" >
+        select comment.*,users.userName,admin.adminName,pet.petName from comment  LEFT JOIN users ON comment.user_id=users.id  LEFT JOIN admin  ON admin.id=comment.admin_id inner join pet on comment.pet_id=pet.id
+    </select>
+
+    <select id="findByPetId" resultMap="BaseCommentMap" parameterType="int">
+        select comment.*,u1.userName,u1.pic,u2.id u2id,u2.pic usPic,u2.userName u2Name,answerTime,answer.id aid,answer.content acontent,admin.adminName,pet.petName from comment left join users as u1 ON comment.user_id=u1.id  LEFT JOIN admin  ON admin.id=comment.admin_id inner join pet on comment.pet_id=pet.id
+        left join answer on answer.comment_id=comment.id and answer.replay_id is null left join users as u2 on u2.id=answer.user_id where comment.pet_id=#{pet_id};
+    </select>
+    <!--SELECT *  FROM comment as c ,pet as p
+
+        <if test="user != null ">
+            ,users as u
+        </if>
+        <if test="admin != null">
+            ,admin as a
+        </if>
+        <where>
+            c.pet_id=p.id
+            <if test=" user != null ">
+                 and u.id=c.user_id
+            </if>
+            <if test=" admin != null ">
+                 and a.id=c.admin_id
+            </if>
+            and c.id=#{id,jdbcType=INTEGER}
+        </where>-->
+    <select id="findById" parameterType="int" resultMap="BaseCommentMap" >
+        select comment.*,users.userName,admin.adminName,pet.petName from comment  LEFT JOIN users ON comment.user_id=users.id  LEFT JOIN admin  ON admin.id=comment.admin_id inner join pet on comment.pet_id=pet.id
+        where comment.id=#{id}
+    </select>
+
+    <select id="findByName" parameterType="String" resultMap="BaseCommentMap" >
+        select comment.*,users.userName,admin.adminName,pet.petName from comment  LEFT JOIN users ON comment.user_id=users.id  LEFT JOIN admin  ON admin.id=comment.admin_id inner join pet on comment.pet_id=pet.id
+        <where>
+            <if test="userName !=null and userName !=''">
+                and users.userName=#{userName}
+            </if>
+            <if test="adminName !=null and adminName != ''">
+                and admin.adminName=#{adminName}
+            </if>
+        </where>
+    </select>
+
+
+    <delete id="deleteBatch" parameterType="int">
+        DELETE FROM comment
+        <foreach collection="ids" item="id" separator="," open="where id in (" close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

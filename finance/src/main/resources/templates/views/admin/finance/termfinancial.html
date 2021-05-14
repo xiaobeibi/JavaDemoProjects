@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>后台管理系统</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--弹出框样式-->
+    <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <div th:replace="admin/common/leftbar::#leftbaraside"></div>
+        <!--头部信息-->
+        <div th:replace="admin/common/topbar::#topbarheader"></div>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>期限理财管理</h4>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th class="info">序号</th>
+                                            <th class="info">产品名称</th>
+                                            <th class="info">起投金额</th>
+                                            <th class="info">收益方式</th>
+                                            <th class="info">七日年化收益率</th>
+                                            <th class="info">投资期限</th>
+                                            <th class="info">相关操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="finance:${financeList}">
+                                            <td th:text="${(finacnePageInfo.pageNum - 1) * finacnePageInfo.pageSize+financeStat.index+1}"></td>
+                                            <td th:text="${finance.name}"></td>
+                                            <td th:text="${#numbers.formatDecimal(finance.leastmoney,1,2)}+'元'"></td>
+                                            <td th:if="${finance.profit==1}" th:text="收益型"></td>
+                                            <td th:if="${finance.profit==2}" th:text="净值型"></td>
+                                            <td th:text="${#numbers.formatDecimal(finance.annualincome*100,1,3)}+'%'"></td>
+                                            <td th:text="${finance.investerm}"></td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm update_btn"
+                                                        th:attr="update-id=${finance.id}">
+															<span class="glyphicon glyphicon-pencil"
+                                                                  aria-hidden="true"></span> 编辑
+                                                </button>
+                                                <button class="btn btn-danger btn-sm delete_btn"
+                                                        th:attr="delete-id=${finance.id},delete-name=${finance.name}">
+															<span class="glyphicon glyphicon-trash"
+                                                                  aria-hidden="true"></span> 删除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- 显示分页信息 -->
+                            <div class="row">
+
+                                <!-- 新增按钮 -->
+                                <div class="col-md-1" style="margin-left: 24px">
+                                    <button id="add_modal_btn" class="btn btn-primary">新增</button>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default">
+                                            <span>页次：</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span th:text="${finacnePageInfo.pageNum}+'/'+${finacnePageInfo.pages}+'页'"></span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span>每页显示：</span>
+                                        </button>
+                                        <div class="btn-group">
+                                            <button id="btnGroupDrop1"
+                                                    class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"><span
+                                                    th:text="${finacnePageInfo.pageSize}"></span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li th:each="i:${#numbers.sequence(1,10)}">
+                                                    <a th:text="${i}"
+                                                       th:href="@{/admin/finance/toTermFinancial.html(pageNum=${finacnePageInfo.pageNum},pageSize=${i})}"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-default">
+                                            <span>条</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span>总记录数：</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span th:text="${finacnePageInfo.total}+'条'"></span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 分页条信息 -->
+                                <div class="col-md-5">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination pagination-lg pull-right"
+                                            style="margin-top: 0">
+                                            <li>
+                                                <a th:href="@{/admin/finance/toTermFinancial.html(pageNum=1,pageSize=${finacnePageInfo.pageSize})}">首页</a>
+                                            </li>
+
+                                            <li th:if="${finacnePageInfo.hasPreviousPage }"><a
+                                                    th:href="@{/admin/finance/toTermFinancial.html(pageNum=${finacnePageInfo.pageNum}-1,pageSize=${finacnePageInfo.pageSize})}"
+                                                    aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+                                            </a></li>
+
+                                            <li th:each="page_Num:${finacnePageInfo.navigatepageNums }"
+                                                th:class="${page_Num == finacnePageInfo.pageNum?'active':''}">
+                                                <a th:if="${page_Num == finacnePageInfo.pageNum}"
+                                                   th:text="${page_Num}"
+                                                   th:href="@{#}">
+                                                </a>
+                                                <a th:text="${page_Num}"
+                                                   th:if="${page_Num != finacnePageInfo.pageNum}"
+                                                   th:href="@{/admin/finance/toTermFinancial.html(pageNum=${page_Num},pageSize=${finacnePageInfo.pageSize})}">
+                                                </a>
+                                            </li>
+
+                                            <li th:if="${finacnePageInfo.hasNextPage }"><a
+                                                    th:href="@{/admin/finance/toTermFinancial.html(pageNum=${finacnePageInfo.pageNum}+1,pageSize=${finacnePageInfo.pageSize})}"
+                                                    aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+                                            </a></li>
+
+                                            <li><a
+                                                    th:href="@{/admin/finance/toTermFinancial.html(pageNum=${finacnePageInfo.pages},pageSize=${finacnePageInfo.pageSize})}">末页</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 新增理财的模态框 -->
+                    <div class="modal fade" id="addModal" tabindex="-1"
+                         role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title">新增期限理财产品</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <!--要提交的表单 -->
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">产品名称：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control"
+                                                       id="name_add_input" name="name"
+                                                       placeholder="请输入期限理财产品名称：">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">起投金额（元）：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control"
+                                                       id="leastmoney_add_input" name="leastmoney"
+                                                       placeholder="请输入起投金额：">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">收益方式：</label>
+                                            <div class="col-sm-6">
+                                                <div class="example-box">
+                                                    <label class="lyear-radio radio-inline">
+                                                        <input type="radio" name="profit"
+                                                               value="1" checked="checked"><span>收益型</span>
+                                                    </label>
+                                                    <label class="lyear-radio radio-inline">
+                                                        <input type="radio" name="profit"
+                                                               value="2"> <span>净值型</span>
+                                                    </label>
+                                                </div>
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">七日年化收益率：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control"
+                                                       id="annualincome_add_input" name="annualincome"
+                                                       placeholder="请输入七日年化收益率：">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">投资期限：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control"
+                                                       id="investerm_add_input" name="investerm"
+                                                       placeholder="请输入投资期限：">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">关闭
+                                    </button>
+                                    <button type="button" class="btn btn-primary"
+                                            id="save_btn">保存
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 修改用户的模态框 -->
+                    <div class="modal fade" id="updateModal" tabindex="-1"
+                         role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title">修改期限理财产品信息</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <!--要提交的表单 -->
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">产品名称：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control"
+                                                       id="name_update_input" name="name"
+                                                       placeholder="请输入期限理财产品名称：">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">起投金额（元）：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control"
+                                                       id="leastmoney_update_input" name="leastmoney"
+                                                       placeholder="请输入起投金额：">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">收益方式：</label>
+                                            <div class="col-sm-6">
+                                                <div class="example-box">
+                                                    <label class="lyear-radio radio-inline">
+                                                        <input type="radio" name="profit"
+                                                               value="1" checked="checked"><span>收益型</span>
+                                                    </label>
+                                                    <label class="lyear-radio radio-inline">
+                                                        <input type="radio" name="profit"
+                                                               value="2"> <span>净值型</span>
+                                                    </label>
+                                                </div>
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">七日年化收益率：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control"
+                                                       id="annualincome_update_input" name="annualincome"
+                                                       placeholder="请输入七日年化收益率：">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">投资期限：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control"
+                                                       id="investerm_update_input" name="investerm"
+                                                       placeholder="请输入投资期限：">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">关闭
+                                    </button>
+                                    <button type="button" class="btn btn-primary"
+                                            id="update_btn">更新
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<!--滚动条插件-->
+<script th:src="@{/lyear/js/perfect-scrollbar.min.js}"></script>
+<!--弹出框js-->
+<script th:src="@{/lyear/jconfirm/jquery-confirm.min.js}"></script>
+<!--自定义js脚本-->
+<script th:src="@{/lyear/js/main.min.js}"></script>
+<script type="text/javascript">
+
+    //点击新增按钮弹出模态框。
+    $("#add_modal_btn").click(function () {
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#addModal form");
+        //弹出模态框
+        $("#addModal").modal({
+            //点击增加框背景不删除增加框
+            backdrop: "static"
+        });
+    });
+
+    //点击保存，保存新增产品信息。
+    $("#save_btn").click(function () {
+        //清空表单样式
+        clean_form("#addModal form");
+
+        var name = $("#name_add_input").val();
+        var leastmoney = $("#leastmoney_add_input").val();
+        var annualincome = $("#annualincome_add_input").val();
+        var investerm = $("#investerm_add_input").val();
+
+        //匹配中文、英文、数字包括下划线(理财产品名称)
+        var nameRegex = /^[\u4E00-\u9FA5A-Za-z0-9_]+$/;
+        if (name.length === 0) {
+            show_validate_msg("#name_add_input",
+                "error", "产品名称为空");
+            return false;
+        } else if (nameRegex.test(name) === false) {
+            show_validate_msg("#name_add_input",
+                "error", "产品名称不合法（产品名称只能由中文、数字、英文和下划线组成）");
+            return false;
+        }
+
+        //匹配有1~2位小数的正实数
+        var leastmoneyRegex = /^[0-9]+(.[0-9]{1,2})?$/;
+        if (leastmoney.length === 0) {
+            show_validate_msg("#leastmoney_add_input",
+                "error", "起投金额为空");
+            return false;
+        } else if (leastmoneyRegex.test(leastmoney) === false) {
+            show_validate_msg("#leastmoney_add_input",
+                "error", "起投金额不合法（有1~2位小数的正实数）");
+            return false;
+        }
+
+        //匹配正数、负数、和小数
+        var annualincomeRegex = /^(\-|\+)?\d+(\.\d+)?$/;
+        if (annualincome.length === 0) {
+            show_validate_msg("#annualincome_add_input",
+                "error", "七日年化收益率为空");
+            return false;
+        } else if (annualincomeRegex.test(annualincome) === false) {
+            show_validate_msg("#annualincome_add_input",
+                "error", "七日年化收益率不合法（正数、负数、和小数）");
+            return false;
+        }
+
+        //匹配中文、英文、数字包括下划线
+        var investermRegex = /^[\u4E00-\u9FA5A-Za-z0-9_]+$/;
+        if (investerm.length === 0) {
+            show_validate_msg("#investerm_add_input",
+                "error", "投资期限为空");
+            return false;
+        } else if (investermRegex.test(investerm) === false) {
+            show_validate_msg("#investerm_add_input",
+                "error", "投资期限不合法");
+            return false;
+        }
+
+        //2、发送ajax请求保存产品
+        $.ajax({
+            url: "/admin/addTermFinancial",
+            type: "POST",
+            data: $("#addModal form").serialize(),
+            success: function (result) {
+                if (result.code === 100) {
+                    $("#addModal").modal('hide');
+                    $.alert('期限理财产品添加成功！');
+                    setTimeout(function () {
+                        var pageNum = [[${finacnePageInfo.pages}]];
+                        var pageSize = [[${finacnePageInfo.pageSize}]];
+                        location.href = "/admin/finance/toTermFinancial.html?pageNum=" + pageNum + "&pageSize=" + pageSize;
+                    }, 1000);
+                } else {
+                    $.alert('期限理财产品添加失败！');
+                }
+            }
+        });
+    });
+
+    //点击编辑按钮时触发事件
+    $(document).on("click", ".update_btn", function () {
+
+        //根据用户id发送ajax请求，查出信息并显示
+        getFinanceInfo($(this).attr("update-id"));
+
+        //把用户的id传递给模态框的更新按钮
+        $("#update_btn").attr("update-id", $(this).attr("update-id"));
+        $("#updateModal").modal({
+            backdrop: "static"
+        });
+    });
+
+    //根据id查出信息并显示
+    function getFinanceInfo(id) {
+        $.ajax({
+            url: "/admin/getTermFinancialInfoById/" + id,
+            type: "GET",
+            success: function (result) {
+                var termFinancial = result.extend.termFinancial;
+
+                //显示数据之前先清除一下校验样式，如果有的话
+                reset_form("#updateModal form");
+
+                $("#name_update_input").val(termFinancial.name);
+                $("#updateModal input[name=profit]").val(
+                    [ termFinancial.profit ]);
+                $("#leastmoney_update_input").val(termFinancial.leastmoney);
+                $("#annualincome_update_input").val(termFinancial.annualincome);
+                $("#investerm_update_input").val(termFinancial.investerm);
+            }
+        });
+    }
+
+    //点击更新，更新信息
+    $("#update_btn").click(function () {
+        //清空表单样式
+        clean_form("#updateModal form");
+
+        var name = $("#name_update_input").val();
+        var leastmoney = $("#leastmoney_update_input").val();
+        var annualincome = $("#annualincome_update_input").val();
+        var investerm = $("#investerm_update_input").val();
+
+        //匹配中文、英文、数字包括下划线(理财产品名称)
+        var nameRegex = /^[\u4E00-\u9FA5A-Za-z0-9_]+$/;
+        if (name.length === 0) {
+            show_validate_msg("#name_update_input",
+                "error", "产品名称为空");
+            return false;
+        } else if (nameRegex.test(name) === false) {
+            show_validate_msg("#name_update_input",
+                "error", "产品名称不合法（产品名称只能由中文、数字、英文和下划线组成）");
+            return false;
+        }
+
+        //匹配有1~2位小数的正实数
+        var leastmoneyRegex = /^[0-9]+(.[0-9]{1,2})?$/;
+        if (leastmoney.length === 0) {
+            show_validate_msg("#leastmoney_update_input",
+                "error", "起投金额为空");
+            return false;
+        } else if (leastmoneyRegex.test(leastmoney) === false) {
+            show_validate_msg("#leastmoney_update_input",
+                "error", "起投金额不合法（有1~2位小数的正实数）");
+            return false;
+        }
+
+        //匹配正数、负数、和小数
+        var annualincomeRegex = /^(\-|\+)?\d+(\.\d+)?$/;
+        if (annualincome.length === 0) {
+            show_validate_msg("#annualincome_update_input",
+                "error", "七日年化收益率为空");
+            return false;
+        } else if (annualincomeRegex.test(annualincome) === false) {
+            show_validate_msg("#annualincome_update_input",
+                "error", "七日年化收益率不合法（正数、负数、和小数）");
+            return false;
+        }
+
+        //匹配中文、英文、数字包括下划线
+        var investermRegex = /^[\u4E00-\u9FA5A-Za-z0-9_]+$/;
+        if (investerm.length === 0) {
+            show_validate_msg("#investerm_update_input",
+                "error", "投资期限为空");
+            return false;
+        } else if (investermRegex.test(investerm) === false) {
+            show_validate_msg("#investerm_update_input",
+                "error", "投资期限不合法");
+            return false;
+        }
+
+        //2、发送ajax请求保存更新的理财产品数据
+        $.ajax({
+            url: "/admin/updateTermFinancial/" + $(this).attr("update-id"),
+            type: "PUT",
+            data: $("#updateModal form").serialize(),
+            success: function (result) {
+                if (result.code === 100) {
+                    $("#updateModal").modal('hide');
+                    $.alert('期限理财产品信息修改成功！');
+                    setTimeout(function () {
+                        var pageNum = [[${finacnePageInfo.pageNum}]];
+                        var pageSize = [[${finacnePageInfo.pageSize}]];
+                        location.href = "/admin/finance/toTermFinancial.html?pageNum=" + pageNum + "&pageSize=" + pageSize;
+                    }, 1000);
+                } else {
+                    $.alert('期限理财产品信息修改失败！');
+                }
+            }
+        });
+    });
+
+    //单个删除
+    $(document).on("click", ".delete_btn", function () {
+        //1、弹出是否确认删除对话框
+        var id = $(this).attr("delete-id");
+        var name = $(this).attr("delete-name");
+        $.alert({
+            title: '提示：',
+            content: "确定删除工资理财产品 <strong>" + name + "</strong> 吗？",
+            buttons: {
+                confirm: {
+                    text: '确认',
+                    btnClass: 'btn-primary',
+                    action: function () {
+                        $.ajax({
+                            url: "/admin/deleteTermFinancialById/" + id,
+                            type: "DELETE",
+                            success: function (result) {
+                                if (result.code === 100) {
+                                    $.alert('删除该期限理财产品成功！');
+                                    setTimeout(function () {
+                                        var pageNum = [[${finacnePageInfo.pageNum}]];
+                                        var pageSize = [[${finacnePageInfo.pageSize}]];
+                                        location.href = "/admin/finance/toTermFinancial.html?pageNum=" + pageNum + "&pageSize=" + pageSize;
+                                    }, 1000);
+                                } else {
+                                    $.alert('删除该期限理财产品失败!');
+                                }
+                            }
+                        });
+                    }
+                },
+                cancel: {
+                    text: '取消',
+                    action: function () {
+                        $.alert('已取消!');
+                    }
+                }
+            }
+        });
+    });
+
+    //清空表单样式及内容
+    function reset_form(ele) {
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
+    //清空表单样式
+    function clean_form(ele) {
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
+    //显示校验结果的提示信息
+    function show_validate_msg(ele, status, msg) {
+        //清除当前元素的校验状态
+        $(ele).parent().removeClass("has-success has-error");
+        $(ele).next("span").text("");
+        if ("success" === status) {
+            $(ele).parent().addClass("has-success");
+            $(ele).next("span").text(msg);
+        } else if ("error" === status) {
+            $(ele).parent().addClass("has-error");
+            $(ele).next("span").text(msg);
+        }
+    }
+
+</script>
+</body>
+</html>

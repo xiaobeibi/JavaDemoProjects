@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>后台管理系统</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--弹出框样式-->
+    <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <div th:replace="admin/common/leftbar::#leftbaraside"></div>
+        <!--头部信息-->
+        <div th:replace="admin/common/topbar::#topbarheader"></div>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>网贷审核</h4>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th class="info">序号</th>
+                                            <th class="info">账户</th>
+                                            <th class="info">借贷资金</th>
+                                            <th class="info">借贷期限</th>
+                                            <th class="info">个人信用</th>
+                                            <th class="info">审核状态</th>
+                                            <th class="info">相关操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="loan:${loanList}">
+                                            <td th:text="${(loanPageInfo.pageNum - 1) * loanPageInfo.pageSize+loanStat.index+1}"></td>
+                                            <td th:text="${loan.user.username}"></td>
+                                            <td th:text="${#numbers.formatDecimal(loan.amount,1,2)}+'元'"></td>
+                                            <td th:text="${loan.term}+'天'"></td>
+                                            <td th:text="${loan.user.reputation}"></td>
+                                            <td th:if="${loan.applystatus==0}" th:text="未审核"></td>
+                                            <td th:if="${loan.applystatus==1}" th:text="审核未通过"></td>
+                                            <td th:if="${loan.applystatus==2}" th:text="审核通过"></td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm pass_update_btn"
+                                                        th:attr="update-id=${loan.id},update-name=${loan.user.username},
+                                                        update-amount=${loan.amount},update-applystatus=${loan.applystatus}">
+															<span class="glyphicon glyphicon-ok"
+                                                                  aria-hidden="true"></span> 审核通过
+                                                </button>
+                                                <button class="btn btn-danger btn-sm notpass_update_btn"
+                                                        th:attr="update-id=${loan.id},update-name=${loan.user.username},
+                                                        update-amount=${loan.amount},update-applystatus=${loan.applystatus}">
+															<span class="glyphicon glyphicon-remove"
+                                                                  aria-hidden="true"></span> 审核不通过
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- 显示分页信息 -->
+                            <div class="row">
+
+
+                                <div class="col-md-5 col-md-offset-1">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default">
+                                            <span>页次：</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span th:text="${loanPageInfo.pageNum}+'/'+${loanPageInfo.pages}+'页'"></span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span>每页显示：</span>
+                                        </button>
+                                        <div class="btn-group">
+                                            <button id="btnGroupDrop1"
+                                                    class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"><span
+                                                    th:text="${loanPageInfo.pageSize}"></span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li th:each="i:${#numbers.sequence(1,10)}">
+                                                    <a th:text="${i}"
+                                                       th:href="@{/admin/loan/toLoanexam.html(pageNum=${loanPageInfo.pageNum},pageSize=${i})}"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-default">
+                                            <span>条</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span>总记录数：</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span th:text="${loanPageInfo.total}+'条'"></span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 分页条信息 -->
+                                <div class="col-md-5">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination pagination-lg pull-right"
+                                            style="margin-top: 0">
+                                            <li>
+                                                <a th:href="@{/admin/loan/toLoanexam.html(pageNum=1,pageSize=${loanPageInfo.pageSize})}">首页</a>
+                                            </li>
+
+                                            <li th:if="${loanPageInfo.hasPreviousPage }"><a
+                                                    th:href="@{/admin/loan/toLoanexam.html(pageNum=${loanPageInfo.pageNum}-1,pageSize=${loanPageInfo.pageSize})}"
+                                                    aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+                                            </a></li>
+
+                                            <li th:each="page_Num:${loanPageInfo.navigatepageNums }"
+                                                th:class="${page_Num == loanPageInfo.pageNum?'active':''}">
+                                                <a th:if="${page_Num == loanPageInfo.pageNum}"
+                                                   th:text="${page_Num}"
+                                                   th:href="@{#}">
+                                                </a>
+                                                <a th:text="${page_Num}"
+                                                   th:if="${page_Num != loanPageInfo.pageNum}"
+                                                   th:href="@{/admin/loan/toLoanexam.html(pageNum=${page_Num},pageSize=${loanPageInfo.pageSize})}">
+                                                </a>
+                                            </li>
+
+                                            <li th:if="${loanPageInfo.hasNextPage }"><a
+                                                    th:href="@{/admin/loan/toLoanexam.html(pageNum=${loanPageInfo.pageNum}+1,pageSize=${loanPageInfo.pageSize})}"
+                                                    aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+                                            </a></li>
+
+                                            <li><a
+                                                    th:href="@{/admin/loan/toLoanexam.html(pageNum=${loanPageInfo.pages},pageSize=${loanPageInfo.pageSize})}">末页</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<!--滚动条插件-->
+<script th:src="@{/lyear/js/perfect-scrollbar.min.js}"></script>
+<!--弹出框js-->
+<script th:src="@{/lyear/jconfirm/jquery-confirm.min.js}"></script>
+<!--自定义js脚本-->
+<script th:src="@{/lyear/js/main.min.js}"></script>
+<script type="text/javascript">
+
+    //通过审核
+    $(document).on("click", ".pass_update_btn", function () {
+
+        var id = $(this).attr("update-id");
+        var username = $(this).attr("update-name");
+        var amount = $(this).attr("update-amount");
+        var applystatus = $(this).attr("update-applystatus");
+        if (applystatus == 2) {
+            $.alert('用户 <strong>' + username + '</strong> 的' + amount + '元网贷审核已通过');
+        } else if (applystatus == 1) {
+            $.alert({
+                title: '提示：',
+                content: "用户 <strong>" + username + "</strong> 的" + amount + "元网贷之前审核未通过，现在确认通过审核吗？",
+                buttons: {
+                    confirm: {
+                        text: '确认',
+                        btnClass: 'btn-primary',
+                        action: function () {
+                            $.ajax({
+                                url: "/loan/passApplyStatus/" + id,
+                                type: "put",
+                                success: function (result) {
+                                    if (result.code === 100) {
+                                        $.alert('通过审核修改成功！');
+                                        setTimeout(function () {
+                                            var pageNum = [[${loanPageInfo.pageNum}]];
+                                            var pageSize = [[${loanPageInfo.pageSize}]];
+                                            location.href = "/admin/loan/toLoanexam.html?pageNum=" + pageNum + "&pageSize=" + pageSize;
+                                        }, 1000);
+                                    } else {
+                                        $.alert('通过审核修改失败!');
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    cancel: {
+                        text: '取消',
+                        action: function () {
+                            $.alert('已取消!');
+                        }
+                    }
+                }
+            });
+        } else if (applystatus == 0) {
+            $.alert({
+                title: '提示：',
+                content: "确定通过用户 <strong>" + username + "</strong> 的" + amount + "元网贷申请吗？",
+                buttons: {
+                    confirm: {
+                        text: '确认',
+                        btnClass: 'btn-primary',
+                        action: function () {
+                            $.ajax({
+                                url: "/loan/passApplyStatus/" + id,
+                                type: "put",
+                                success: function (result) {
+                                    if (result.code === 100) {
+                                        $.alert('通过审核修改成功！');
+                                        setTimeout(function () {
+                                            var pageNum = [[${loanPageInfo.pageNum}]];
+                                            var pageSize = [[${loanPageInfo.pageSize}]];
+                                            location.href = "/admin/loan/toLoanexam.html?pageNum=" + pageNum + "&pageSize=" + pageSize;
+                                        }, 1000);
+                                    } else {
+                                        $.alert('通过审核修改失败!');
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    cancel: {
+                        text: '取消',
+                        action: function () {
+                            $.alert('已取消!');
+                        }
+                    }
+                }
+            });
+        }
+    });
+
+    //未通过审核
+    $(document).on("click", ".notpass_update_btn", function () {
+
+        var id = $(this).attr("update-id");
+        var username = $(this).attr("update-name");
+        var amount = $(this).attr("update-amount");
+        var applystatus = $(this).attr("update-applystatus");
+        if (applystatus == 1) {
+            $.alert('用户 <strong>' + username + '</strong> 的' + amount + '元网贷审核未通过，无需重复提交');
+        } else if (applystatus == 2) {
+            $.alert('用户 <strong>' + username + '</strong> 的' + amount + '元网贷审核已通过，无法取消');
+        } else if (applystatus == 0) {
+            $.alert({
+                title: '提示：',
+                content: "确定不通过用户 <strong>" + username + "</strong> 的" + amount + "元网贷申请吗？",
+                buttons: {
+                    confirm: {
+                        text: '确认',
+                        btnClass: 'btn-primary',
+                        action: function () {
+                            $.ajax({
+                                url: "/loan/notPassApplyStatus/" + id,
+                                type: "PUT",
+                                data: {},
+                                success: function (result) {
+                                    if (result.code === 100) {
+                                        $.alert('未通过审核修改成功！');
+                                        setTimeout(function () {
+                                            var pageNum = [[${loanPageInfo.pageNum}]];
+                                            var pageSize = [[${loanPageInfo.pageSize}]];
+                                            location.href = "/admin/loan/toLoanexam.html?pageNum=" + pageNum + "&pageSize=" + pageSize;
+                                        }, 1000);
+                                    } else {
+                                        $.alert('未通过审核修改失败!');
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    cancel: {
+                        text: '取消',
+                        action: function () {
+                            $.alert('已取消!');
+                        }
+                    }
+                }
+            });
+        }
+    });
+
+</script>
+</body>
+</html>

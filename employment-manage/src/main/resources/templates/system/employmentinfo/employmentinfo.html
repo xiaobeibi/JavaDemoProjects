@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html >
+<head th:include="include/commoncss::commoncss(~{})">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div th:replace="include/header::header"></div>
+    <!--查询条件-->
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 15px;">
+        <legend>搜索条件</legend>
+    </fieldset>
+    <form action="" method="post" id="searchinfo" lay-filter="searchinfo" class="layui-form">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">专业</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="studentMajor" class="layui-input input-radius"
+                           placeholder="请输入专业名称">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">班级</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="studentClass" class="layui-input input-radius"
+                           placeholder="请输入班级名称">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="studentGender" class="layui-input input-radius"
+                           placeholder="请输入学生性别">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">企业</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="companyName" class="layui-input input-radius"
+                           placeholder="请输入企业名称">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">岗位</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="employmentStation" class="layui-input input-radius"
+                           placeholder="请输入岗位名称">
+                </div>
+            </div>
+
+            <div class="layui-inline" style="padding-left: 3%">
+                <button type="button" class="layui-btn layui-btn-sm layui-btn-radius" lay-submit="" lay-filter="doSearch"><i
+                        class="layui-icon layui-icon-search layui-icon-normal"></i>查询
+                </button>
+                <button type="reset" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-warm"><i
+                        class="layui-icon layui-icon-refresh"></i><span>重置</span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <!-- 用户列表 -->
+    <div>
+        <table class="layui-hide" id="infoList" lay-filter="infoList"></table>
+    </div>
+    <!-- 表格操作 -->
+    <script type="text/html" id="infoToolBar">
+        <button type="button" lay-event="infoAdd" class="layui-btn layui-btn-sm layui-btn-normal layui-btn-radius">
+            <i class="layui-icon layui-icon-add-1"></i>添加就业信息
+        </button>
+    </script>
+    <!-- 用户操作 -->
+    <script type="text/html" id="infoListOpt">
+        <a class="layui-btn layui-btn-xs" lay-event="infoEdit">编辑</a>
+        <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="infoDel">删除</a>
+    </script>
+    <!-- 添加或修改弹出层 -->
+    <div style="display: none;padding: 10px;" id="addOrUpdateinfo">
+        <form action="" method="post" class="layui-form" id="addOrUpdateForm" lay-filter="addOrUpdateForm">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">就业单位</label>
+                    <div class="layui-input-block">
+                        <input type="hidden" name="informationId">
+                        <input type="text" name="companyName" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入就业单位名称">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">就业单位地址</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="companyAddress" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入就业单位地址">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">就业岗位</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="employmentStation" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入就业岗位">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">待遇</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="treatment" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入待遇">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">能力要求</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="abilityRequirement" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入能力要求">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">学生姓名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="studentName" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入学生姓名">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">学生专业</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="studentMajor" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入学生专业">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">学生性别</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="studentGender" value="男" title="男" checked>
+                        <input type="radio" name="studentGender" value="女" title="女" >
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">学生班级</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="studentClass" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入学生班级">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">学生电话</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="studentMobile" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入学生电话">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">就业时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="employmentTime" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入就业时间">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">单位联系人</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="companyContactName" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入单位联系人">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">单位联系人电话</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="companyContactMobile" lay-verify="required" autocomplete="off"
+                               class="layui-input input-radius" placeholder="请输入单位联系人电话">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block" style="text-align: center;padding-right: 7%">
+                    <button type="button" class="layui-btn layui-btn-radius" lay-submit="" lay-filter="infoSubmitBtn" id="infoSubmitBtn"><i
+                            class="layui-icon layui-icon-search layui-icon-normal"></i>提交
+                    </button>
+                    <button type="userReset" class="layui-btn layui-btn-radius layui-btn-warm"><i
+                            class="layui-icon layui-icon-refresh"></i><span>重置</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div th:include="include/commonjs::commonjs(~{::script})">
+        <script type="text/javascript" src="/resources/js/common/header.js"></script>
+        <script type="text/javascript" src="/resources/js/system/employmentinfo/employmentinfo.js"></script>
+    </div>
+</div>
+</body>
+</html>

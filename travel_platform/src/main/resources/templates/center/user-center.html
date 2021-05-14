@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{base/layout}">
+<div layout:fragment="content">
+    <!--med_tittle_section-->
+    <div class="med_tittle_section">
+        <div class="med_img_overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="med_tittle_cont_wrapper">
+                        <div class="med_tittle_cont">
+                            <ol class="breadcrumb">
+                                <li><a th:href="@{/}">系统首页</a></li>
+                                <li>用户中心</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- med_tittle_section End -->
+    <!--service section start-->
+    <div class="page-container">
+        <div class="container">
+            <div class="row med_toppadder50 med_bottompadder50">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h2 class="cy-uc-title">用户中心</h2>
+                    <div class="panel panel-default panel-view">
+                        <div class="panel-body">
+                            <div class="cy-tabs">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                    <li class="active">
+                                        <a href="javaScript:void(0);"><i class="fa fa-address-card"></i> 我的信息</a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane active">
+                                        <form action="#" method="post" class="cy-form">
+                                            <fieldset>
+                                                <div class="row">
+                                                    <section>
+                                                        <label class="label col col-1">用户名</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static"
+                                                               th:text="${user.username}"></p>
+                                                        </div>
+                                                        <label class="label col col-1">密码</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static"
+                                                               th:text="${user.password}"></p>
+                                                        </div>
+                                                        <label class="label col col-1">姓名</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static" th:text="${user.name}"></p>
+                                                        </div>
+                                                        <label class="label col col-1">性别</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static">未实现</p>
+                                                        </div>
+
+                                                    </section>
+                                                    <section>
+                                                        <label class="label col col-1">学历</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static">未实现</p>
+                                                        </div>
+
+                                                        <label class="label col col-1">未实现</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static">未实现</p>
+                                                        </div>
+                                                        <label class="label col col-1">手机</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static">未实现</p>
+                                                        </div>
+                                                        <label class="label col col-1">未实现</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static">不详</p>
+                                                        </div>
+                                                    </section>
+                                                    <section>
+                                                        <label class="label col col-1">电话</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static">未实现</p>
+                                                        </div>
+
+                                                        <label class="label col col-1">单位</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static">未实现</p>
+                                                        </div>
+                                                        <label class="label col col-1">通讯地址</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static">未实现</p>
+                                                        </div>
+                                                        <label class="label col col-1">职务</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static">未实现</p>
+                                                        </div>
+                                                    </section>
+                                                    <section>
+                                                        <label class="label col col-1">所在地区</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static">未实现</p>
+                                                        </div>
+
+                                                        <label class="label col col-1">所属人群</label>
+                                                        <div class="col col-2">
+                                                            <p class="form-control-static">未实现</p>
+                                                        </div>
+
+                                                    </section>
+                                                </div>
+                                            </fieldset>
+                                            <footer>
+                                                <button type="button" class="button"
+                                                        onclick="link('centerEditPWUI')">
+                                                    修改密码
+                                                </button>
+                                                <button type="button" class="button"
+                                                        onclick="link('centerEditUI')">
+                                                    修改信息
+                                                </button>
+                                            </footer>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--service section end-->
+    <script>
+        function link(url) {
+            window.location.href = "/travel/user/" + url;
+        }
+    </script>
+</div>
+</html>

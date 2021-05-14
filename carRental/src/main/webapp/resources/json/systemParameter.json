@@ -1,0 +1,14 @@
+{
+	"cmsName": "layuiCMS后台管理模版",
+	"version": "v2.0",
+	"author": "power",
+	"homePage": "index.html",
+	"server": "windows",
+	"dataBase": "8.00.2039",
+	"maxUpload": "2M",
+	"userRights": "超级管理员",
+	"description": "bjpowernode",
+	"powerby": "copyright @2019 伟彬",
+	"record": "京ICP备888xxx号-1",
+	"keywords": "伟彬"
+}

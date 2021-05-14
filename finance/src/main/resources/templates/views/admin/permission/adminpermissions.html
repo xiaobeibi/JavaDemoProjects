@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>后台管理系统</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--弹出框样式-->
+    <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <div th:replace="admin/common/leftbar::#leftbaraside"></div>
+        <!--头部信息-->
+        <div th:replace="admin/common/topbar::#topbarheader"></div>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>管理员权限管理</h4>
+                            </div>
+
+                            <div class="card-body">
+
+                                <form>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>
+                                                    <label class="lyear-checkbox checkbox-primary">
+                                                        <input name="checkbox" type="checkbox" id="check-all">
+                                                        <span>全选</span>
+                                                    </label>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            <tr>
+                                                <td class="p-l-20">
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:userInfo')}"
+                                                           class="lyear-checkbox checkbox-primary">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-parent checkbox-child" dataid="id-1-6"
+                                                               value="admin:userInfo">
+                                                        <span>用户信息管理</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:userInfo')}"
+                                                           class="lyear-checkbox checkbox-primary">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-parent checkbox-child" dataid="id-1-6"
+                                                               checked value="admin:userInfo">
+                                                        <span>用户信息管理</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-l-40">
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:bankCard')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child"
+                                                               dataid="id-1-6-20" value="admin:bankCard">
+                                                        <span> 银行卡</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:bankCard')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" checked
+                                                               dataid="id-1-6-20" value="admin:bankCard">
+                                                        <span> 银行卡</span>
+                                                    </label>
+
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:reputation')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child"
+                                                               dataid="id-1-6-21" value="admin:reputation">
+                                                        <span> 个人征信</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:reputation')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" checked
+                                                               dataid="id-1-6-21" value="admin:reputation">
+                                                        <span> 个人征信</span>
+                                                    </label>
+
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:userInfoElse')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child"
+                                                               dataid="id-1-6-44" value="admin:userInfoElse">
+                                                        <span> 用户信息</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:userInfoElse')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" checked
+                                                               dataid="id-1-6-44" value="admin:userInfoElse">
+                                                        <span> 用户信息</span>
+                                                    </label>
+
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="p-l-20">
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:finance')}"
+                                                           class="lyear-checkbox checkbox-primary">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-parent checkbox-child" dataid="id-1-6"
+                                                               value="admin:finance">
+                                                        <span>理财产品管理</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:finance')}"
+                                                           class="lyear-checkbox checkbox-primary">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-parent checkbox-child" dataid="id-1-6"
+                                                               checked value="admin:finance">
+                                                        <span>理财产品管理</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-l-40">
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:changeMoney')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child"
+                                                               dataid="id-1-6-20" value="admin:changeMoney">
+                                                        <span> 零钱理财</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:changeMoney')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" checked
+                                                               dataid="id-1-6-20" value="admin:changeMoney">
+                                                        <span> 零钱理财</span>
+                                                    </label>
+
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:payMoney')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child"
+                                                               dataid="id-1-6-21" value="admin:payMoney">
+                                                        <span> 工资理财</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:payMoney')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" checked
+                                                               dataid="id-1-6-21" value="admin:payMoney">
+                                                        <span> 工资理财</span>
+                                                    </label>
+
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:termFinancial')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child"
+                                                               dataid="id-1-6-44" value="admin:termFinancial">
+                                                        <span> 期限理财</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:termFinancial')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" checked
+                                                               dataid="id-1-6-44" value="admin:termFinancial">
+                                                        <span> 期限理财</span>
+                                                    </label>
+
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:fundProduct')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child"
+                                                               dataid="id-1-6-45" value="admin:fundProduct">
+                                                        <span> 基金理财</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:fundProduct')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" checked
+                                                               dataid="id-1-6-45" value="admin:fundProduct">
+                                                        <span> 基金理财</span>
+                                                    </label>
+
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:bank')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child"
+                                                               dataid="id-1-6-46" value="admin:bank">
+                                                        <span> 精选银行</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:bank')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" checked
+                                                               dataid="id-1-6-46" value="admin:bank">
+                                                        <span> 精选银行</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="p-l-20">
+
+                                                    <label class="lyear-checkbox checkbox-primary">
+                                                        <input name="permissions[]" type="checkbox" disabled checked
+                                                               class="checkbox-parent checkbox-child" dataid="id-1-7"
+                                                               value="admin:permission">
+                                                        <span>权限管理</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-l-40">
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:userPermissions')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child"
+                                                               dataid="id-1-7-51" value="admin:userPermissions">
+                                                        <span> 用户权限</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:userPermissions')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" checked
+                                                               dataid="id-1-7-51" value="admin:userPermissions">
+                                                        <span> 用户权限</span>
+                                                    </label>
+
+
+                                                    <label class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" disabled checked
+                                                               dataid="id-1-7-51" value="admin:adminPermissions">
+                                                        <span> 管理员权限</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="p-l-20">
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:loan')}" class="lyear-checkbox checkbox-primary">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-parent checkbox-child" dataid="id-1-7"
+                                                               value="admin:loan">
+                                                        <span> 网贷管理</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:loan')}" class="lyear-checkbox checkbox-primary">
+                                                        <input name="permissions[]" type="checkbox" checked
+                                                               class="checkbox-parent checkbox-child" dataid="id-1-7"
+                                                               value="admin:loan">
+                                                        <span> 网贷管理</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-l-40">
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:loanExam')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child"
+                                                               dataid="id-1-7-51" value="admin:loanExam">
+                                                        <span> 网贷审核</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:loanExam')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" checked
+                                                               dataid="id-1-7-51" value="admin:loanExam">
+                                                        <span> 网贷审核</span>
+                                                    </label>
+
+                                                    <label th:if="${!#lists.contains(permissionsList,'admin:loanInfo')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child"
+                                                               dataid="id-1-7-51" value="admin:loanInfo">
+                                                        <span> 网贷审核</span>
+                                                    </label>
+                                                    <label th:if="${#lists.contains(permissionsList,'admin:loanInfo')}" class="lyear-checkbox checkbox-primary checkbox-inline">
+                                                        <input name="permissions[]" type="checkbox"
+                                                               class="checkbox-child" checked
+                                                               dataid="id-1-7-51" value="admin:loanInfo">
+                                                        <span> 网贷审核</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                        <div class="col-md-1">
+                                            <button type="button" id="submit_modal_btn" class="btn btn-primary">提交</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<!--滚动条插件-->
+<script th:src="@{/lyear/js/perfect-scrollbar.min.js}"></script>
+<!--弹出框js-->
+<script th:src="@{/lyear/jconfirm/jquery-confirm.min.js}"></script>
+<!--选择框js-->
+<script th:src="@{/js/chosen.jquery.min.js}"></script>
+<!--自定义js脚本-->
+<script th:src="@{/lyear/js/main.min.js}"></script>
+<script type="text/javascript">
+
+    $("#submit_modal_btn").click(function () {
+        var permissions = "";
+        var r=document.getElementsByName("permissions[]");
+        for(var i=0;i<r.length;i++){
+            if(r[i].checked){
+                permissions+=(r[i].value+";")
+            }
+        }
+        $.ajax({
+            url: "/admin/updateAdminPermissions",
+            type: "PUT",
+            data:{
+                "adminPermissions":permissions
+            },
+            success: function (result) {
+                if (result.code === 100) {
+                    $.alert('提交成功！');
+                    setTimeout(function () {
+                        location.href = "/admin/permission/toAdminPermissions.html";
+                    }, 1000);
+                } else {
+                    $.alert('提交失败!');
+                }
+            }
+        });
+    })
+
+
+</script>
+</body>
+</html>

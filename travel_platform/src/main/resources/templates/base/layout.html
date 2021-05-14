@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--[endif]-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>银杏湖景区乐游系统 </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description" content="银杏湖景区乐游系统"/>
+    <meta name="keywords" content="银杏湖景区乐游系统"/>
+    <meta name="author" content="银杏湖景区乐游系统"/>
+    <!--start theme style -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/linecons.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/slider-pro/css/slider-pro.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/owlcarousel/css/owl.carousel.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/owlcarousel/css/owl.theme.default.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}"/>
+    <!-- favicon link-->
+    <link rel="shortcut icon" type="image/icon" th:href="@{/images/logo.png}" />
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="page-wrapper">
+
+        <div id="preloader">
+            <div id="status"><img th:src="@{/images/preloader.gif}" id="preloader_image" alt="loader">
+            </div>
+        </div>
+        <!--top header start 项目头部 -->
+        <div class="top_header_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="top_header_add">
+                            <ul>
+                                <li><a th:href="@{/}"><i class="fa fa-home"
+                                                         aria-hidden="true"></i> 银杏湖景区乐游系统 </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="top_login">
+                            <ul>
+                                <li id="login"><i class="fa fa-sign-in" aria-hidden="true"></i> 你好，请<a
+                                        th:href="@{/loginUI}">登录</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a
+                                        th:href="@{/registerUI}">注册</a>
+                                        /&nbsp;&nbsp;<a target="_blank"
+                                        href="/travel/system">后台管理</a></li>
+                                <li id="logout"><i class="fa fa-sign-in"></i> 你好，<a id="yonghuming"
+                                                                                    th:href="@{/user/centerUI}"></a>&nbsp;&nbsp;<a
+                                        th:href="@{/logout}">退出</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--header menu wrapper  导航栏  -->
+        <div class="menu_wrapper header-area hidden-menu-bar stick">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12">
+                        <div class="header_logo">
+                            <a th:href="@{/}" class="hidden-xs"><img th:src="@{/images/logo.png}" width="100px" alt="logo" title="银杏湖景区乐游系统"
+                                                                     class="img-responsive"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-10 col-xs-12">
+                        <nav class="navbar hidden-xs">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target="#bs-example-navbar-collapse-1"
+                                        aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse respose_nav" id="bs-example-navbar-collapse-1">
+                                <div class="et_navbar_search_wrapper hidden-xs">
+                                    <div class="et_search_bar" id="search_button">
+                                        <a href="javascript:void(0);"><i class="fa fa-search"
+                                                                         aria-hidden="true"></i></a>
+                                    </div>
+                                    <div id="search_open" class="et_search_box">
+                                        <input type="text" placeholder="请输入关键词">
+                                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                                <ul class="nav navbar-nav" id="nav_filter">
+                                    <li><a th:href="@{/}">系统首页</a></li>
+                                    <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle"
+                                                            data-toggle="dropdown" role="button"
+                                                            aria-haspopup="true" aria-expanded="false">景区游玩路线 <i
+                                            class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu hovr_nav_tab">
+                                            <li><a th:href="@{/route/travelRouteListUI}">景区游玩路线</a></li>
+                                            <li><a th:href="@{/route/routeManageUI}">我关注的路线</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle"
+                                                            data-toggle="dropdown" role="button"
+                                                            aria-haspopup="true" aria-raexpanded="false">景区游玩攻略 <i
+                                            class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu hovr_nav_tab">
+                                            <li><a th:href="@{/strategy/travelStrategyListUI}">景区游玩攻略</a></li>
+                                            <li><a th:href="@{/strategy/pushStrategyListUI}">我发布的攻略</a></li>
+                                            <li><a th:href="@{/strategy/strategyManageUI}">我关注的攻略</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle"
+                                                            data-toggle="dropdown" role="button"
+                                                            aria-haspopup="true" aria-expanded="false">在线预订 <i
+                                            class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu hovr_nav_tab">
+                                            <li><a th:href="@{/reserve/reserveHotelListUI}">酒店预订</a></li>
+                                            <li><a th:href="@{/reserve/reserveAttractionsListUI}">景点预订</a></li>
+                                            <li><a th:href="@{/reserve/reserveManageUI}">我的预订</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--预留填充模块-->
+        <div layout:fragment="content">
+
+        </div>
+        <!-- ser_footer section start 页面底部-->
+        <div class="footer_wrapper">
+            <div class="container">
+                <div class="text-center">
+                    <p><a href="javascript:void(0);">网站地图</a> | <a href="javascript:void(0);">帮助中心</a> | <a
+                            href="javascript:void(0);">联系我们</a>
+                        | <a href="javascript:void(0);">关于平台</a> | <a href="javascript:void(0);">网站维护</a></p>
+                    <p>copyright© 2020 by @node</p>
+                    <p>电话号码：13966616612</p>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="up_wrapper">
+                    <a href="javascript:" id="return-to-top"><i class="fa fa fa-arrow-up" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--main js files 所有可能用到的js-->
+<script th:src="@{/js/jquery_min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/wow.min.js}"></script>
+<script th:src="@{/js/custom.js}"></script>
+<script th:src="@{/plugins/slider-pro/js/jquery.sliderPro.min.js}"></script>
+<script th:src="@{/plugins/owlcarousel/js/owl.carousel.min.js}"></script>
+<script th:src="@{/layer/layer.js}"></script>
+<!--js code-->
+<script th:inline="javascript" type="text/javascript">
+
+    $(function () {
+        var username = getCookie('username');
+        console.log(username);
+        if (username !== '' && username) {
+            console.log("111111111");
+            $("#login").hide();
+            $("#logout").show();
+            $("#yonghuming").text(username);
+        } else {
+            console.log("2222222222");
+            $("#logout").hide();
+            $("#login").show();
+            console.log('隐藏后面登出');
+        }
+    });
+
+
+    function getCookie(key) {
+        var arr1 = document.cookie.split("; ");//由于cookie是通过一个分号+空格的形式串联起来的，所以这里需要先按分号空格截断,变成[name=Jack,pwd=123456,age=22]数组类型；
+        for (var i = 0; i < arr1.length; i++) {
+            var arr2 = arr1[i].split("=");//通过=截断，把name=Jack截断成[name,Jack]数组；
+            if (arr2[0] == key) {
+                return decodeURI(arr2[1]);
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

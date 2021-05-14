@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.hospitalhr.mapper.AttendanceMapper">
+	
+	<sql id="Base_Column_List">
+		id, employee_number, day, time_type, start_time, start_type, end_time,  
+		end_type, work_type, notes
+		
+	</sql>
+	
+	<select id="selectByNumber" resultType="Attendance">
+		select 
+		<include refid="Base_Column_List" />
+		from attendance
+		where employee_number = #{employeeNumber}
+		and day = #{day} and time_type = #{timeType}
+	</select>
+
+</mapper>

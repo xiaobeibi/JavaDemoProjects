@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LibraryForJavaSE/LibraryForJavaSE.iml" filepath="$PROJECT_DIR$/LibraryForJavaSE/LibraryForJavaSE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineBiddingSystem/OnlineBiddingSystem.iml" filepath="$PROJECT_DIR$/OnlineBiddingSystem/OnlineBiddingSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/adopt/adopt.iml" filepath="$PROJECT_DIR$/adopt/adopt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/carRental/carRental.iml" filepath="$PROJECT_DIR$/carRental/carRental.iml" />
+      <module fileurl="file://$PROJECT_DIR$/employment-manage/employment-manage.iml" filepath="$PROJECT_DIR$/employment-manage/employment-manage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exam/exam.iml" filepath="$PROJECT_DIR$/exam/exam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fangkuai/fangkuai.iml" filepath="$PROJECT_DIR$/fangkuai/fangkuai.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finance/finance.iml" filepath="$PROJECT_DIR$/finance/finance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hdl/hdl.iml" filepath="$PROJECT_DIR$/hdl/hdl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/house/house.iml" filepath="$PROJECT_DIR$/house/house.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hr/hr.iml" filepath="$PROJECT_DIR$/hr/hr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/music/music.iml" filepath="$PROJECT_DIR$/music/music.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pan/pan.iml" filepath="$PROJECT_DIR$/pan/pan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/travel_platform/travel_platform.iml" filepath="$PROJECT_DIR$/travel_platform/travel_platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vinfo/vinfo.iml" filepath="$PROJECT_DIR$/vinfo/vinfo.iml" />
+    </modules>
+  </component>
+</project>

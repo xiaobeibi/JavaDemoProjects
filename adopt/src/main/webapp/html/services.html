@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content=""
+    />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--// Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" type="text/css" media="all">
+    <!-- Owl-Carousel-CSS -->
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
+
+</head>
+<body>
+<!--导航栏-->
+<!-- sticky navigation -->
+<div class="nav-links">
+    <nav class='navbar navbar-default'>
+        <div class='container'>
+            <div class='collapse navbar-collapse'>
+                <ul>
+                    <li>
+                        <a href="index.html">主页</a>
+                    </li>
+                    <li>
+                        <a href="about.html">流浪猫狗知识</a>
+                    </li>
+                    <li>
+                        <a href="services.html">领养中心</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">团队活动</a>
+                    </li>
+                    <li>
+                        <a href="team.html">团队展示</a>
+                    </li>
+
+                    <li>
+                        <button class="btn-primary btn-lg" data-toggle="modal" data-target="#login">注册/登录</button>
+                    </li>
+                    <li>
+                        <button class="btn-primary btn-lg" data-toggle="modal" data-target="#editUsers">修改</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- //sticky navigation -->
+
+<!-- services -->
+<div class="services" id="services">
+    <div class="container">
+        <h3 class="agile-title">Services Overview</h3>
+        <div class="w3_agile_services_grids">
+            <div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid " data-aos="zoom-in">
+                <div class="ih-item circle effect1 agile_services_grid">
+                    <div class="spinner"></div>
+                    <div class="img">
+                        <img src="../images/cat6.jpg" alt=" " class="img-responsive" />
+                    </div>
+                </div>
+                <fieldset>
+                    <legend>Service 1</legend>
+                    consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+                </fieldset>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
+                <div class="ih-item circle effect1 agile_services_grid">
+                    <div class="spinner"></div>
+                    <div class="img">
+                        <a href="show.html">
+                        <img src="../images/dog1.jpg" alt=" " class="img-responsive" />
+                        </a>
+                    </div>
+                </div>
+                <fieldset>
+                    <legend>Service 2</legend>
+                    consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+                </fieldset>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
+                <div class="ih-item circle effect1 agile_services_grid">
+                    <div class="spinner"></div>
+                    <div class="img">
+                        <img src="../images/cat8.jpg" alt=" " class="img-responsive" />
+                    </div>
+                </div>
+                <fieldset>
+                    <legend>Service 3</legend>
+                    consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+                </fieldset>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="w3l-img-side">
+        <img src="../images/cat11.png" alt="" />
+    </div>
+    <div class="w3l-img-side w3l-img-side2">
+        <img src="../images/cat1.png" alt="" />
+    </div>
+</div>
+<!-- //services -->
+<!-- js -->
+<script src="../JQuery/jquery-3.4.1.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<!-- Necessary-JavaScript-File-For-Bootstrap -->
+<!-- //js -->
+
+<!-- start-smooth-scrolling 上去-->
+<script src="../js/move-top.js"></script>
+<script src="../js/easing.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+    });
+</script>
+<!-- //end-smooth-scrolling -->
+
+<!-- smooth-scrolling-of-move-up 这是service.html页面反到底层上去的功能 -->
+<script>
+    $(document).ready(function () {
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+
+    });
+</script>
+<!-- //smooth-scrolling-of-move-up -->
+
+
+</body>
+
+</html>

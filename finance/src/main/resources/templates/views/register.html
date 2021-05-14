@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>个人理财系统注册界面</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+    <style>
+        .lear-wrapper {
+            position: relative;
+        }
+        .lear-login {
+            display: flex !important;
+            min-height: 100vh;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .login-center1 {
+            background: #fff;
+            min-width: 38.25rem;
+            padding: 2.14286em 3.57143em;
+            border-radius: 5px;
+            margin: 2.85714em 0;
+        }
+        .login-header {
+            margin-bottom: 1.5rem !important;
+        }
+        .login-center .has-feedback.feedback-left .form-control {
+            padding-left: 38px;
+            padding-right: 12px;
+        }
+        .login-center .has-feedback.feedback-left .form-control-feedback {
+            left: 0;
+            right: auto;
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            z-index: 4;
+            color: #dcdcdc;
+        }
+        .login-center .has-feedback.feedback-left.row .form-control-feedback {
+            left: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="row lear-wrapper">
+    <div class="lear-login">
+        <div class="login-center1">
+            <div class="login-header text-center">
+                <h1>——注册账号——</h1>
+            </div>
+            <form>
+                <div class="form-group has-feedback feedback-left">
+                    <input type="text" placeholder="请输入您的用户名" class="form-control"
+                           name="username" id="username"/><span class="help-block"></span>
+                    <span class="mdi mdi-account form-control-feedback"
+                          aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-feedback feedback-left">
+                    <input type="password" placeholder="请输入密码" class="form-control"
+                           id="password" name="password"/><span class="help-block"></span>
+                    <span class="mdi mdi-lock form-control-feedback"
+                          aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-feedback feedback-left">
+                    <input type="password" placeholder="请重复密码" class="form-control"
+                           id="repassword" name="repassword"/><span class="help-block"></span>
+                    <span class="mdi mdi-lock form-control-feedback"
+                          aria-hidden="true"></span>
+                </div>
+
+                <div id="captcha_note_parent"
+                     class="form-group has-feedback feedback-left row">
+                    <div class="col-xs-7">
+                        <input type="text" id="captcha" name="captcha"
+                               class="form-control" placeholder="请输入验证码">
+                    </div>
+                    <div class="col-xs-5">
+                        <canvas id="canvas" width="120" height="45"></canvas>
+                    </div>
+                    <span id="captcha_note_child" class="help-block"
+                          style="margin-left: 15px"></span>
+                </div>
+
+                <div class="form-group">
+                    <button id="login_btn" class="btn btn-block btn-primary"
+                            type="button">注册
+                    </button>
+                </div>
+            </form>
+            <div style="margin-left: 110px">
+                <a th:href="@{/tologin.html}">已有账号？去登录</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<script th:src="@{/js/md5.js}"></script>
+<!-- 点线粒子插件 -->
+<script color="255,0,255" opacity='0.8'
+        zIndex="9999" count="99"
+        th:src="@{/js/canvas-nest.js}"></script>
+<script>
+    var show_num = [];
+    $(function () {
+        $("input[name='username']").blur(verifyUsername);
+        $("input[name='password']").change(removeLoginDisabled);
+        $("input[name='repassword']").blur(verifyRepassword);
+        $("input[name='repassword']").change(removeLoginDisabled);
+        //生成图片验证码
+        drawPic(show_num);
+        $("#canvas").click(function (e) {
+            //取消事件的默认动作。
+            e.preventDefault();
+            drawPic(show_num);
+        });
+        $("#captcha").blur(verifyCaptcha);
+        $("#login_btn").mousedown(verifyLogin);
+        //回车注册
+        $("body").keyup(function (event) {
+            if (event.keyCode === 13) {//keyCode=13是回车键
+                verifyLogin();
+            }
+        });
+
+    });
+
+    function verifyCaptcha() {
+        var captcha_num = $("#captcha").val().toLowerCase();
+        var real_num = show_num.join("");
+        $("#captcha_note_parent").removeClass("has-success has-error");
+        $("#captcha_note_child").text("");
+        if (captcha_num == "") {
+            $("#captcha_note_parent").addClass("has-error");
+            $("#captcha_note_child").text("验证码为空");
+            $("#login_btn").attr("disabled", "disabled");
+            return false;
+        } else if (captcha_num == real_num) {
+            $("#captcha_note_parent").addClass("has-success");
+            $("#captcha_note_child").text("验证码正确");
+            $("#login_btn").removeAttr("disabled");
+            return true;
+        } else {
+            $("#captcha_note_parent").addClass("has-error");
+            $("#captcha_note_child").text("验证码错误");
+            $("#login_btn").attr("disabled", "disabled");
+            return false;
+        }
+    }
+
+    function verifyUsername() {
+        //发送ajax请求校验用户名是否可用
+        var username = document.getElementById("username").value;
+        var lock = true;
+        if (username === "") {
+            show_validate_msg("#username", "error", "用户名为空");
+            $("#login_btn").attr("disabled", "disabled");
+            return false;
+        } else {
+            $.ajax({
+                url: "/login/loginVerifyUsername/"+username,
+                type: "GET",
+                success: function (result) {
+                    if (result.code === 100) {
+                        show_validate_msg("#username", "error",
+                            "用户"+username+"已存在");
+                        $("#login_btn")
+                            .attr("disabled", "disabled");
+                        lock = false;
+                    } else {
+                        show_validate_msg("#username", "success",
+                            "欢迎" + username + "注册");
+                        $("#login_btn").removeAttr("disabled");
+                    }
+                }
+            });
+            return lock;
+        }
+    }
+
+    function verifyRepassword() {
+        //判断重复密码是否相同
+        var password = document.getElementById("password").value;
+        var repassword = document.getElementById("repassword").value;
+        if (repassword === "") {
+            show_validate_msg("#repassword", "error", "重复密码为空");
+            $("#login_btn").attr("disabled", "disabled");
+            return false;
+        } else if (password===""){
+            show_validate_msg("#repassword", "error", "上一项密码为空");
+            $("#login_btn").attr("disabled", "disabled");
+            return false;
+        }else{
+            if (repassword===password){
+                show_validate_msg("#repassword", "success",
+                    "重复密码相同");
+                $("#login_btn").removeAttr("disabled");
+                return true;
+            }else{
+                show_validate_msg("#repassword", "error", "两次密码不相同");
+                $("#login_btn").attr("disabled", "disabled");
+                return false;
+            }
+        }
+    }
+
+    function removeLoginDisabled() {
+        $("#login_btn").removeAttr("disabled");
+    }
+
+    function verifyLogin() {
+        $("input[name='username']").blur(verifyUsername);
+        $("#captcha").blur(verifyCaptcha);
+        $("#repassword").blur(verifyRepassword);
+
+        if ($("#username").val() == "") {
+            show_validate_msg("#username", "error", "用户名为空");
+            $("#login_btn").attr("disabled", "disabled");
+            return false;
+        }
+
+        if ($("#password").val() == "") {
+            show_validate_msg("#password", "error", "密码为空");
+            $("#login_btn").attr("disabled", "disabled");
+            return false;
+        }
+
+        if ($("#repassword").val() == "") {
+            show_validate_msg("#repassword", "error", "重复密码为空");
+            $("#login_btn").attr("disabled", "disabled");
+            return false;
+        }
+
+        if ($("#captcha").val() == "") {
+            $("#captcha_note_parent").addClass("has-error");
+            $("#captcha_note_child").text("验证码为空");
+            $("#login_btn").attr("disabled", "disabled");
+            return false;
+        }
+
+        if (verifyUsername() && verifyCaptcha() && verifyRepassword()) {
+            var pwd = $("#password").val();
+            var newpwd = $.md5(pwd);
+            $("#password").val(newpwd);
+            $("#repassword").val(newpwd)
+            $.ajax({
+                url: "/login/register",
+                type: "POST",
+                data: {
+                    "username": $("#username").val(),
+                    "password": $("#password").val()
+                },
+                success: function (result) {
+                    if (result.code === 100) {
+                        var url = result.extend.url;
+                        //alert(url);
+                        location.href = url;
+                    } else {
+                        show_validate_msg("#password", "error",
+                            "密码错误");
+                        $("#login_btn")
+                            .attr("disabled", "disabled");
+                    }
+                }
+            })
+        }
+
+    }
+
+    //显示校验结果的提示信息
+    function show_validate_msg(ele, status, msg) {
+        //清除当前元素的校验状态
+        $(ele).parent().removeClass("has-success has-error");
+        $(ele).next("span").text("");
+        if ("success" === status) {
+            $(ele).parent().addClass("has-success");
+            $(ele).next("span").text(msg);
+        } else if ("error" === status) {
+            $(ele).parent().addClass("has-error");
+            $(ele).next("span").text(msg);
+        }
+    }
+
+    /**生成一个随机数**/
+    function randomNum(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    /**生成一个随机色**/
+    function randomColor(min, max) {
+        var r = randomNum(min, max);
+        var g = randomNum(min, max);
+        var b = randomNum(min, max);
+        return "rgb(" + r + "," + g + "," + b + ")";
+    }
+
+    /**绘制验证码图片**/
+    function drawPic(show_num) {
+        var canvas = document.getElementById("canvas");
+        var width = canvas.width;
+        var height = canvas.height;
+        var ctx = canvas.getContext('2d');
+        ctx.textBaseline = 'bottom';
+
+        /**绘制背景色**/
+        ctx.fillStyle = randomColor(280, 280); //颜色若太深可能导致看不清
+        ctx.fillRect(0, 0, width, height);
+        /**绘制文字**/
+        var sCode = "A,B,C,E,F,G,H,J,K,L,M,N,P,Q,R,S,T,W,X,Y,Z,1,2,3,4,5,6,7,8,9,0";
+        var aCode = sCode.split(",");
+        for (var i = 0; i < 4; i++) {
+            var txt = aCode[randomNum(0, aCode.length)];//得到随机的一个内容
+            show_num[i] = txt.toLowerCase();
+            ctx.fillStyle = randomColor(50, 160); //随机生成字体颜色
+            ctx.font = randomNum(15, 40) + 'px SimHei'; //随机生成字体大小
+            var x = 10 + i * 25;
+            var y = randomNum(25, 45);
+            var deg = randomNum(-45, 45);
+            //修改坐标原点和旋转角度
+            ctx.translate(x, y);
+            ctx.rotate(deg * Math.PI / 180);
+            ctx.fillText(txt, 0, 0);
+            //恢复坐标原点和旋转角度
+            ctx.rotate(-deg * Math.PI / 180);
+            ctx.translate(-x, -y);
+        }
+    }
+</script>
+
+</body>
+</html>

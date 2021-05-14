@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  #thymeleaf
+  thymeleaf:
+    cache: false
+
+  #数据库连接配置
+  datasource:
+    url: jdbc:mysql://192.168.1.120/employment?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useInformationSchema=true
+    username: root
+    password: tuyong88
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml

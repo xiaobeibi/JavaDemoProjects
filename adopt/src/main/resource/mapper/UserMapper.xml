@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecjtu.mapper.UsersMapper">
+
+    <insert id="addUser" parameterType="Users">
+        INSERT INTO users(userName,password,sex,age,telephone,Email,address,state)
+        VALUES (#{userName},#{password},#{sex},#{age},#{telephone},#{Email},#{address},#{state})
+    </insert>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM users WHERE id=#{id}
+    </delete>
+
+    <update id="updateUser" parameterType="int">
+        UPDATE users
+        <set>
+            <if test="userName != null">userName=#{userName},</if>
+            <if test="password != null">password=#{password},</if>
+            <if test="sex != null">sex=#{sex},</if>
+            <if test="age != null">age=#{age},</if>
+            <if test="telephone != null">telephone=#{telephone},</if>
+            <if test="Email != null">Email=#{Email},</if>
+            <if test="address != null">address=#{address},</if>
+            <if test="pic != null">pic=#{pic},</if>
+            <if test="state != null">state=#{state}</if>
+        </set>
+             WHERE id=#{id}
+    </update>
+
+    <resultMap id="BaseUserMap" type="users">
+        <id property="id" column="id"></id>
+        <result column="userName" property="userName"></result>
+        <result column="password" property="password"></result>
+        <result column="sex" property="sex"></result>
+        <result column="age" property="age"></result>
+        <result column="telephone" property="telephone"></result>
+        <result column="Email" property="Email"></result>
+        <result column="address" property="address"></result>
+        <result column="pic" property="pic"></result>
+        <result column="state" property="state"></result>
+        <collection property="commentList" javaType="list" ofType="comment" >
+            <id column="id" property="id"></id>
+            <result column="commentTime" property="commentTime"></result>
+            <result column="content" property="content"></result>
+        </collection>
+        <collection property="animalList" javaType="list" ofType="adoptAnimal">
+            <id column="id" property="id"></id>
+            <result column="adoptTime" property="adoptTime"></result>
+            <result column="state" property="state"></result>
+            <association property="pet" javaType="pet">
+                <id column="id" property="id"></id>
+                <result column="petName" property="petName"></result>
+                <result column="petType" property="petType"></result>
+                <result column="sex" property="sex"></result>
+                <result column="birthday" property="birthday"></result>
+                <result column="pic" property="pic"></result>
+                <result column="state" property="state"></result>
+                <result column="remark" property="remark"></result>
+            </association>
+        </collection>
+    </resultMap>
+
+    <select id="loginUser" parameterType="users" resultType="users">
+        SELECT * FROM users WHERE userName=#{userName} AND password=#{password}
+    </select>
+
+    <select id="getUsers" resultType="users">
+        select * from users
+    </select>
+
+    <select id="findByName" resultType="users" parameterType="string">
+        SELECT * FROM users
+        <where>
+            <if test=" userName != null  and userName !='' ">
+                and userName LIKE "%"#{userName}"%"
+            </if>
+        </where>
+    </select>
+
+    <select id="findById" resultType="users" parameterType="int">
+        SELECT * FROM users WHERE id=#{id}
+    </select>
+
+    <delete id="deleteBatch" parameterType="int">
+        DELETE FROM users
+        <foreach collection="ids" item="id" separator="," open="where id in (" close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

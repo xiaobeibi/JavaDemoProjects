@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="exam" />
+        <module name="music" />
+        <module name="vinfo" />
+        <module name="employment-manage" />
+        <module name="adopt" />
+        <module name="carRental" />
+        <module name="travel_platform" />
+        <module name="hr" />
+        <module name="pan" />
+        <module name="house" />
+        <module name="OnlineBiddingSystem" />
+        <module name="finance" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="adopt" target="1.8" />
+      <module name="carRental" target="1.8" />
+      <module name="chat" target="1.7" />
+      <module name="employment-manage" target="1.8" />
+      <module name="exam" target="1.5" />
+      <module name="finance" target="1.8" />
+      <module name="house" target="1.8" />
+      <module name="hr" target="1.8" />
+      <module name="music" target="1.8" />
+      <module name="OnlineBiddingSystem" target="1.8" />
+      <module name="pan" target="1.8" />
+      <module name="travel_platform" target="1.8" />
+      <module name="vinfo" target="1.8" />
+      <module name="weibo" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="employment-manage" options="-parameters" />
+      <module name="finance" options="-parameters" />
+      <module name="music" options="-parameters" />
+      <module name="pan" options="-parameters" />
+      <module name="travel_platform" options="-parameters" />
+      <module name="vinfo" options="-parameters" />
+    </option>
+  </component>
+</project>

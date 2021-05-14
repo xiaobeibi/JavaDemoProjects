@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecjtu.mapper.AnswerMapper">
+
+    <insert id="addAnswer" parameterType="answer">
+        INSERT INTO answer (user_id,comment_id, answerTime, content) VALUES (#{user.id},#{comment.id},#{answerTime},#{content})
+    </insert>
+
+
+    <insert id="addAnswers" parameterType="answer">
+        INSERT INTO answer (user_id,comment_id,replay_id,answerTime, content) VALUES (#{user.id},#{comment.id},#{answer.id},#{answerTime},#{content})
+    </insert>
+
+    <resultMap id="BaseAnswerMap" type="answer">
+        <id column="a1Id" property="id"></id>
+        <result column="a1AnswerTime" property="answerTime"></result>
+        <result column="a1content" property="content"></result>
+
+        <association property="user" javaType="users">
+            <id property="id" column="u1Id"></id>
+            <result column="u1Name" property="userName"></result>
+            <result column="password" property="password"></result>
+            <result column="sex" property="sex"></result>
+            <result column="age" property="age"></result>
+            <result column="telephone" property="telephone"></result>
+            <result column="Email" property="Email"></result>
+            <result column="address" property="address"></result>
+            <result column="pic" property="pic"></result>
+            <result column="state" property="state"></result>
+        </association>
+
+        <association property="answer" javaType="answer">
+            <id column="a2Id" property="id"></id>
+            <result column="answerTime" property="answerTime"></result>
+            <result column="content" property="content"></result>
+            <association property="user" javaType="users">
+                <id property="id" column="u2Id"></id>
+                <result column="u2Name" property="userName"></result>
+                <result column="password" property="password"></result>
+                <result column="sex" property="sex"></result>
+                <result column="age" property="age"></result>
+                <result column="telephone" property="telephone"></result>
+                <result column="Email" property="Email"></result>
+                <result column="address" property="address"></result>
+                <result column="pic" property="pic"></result>
+                <result column="state" property="state"></result>
+            </association>
+        </association>
+        <association property="comment" javaType="comment">
+            <id column="cid" property="id"></id>
+            <result column="commentTime" property="commentTime"></result>
+            <result column="content" property="content"></result>
+        </association>
+    </resultMap>
+    <!--a2是回复的-->
+    <select id="findByCommentId" parameterType="int" resultMap="BaseAnswerMap">
+        select a1.id a1Id ,a2.id a2Id,a1.content a1Content,a1.answerTime a1AnswerTime,u1.id u1Id,u2.id u2Id,u1.userName u1Name,u2.userName u2Name,comment.id cid from answer as a1 inner join users as u1 ON u1.id=a1.user_id left join answer as a2 ON a1.replay_id=a2.id inner join users as u2 on u2.id=a2.user_id INNER  join comment ON comment.id=a1.comment_id where a1.comment_id=#{comment_id} order by a1AnswerTime DESC
+    </select>
+
+    <select id="findById" parameterType="int" resultMap="BaseAnswerMap">
+        SELECT answer.id a1Id,answer.answerTime a1AnswerTime,answer.content a1content,comment.id cid FROM answer,comment WHERE answer.comment_id=comment.id AND answer.id=#{id} order by a1AnswerTime ASC
+    </select>
+
+</mapper>

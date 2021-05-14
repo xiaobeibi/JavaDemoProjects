@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.hospitalhr.mapper.EmployeeMapper">
+
+	<sql id="Base_Column_List">
+		id, employee_number, name, gender, birthday, telephone, email, address, photo,
+		education, department_number, position_number, in_time, password, notes
+	</sql>
+	
+	<select id="checkLogin" resultType="Employee">
+		select
+		<include refid="Base_Column_List" />
+		from employee 
+		where employee_number = #{employeeNumber} and password = #{password}
+	</select>
+	
+	<select id="selectByNumber" parameterType="java.lang.Integer" resultType="Employee">
+		select
+		<include refid="Base_Column_List" />
+		from employee
+		where employee_number = #{employeeNumber}
+	</select>
+
+</mapper>

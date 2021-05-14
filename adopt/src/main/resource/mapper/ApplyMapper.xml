@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecjtu.mapper.ApplyMapper">
+
+    <insert id="addApply" parameterType="apply">
+        INSERT INTO apply(name,email,age,telephone,message,applyTime) VALUES (#{name},#{email},#{age},#{telephone},#{message},#{applyTime})
+    </insert>
+
+    <delete id="deleteApply" parameterType="int">
+        DELETE FROM apply WHERE id=#{id}
+    </delete>
+    <update id="updateApply" parameterType="apply">
+        UPDATE apply SET name=#{name},email=#{email},age=#{age},telephone=#{telephone},message=#{message},applyTime=#{applyTime},state=#{state} WHERE id=#{id}
+    </update>
+
+    <select id="getApply" resultType="apply">
+        SELECT * FROM apply ORDER BY applyTime Desc
+    </select>
+
+    <select id="findById" parameterType="int" resultType="apply">
+        SELECT * FROM apply WHERE id=#{id} ORDER BY applyTime Desc
+    </select>
+
+    <select id="findByState" parameterType="int" resultType="apply">
+        SELECT * FROM apply WHERE state=#{state} ORDER BY applyTime DESC
+    </select>
+
+    <delete id="deleteBatch" parameterType="int">
+        DELETE FROM apply
+        <foreach collection="ids" item="id" separator="," open="where id in (" close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

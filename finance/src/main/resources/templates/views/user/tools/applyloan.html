@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>个人理财系统</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--弹出框样式-->
+    <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <div th:replace="user/common/leftbar::#leftbaraside"></div>
+        <!--头部信息-->
+        <div th:replace="user/common/topbar::#topbarheader"></div>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>安全网贷申请</h4>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="amount">借贷金额（元）</label>
+                                            <input class="form-control" type="text" id="amount" name="amount" placeholder="请输入要申请的借贷金额..">
+                                            <span class="help-block"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="rate">年借贷利率</label>
+                                            <input class="form-control" type="text" id="rate" name="rate" th:placeholder="${#numbers.formatDecimal(0.2845*100,1,2)}+'%'" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="term">借贷期限（天）</label>
+                                            <input class="form-control" type="text" id="term" name="term" placeholder="请输入要申请的借贷期限..">
+                                            <span class="help-block"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-primary" id="submit" type="button">申请</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<!--滚动条插件-->
+<script th:src="@{/lyear/js/perfect-scrollbar.min.js}"></script>
+<!--弹出框js-->
+<script th:src="@{/lyear/jconfirm/jquery-confirm.min.js}"></script>
+<!--自定义js脚本-->
+<script th:src="@{/lyear/js/main.min.js}"></script>
+<script th:inline="javascript">
+
+    $(function() {
+        $("#amount").blur(checkAmount);
+        $("#term").blur(checkTerm);
+        $("#submit").mousedown(function() {
+            if (checkAmount() && checkTerm()) {
+                applyLoan();
+            }
+        });
+    });
+
+    //校验金额
+    function checkAmount() {
+        var amount = $("#amount").val();
+        if (amount.length === 0) {
+            show_validate_msg("#amount", "error", "输入金额不能为空！");
+            return false;
+        }
+
+        //匹配有两位小数的正实数
+        var amountReg = /^[0-9]+(.[0-9]{2})?$/;
+        if (amountReg.test(amount) === false) {
+            show_validate_msg("#amount", "error", "输入金额不合法！");
+            return false;
+        }
+        show_validate_msg("#amount", "success", "就借这么点钱吗？？？");
+        return true;
+    }
+
+    //校验期限
+    function checkTerm() {
+        var term = $("#term").val();
+        if (term.length === 0) {
+            show_validate_msg("#term", "error", "还没说什么时候还钱呢！");
+            return false;
+        }
+
+        //匹配m-n位的数字
+        var termReg = /^\d{1,4}$/;
+        if (termReg.test(term) === false) {
+            show_validate_msg("#term", "error", "输入期限不合法！");
+            return false;
+        }
+        show_validate_msg("#term", "success", "要记得按时还钱哦！");
+        return true;
+    }
+
+    //ajax提交网贷申请
+    function applyLoan() {
+        var amount = $("#amount").val();
+        $.alert({
+            title: '提示：',
+            content: "确定借贷 <strong>"+amount+"</strong>元 吗？",
+            buttons: {
+                confirm: {
+                    text: '确认',
+                    btnClass: 'btn-primary',
+                    action: function(){
+                        $.ajax({
+                            url: "/user/applyLoan",
+                            type: "POST",
+                            data: {
+                                "amout": amount,
+                                "term":$("#term").val(),
+                                "rate":"0.2845"
+                            },
+                            success: function(result) {
+                                if (result.code === 100) {
+                                    $.alert('申请成功!请等待管理员审核');
+                                    setTimeout(function () {
+                                        location.href = "/user/tools/toApplyLoan.html";
+                                    }, 1000);
+                                } else {
+                                    $.alert('申请失败!');
+                                }
+                            }
+                        });
+                    }
+                },
+                cancel: {
+                    text: '取消',
+                    action: function () {
+                        $.alert('已取消!');
+                    }
+                }
+            }
+        });
+    }
+
+    //显示校验结果的提示信息
+    function show_validate_msg(ele, status, msg) {
+        //清除当前元素的校验状态
+        $(ele).parent().removeClass("has-success has-error");
+        $(ele).next("span").text("");
+        if ("success" == status) {
+            $(ele).parent().addClass("has-success");
+            $(ele).next("span").text(msg);
+        } else if ("error" == status) {
+            $(ele).parent().addClass("has-error");
+            $(ele).next("span").text(msg);
+        }
+    }
+
+</script>
+</body>
+</html>

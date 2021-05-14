@@ -1,0 +1,81 @@
+TD {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: '宋体'
+}
+BODY {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: '宋体'
+}
+INPUT {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: '宋体'
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: '宋体'
+}
+.ui_top {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 18px
+}
+.ui_top A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.ui_top A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.ui_top A:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+.center01 {
+	COLOR: #035c80; LINE-HEIGHT: 20px; TEXT-DECORATION: none
+}
+A.center01:visited {
+	COLOR: #035c80; LINE-HEIGHT: 20px; TEXT-DECORATION: none
+}
+A.center01:hover {
+	COLOR: #fb6803; TEXT-DECORATION: underline
+}
+.center02 {
+	COLOR: #424242; LINE-HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.center02:visited {
+	COLOR: #424242; LINE-HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.center02:hover {
+	COLOR: #424242; TEXT-DECORATION: underline
+}
+.center03 {
+	COLOR: #ffffff; LINE-HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.center03:visited {
+	COLOR: #ffffff; LINE-HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.center03:hover {
+	COLOR: #fcfc86; TEXT-DECORATION: none
+}
+A.link1 {
+	COLOR: #ff6600; TEXT-DECORATION: underline
+}
+A.link2 {
+	COLOR: #fb6803
+}
+.img1 {
+	BORDER-RIGHT: #65bfd4 1px solid; BORDER-TOP: #65bfd4 1px solid; BORDER-LEFT: #65bfd4 1px solid; BORDER-BOTTOM: #65bfd4 1px solid
+}
+.img2 {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BORDER-BOTTOM: #ffffff 1px solid
+}
+.box1 {
+	BORDER-RIGHT: #5dabb4 1px solid; BORDER-TOP: #5dabb4 1px solid; BACKGROUND: #ffffff; BORDER-LEFT: #5dabb4 1px solid; COLOR: #035c80; BORDER-BOTTOM: #5dabb4 1px solid
+}
+.cla1 {
+	FONT-SIZE: 12px; COLOR: #4b4b4b; TEXT-DECORATION: none
+}
+.popmenuUser {
+	BORDER-RIGHT: #fed070 1px solid; BORDER-TOP: #fed070 1px solid; PADDING-LEFT: 5px; BORDER-LEFT: #fed070 1px solid; WIDTH: 120px; BORDER-BOTTOM: #fed070 1px solid; POSITION: absolute; BACKGROUND-COLOR: #e9ffd8
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #A3DAFF;
+	SCROLLBAR-HIGHLIGHT-COLOR: #D2EDFF;
+	SCROLLBAR-SHADOW-COLOR: #4b9da7; 
+	SCROLLBAR-ARROW-COLOR: #035c80; 
+	SCROLLBAR-BASE-COLOR: #4b9da7; 
+	scrollbar-3d-light-color: #4B9DA7;
+	scrollbar-dark-shadow-color: #4B9DA7
+}

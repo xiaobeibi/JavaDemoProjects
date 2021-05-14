@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/adopt" />
+    <file type="web" url="file://$PROJECT_DIR$/carRental" />
+    <file type="web" url="file://$PROJECT_DIR$/chat" />
+    <file type="web" url="file://$PROJECT_DIR$/exam" />
+    <file type="web" url="file://$PROJECT_DIR$/house" />
+    <file type="web" url="file://$PROJECT_DIR$/hr" />
+    <file type="web" url="file://$PROJECT_DIR$/OnlineBiddingSystem" />
+    <file type="web" url="file://$PROJECT_DIR$/weibo" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/vinfo/pom.xml" />
+        <option value="$PROJECT_DIR$/OnlineBiddingSystem/pom.xml" />
+        <option value="$PROJECT_DIR$/exam/pom.xml" />
+        <option value="$PROJECT_DIR$/carRental/pom.xml" />
+        <option value="$PROJECT_DIR$/adopt/pom.xml" />
+        <option value="$PROJECT_DIR$/travel_platform/pom.xml" />
+        <option value="$PROJECT_DIR$/ss/pom.xml" />
+        <option value="$PROJECT_DIR$/music/pom.xml" />
+        <option value="$PROJECT_DIR$/pan/pom.xml" />
+        <option value="$PROJECT_DIR$/house/pom.xml" />
+        <option value="$PROJECT_DIR$/employment-manage/pom.xml" />
+        <option value="$PROJECT_DIR$/finance/pom.xml" />
+        <option value="$PROJECT_DIR$/hr/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+<StackPane prefHeight="620.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bjpowernode.module.book.BookLendViewCtrl">
+    <children>
+        <VBox alignment="CENTER" spacing="10.0">
+            <children>
+                <VBox alignment="CENTER" spacing="20.0" styleClass="box-light" VBox.vgrow="ALWAYS">
+                    <children>
+                          <GridPane alignment="CENTER" prefWidth="478.0" hgap="10" vgap="10">
+                              <children>
+                                  <Label GridPane.columnIndex="0" GridPane.rowIndex="8" prefHeight="30.0" prefWidth="60.0" style="-fx-text-fill: -text-color;" />
+                                  <TextField fx:id="bookIdField" GridPane.columnIndex="1" GridPane.rowIndex="9"  visible="false" layoutX="739.0" layoutY="18.0" prefHeight="30.0" prefWidth="151.0" styleClass="rectangle" />
+                                  <Label GridPane.columnIndex="0" GridPane.rowIndex="0" prefHeight="40.0" prefWidth="60.0" style="-fx-text-fill: -text-color;" text="书名:" />
+                                  <TextField fx:id="bookNameField"  GridPane.columnIndex="1" GridPane.rowIndex="0" layoutX="739.0" layoutY="18.0" prefHeight="40.0" disable="true" prefWidth="151.0"  styleClass="rectangle" />
+                                  <Label GridPane.columnIndex="0" GridPane.rowIndex="7" prefHeight="30.0" prefWidth="60.0" style="-fx-text-fill: -text-color;" />
+                                  <TextField fx:id="userIdField" GridPane.columnIndex="1" GridPane.rowIndex="7" visible="false"  prefHeight="30.0" prefWidth="151.0"  styleClass="rectangle" />
+                                  <Label GridPane.columnIndex="0" GridPane.rowIndex="2" prefHeight="40.0" prefWidth="60.0" style="-fx-text-fill: -text-color;" text="借阅者:" />
+                                  <TextField fx:id="userNameField" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="40.0" disable="true" prefWidth="151.0" styleClass="rectangle" />
+                                  <Button layoutX="516.0" GridPane.columnIndex="2" GridPane.rowIndex="2" layoutY="10.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="100.0" onMouseClicked="#initSelectUserStage" styleClass="btn-success" text="查询" />
+                              </children>
+                          </GridPane>
+
+                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="478.0" spacing="10.0">
+                             <children>
+                                 <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="100.0" onMouseClicked="#add"  styleClass="btn-primary" text="提交" />
+                                 <Button layoutX="406.0" layoutY="10.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="100.0" onMouseClicked="#closeView" styleClass="btn-info" text="关闭" />
+                             </children>
+                         </HBox>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </VBox>
+    </children>
+    <stylesheets>
+        <URL value="@../../theme/css/material-color.css" />
+        <URL value="@../../theme/css/skeleton.css" />
+        <URL value="@../../theme/css/light.css" />
+        <URL value="@../../theme/css/bootstrap.css" />
+        <URL value="@../../theme/css/simple-green.css" />
+        <URL value="@../../theme/css/shape.css" />
+        <URL value="@../../theme/css/typographic.css" />
+        <URL value="@../../theme/css/helpers.css" />
+        <URL value="@../../theme/css/master.css" />
+    </stylesheets>
+</StackPane>

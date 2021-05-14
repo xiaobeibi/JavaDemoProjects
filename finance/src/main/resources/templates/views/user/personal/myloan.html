@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>个人理财系统</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--弹出框样式-->
+    <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <div th:replace="user/common/leftbar::#leftbaraside"></div>
+        <!--头部信息-->
+        <div th:replace="user/common/topbar::#topbarheader"></div>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>我的借贷</h4>
+                            </div>
+                            <div th:if="${!loansList.isEmpty()}" class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th class="info">序号</th>
+                                            <th class="info">借贷资金</th>
+                                            <th class="info">借贷期限</th>
+                                            <th class="info">固定年借贷率</th>
+                                            <th class="info">申请状态</th>
+                                            <th class="info">借贷状态</th>
+                                            <th class="info">操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="loan:${loansList}">
+                                            <td th:text="${(myLoansPageInfo.pageNum - 1) * myLoansPageInfo.pageSize+loanStat.index+1}"></td>
+                                            <td th:text="${#numbers.formatDecimal(loan.amount,1,2)}+'元'"></td>
+                                            <td th:text="${loan.term}+'天'"></td>
+                                            <td th:text="${#numbers.formatDecimal(loan.rate*100,1,2)}+'%'"></td>
+                                            <td th:if="${loan.applystatus==0}" th:text="未审核"></td>
+                                            <td th:if="${loan.applystatus==1}" th:text="审核未通过"></td>
+                                            <td th:if="${loan.applystatus==2}" th:text="审核通过"></td>
+                                            <td th:if="${loan.loanstatus==0}" th:text="未逾期"></td>
+                                            <td th:if="${loan.loanstatus==1}" th:text="逾期"></td>
+                                            <td th:if="${loan.loanstatus==2}" th:text="已还清"></td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm loan_btn"
+                                                        th:attr="loanBtnId=${loan.id},loanStatus=${loan.loanstatus},
+                                                        loanApplystatus=${loan.applystatus},loanBtnName=${#numbers.formatDecimal(loan.amount,1,2)}+'元'">
+															<span class="glyphicon glyphicon-yen"
+                                                                  aria-hidden="true"></span> 还款
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- 显示分页信息 -->
+                                <div class="row">
+
+                                    <!--新增按钮-->
+                                    <div class="col-md-1" style="margin-left: 24px">
+                                        <button id="loan_add_modal_btn" class="btn btn-primary">新增</button>
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <div class="btn-group">
+                                            <button class="btn btn-default">
+                                                <span>页次：</span>
+                                            </button>
+                                            <button class="btn btn-default">
+                                                <span th:text="${myLoansPageInfo.pageNum}+'/'+${myLoansPageInfo.pages}+'页'"></span>
+                                            </button>
+                                            <button class="btn btn-default">
+                                                <span>每页显示：</span>
+                                            </button>
+                                            <div class="btn-group">
+                                                <button id="btnGroupDrop1"
+                                                        class="btn btn-default dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false"><span
+                                                        th:text="${myLoansPageInfo.pageSize}"></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li th:each="i:${#numbers.sequence(1,10)}"><a th:text="${i}"
+                                                                                                  th:href="@{/user/personal/toMyLoan.html(pageNum=${myLoansPageInfo.pageNum},pageSize=${i})}"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <button class="btn btn-default">
+                                                <span>条</span>
+                                            </button>
+                                            <button class="btn btn-default">
+                                                <span>总记录数：</span>
+                                            </button>
+                                            <button class="btn btn-default">
+                                                <span th:text="${myLoansPageInfo.total}+'条'"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- 分页条信息 -->
+                                    <div class="col-md-5">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination pagination-lg pull-right"
+                                                style="margin-top: 0">
+                                                <li>
+                                                    <a th:href="@{/user/personal/toMyLoan.html(pageNum=1,pageSize=${myLoansPageInfo.pageSize})}">首页</a>
+                                                </li>
+
+                                                <li th:if="${myLoansPageInfo.hasPreviousPage }"><a
+                                                        th:href="@{/user/personal/toMyLoan.html(pageNum=${myLoansPageInfo.pageNum}-1,pageSize=${myLoansPageInfo.pageSize})}"
+                                                        aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+                                                </a></li>
+
+                                                <li th:each="page_Num:${myLoansPageInfo.navigatepageNums }"
+                                                    th:class="${page_Num == myLoansPageInfo.pageNum?'active':''}">
+                                                    <a th:if="${page_Num == myLoansPageInfo.pageNum}"
+                                                       th:text="${page_Num}"
+                                                       th:href="@{#}">
+                                                    </a>
+                                                    <a th:text="${page_Num}"
+                                                       th:if="${page_Num != myLoansPageInfo.pageNum}"
+                                                       th:href="@{/user/personal/toMyLoan.html(pageNum=${page_Num},pageSize=${myLoansPageInfo.pageSize})}">
+                                                    </a>
+                                                </li>
+
+                                                <li th:if="${myLoansPageInfo.hasNextPage }"><a
+                                                        th:href="@{/user/personal/toMyLoan.html(pageNum=${myLoansPageInfo.pageNum}+1,pageSize=${myLoansPageInfo.pageSize})}"
+                                                        aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+                                                </a></li>
+
+                                                <li><a
+                                                        th:href="@{/user/personal/toMyLoan.html(pageNum=${myLoansPageInfo.pages},pageSize=${myLoansPageInfo.pageSize})}">末页</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div th:if="${loansList.isEmpty()}" class="card-body">
+                                <div class="table-responsive">
+                                    <h4>很抱歉！暂时还没有查询到您的安全网贷信息</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<!--滚动条插件-->
+<script th:src="@{/lyear/js/perfect-scrollbar.min.js}"></script>
+<!--弹出框js-->
+<script th:src="@{/lyear/jconfirm/jquery-confirm.min.js}"></script>
+<!--自定义js脚本-->
+<script th:src="@{/lyear/js/main.min.js}"></script>
+<script th:inline="javascript">
+
+    //跳转到安全网贷界面
+    $("#loan_add_modal_btn").click(function () {
+        location.href = "/user/tools/toApplyLoan.html";
+    });
+
+    //还款
+    $(document).on("click", ".loan_btn", function () {
+        var id = $(this).attr("loanBtnId");
+        var name = $(this).attr("loanBtnName");
+        var loanApplystatus = $(this).attr("loanApplystatus");
+        if (loanApplystatus == 0) {
+            $.alert('请耐心等待管理员审核！');
+            //return false;
+        } else if (loanApplystatus == 1) {
+            $.alert('审核未通过！');
+            //return false;
+        } else if (loanApplystatus == 2) {
+            var loanStatus = $(this).attr("loanStatus");
+            if (loanStatus == 2) {
+                $.alert("已还清！");
+            } else {
+                $.alert({
+                    title: '提示：',
+                    content: "确定还款 <strong>" + name + "</strong> 吗？",
+                    buttons: {
+                        confirm: {
+                            text: '确认',
+                            btnClass: 'btn-primary',
+                            action: function () {
+                                $.ajax({
+                                    url: "/user/repayment/" + id,
+                                    type: "PUT",
+                                    success: function (result) {
+                                        if (result.code === 100) {
+                                            $.alert('还款成功!');
+                                            setTimeout(function () {
+                                                location.href = "/user/personal/toMyLoan.html";
+                                            }, 1000);
+                                        } else {
+                                            $.alert('还款失败!');
+                                        }
+                                    }
+                                });
+                            }
+                        },
+                        cancel: {
+                            text: '取消',
+                            action: function () {
+                                $.alert('已取消!');
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

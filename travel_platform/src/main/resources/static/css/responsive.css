@@ -1,0 +1,192 @@
+/********--------responsive css of main index-----**********/
+/**********************991 & 1199 start******************/
+@media (min-width: 992px) and (max-width: 1199px){
+	.address_main:after{
+		height:595px;
+	}
+}
+@media (min-width: 991px) and (max-width: 1199px){
+.header_logo{
+	top:-5px;
+}
+.top_header_add ul li{
+	margin-right:25px;
+}
+.navbar-nav>li {
+    float:left;
+	margin-right:-5px;
+}
+.navbar{
+	margin-left:-15px;
+}
+
+}
+/************----------991 css-----------***********/
+@media (max-width: 991px){
+	
+}
+/*******************-----------------**********************/
+@media (min-width: 768px) and (max-width: 991px){
+	
+.top_header_add{
+	font-size:12px;
+}
+.top_login{
+	margin-top:20px;
+	margin-right:270px;
+}
+.navbar{width: 100%;
+	float:none;
+}
+.header_logo{
+	width:75%; top:0px;
+}
+.navbar ul{
+    float: left;
+}
+.navbar-nav>li {
+    float: left;
+    margin-right: 8px;
+	font-size:16px;
+}
+
+.sidebar_wrapper{
+	margin-bottom:20px;}
+.navbar-nav>li {
+    float:left;
+}	
+#nav_filter li a{
+	   margin-right:-17px;
+		font-size:12px;
+
+}
+#return-to-top{
+	margin-top:-110px;
+}
+.event_img_count img{
+		margin-top:70px;
+		width:100%;
+}
+.cont_cat_abt{
+		margin-top:0;
+		margin-bottom:30px;
+}
+.cont_cat_txt{
+	margin-top:10px;
+}
+.edu_news_form button{
+	right:-2px;
+}
+.pricing_box1_wrapper{margin-bottom:50px;}
+.portfolio-area .portfolio-info_iv{
+	padding:44px;
+	margin-top:20px;
+}
+.pagination>li>a, .pagination>li>span{
+	margin-bottom:50px;
+}
+}
+/*********------------767 responsive css---------***********/
+@media (max-width: 767px){
+	
+.top_header_wrapper{
+	display:none;
+}
+.navbar{margin-top:-17px;}
+.nav .navbar-nav{
+	float:none;
+}
+.navbar-nav{
+	border:2px solid #2ec8a6;
+}
+.nav>li{
+    display: block;
+	overflow:hidden;
+	padding:7px;
+	border-bottom:2px solid #2ec8a6;
+}
+.nav>li:last-child{border:none;}
+.nav>li:hover{
+	background-color:#2ec8a6;
+	transition:.7s;
+}
+#nav_filter li a{
+	border:none;
+	overflow:hidden;
+}
+#nav_filter li a:hover{
+	border:none;
+	overflow:hidden;
+}
+#nav_filter{
+	bottom:0;
+}
+
+button span{
+	background:white;
+}
+.slider_main_wrapper{
+	margin-top:0;
+}
+#return-to-top{
+	margin-top:-150px;
+}
+.pagination>li>a, .pagination>li>span{
+	margin-bottom:50px;
+}
+}
+
+/**********--------480 responsivecss--------********/
+@media (max-width: 480px){
+
+
+#return-to-top{
+	margin-right:0;
+	margin-top: -149px;
+}
+
+}
+/***********---------320 responsive css-------**********/
+@media (max-width: 320px){
+
+
+#return-to-top {
+    margin-right: 0;
+	margin-top:-180px;
+}
+
+}
+
+/********--------320 & 480 responsivecss-----*********/
+@media (min-width: 321px) and (max-width: 480px){
+
+#return-to-top {
+    margin-right: 0;
+	margin-top:-181px;
+}	
+
+}
+
+/*******----------480 & 767 responsive css-------********/
+@media (min-width: 481px) and (max-width: 766px){
+	
+
+#return-to-top{
+	margin-right:0;
+	margin-top: -157px;
+}
+
+}
+/********---------580 css responsive-------**********/
+@media (min-width: 481px) and (max-width: 580px){
+
+#return-to-top{
+	margin-top:-182px;
+}
+}
+@media (min-width: 321px) and (max-width: 330px){
+	#return-to-top{
+		margin-top:-202px;
+	}
+}
+/*******----------medium width css-------************/

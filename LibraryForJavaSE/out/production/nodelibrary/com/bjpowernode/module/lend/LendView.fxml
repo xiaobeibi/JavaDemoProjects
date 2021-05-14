@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+<StackPane prefHeight="1120.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bjpowernode.module.lend.LendViewCtrl">
+    <children>
+        <VBox alignment="CENTER" spacing="10.0">
+            <children>
+                <VBox alignment="CENTER" spacing="20.0" styleClass="box-light" VBox.vgrow="ALWAYS">
+                    <children>
+                          <HBox alignment="CENTER" prefWidth="478.0" spacing="20.0">
+                              <children>
+                                  <Label prefHeight="30.0" prefWidth="40.0" style="-fx-text-fill: -text-color;" text="书名:" />
+                                  <TextField fx:id="lendNameField" layoutX="739.0" layoutY="18.0" prefHeight="30.0" prefWidth="151.0" promptText="书名" styleClass="rectangle" />
+                                  <Label prefHeight="30.0" prefWidth="40.0" style="-fx-text-fill: -text-color;" text="isbn:" />
+                                  <TextField fx:id="isbnField" prefHeight="30.0" prefWidth="151.0" promptText="isbn" styleClass="rectangle" />
+                              </children>
+                          </HBox>
+
+                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="478.0" spacing="10.0">
+                             <children>
+                                 <Button layoutX="516.0" layoutY="10.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="100.0" onMouseClicked="#lendSelect" styleClass="btn-success" text="查询" />
+                                 <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="100.0" onMouseClicked="#returnBook" styleClass="btn-primary" text="还书" />
+                                 <Button layoutX="406.0" layoutY="10.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="100.0" onMouseClicked="#renew" styleClass="btn-info" text="续借" />
+                             </children>
+                         </HBox>
+                      <VBox>
+                         <children>
+                             <TableView fx:id="lendTableView" prefHeight="600">
+                                 <columns>
+                                     <TableColumn fx:id="c1" text="编号">
+                                  </TableColumn>
+                                     <TableColumn fx:id="c2" text="书名">
+                                  </TableColumn>
+                                     <TableColumn fx:id="c3" text="isbn">
+                                  </TableColumn>
+                                     <TableColumn fx:id="c4" text="借阅者">
+                                  </TableColumn>
+                                     <TableColumn fx:id="c5" text="出借日期">
+                                  </TableColumn>
+                                     <TableColumn fx:id="c6" text="归还日期">
+                                  </TableColumn>
+                                     <TableColumn fx:id="c7" text="状态">
+                                  </TableColumn>
+                                 </columns>
+                                 <columnResizePolicy>
+                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                             </TableView>
+                         </children>
+                      </VBox>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </VBox>
+    </children>
+    <stylesheets>
+        <URL value="@../../theme/css/material-color.css" />
+        <URL value="@../../theme/css/skeleton.css" />
+        <URL value="@../../theme/css/light.css" />
+        <URL value="@../../theme/css/bootstrap.css" />
+        <URL value="@../../theme/css/simple-green.css" />
+        <URL value="@../../theme/css/shape.css" />
+        <URL value="@../../theme/css/typographic.css" />
+        <URL value="@../../theme/css/helpers.css" />
+        <URL value="@../../theme/css/master.css" />
+    </stylesheets>
+</StackPane>

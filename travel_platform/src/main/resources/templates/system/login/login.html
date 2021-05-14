@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>银杏湖景区乐游系统后端管理系统</title>
+</head>
+<body style="text-align:center;background-color: #9999CC;">
+<div class="container" >
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h1>银杏湖景区乐游系统后端管理系统</h1>
+            <form  method="post" id="form-submit" name="form-submit">
+                <div class="form-group">
+                    <label>账号</label>
+                    <input name="username" id="username" type="text" />
+                </div>
+                <div class="form-group">
+                    <label>密码</label>
+                    <input name="password" id="password" type="password" />
+                </div>
+                <button type="button" class="button" onclick="saveForm()">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!--main js files 所有可能用到的js-->
+    <script th:src="@{/js/jquery_min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/wow.min.js}"></script>
+    <script th:src="@{/js/custom.js}"></script>
+    <script th:src="@{/plugins/slider-pro/js/jquery.sliderPro.min.js}"></script>
+    <script th:src="@{/plugins/owlcarousel/js/owl.carousel.min.js}"></script>
+    <script th:src="@{/layer/layer.js}"></script>
+    <!--js code-->
+    <script th:inline="javascript">
+
+        function saveForm() {
+            $.ajax({
+                url: '/travel/system/login',
+                data: $("#form-submit").serialize(),
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code == 200) {
+                        window.location.href = "/travel/system/userListUI";
+                    }else {
+                        alert(result.message);
+                    }
+                }
+            })
+        }
+
+
+
+    </script>
+</div>
+</body>
+</html>

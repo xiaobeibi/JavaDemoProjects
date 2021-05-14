@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head th:include="include/commoncss::commoncss(~{::link})">
+    <link rel="stylesheet" href="/resources/css/login.css">
+</head>
+<body>
+    <div class="login-content">
+        <div class="layui-row">
+            <div class="layui-col-md12">
+                <div class="layui-row">
+                    <div class="layui-col-md12 login-promt">
+                        <span>就业管理系统</span>
+                    </div>
+                    <div class="layui-col-md12">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="userAccount" required  lay-verify="required" placeholder="请输入帐号" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                                <div class="layui-input-block">
+                                    <input type="password" name="userPwd" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button type="button" class="layui-btn" lay-submit="" lay-filter="formLogin">登录</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:include="include/commonjs::commonjs(~{::script})">
+        <script type="text/javascript" src="/resources/js/system/home/login.js"></script>
+    </div>
+</body>
+</html>

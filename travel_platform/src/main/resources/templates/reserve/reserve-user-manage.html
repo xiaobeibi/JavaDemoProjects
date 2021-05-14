@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{base/layout}">
+<div layout:fragment="content">
+    <div class="med_tittle_section">
+        <div class="med_img_overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="med_tittle_cont_wrapper">
+                        <div class="med_tittle_cont">
+                            <ol class="breadcrumb">
+                                <li><a href="index.html">系统首页</a></li>
+                                <li>我的预定</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- med_tittle_section End -->
+    <!--service section start-->
+    <div class="page-container">
+        <div class="container">
+            <div class="row med_toppadder50 med_bottompadder50">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1>酒店预订管理</h1>
+                    <div class="cy-news-grid-item" th:each="userHotel:${userHotelList}">
+                        <div class="cy-ib-thumbnail pull-left">
+                            <a th:href="@{/reserve/hotelDetailsUI(id=${userHotel.hotel.id})}">
+                                <img th:src="@{'/images/'+ ${userHotel.hotel.image} +'.jpg'}" class="image_fade" alt="">
+                            </a>
+                        </div>
+                        <div class="booklet-cont">
+                            <h5><a th:href="@{/reserve/hotelDetailsUI(id=${userHotel.hotel.id})}"
+                                   th:text="'酒店预约: ' + ${userHotel.hotel.name}"></a></h5>
+                            <div class="cy-summary-intro">
+                                <p th:text="${userHotel.hotel.describe}">
+                                </p>
+                                <a href="javascript:void(0);">更多</a>
+                            </div>
+                            <div class="text-right"><a th:onclick="cancelReserve([[${userHotel.hotel.id}]])"
+                                                       class="btn btn-info btn-sm">取消预约</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1>景点预订管理</h1>
+                    <div class="cy-news-grid-item" th:each="userAttractions:${userAttractionsList}">
+                        <div class="cy-ib-thumbnail pull-left">
+                            <a th:href="@{/reserve/attractionsDetailsUI(id=${userAttractions.attractions.id})}">
+                                <img th:src="@{'/images/'+ ${userAttractions.attractions.image} +'.jpg'}" class="image_fade" alt="">
+                            </a>
+                        </div>
+                        <div class="booklet-cont">
+                            <h5><a th:href="@{/reserve/attractionsDetailsUI(id=${userAttractions.attractions.id})}"
+                                   th:text="'景点预约: ' + ${userAttractions.attractions.name}"></a></h5>
+                            <div class="cy-summary-intro">
+                                <p th:text="${userAttractions.attractions.describe}">
+                                </p>
+                                <a href="javascript:void(0);">更多</a>
+                            </div>
+                            <div class="text-right"><a th:onclick="cancelAttractionsReserve([[${userAttractions.attractions.id}]])"
+                                                       class="btn btn-info btn-sm">取消预约</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--service section end-->
+    <!--js code-->
+    <!--main js files 所有可能用到的js-->
+    <script th:src="@{/js/jquery_min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/wow.min.js}"></script>
+    <script th:src="@{/js/custom.js}"></script>
+    <script th:src="@{/plugins/slider-pro/js/jquery.sliderPro.min.js}"></script>
+    <script th:src="@{/plugins/owlcarousel/js/owl.carousel.min.js}"></script>
+    <script th:src="@{/layer/layer.js}"></script>
+    <script th:inline="javascript">
+
+        function cancelReserve(id) {
+            $.ajax({
+                url: '/travel/reserve/cancelReserve',
+                data: {"id": id},
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code === 200) {
+                        window.location.reload();
+                    } else {
+                        layer.open({
+                            title: '错误提示',
+                            content: result.message
+                        });
+                    }
+                }
+            })
+        }
+
+        function cancelAttractionsReserve(id) {
+            $.ajax({
+                url: '/travel/reserve/cancelAttractionsReserve',
+                data: {"id": id},
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code === 200) {
+                        window.location.reload();
+                    } else {
+                        layer.open({
+                            title: '错误提示',
+                            content: result.message
+                        });
+                    }
+                }
+            })
+        }
+
+        $('.filter-type-box span a').click(function () {
+            if ($(this).hasClass('active'))
+                $(this).removeClass('active')
+            else
+                $(this).addClass('active')
+        });
+        $('.cy-summary-intro p').each(function () {
+            var maxwidth = 260;
+            var backup = $(this).html();
+            var height_lg = $(this).parent().height();
+            if ($(this).text().length > maxwidth) {
+                $(this).text($(this).text().substring(0, maxwidth));
+                $(this).html($(this).html() + '...');
+                var backup_1 = $(this).html();
+                var height_sm = $(this).parent().height();
+                $(this).parent().css('height', height_sm);
+            }
+            var d_value = height_lg - height_sm;
+            $(this).next().click(function () {
+                if ($(this).html() == '更多') {
+                    $(this).html('收起');
+                    $(this).prev().html(backup);
+                    $(this).parent().animate({height: '+=' + d_value + 'px'});
+                } else {
+                    $(this).html('更多');
+                    $(this).prev().html(backup_1);
+                    $(this).parent().animate({height: '-=' + d_value + 'px'});
+                }
+            })
+        });
+    </script>
+</div>
+</html>

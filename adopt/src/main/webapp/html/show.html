@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>动物的具体信息</title>
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link href="../css/jquery.slideBox.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/show.css">
+    <script src="../js/jquery-2.2.3.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../js/jquery.slideBox.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.comment.js"></script>
+</head>
+<body>
+<div>
+<div>
+    <h2>待领养的动物</h2>
+<center>
+<div id="demo1" class="slideBox">
+<ul class="items">
+    <li><a href="" ><img class="my-img" src="../images/1.jpg"></a></li>
+    <li><a href="" ><img class="my-img" src="../images/2.jpg"></a></li>
+    <li><a href="" ><img class="my-img" src="../images/3.jpg"></a></li>
+    <li><a href="" ><img class="my-img" src="../images/4.jpg"></a></li>
+</ul>
+</div>
+    <div class="name">
+        <img src="../images/p9.jpg">
+        <span>kitty</span>
+    </div>
+</center>
+    <div class="animal">
+        <div class="group">
+        <div class="animalX1">
+            <img src="../images/P7.jpg"><span>编号</span><br>
+            <p>123123</p>
+        </div>
+        <div class="animalX2">
+            <img src="../images/P7.jpg"><span>生日</span><br>
+            <p>2019/09/23</p>
+        </div>
+        </div>
+        <div class="group">
+            <div class="animalX3">
+                <img src="../images/P7.jpg"><span>品种</span><br>
+                <p>波斯猫</p>
+            </div>
+            <div class="animalX4">
+                <img src="../images/P7.jpg"><span>性别</span><br>
+                <p>雄性</p>
+            </div>
+        </div>
+        <div class="group">
+            <div class="animalX5">
+                <img src="../images/P8.jpg"><span>备注</span><br>
+                <p>好动</p>
+            </div>
+        </div>
+    </div>
+<div class="animal_me">
+    <div class="animal_me1"><img src="../images/p11.jpg"></div>
+    <div class="animal_me2"><p>大家好，我是Salon。我的特徵是一豎一摺的耳朵和會說話的眼神。我非常有活力，最愛和人玩耍逛街做運動。我很喜歡認識朋友，我有自信能和大部份狗狗友好相處。
+        我已經準備好當你的好朋友，你能帶我回家給我永遠的溫暖嗎?</p></div>
+    <div class="animal_me3"><img src="../images/p10.jpg"></div>
+</div>
+<div class="my_btn">
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">想要领养</button>
+</div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    请填写个人信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="new_department_form">
+                    <div class="form-group">
+                        <label for="new_Name" class="col-sm-2 control-label">
+                            领养人姓名： </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="new_Name"
+                                   placeholder="name" name="name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="new_petName" class="col-sm-2 control-label">
+                            动物姓名： </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="new_petName"
+                                   placeholder="petName" name="petName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="new_Sex" class="col-sm-2 control-label">
+                            性别： </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="new_Sex"
+                                   placeholder="sex" name="sex">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="new_tel" class="col-sm-2 control-label">
+                            联系方式： </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="new_tel"
+                                   placeholder="telephone" name="telephone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="new_Email" class="col-sm-2 control-label">
+                            邮件： </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="new_Email"
+                                   placeholder="Email" name="new_Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="new_Adress" class="col-sm-2 control-label">
+                            地址： </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="new_Adress"
+                                   placeholder="adress" name="address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="new_remark" class="col-sm-2 control-label">
+                            备注： </label>
+                        <div class="col-sm-10">
+                            <textarea type="text" class="form-control" id="new_remark"
+                            placeholder="remark" name="remark"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary">提交申请</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+    <div class="comment-list">
+
+    </div>
+    <div class="container">
+        <div class="commentbox">
+            <textarea cols="80" rows="50" placeholder="来说几句吧......" class="mytextarea" id="content"></textarea>
+            <div class="btn btn-info pull-right" id="comment">评论</div>
+        </div>
+
+    </div>
+</div>
+<script>
+    jQuery(function($){
+        $('#demo1').slideBox();
+
+    });
+
+    $(function(){
+        $("#comment").click(function(){
+            var obj = new Object();
+            obj.img="./images/img.jpg";
+            obj.replyName="匿名";
+            obj.content=$("#content").val();
+            obj.browse="深圳";
+            obj.osname="win10";
+            obj.replyBody="";
+            $(".comment-list").addCommentList({data:[],add:obj});
+        });
+    })
+</script>
+</body>
+</html>
+

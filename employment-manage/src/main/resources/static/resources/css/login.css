@@ -1,0 +1,22 @@
+body{
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    background-image: url(../img/background.jpg);
+}
+.login-content{
+    margin: 0 auto;
+    width: 30%;
+    padding-top: 200px;
+}
+.login-promt{
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 500;
+}
+.layui-form-label i{
+    font-size: 25px;
+}

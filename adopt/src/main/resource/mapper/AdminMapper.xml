@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecjtu.mapper.AdminMapper">
+
+
+    <insert id="addAdmin" parameterType="admin">
+       INSERT INTO admin (adminName,adminPwd,realName,telephone,Email,birthday,sex,pic,remark) VALUES
+       (#{adminName},#{adminPwd},#{realName},#{telephone},#{Email},#{birthday},#{sex},#{pic},#{remark})
+    </insert>
+
+
+    <delete id="deleteAdmin" parameterType="int">
+        DELETE FROM admin WHERE id=#{id}
+    </delete>
+
+    <update id="updateAdmin" parameterType="Admin">
+        UPDATE admin SET adminName=#{adminName},adminPwd=#{adminPwd},realName=#{realName},telephone=#{telephone},Email=#{Email},birthday=#{birthday},sex=#{sex},
+        <trim suffix=",">
+            <if test="pic !=null and pic != ''">
+                pic=#{pic}
+            </if>
+        </trim>
+        remark=#{remark} WHERE id=#{id}
+    </update>
+
+    <resultMap id="BaseAdminMap" type="Admin">
+        <id column="id" property="id"></id>
+        <result column="adminName"  property="adminName"></result>
+        <result column="adminPwd"  property="adminPwd"></result>
+        <result column="realName"  property="realName"></result>
+        <result column="telephone" property="telephone"></result>
+        <result column="Email" property="Email"></result>
+        <result column="birthday" property="birthday"></result>
+        <result column="sex" property="sex"></result>
+        <result column="pic" property="pic"></result>
+        <result column="remark" property="remark"></result>
+        <collection property="commentList" ofType="comment" javaType="list" >
+            <id column="tid" property="id"></id>
+            <result column="commentTime" property="commentTime"></result>
+            <result column="content" property="content"></result>
+            <association property="pet" javaType="pet">
+                <id column="id" property="id"></id>
+                <result column="petName" property="petName"></result>
+                <result column="petType" property="petType"></result>
+                <result column="sex" property="sex"></result>
+                <result column="birthday" property="birthday"></result>
+                <result column="pic" property="pic"></result>
+                <result column="state" property="state"></result>
+                <result column="remark" property="remark"></result>
+            </association>
+        </collection>
+    </resultMap>
+
+    <select id="loginAdmin" parameterType="Admin" resultMap="BaseAdminMap">
+        SELECT * FROM admin WHERE adminName=#{adminName} AND adminPwd=#{adminPwd}
+    </select>
+
+    <select id="getAdmins" resultMap="BaseAdminMap">
+        SELECT admin.*,comment.id tid,comment.commentTime,comment.content
+         FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id
+    </select>
+
+    <select id="findById" resultMap="BaseAdminMap" parameterType="int">
+        SELECT admin.*,comment.id tid,comment.commentTime,comment.content FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id WHERE admin.id=#{id}
+    </select>
+
+    <select id="findByName" resultMap="BaseAdminMap" parameterType="string">
+        SELECT admin.*,comment.id tid,comment.commentTime,comment.content FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id
+        <where>
+            <if test="adminName != null and adminName != '' ">
+             and admin.adminName LIKE "%"#{adminName}"%"
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteBatch" parameterType="int">
+        DELETE FROM admin
+        <foreach collection="ids" item="id" separator="," open="where id in (" close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

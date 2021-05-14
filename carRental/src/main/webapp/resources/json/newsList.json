@@ -1,0 +1,19 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 15,
+	"data": [
+		{
+			"newsId": "1",
+			"newsName": "css3用transition实现边框动画效果",
+			"newsAuthor": "admin",
+			"abstract": "css3用transition实现边框动画效果css3用transition实现边框动画效果",
+			"newsStatus": "0",
+			"newsImg":"../../images/userface1.jpg",
+			"newsLook": "开放浏览",
+			"newsTop": "",
+			"newsTime": "2019-04-14 00:00:00",
+			"content" : "css3用transition实现边框动画效果<img src='../../images/userface1.jpg' alt='文章内容图片'>css3用transition实现边框动画效果css3用transition实现边框动画效果"
+		}
+	]
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{base/layout}">
+<div layout:fragment="content">
+    <!--med_tittle_section-->
+    <div class="med_tittle_section">
+        <div class="med_img_overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="med_tittle_cont_wrapper">
+                        <div class="med_tittle_cont">
+                            <ol class="breadcrumb">
+                                <li><a th:href="@{/}">系统首页</a></li>
+                                <li>用户中心</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- med_tittle_section End -->
+    <!--service section start-->
+    <div class="page-container">
+        <div class="container">
+            <div class="row med_toppadder50 med_bottompadder50">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h2 class="cy-uc-title">用户中心</h2>
+                    <div class="panel panel-default panel-view">
+                        <div class="panel-body">
+                            <div class="cy-tabs">
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                    <li class="active">
+                                        <a href="javaScript:void(0);"><i class="fa fa-address-card"></i> 我的信息</a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane active">
+                                        <div class="row">
+                                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
+                                                <form action="#" method="post" class="cy-form">
+                                                    <fieldset>
+                                                        <section>
+                                                            <label class="input">
+                                                                <!-- <em>*</em> -->
+                                                                <i class="icon-append fa fa-lock"></i>
+                                                                <input required name="oldPassword" type="password"
+                                                                       placeholder="旧密码">
+                                                                <b class="tooltip tooltip-bottom-right">请输入旧密码</b>
+                                                            </label>
+                                                        </section>
+                                                        <section>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-lock"></i>
+                                                                <input required name="password" type="password"
+                                                                       placeholder="新密码">
+                                                                <b class="tooltip tooltip-bottom-right">请牢记新密码，以免丢失</b>
+                                                            </label>
+                                                        </section>
+                                                        <section>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-lock"></i>
+                                                                <input required name="newPassword" type="password"
+                                                                       placeholder="再次输入新密码">
+                                                                <b class="tooltip tooltip-bottom-right">请再次输入新密码</b>
+                                                            </label>
+                                                        </section>
+                                                    </fieldset>
+                                                    <footer>
+                                                        <button type="button" class="button" onclick="saveForm()">保存返回
+                                                        </button>
+                                                    </footer>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--service section end-->
+    <!--service section end-->
+    <script th:inline="javascript">
+
+        function saveForm() {
+
+            var oldPassword = $("input[ name='oldPassword' ] ").val();
+            var password = $("input[ name='password' ] ").val();
+            var newPassword = $("input[ name='newPassword' ] ").val();
+
+            if (password !== newPassword) {
+                alert("新密码两次输入不一样!");
+                return;
+            }
+            var id = [[${id}]];
+            console.log(id);
+            $.ajax({
+                url: '/travel/user/centerEditPW',
+                data: {"id": id, "oldPassword": oldPassword, "newPassword": newPassword},
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code === 200) {
+                        confirm("修改成功,请重新登录!"); //在页面上弹出对话框
+                        window.location.href = "/travel/loginUI";
+                    } else {
+                        alert(result.message);
+                    }
+                }
+            })
+        }
+    </script>
+</div>
+
+</html>

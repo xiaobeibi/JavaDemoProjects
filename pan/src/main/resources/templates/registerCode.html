@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>文件下载</title>
+    <script src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <!--剪切板的功能-->
+    <script src="/js/clipboard.min.js"></script>
+    <style>
+        a {
+            font-family: "微软雅黑";
+            cursor: pointer;
+        }
+        .blur {
+            filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+            -webkit-filter: blur(7px); /* Chrome, Opera */
+            -moz-filter: blur(7px);
+            -ms-filter: blur(7px);
+            filter: blur(7px);
+            filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=7, MakeShadow=false); /* IE6~IE9 */
+        }
+        .Filebox a{display:inline-block; width:100%; font-size:200px; text-align:center; vertical-align:middle;cursor:default}
+        .Filebox a img{vertical-align:middle; padding:2px; border:1px solid #beceeb;cursor:pointer}
+
+    </style>
+</head>
+<body>
+
+
+<div id="imgbackground" class="blur"
+     style="background: url('images/bg1.jpg');top:0; position: fixed;width: 100%;height: 100%;z-index: -1;">
+</div>
+
+<div id="container" class="container"
+     style="width: 90%;height:500px;margin-top:20px;margin-bottom: 20px; background-color: rgba(255,255,255,0.7);border-radius: 10px;">
+    <div class="header clearfix" style="margin: 0px; ">
+        <img src="/images/pan-top.png" style="max-height: 50px;">
+        <span>
+                <ul class="nav nav-pills pull-right" style="margin-top: 10px;">
+                    <li role="presentation"><a id="userLName" href="/" th:text="${author}"
+                                               style="color: firebrick;background: unset;"></a></li>
+                    <!-- Button trigger modal -->
+                    <button type="button" id="loginBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                     登录
+                    </button>
+                    <li id="homeBtn" role="presentation"><a href="/">主页</a></li>
+                    <!--<li id="contactBtn" role="presentation"><a data-toggle="modal" data-target="#donateDlg">捐助</a></li>-->
+                    <li id="quitBtn" role="presentation"><a style="cursor: pointer">退出</a></li>
+                </ul>
+            </span>
+    </div>
+
+    <div style="height: 100px;text-align:center">
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <label for="customName" class="form-label">填写要注册码的人的名字：</label>
+                <input id="customName"  name="customName"  tabindex="2" class="form-control " />
+            </div>
+            <button type="button"  id="proRegisterCode" class="btn btn-primary">生成注册码</button>
+        </form>
+        <!--<input type="text" id="registerCode" style="display: none">-->
+        <div id="shareRegisterCode" style="display:none;text-align: center">
+            <h4 style="text-align: center;">验证码：</h4>
+            <span style="position: relative;">
+                <a id="registerCode" target="_blank" ></a>
+            </span>
+            <br>
+        </div>
+        <div id="registerCodeCopy" style="margin-top: 10px;text-align: center;display: none">
+            <button id="copyRegisterCodeBtn" class="btn btn-primary"  data-clipboard-action="copy">一键复制</button>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+    $('#proRegisterCode').click(function (e) {
+        $.ajax({
+            type: "post",
+            url: "/proRegisterCode",
+            data: {
+                "customName": $("#customName").val(),
+            },
+            dataType: "json",
+            success: function (data) {
+                if(data.success){
+                    console.log("验证码为："+data.msg);
+                    $("#shareRegisterCode").css("display","block");
+                    $("#registerCodeCopy").css("display","block");
+                    $("#registerCode").text(data.msg);
+
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+    });
+    var clipboard = new ClipboardJS('#copyRegisterCodeBtn', {
+        text: function(trigger) {
+            return "注册码：" + document.getElementById("registerCode").innerText;
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

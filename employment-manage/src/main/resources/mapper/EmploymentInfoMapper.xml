@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.employment.mapper.EmploymentInfoMapper">
+    <resultMap id="employmentInfoResultMap" type="com.bjpowernode.employment.mapper.entity.EmploymentInfo">
+        <result column="information_id" jdbcType="VARCHAR" property="informationId" />
+        <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+        <result column="company_address" jdbcType="VARCHAR" property="companyAddress" />
+        <result column="employment_station" jdbcType="VARCHAR" property="employmentStation" />
+        <result column="treatment" jdbcType="VARCHAR" property="treatment" />
+        <result column="ability_requirement" jdbcType="VARCHAR" property="abilityRequirement" />
+        <result column="student_name" jdbcType="VARCHAR" property="studentName" />
+        <result column="student_major" jdbcType="VARCHAR" property="studentMajor" />
+        <result column="student_gender" jdbcType="VARCHAR" property="studentGender" />
+        <result column="student_class" jdbcType="VARCHAR" property="studentClass" />
+        <result column="student_mobile" jdbcType="VARCHAR" property="studentMobile" />
+        <result column="company_contact_name" jdbcType="VARCHAR" property="companyContactName" />
+        <result column="company_contact_mobile" jdbcType="VARCHAR" property="companyContactMobile" />
+        <result column="employment_time" jdbcType="TIMESTAMP" property="employmentTime" />
+    </resultMap>
+
+    <select id="getEmploymentInfo" resultMap="employmentInfoResultMap">
+        select information_id, company_name, company_address, employment_station, treatment, ability_requirement, student_name,
+            student_major, student_gender, student_class, student_mobile, company_contact_name, company_contact_mobile, employment_time
+        from employment_info order by employment_time
+    </select>
+
+    <select id="getAllEmploymentInfo" parameterType="com.bjpowernode.employment.mapper.entity.EmploymentInfo" resultMap="employmentInfoResultMap">
+        select information_id, company_name, company_address, employment_station, treatment, ability_requirement, student_name,
+            student_major, student_class, student_gender, student_mobile, company_contact_name, company_contact_mobile, employment_time
+        from employment_info
+        where 1=1
+        <if test="informationId != null and informationId != ''">
+             and information_id = #{informationId}
+        </if>
+        <if test="studentMajor != null and studentMajor != ''">
+            and student_major like '%${studentMajor}%'
+        </if>
+        <if test="studentClass != null and studentClass != ''">
+            and student_class like '%${studentClass}%'
+        </if>
+        <if test="studentGender != null and studentGender != ''">
+            and student_gender = #{studentGender}
+        </if>
+        <if test="companyName != null and companyName != ''">
+            and company_name like '%${companyName}%'
+        </if>
+        <if test="employmentStation != null and employmentStation != ''">
+            and employment_station like '%${employmentStation}%'
+        </if>
+        order by employment_time
+    </select>
+
+    <select id="getStudentCount" resultType="map">
+        select count(information_id) studentCount, ${fieldName} from employment_info group by ${fieldName}
+    </select>
+
+    <insert id="addEmploymentInfo" parameterType="com.bjpowernode.employment.mapper.entity.EmploymentInfo">
+        insert into employment_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="informationId != null">
+                 information_id,
+            </if>
+            <if test="studentMajor != null">
+                 student_major,
+            </if>
+            <if test="studentClass != null">
+                 student_class,
+            </if>
+            <if test="studentGender != null">
+                 student_gender,
+            </if>
+            <if test="companyName != null">
+                 company_name,
+            </if>
+            <if test="companyAddress != null">
+                 company_address,
+            </if>
+            <if test="treatment != null">
+                 treatment,
+            </if>
+            <if test="abilityRequirement != null">
+                 ability_requirement,
+            </if>
+            <if test="studentMobile != null">
+                 student_mobile,
+            </if>
+            <if test="employmentTime != null">
+                 employment_time,
+            </if>
+            <if test="companyContactName != null">
+                 company_contact_name,
+            </if>
+            <if test="companyContactMobile != null">
+                 company_contact_mobile,
+            </if>
+            <if test="studentName != null">
+                 student_name,
+            </if>
+            <if test="employmentStation != null">
+                 employment_station,
+            </if>
+        </trim>
+        <trim prefix="values(" suffix=")" suffixOverrides=",">
+            <if test="informationId != null">
+                #{informationId},
+            </if>
+            <if test="studentMajor != null">
+                #{studentMajor},
+            </if>
+            <if test="studentClass != null">
+                #{studentClass},
+            </if>
+            <if test="studentGender != null">
+                #{studentGender},
+            </if>
+            <if test="companyName != null">
+                #{companyName},
+            </if>
+            <if test="companyAddress != null">
+                #{companyAddress},
+            </if>
+            <if test="treatment != null">
+                #{treatment},
+            </if>
+            <if test="abilityRequirement != null">
+                #{abilityRequirement},
+            </if>
+            <if test="studentMobile != null">
+                #{studentMobile},
+            </if>
+            <if test="employmentTime != null">
+                #{employmentTime},
+            </if>
+            <if test="companyContactName != null">
+                #{companyContactName},
+            </if>
+            <if test="companyContactMobile != null">
+                #{companyContactMobile},
+            </if>
+            <if test="studentName != null">
+                #{studentName},
+            </if>
+            <if test="employmentStation != null">
+                #{employmentStation},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateEmploymentInfo" parameterType="com.bjpowernode.employment.mapper.entity.EmploymentInfo">
+        update employment_info
+        <set>
+            <if test="studentMajor != null">
+                 student_major = #{studentMajor},
+            </if>
+            <if test="studentClass != null">
+                 student_class = #{studentClass},
+            </if>
+            <if test="studentGender != null">
+                 student_gender = #{studentGender},
+            </if>
+            <if test="companyName != null">
+                 company_name = #{companyName},
+            </if>
+            <if test="companyAddress != null">
+                 company_address = #{companyAddress},
+            </if>
+            <if test="treatment != null">
+                 treatment = #{treatment},
+            </if>
+            <if test="abilityRequirement != null">
+                 ability_requirement = #{abilityRequirement},
+            </if>
+            <if test="studentMobile != null">
+                 student_mobile = #{studentMobile},
+            </if>
+            <if test="employmentTime != null">
+                 employment_time = #{employmentTime},
+            </if>
+            <if test="companyContactName != null">
+                 company_contact_name = #{companyContactName},
+            </if>
+            <if test="companyContactMobile != null">
+                 company_contact_mobile = #{companyContactMobile},
+            </if>
+            <if test="studentName != null">
+                 student_name = #{studentName},
+            </if>
+            <if test="employmentStation != null">
+                 employment_station = #{employmentStation},
+            </if>
+        </set>
+        where information_id = #{informationId}
+    </update>
+
+    <delete id="deleteEmploymentInfo">
+        delete from employment_info where information_id = #{informationId}
+    </delete>
+</mapper>

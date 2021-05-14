@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{system/base/layout}">
+<div layout:fragment="content">
+
+    <div class="container" style="width: 1400px">
+        <h1>景点管理</h1>
+        <div class="row clearfix">
+            <form name="search-form" class="form-inline m-b-10 clearfix" th:action="@{/system/attractionsListUI}"
+                  id="search-form">
+            </form>
+
+            <div align="right" style="float:right">
+                <button type="button" onclick="reset()" class="btn btn-default btn-warning">增加</button>
+            </div>
+            <div class="col-md-12 column">
+                <table class="table table-hover table-condensed">
+                    <thead>
+                    <tr>
+                        <th width="150px">name</th>
+                        <th width="170px">image</th>
+                        <th width="150px">address</th>
+                        <th width="700px">describe</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="attractions:${page.content}">
+                        <td th:text="${attractions.name}"></td>
+                        <td><img width="170px" th:src="@{'/images/'+ ${attractions.image} +'.jpg'}"></td>
+                        <td th:text="${attractions.address}"></td>
+                        <td th:text="${attractions.describe}"></td>
+                        <td>
+                            <div align="left" style="float:left">
+                                <button type="button" th:onclick="updateMember([[${attractions.id}]])" class="btn btn-default btn-info">修改</button>
+                            </div>
+                            <div th:if="${attractions.status == 0}" align="left">
+                                <button type="button" th:onclick="updateAttractionsStatus([[${attractions.id}]])" class="btn btn-default btn-danger">禁用</button>
+                            </div>
+                            <div th:if="${attractions.status == 1}" align="left">
+                                <button type="button" th:onclick="updateAttractionsStatus([[${attractions.id}]])" class="btn btn-default btn-success">启用</button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div th:insert="~{base/pageable}"></div>
+    </div>
+    <!--弹框-->
+    <div class="modal fade" id="exampleModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" name="insertMember"
+                          id="insertMember" class="form-horizontal">
+                        <!--隐藏的-->
+                        <input type="text" id="id" name="id" hidden>
+
+                        <div id="usernameDiv" class="form-group m-b-10" style="text-align:right">
+                            <label class="col-sm-4 control-label">
+                                <label style="color: red">*</label>景点名:
+                            </label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="name" name="name">
+                            </div>
+                        </div>
+                        <div class="form-group m-b-10" style="text-align:right">
+                            <label class="col-sm-4 control-label">
+                                <label style="color: red">*</label>景点地址:</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="address" name="address">
+                            </div>
+                        </div>
+                        <div class="form-group m-b-10" style="text-align:right">
+                            <label class="col-sm-4 control-label">
+                                景点描述:
+                            </label>
+                            <div class="col-sm-7">
+                                <textarea type="text" rows="7" cols="20" class="form-control" id="describe"
+                                          name="describe">
+                                </textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                    <button type="button" class="btn btn-info" onclick="saveForm()">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script th:inline="javascript">
+        function reset() {
+            //全部清空
+            $('#exampleModalLabel').text('新增景点');
+            //id
+            $('#id').val('');
+            //name
+            $('#name').val('');
+            //address
+            $('#address').val('');
+            //describe
+            $('#describe').val('');
+            //显示模态框
+            $('#exampleModal').modal('show')
+        }
+
+        function updateMember(id) {
+            $.ajax({
+                url: '/travel/system/getAttractionsById',
+                data: {"id": id},
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code == 200) {
+                        var attractions = result.data;
+                        //全部清空
+                        $('#exampleModalLabel').text('修改景点');
+                        //id
+                        $('#id').val(attractions.id);
+                        //name
+                        $('#name').val(attractions.name);
+                        //address
+                        $('#address').val(attractions.address);
+                        //describe
+                        $('#describe').val(attractions.describe);
+                        //显示模态框
+                        $('#exampleModal').modal('show')
+                    }
+                }
+            });
+        }
+
+        function updateAttractionsStatus(id) {
+            $.ajax({
+                url: '/travel/system/updateAttractionsStatus',
+                data: {"id": id},
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code === 200) {
+                        window.location.reload();
+                    } else {
+                        layer.open({
+                            title: '错误提示',
+                            content: result.message
+                        });
+                    }
+                }
+            })
+        }
+
+        function saveForm() {
+            //name
+            var name = $('#name').val();
+            //address
+            var address = $('#address').val();
+
+
+            if ($.trim(name) === '') {
+                layer.msg("酒店名不能为空");
+                return;
+            }
+            if ($.trim(address) === '') {
+                layer.msg("酒店地址不能为空!");
+                return;
+            }
+            $.ajax({
+                url: '/travel/system/saveAttractions',
+                data: $("#insertMember").serialize(),
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code === 200) {
+                        window.location.href = "/travel/system/attractionsListUI";
+                    } else {
+                        layer.open({
+                            title: '错误提示',
+                            content: result.message
+                        });
+                    }
+                }
+            })
+        }
+    </script>
+</div>
+</html>

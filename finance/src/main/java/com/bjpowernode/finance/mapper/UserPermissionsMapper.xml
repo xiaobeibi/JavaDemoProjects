@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.finance.mapper.UserPermissionsMapper">
+  <resultMap id="BaseResultMap" type="com.bjpowernode.finance.entity.UserPermissions">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="permissionId" jdbcType="INTEGER" property="permissionid" />
+  </resultMap>
+
+  <resultMap id="BaseResultMapWithUserAndPermission" type="com.bjpowernode.finance.entity.UserPermissions">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="permissionId" jdbcType="INTEGER" property="permissionid" />
+    <!-- 指定联合查询用户字段的封装 -->
+    <association property="user"
+                 javaType="com.bjpowernode.finance.entity.User">
+      <id column="id" jdbcType="INTEGER" property="id" />
+      <result column="username" jdbcType="VARCHAR" property="username" />
+      <result column="realname" jdbcType="VARCHAR" property="realname" />
+      <result column="password" jdbcType="VARCHAR" property="password" />
+      <result column="IDcard" jdbcType="VARCHAR" property="idcard" />
+      <result column="phone" jdbcType="VARCHAR" property="phone" />
+      <result column="email" jdbcType="VARCHAR" property="email" />
+      <result column="paypwd" jdbcType="INTEGER" property="paypwd" />
+      <result column="status" jdbcType="INTEGER" property="status" />
+      <result column="reputation" jdbcType="VARCHAR" property="reputation" />
+    </association>
+    <!-- 指定联合查询权限字段的封装 -->
+    <association property="permissions"
+                 javaType="com.bjpowernode.finance.entity.Permissions">
+      <id column="id" jdbcType="INTEGER" property="id" />
+      <result column="permission" jdbcType="VARCHAR" property="permission" />
+    </association>
+  </resultMap>
+
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, userId, permissionId
+  </sql>
+  <sql id="Base_Column_List_With_User_And_Permission">
+    up.id, up.userId, up.permissionId,
+    u.id, u.username, u.realname, u.password, u.IDcard, u.phone, u.email, u.paypwd, u.status, u.reputation,
+    p.id, p.permission
+  </sql>
+
+  <select id="selectByExampleWithUserAndPermission" parameterType="com.bjpowernode.finance.entity.UserPermissionsExample" resultMap="BaseResultMapWithUserAndPermission">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List_With_User_And_Permission" />
+    from user_permissions up left join user u on up.userId=u.id left join permissions p on up.permissionId=p.id
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKeyWithUserAndPermission" parameterType="java.lang.Integer" resultMap="BaseResultMapWithUserAndPermission">
+    select
+    <include refid="Base_Column_List_With_User_And_Permission" />
+    from user_permissions up left join user u on up.userId=u.id left join permissions p on up.permissionId=p.id
+    where up.id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByExample" parameterType="com.bjpowernode.finance.entity.UserPermissionsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user_permissions
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_permissions
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_permissions
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bjpowernode.finance.entity.UserPermissionsExample">
+    delete from user_permissions
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bjpowernode.finance.entity.UserPermissions">
+    insert into user_permissions (id, userId, permissionId
+      )
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{permissionid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bjpowernode.finance.entity.UserPermissions">
+    insert into user_permissions
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="permissionid != null">
+        permissionId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="permissionid != null">
+        #{permissionid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bjpowernode.finance.entity.UserPermissionsExample" resultType="java.lang.Long">
+    select count(*) from user_permissions
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update user_permissions
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null">
+        userId = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.permissionid != null">
+        permissionId = #{record.permissionid,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update user_permissions
+    set id = #{record.id,jdbcType=INTEGER},
+      userId = #{record.userid,jdbcType=INTEGER},
+      permissionId = #{record.permissionid,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bjpowernode.finance.entity.UserPermissions">
+    update user_permissions
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="permissionid != null">
+        permissionId = #{permissionid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bjpowernode.finance.entity.UserPermissions">
+    update user_permissions
+    set userId = #{userid,jdbcType=INTEGER},
+      permissionId = #{permissionid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

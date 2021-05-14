@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{system/base/layout}">
+<div layout:fragment="content">
+
+    <div class="container" style="width: 1400px">
+        <h1>用户管理</h1>
+        <div class="row clearfix">
+            <form name="search-form" class="form-inline m-b-10 clearfix" th:action="@{/system/userListUI}"
+                  id="search-form">
+            </form>
+
+            <div class="col-md-12 column">
+                <table class="table table-hover table-condensed">
+                    <thead>
+                    <tr>
+                        <th width="150px">id</th>
+                        <th width="170px">username</th>
+                        <th width="150px">password</th>
+                        <th width="700px">name</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="user:${page.content}">
+                        <td th:text="${user.id}"></td>
+                        <td th:text="${user.username}"></td>
+                        <td th:text="${user.password}"></td>
+                        <td th:text="${user.name}"></td>
+                        <td>
+                            <div align="left" style="float:left">
+                                <button type="button" th:onclick="updatePassword([[${user.id}]])" class="btn btn-default btn-info">重置密码</button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div th:insert="~{base/pageable}"></div>
+        <!--弹框-->
+        <div class="modal fade" id="exampleModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" name="insertPassword"
+                              id="insertPassword" class="form-horizontal">
+                            <!--隐藏的-->
+                            <input type="text" id="id" name="id" hidden>
+                            <div class="form-group m-b-10" style="text-align:right">
+                                <label class="col-sm-4 control-label">
+                                    <label style="color: red">*</label>密码:</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" id="password" name="password">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                        <button type="button" class="btn btn-info" onclick="saveForm()">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:inline="javascript">
+
+
+        function updatePassword(id) {
+            $.ajax({
+                url: '/travel/system/getUserById',
+                data: {"id": id},
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code == 200) {
+                        var user = result.data;
+                        //全部清空
+                        $('#exampleModalLabel').text('修改密码');
+                        //id
+                        $('#id').val(user.id);
+                        //username
+                        $('#username').val(user.username);
+                        //password
+                        $('#password').val(user.password);
+                        //name
+                        $('#name').val(user.name);
+                        //显示模态框
+                        $('#exampleModal').modal('show')
+                    }
+                }
+            });
+        }
+
+        function saveForm() {
+            //password
+            var password = $('#password').val();
+
+            if ($.trim(password) === '') {
+                layer.msg("密码不能为空");
+                return;
+            }
+
+            $.ajax({
+                url: '/travel/system/saveUser',
+                data: $("#insertPassword").serialize(),
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code === 200) {
+                        window.location.href = "/travel/system/userListUI";
+                    } else {
+                        layer.open({
+                            title: '错误提示',
+                            content: result.message
+                        });
+                    }
+                }
+            })
+        }
+    </script>
+</div>
+</html>

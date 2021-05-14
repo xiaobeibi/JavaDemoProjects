@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecjtu.mapper.AdoptAnimalMapper">
+
+
+    <insert id="addAdoptAnimal" parameterType="AdoptAnimal" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_adopt (user_id,pet_id,adoptTime,state) VALUES (#{user.id},#{pet.id},#{adoptTime},#{state})
+    </insert>
+
+    <delete id="deleteAdoptAnimal" parameterType="int">
+        DELETE FROM t_adopt WHERE id=#{id}
+    </delete>
+
+    <update id="updateAdoptAnimal" parameterType="adoptAnimal">
+        UPDATE t_adopt SET user_id=#{user.id},pet_id=#{pet.id},adoptTime=#{adoptTime},state=#{state} WHERE id=#{id}
+    </update>
+
+    <update id="updateAdoptState" parameterType="adoptAnimal">
+        UPDATE t_adopt SET state=#{state} WHERE id=#{id}
+    </update>
+
+    <update id="updateRelationUser" parameterType="int">
+         UPDATE t_adopt SET user_id=NULL WHERE user_id=#{user_id}
+    </update>
+
+    <update id="updateRelationPet" parameterType="int">
+        UPDATE t_adopt SET pet_id=NULL WHERE pet_id=#{pet_id}
+    </update>
+
+    <resultMap id="BaseAdoptAnimalMap" type="AdoptAnimal">
+        <id column="id" property="id"></id>
+        <result column="adoptTime" property="adoptTime"></result>
+        <result column="state" property="state"></result>
+        <association property="user" javaType="users">
+            <id property="id" column="uid"></id>
+            <result column="userName" property="userName"></result>
+            <result column="password" property="password"></result>
+            <result column="sex" property="sex"></result>
+            <result column="age" property="age"></result>
+            <result column="telephone" property="telephone"></result>
+            <result column="Email" property="Email"></result>
+            <result column="address" property="address"></result>
+            <result column="pic" property="pic"></result>
+            <result column="state" property="state"></result>
+        </association>
+        <association property="pet" javaType="pet">
+            <id column="pid" property="id"></id>
+            <result column="petName" property="petName"></result>
+            <result column="petType" property="petType"></result>
+            <result column="sex" property="sex"></result>
+            <result column="birthday" property="birthday"></result>
+            <result column="pic" property="pic"></result>
+            <result column="state" property="state"></result>
+            <result column="remark" property="remark"></result>
+        </association>
+
+    </resultMap>
+
+
+    <select id="getAdoptAnimals" parameterType="int" resultMap="BaseAdoptAnimalMap">
+        SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id
+    </select>
+
+    <select id="findById" resultMap="BaseAdoptAnimalMap" parameterType="int">
+        SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.id=#{id}
+    </select>
+
+    <select id="findByState" resultMap="BaseAdoptAnimalMap" parameterType="int">
+        SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.state=#{state}
+    </select>
+
+    <select id="findByName" resultMap="BaseAdoptAnimalMap">
+        SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p
+            <foreach collection="users" item="user" separator="," open="where userName in (" close=")">
+                #{user.userName}
+            </foreach>
+        AND t.user_id=u.id AND t.pet_id=p.id AND t.state=#{state}
+    </select>
+
+    <select id="findByAdoptTime" resultMap="BaseAdoptAnimalMap" parameterType="string">
+        SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id
+
+        <trim prefix="AND">
+            <if test="adoptTime !=null and adoptTime !=''">
+                t.adoptTime=#{adoptTime}
+            </if>
+        </trim>
+    </select>
+
+</mapper>

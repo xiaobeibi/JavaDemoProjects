@@ -1,0 +1,288 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    vertical-align:baseline;
+}
+*{margin:0px;padding:0px}
+
+
+h2{
+    margin-left: 300px;
+    margin-top: 20px;
+    background-color:  #D7EEFC;
+    width: 250px;
+    height: 60px;
+    font-size: 40px;
+
+}
+
+.name{
+    width: 400px;
+    height: 100px;
+    margin-top: 50px;
+}
+.name>span{
+    font-size: 40px;
+}
+
+.animal{
+    width: 200px;
+    height: 80px;
+    margin-top: 40px;
+    margin-left: 250px;
+
+}
+.group{
+    width: 450px;
+    height: 100px;
+    margin-top: 40px;
+}
+.animalX1{
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+.animalX1>img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.animalX1>span{
+    position: relative;
+    right: 60px;
+    float: right;
+    font-family: 'Molle', cursive;
+    color: #3ba2c1;
+    font-size: 30px;
+}
+.animalX1>p{
+    position: relative;
+    right: 50px;
+    float: right;
+    bottom: 30px;
+    font-size: 20px;
+}
+.animalX2{
+    width: 200px;
+    height: 100px;
+    margin-left: 40px;
+    float: left;
+}
+.animalX2>img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.animalX2>span{
+    position: relative;
+    right: 60px;
+    float: right;
+    font-family: 'Molle', cursive;
+    color: #3ba2c1;
+    font-size: 30px;
+}
+.animalX2>p{
+    position: relative;
+    right: 10px;
+    float: right;
+    bottom: 30px;
+    font-size: 20px;
+}
+
+.animalX3{
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+.animalX3>img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.animalX3>span{
+    position: relative;
+    right: 60px;
+    float: right;
+    font-family: 'Molle', cursive;
+    color: #3ba2c1;
+    font-size: 30px;
+}
+.animalX3>p{
+    position: relative;
+    right: 53px;
+    float: right;
+    bottom: 30px;
+    font-size: 20px;
+}
+.animalX4{
+    width: 200px;
+    height: 100px;
+    margin-left: 40px;
+    float: left;
+}
+.animalX4>img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.animalX4>span{
+    position: relative;
+    right: 60px;
+    float: right;
+    font-family: 'Molle', cursive;
+    color: #3ba2c1;
+    font-size: 30px;
+}
+.animalX4>p{
+    position: relative;
+    right: 75px;
+    float: right;
+    bottom: 30px;
+    font-size: 20px;
+}
+.animalX5{
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+.animalX5>img{
+    width: 85px;
+    height: 80px;
+    object-fit: cover;
+}
+.animalX5>span{
+    position: relative;
+    right: 60px;
+    float: right;
+    font-family: 'Molle', cursive;
+    color: #3ba2c1;
+    font-size: 30px;
+}
+.animalX5>p{
+    position: relative;
+    right: 75px;
+    float: right;
+    bottom: 30px;
+    font-size: 20px;
+}
+.animal_me{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    float: left;
+    bottom: 150px;
+    left: 60px;
+}
+.animal_me1{
+    width: 258px;
+    height: 100px;
+    margin: 0px;
+}
+.animal_me1>img{
+    position: relative;
+    bottom: -30px;
+    right: 2px;
+    width: 260px;
+    height: 100px;
+    object-fit: cover;
+}
+.animal_me2{
+    width: 258px;
+    height: 300px;
+    margin: 0px;
+    background-color: #D7EEFC;
+}
+.animal_me2>p{
+    font-size: 20px;
+    text-indent: 40px;
+}
+.animal_me3{
+    margin: 0px;
+}
+.animal_me3>img{
+    position: relative;
+    right: 3px;
+    width: 264px;
+    object-fit: cover;
+}
+.my_btn{
+    position: relative;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    margin-left: 450px;
+    margin-top: 10px;
+    bottom: 200px;
+}
+/**/
+.container{
+    width: 1000px;
+}
+.commentbox{
+    width: 900px;
+    margin: 20px auto;
+}
+.mytextarea {
+    width: 100%;
+    overflow: auto;
+    word-break: break-all;
+    height: 100px;
+    color: #000;
+    font-size: 1em;
+    resize: none;
+}
+.comment-list{
+    width: 900px;
+    margin: 20px auto;
+    clear: both;
+    padding-top: 20px;
+}
+.comment-list .comment-info{
+    position: relative;
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.comment-list .comment-info header{
+    width: 10%;
+    position: absolute;
+}
+.comment-list .comment-info header img{
+    width: 100%;
+    border-radius: 50%;
+    padding: 5px;
+}
+.comment-list .comment-info .comment-right{
+    padding:5px 0px 5px 11%;
+}
+.comment-list .comment-info .comment-right h3{
+    margin: 5px 0px;
+}
+.comment-list .comment-info .comment-right .comment-content-header{
+    height: 25px;
+}
+.comment-list .comment-info .comment-right .comment-content-header span,.comment-list .comment-info .comment-right .comment-content-footer span{
+    padding-right: 2em;
+    color: #aaa;
+}
+.comment-list .comment-info .comment-right .comment-content-header span,.comment-list .comment-info .comment-right .comment-content-footer span.reply-btn,.send,.reply-list-btn{
+    cursor: pointer;
+}
+.comment-list .comment-info .comment-right .reply-list {
+    border-left: 3px solid #ccc;
+    padding-left: 7px;
+}
+.comment-list .comment-info .comment-right .reply-list .reply{
+    border-bottom: 1px dashed #ccc;
+}
+.comment-list .comment-info .comment-right .reply-list .reply div span{
+    padding-left: 10px;
+}
+.comment-list .comment-info .comment-right .reply-list .reply p span{
+    padding-right: 2em;
+    color: #aaa;
+}
+

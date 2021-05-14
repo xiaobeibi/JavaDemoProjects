@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{base/layout}">
+<div layout:fragment="content">
+
+    <!--med_tittle_section-->
+    <div class="med_tittle_section">
+        <div class="med_img_overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="med_tittle_cont_wrapper">
+                        <div class="med_tittle_cont">
+                            <ol class="breadcrumb">
+                                <li><a th:href="@{/}">系统首页</a></li>
+                                <li><a th:href="@{/route/travelRouteListUI}">景区游玩路线列表</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- med_tittle_section End -->
+    <!--service section start-->
+    <div class="page-container">
+        <div class="container">
+            <div class="row med_toppadder50 med_bottompadder50">
+                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                    <div class="filter-type-box cy-tabs">
+                        <ul class="nav nav-tabs mb-10">
+                            <li class="active">
+                                <a href="javascript:void(0);"><i class="fa"></i>路线列表</a>
+                            </li>
+                            <li class="pull-right">
+                                <div class="search-tags">
+                                    <form th:action="@{/route/travelRouteListUI}" methed="post" name="search-form"
+                                          id="search-form" class="form-inline">
+                                        <div class="input-group">
+                                            <input type="text" name="searchName" th:value="${searchName}"
+                                                   class="form-control">
+                                            <span class="input-group-btn">
+                                                <input class="btn btn-info" type="submit" value="名称搜索"><i
+                                                    class="fa fa-search"></i>  </input>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div th:each="travelRoute:${page.content}" class="cy-news-grid-item">
+                        <div class="cy-media-body">
+                            <div class="cy-grid-body">
+                                <h5><a th:href="@{/route/travelRouteDetailsUI(id=${travelRoute.id})}"
+                                       th:text="'路线名称 : ' + ${travelRoute.name}"></a></h5>
+                                <small th:text="${travelRoute.describe}">
+
+                                </small>
+                            </div>
+                            <div class="cy-btm-info">
+                                <div class="cy-btm-date"></div>
+                                <div class="cy-btm-tags"><a href="javascript:void(0);" th:text="${travelRoute.address}">南京</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div th:insert="~{base/pageable}"></div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                    <div class="sider-card">
+                        <div class="sider-card-header">
+                            <h3>热门路线</h3>
+                        </div>
+                        <ul class="sider-list-model-a">
+                            <li th:each="travelRoute:${top10Route}">
+                                <a th:href="@{/route/travelRouteDetailsUI(id=${travelRoute.id})}"
+                                   th:text="${travelRoute.name}">XXXX</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--service section end-->
+
+    <!--js code-->
+    <script>
+        $('.filter-type-box span a').click(function () {
+            if ($(this).hasClass('active'))
+                $(this).removeClass('active')
+            else
+                $(this).addClass('active')
+        });
+    </script>
+</div>
+</html>

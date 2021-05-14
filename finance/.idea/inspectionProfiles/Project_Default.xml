@@ -1,0 +1,41 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="9">
+            <item index="0" class="java.lang.String" itemvalue="color" />
+            <item index="1" class="java.lang.String" itemvalue="opacity" />
+            <item index="2" class="java.lang.String" itemvalue="zindex" />
+            <item index="3" class="java.lang.String" itemvalue="count" />
+            <item index="4" class="java.lang.String" itemvalue="${ui.admin.username}" />
+            <item index="5" class="java.lang.String" itemvalue="admin" />
+            <item index="6" class="java.lang.String" itemvalue="${#dates.format(ui.createtime," />
+            <item index="7" class="java.lang.String" itemvalue="checked" />
+            <item index="8" class="java.lang.String" itemvalue="shiro:haspermission" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="8">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="p4" />
+            <item index="7" class="java.lang.String" itemvalue="p3" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="SpringJavaInjectionPointsAutowiringInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>

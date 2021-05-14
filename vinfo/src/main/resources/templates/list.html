@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title >疫情最新动态</title>
+    <link rel="stylesheet" th:href="@{/bootstrap.css}">
+    <script type="text/javascript" src="echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="echarts/china.js"></script>
+</head>
+<body style="background-color:#a6e1ec">
+
+<div style="border: 0px solid #000000; width: 1000px;margin: 0 auto;">
+    <br>
+    <div class="page-header"><h2>国内疫情情况如下</h2></div>
+    <br>
+
+    <div id="graph4" style="width: 980px;height:680px;"></div>
+    <script th:inline="javascript">
+        var dataStr = [[${mapData}]];
+
+        option = {
+            title: {
+                text: '疫情地图',
+                subtext: '仅供参考',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+
+            series: [
+                {
+                    name: '现存确诊',
+                    type: 'map',
+                    mapType: 'china',
+                    roam: false,
+                    label: {
+                        normal: {
+                            // formatter: '{b}',
+                            position: 'center',
+                            show: true,
+                            textStyle: {
+                                color: 'rgba(0,0,0,0.4)'
+                            }
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    data: JSON.parse(dataStr)
+                }
+            ]
+        };
+        var chart = echarts.init(document.getElementById("graph4"))
+        chart.setOption(option)
+
+    </script>
+
+
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="graph2" style="width: 800px;height:500px;"></div>
+
+    <!--在js中接收服务端返回数据-->
+    <script th:inline="javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('graph2'));
+
+        var nameStr = [[${nameList}]];
+        var fromAbroadStr = [[${fromAbroadList}]];
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {  // 标题组件
+                text: '境外输入省市TOP10'
+            },
+            tooltip: {  // 提示框组件
+                trigger: 'axis'
+            },
+            xAxis: {
+                // 转化为json对象
+                data: JSON.parse(nameStr)
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '境外输入',
+                    type: 'bar',
+                    barWidth: '60%',
+                    data: JSON.parse(fromAbroadStr)
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+    <br>
+
+
+    <div id="graph1" style="width: 800px;height:500px;"></div>
+
+    <script th:inline="javascript">
+        var myChart = echarts.init(document.getElementById('graph1'));
+
+        var dateStr = [[${dateList}]];
+        var nowConfirmStr = [[${nowConfirmList}]];
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {  // 标题组件
+                text: '全国现有确诊趋势'
+            },
+            tooltip: {  // 提示框组件
+                trigger: 'axis'
+            },
+            legend: {  // 曲线含义说明
+                data: ['现有确诊']
+            },
+            xAxis: {
+                // 转化为json对象
+                data: JSON.parse(dateStr)
+                // data: dateStr
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                name: '现有确诊',
+                data: JSON.parse(nowConfirmStr),
+                // data: nowConfirmStr,
+                type: 'line'
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+
+    <div id="graph5" style="width: 800px;height:500px;"></div>
+
+    <script th:inline="javascript">
+        var myChart = echarts.init(document.getElementById('graph5'));
+
+        var addDateStr = [[${addDateList}]];
+        var addConfirmStr = [[${addConfirmList}]];
+        var addSuspectStr = [[${addSuspectList}]];
+
+        var option = {
+            title: {  // 标题组件
+                text: '全国疫情新增趋势'
+            },
+            tooltip: {  // 提示框组件
+                trigger: 'axis'
+            },
+            legend: {  // 曲线含义说明
+                data: ['新增确诊', '新增疑似']
+            },
+            xAxis: {
+                // 转化为json对象
+                data: JSON.parse(addDateStr)
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                name: '新增确诊',
+                data: JSON.parse(addConfirmStr),
+                type: 'line'
+            }, {
+                name: '新增疑似',
+                data: JSON.parse(addSuspectStr),
+                type: 'line'
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+
+    <br>
+    <div id="graph3" style="width: 800px;height:500px;"></div>
+
+    <script th:inline="javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('graph3'));
+
+        var str = [[${pieList}]];
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {  // 标题组件
+                text: '全国现有确诊构成'
+            },
+            tooltip: {  // 提示框组件
+                trigger: 'axis'
+            },
+            series: [
+                {
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: JSON.parse(str)
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+    <br>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th><p>地区</p></th>
+            <th><p>现有确诊</p></th>
+            <th><p>累计确诊</p></th>
+            <th><p>治愈</p></th>
+            <th><p>死亡</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="data:${dataList}">
+            <td th:text="${data.area}">name</td>
+            <td th:text="${data.nowConfirm}">nowConfirm</td>
+            <td th:text="${data.confirm}">confirm</td>
+            <td th:text="${data.heal}">heal</td>
+            <td th:text="${data.dead}">dead</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

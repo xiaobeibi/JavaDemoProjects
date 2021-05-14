@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>在线播放</title>
+    <link rel="stylesheet" href="/dplayer/DPlayer.min.css"/>
+    <script src="/js/jquery.min.js"></script>
+<!--    <script src="/flv/flv.js"></script>-->
+<!--    <script src="/flv/flv.min.js"></script>-->
+<!--    <script src="/dplayer/DPlayer.min.js"></script>-->
+
+    <style>
+        .blur {
+            filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+            -webkit-filter: blur(7px); /* Chrome, Opera */
+            -moz-filter: blur(7px);
+            -ms-filter: blur(7px);
+            filter: blur(7px);
+            filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=7, MakeShadow=false); /* IE6~IE9 */
+        }
+        /* 媒体查询：适配移动端(0-480px屏幕)的样式 */
+        @media only screen and (max-width: 480px) {
+            .input-group {
+                margin-top: 7px !important;
+            }
+        }
+        .fullscreen {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            font-size: 22px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="imgbackground" class="blur"
+         style="background: url('images/bg1.jpg');top:0; position: fixed;width: 100%;height: 100%;z-index: -1;">
+    </div>
+    <div id="container" style="text-align: center">
+        <p id="fileName" th:text="${fileName}" style="font-size: x-large;color: white;"></p>
+        <div id="dplayer" class="dplayer-danmaku" style="display: inline-block;"></div>
+<!--        <div id="infobox" style="width: 200px;background-color: whitesmoke;display: inline-block;"></div>-->
+        <p id="author" th:text="${author}" style="display: none"></p>
+        <p id="filePath" th:text="${filePath}" style="display: none"></p>
+    </div>
+
+    <script>
+        $(function () {
+            var disNowFileName = $("#fileName").text();
+            disNowFileName = decodeURI(decodeURI(disNowFileName));
+            $("#fileName").text(disNowFileName);
+            var suffix = disNowFileName.substring(disNowFileName.lastIndexOf(".")+1).toLowerCase();
+
+            // avi、wmv、3gp
+            if(suffix=="avi" || suffix=="wmv" || suffix=="3gp") {
+                // 只支持IE浏览器
+                if (isIE() == false) {
+                    alert("avi、wmv和3gp格式在线播放只支持ie内核的浏览器，请复制链接后到ie浏览器打开！");
+                    return;
+                }
+                var txt=document.createElement("div");
+                txt.innerHTML='<object id="MediaPlayer" width="100%" height="100%" class="fullscreen" classid="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95" codebase="http://www.microsoft.com/Windows/MediaPlayer/">' +
+                    '<param name="Filename" value="'+ document.getElementById("filePath").innerText + '">' +
+                    '<param name="AutoStart" value="true">'+
+                    '<param name="ShowControls" value="true">'+
+                    '<param name="BufferingTime" value="2">'+
+                    '<param name="ShowStatusBar" value="true">'+
+                    '<param name="InvokeURLs" value="false">'+
+                    '<embed width="100%" height="100%" class="fullscreen" type="application/x-mplayer2" autostart="1" volume="100" enabled="1" showstatusbar="1" showdisplay="1" showcontrols="1" pluginspage="http://www.microsoft.com/Windows/MediaPlayer/" CODEBASE="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,0,0,0"  src="'+document.getElementById("filePath").innerText+'">' +
+                    '</object>';
+                document.getElementById("container").appendChild(txt);
+                $("#dplayer").hide();
+            }
+            // rmvb、rm
+            else if(suffix=="rmvb" || suffix=="rm") {
+                // 不支持IE浏览器
+                if (isIE() == true) {
+                    alert("rmvb格式在线播放不支持ie内核的浏览器，请复制链接后到chrome浏览器打开！");
+                    return;
+                }
+                // alert("在rmvb播放时请勿点右键！");
+                var realfilepath = document.getElementById("filePath").innerText;
+                var txt=document.createElement("div");
+                txt.innerHTML='<object id="MediaPlayer" classid="clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA" >' +
+                    '<param name="SRC" value =' + realfilepath + '>'+
+                    // '<param name="_ExtentX" value="9313" >'+
+                    // '<param name="_ExtentY" value="7620" >'+
+                    '<param name="AUTOSTART" value="1" >'+
+                    '<param name="SHUFFLE" value="0" >'+
+                    '<param name="PREFETCH" value="0" >'+
+                    '<param name="NOLABELS" value="0" >'+
+                    // '<param name="CONTROLS" value="Imagewindow,ControlPanel" >'+
+                    '<param name="CONSOLE" value="Clip1" >'+
+                    '<param name="LOOP" value="0" >'+
+                    '<param name="NUMLOOP" value="0" >'+
+                    '<param name="CENTER" value="0" >'+
+                    '<param name="MAINTAINASPECT" value="0" >'+
+                    '<param name="BACKGROUNDCOLOR" value="#000000" >'+
+                    '<embed width="1280px" height="800px"type="audio/x-pn-realaudio-plugin" maintainaspect="0" prefetch="0" console="Clip2"  controls="ImageWindow,ControlPanel" autostart="true" src="'+realfilepath+'">' +
+                    '</object>';
+                document.getElementById("container").appendChild(txt);
+                $("#dplayer").hide();
+            }
+            // MP4、MKV、FLV
+            else {
+                // // 不支持ie浏览器
+                // if (isIE() == true) {
+                //     alert("mp4格式不支持ie内核的浏览器，请使用Chrome内核的浏览器！");
+                //     return;
+                // }
+                $.getScript('/flv/flv.min.js',function(){
+                    $.getScript('/dplayer/DPlayer.min.js',function(){
+                        var dplayer = new DPlayer({
+                            element: document.getElementById('dplayer'),
+                            autoplay: true,
+                            theme: '#FADFA3',
+                            loop: false,
+                            screenshot: true, //截屏
+                            hotkey: true,
+                            video: {  //视频源 包含不同分辨率源
+                                quality: [{
+                                    name: '普清',
+                                    url: document.getElementById("filePath").innerText
+                                }],
+                                defaultQuality: 0,
+                                pic: '',
+                                type: 'auto'
+                            }
+                        });
+                    });
+                });
+            }
+        });
+
+        // 判断是否为ie浏览器
+        function isIE() { //ie?
+            if (!!window.ActiveXObject || "ActiveXObject" in window)
+                return true;
+            else
+                return false;
+        }
+    </script>
+</body>
+</html>

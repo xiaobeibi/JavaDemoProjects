@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{base/layout}">
+<div layout:fragment="content">
+    <!--med_tittle_section-->
+    <div class="med_tittle_section">
+        <div class="med_img_overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="med_tittle_cont_wrapper">
+                        <div class="med_tittle_cont">
+                            <ol class="breadcrumb">
+                                <li><a th:href="@{/}">系统首页</a></li>
+                                <li>注册</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- med_tittle_section End -->
+    <!--service section start-->
+    <div class="page-container">
+        <div class="container">
+            <div class="row med_toppadder50 med_bottompadder50">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
+                    <form name="form-submit" id="form-submit" method="post" class="cy-form boxed">
+                        <header>新用户注册</header>
+                        <fieldset>
+                            <section>
+                                <label class="input">
+                                    <i class="icon-append fa fa-user"></i>
+                                    <input name="username" id="username" required type="text" placeholder="用户名">
+                                    <b class="tooltip tooltip-bottom-right">请输入正确的用户名,可用于登录和找回密码(必选)</b>
+                                </label>
+                            </section>
+                            <!--<section>-->
+                                <!--<label class="input">-->
+                                    <!--<i class="icon-append fa fa-envelope"></i>-->
+                                    <!--<input required type="email" placeholder="邮箱地址">-->
+                                    <!--<b class="tooltip tooltip-bottom-right">用于验证用户(必选)</b>-->
+                                <!--</label>-->
+                            <!--</section>-->
+
+                            <section>
+                                <label class="input">
+                                    <i class="icon-append fa fa-lock"></i>
+                                    <input name="password" id="password" required type="password" placeholder="密码">
+                                    <b class="tooltip tooltip-bottom-right">建议使用字母加数字或符号组合(必选)</b>
+                                </label>
+                            </section>
+
+                            <!--<section>-->
+                                <!--<label class="input">-->
+                                    <!--<i class="icon-append fa fa-lock"></i>-->
+                                    <!--<input required type="password" placeholder="确认密码">-->
+                                    <!--<b class="tooltip tooltip-bottom-right">请重复输入注册密码(必选)</b>-->
+                                <!--</label>-->
+                            <!--</section>-->
+                            <!--<section>-->
+                                <!--<label class="input">-->
+                                    <!--<i class="icon-append fa fa-building"></i>-->
+                                    <!--<input type="text" placeholder="单位">-->
+                                    <!--<b class="tooltip tooltip-bottom-right">请输入单位名称(可选)</b>-->
+                                <!--</label>-->
+                            <!--</section>-->
+                            <!--<div class="row">-->
+                                <!--<section class="col col-md-6">-->
+                                    <!--<label class="input">-->
+                                        <!--<i class="icon-append fa fa-key"></i>-->
+                                        <!--<input required type="text" placeholder="验证码">-->
+                                        <!--<b class="tooltip tooltip-bottom-right">输入验证码</b>-->
+                                    <!--</label>-->
+                                <!--</section>-->
+                                <!--<section class="col col-md-6">-->
+                                    <!--<label class="input med_toppadder5">-->
+                                        <!--<img src="images/vcode.jpg">-->
+                                        <!--<a class="change" href="javascript:void(0);">换一张</a>-->
+                                    <!--</label>-->
+                                <!--</section>-->
+                            <!--</div>-->
+                            <!--<section>-->
+                                <!--<label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>我已经阅读并接受 <a-->
+                                        <!--href="javascript:void(0);">免责声明</a></label>-->
+                            <!--</section>-->
+                        </fieldset>
+
+
+                        <footer>
+                            <button type="reset" class="button button-secondary">重 置</button>
+                            <button type="button" onclick="saveForm()" class="button">注 册</button>
+                        </footer>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script th:inline="javascript">
+
+        function saveForm() {
+            // var username = $("input[name='username']").val();
+            // if ($.trim(username) == '') {
+            //     layer.msg("username不能为空");
+            // return;
+            // }
+            // var password = $("input[name='password']").val();
+            // console.log()
+            // if ($.trim(password) == '') {
+            //     layer.msg("password不能为空");
+            // return;
+            // }
+            $.ajax({
+                url: '/travel/register',
+                data: $("#form-submit").serialize(),
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    console.log(result);
+                    if (result.code == 200) {
+                        window.location.href = "/travel/loginUI";
+                    }else {
+                        alert(result.message);
+                    }
+                }
+            })
+        }
+    </script>
+</div>
+
+</html>

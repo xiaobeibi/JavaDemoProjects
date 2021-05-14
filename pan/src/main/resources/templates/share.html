@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>文件下载</title>
+    <script src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <!--在线音乐播放功能-->
+    <link rel="stylesheet" href="/aplayer/APlayer.min.css">
+    <script src="/aplayer/APlayer.min.js"></script>
+
+    <style>
+        a {
+            font-family: "微软雅黑";
+            cursor: pointer;
+        }
+
+        .loading {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            line-height: 56px;
+            background: #000;
+            color: #fff;
+            padding-left: 60px;
+            font-size: 15px;
+            opacity: 0.7;
+            z-index: 9999;
+            filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+        }
+
+        /*.btn {*/
+            /*padding: 6px 30px;*/
+        /*}*/
+
+        .blur {
+            filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+            -webkit-filter: blur(7px); /* Chrome, Opera */
+            -moz-filter: blur(7px);
+            -ms-filter: blur(7px);
+            filter: blur(7px);
+            filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=7, MakeShadow=false); /* IE6~IE9 */
+        }
+        .Filebox a{display:inline-block; width:100%; font-size:200px; text-align:center; vertical-align:middle;cursor:default}
+        .Filebox a img{vertical-align:middle; padding:2px; border:1px solid #beceeb;cursor:pointer}
+
+        #SaveToPan {
+            margin-right: 100px;
+        }
+
+        #SaveToPan,
+        #DownloadFile {
+            height: 40px;
+            width: 150px;
+            font-size: 16px;
+            border-radius: 10px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Modal 登录-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">登录</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center">
+                    <label for="userName" style="width: 60px;">用户名</label>
+                    &nbsp;&nbsp;
+                    <input id="userName" type="text" name="email" placeholder="用户名" tabindex="1"  />
+                </div>
+                <div style="text-align: center; margin-top: 20px">
+                    <label for="password" style="width: 60px;">密码</label>
+                    &nbsp;&nbsp;
+                    <input id="password" type="password" name="password" placeholder="密码" tabindex="2" />
+                </div>
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <button type="button" id="doLogin" class="btn btn-primary">登录</button>
+                <button type="button" id="closeLogin" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 图片预览-->
+<div class="modal fade" id="imgviewDlg" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">图片预览</h4>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <img id="imgview" src="/images/cf_code.jpg" style="max-height: 350px;display: inline-block">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="loading" class="loading" style="display: none;">
+    <div style="background:url(images/loading.gif) no-repeat 10px 50%;
+                width:56px;
+                height:56px;
+                position: absolute;
+                top:50%;
+                left:40%;
+                ">
+    </div>
+    <p style="position: absolute;top:50%;left:45%;margin: 0;">文件生成中，请稍候……</p>
+</div>
+<span id="downloadLink" th:text="${link}" style="display: none;"></span>
+<span id="downloadLinkDecoder" th:text="${linkDecoder}" style="display: none;"></span>
+
+
+<div id="imgbackground" class="blur"
+     style="background: url('images/bg1.jpg');top:0; position: fixed;width: 100%;height: 100%;z-index: -1;">
+</div>
+<div id="player_music"></div>
+<div id="container" class="container"
+     style="width: 90%;height:500px;margin-top:20px;margin-bottom: 20px; background-color: rgba(255,255,255,0.7);border-radius: 10px;">
+    <div class="header clearfix" style="margin: 0px; ">
+        <img src="/images/pan-top.png" style="max-height: 50px;">
+        <span>
+                <ul class="nav nav-pills pull-right" style="margin-top: 10px;">
+                    <li role="presentation"><a id="userLName" href="/" th:text="'您好，'+${author}"
+                                               style="color: firebrick;background: unset;"></a></li>
+                    <!-- Button trigger modal -->
+                    <!--<button type="button" id="loginBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
+                     <!--登录-->
+                    <!--</button>-->
+                    <li id="loginBtn" data-toggle="modal"  data-target="#exampleModal" role="presentation"><a style="cursor: pointer">登录</a></li>
+                    <li id="homeBtn" role="presentation"><a href="/">主页</a></li>
+                    <!--<li id="contactBtn" role="presentation"><a data-toggle="modal" data-target="#donateDlg">捐助</a></li>-->
+                    <li id="quitBtn" role="presentation"><a style="cursor: pointer">退出</a></li>
+                </ul>
+            </span>
+    </div>
+    <div style="height: 405px">
+    <div class="Filebox" style="height: 285px;display: none;">
+        <a>
+        <img src="/images/p_file.png" style="height: 150px;width: 150px;"/></a>
+    </div>
+    <div>
+    <p style="text-align: center"><a id="FileName" onclick="fileplay();"></a></p>
+    </div>
+
+    <div style="height: 100px;text-align:center">
+        <div style="width: 50%;float: left">
+        <input type="button" class="btn btn-primary " id="SaveToPan" onclick="SaveTo()" value="保存到网盘">
+        </div>
+        <div style="width: 50%;float: left">
+        <input type="button" class="btn btn-primary" id="DownloadFile" onclick="download()" value="本地下载">
+        </div>
+        <div style="width: 100%;height:60px;float: left">
+        </div>
+    </div>
+    </div>
+    <a href="/downloadApk?filename=pan_0.1.0.apk&&downloadPath=share" style="float: right;font-size: 16px">下载客户端的apk</a>
+    <a  id="downloadApp" style="display: none"><span>此链接唤起app</span></a>
+
+</div>
+<script>
+    // 文件播放路径
+    var downloadurl="";
+    // 音乐播放对象
+    var apa = undefined;
+    // 用户名
+    var username;
+
+    //简单登录操作
+    $("#doLogin").click(function (e) {
+            $.ajax({
+                type: "POST",
+                url: "/login",
+                data: {
+                    "userName": $("#userName").val(),
+                    "password": $("#password").val()
+                },
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    if (data.result == "1") {
+                        //关闭按钮
+                        $("#closeLogin").click();
+                        $("#userLName").css("display","block");
+                        $("#userLName").text("您好，" + data.userName);
+                        alert("登录成功！");
+                        $("#loginBtn").css("display","none");
+                    } else if (data.result == "2") {
+                        alert("密码错误！");
+                    } else {
+                        alert("用户不存在或账号密码不能为空！");
+                    }
+                }
+            });
+    });
+
+    $(function () {
+        var browser={
+            versions:function(){
+                var u = window.navigator.userAgent;
+                return {
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/)||!!u.match(/AppleWebKit/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否为iPad
+                    webApp: u.indexOf('Safari') == -1 ,//是否为web应用程序，没有头部与底部
+                    weixin: u.indexOf('MicroMessenger') == -1 //是否为微信浏览器
+                };
+            }()
+        }
+        var nowcode = $("#downloadLink").text();
+        console.log(browser.versions.mobile);
+        if (browser.versions.mobile){
+            var linkDecoder=$("#downloadLinkDecoder").text();
+            var el_a = document.getElementById("downloadApp");
+            el_a.href="wut://pan/download?downloadlink="+linkDecoder;
+            console.log( el_a.href);
+            $('#downloadApp span').trigger('click');
+        }
+
+        // 不支持ie浏览器
+        if (isIE() == true) {
+            alert("网站不支持ie内核的浏览器，请使用Chrome内核的浏览器，现在为您退出！");
+            $("#quitBtn").click();
+            window.opener = null;
+            window.open('', '_self');
+            window.close();
+        }
+        var Username=$("#userLName").text();
+        username = Username.slice(3);
+        if (username!="null"){
+            $("#loginBtn").css("display","none");
+        }else {
+            $("#userLName").css("display","none");
+        }
+        $.ajax({
+            type: "POST",
+            url: "/shareCallBack",
+            data: {link: nowcode},
+            dataType: "json",
+            success: function (data) {
+                if (data.success) {
+                    var nowLink = data.msg;
+                    downloadurl = nowLink;
+                    var name_list = nowLink.split("/");
+                    var file_name = name_list[name_list.length - 1];
+                    $(".Filebox").css("display","block")
+                    $("#FileName").text(file_name);
+                    $("#SaveToPan").css({
+                        'display':'block',
+                        'float':'right',
+                        'margin-right':'10px',
+                        });
+                    $("#DownloadFile").css({
+                        'display':'block',
+                        'margin-left':'10px',
+                        });
+                    // alert(file_name);
+                }
+            }
+        });
+    });
+
+    function SaveTo() {
+        //alert("点击判断是否登录");
+        var nowcode = $("#downloadLink").text();
+        $.ajax({
+            type: "POST",
+            url: "/shareToMyPan",
+            data: {link: nowcode},
+            dataType: "json",
+            success: function (data) {
+                if(data.msg=="未登录"){
+                    //未登录
+                    alert(data.msg);
+//                    window.location.href = '/';
+                    $("#loginBtn").click();
+                    //这做一个模态框类似的登录接口，还是留在当前界面
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+    }
+
+    function downloadFile(url, fileName_download) {
+        try {
+            var elemIF = document.createElement("a");
+            elemIF.src = url;
+            elemIF.href = url;
+            elemIF.download = fileName_download;
+            elemIF.style.display = "none";
+            document.body.appendChild(elemIF);
+            elemIF.click();
+        } catch (e) {
+            alert(e)
+        }
+        // window.open(url);
+    }
+
+    function isIE() { //ie?
+        if (!!window.ActiveXObject || "ActiveXObject" in window)
+            return true;
+        else
+            return false;
+    }
+
+    // 下载文件按钮响应函数
+    function download() {
+        // 不支持ie浏览器
+        if (isIE() == true) {
+            alert("不支持ie内核的浏览器下载，请使用Chrome内核的浏览器，现在为您退出！");
+            window.opener = null;
+            window.open('', '_self');
+            window.close();
+        }
+
+        $("#loading").show();
+        // var nowcode =window.localStorage.getItem("filecode");
+        var nowcode = $("#downloadLink").text();
+        $.ajax({
+            type: "POST",
+            url: "/shareCallBack",
+            data: {link: nowcode},
+            dataType: "json",
+            success: function (data) {
+                console.log("success!");
+                if (data.success) {
+                    $("#loading").hide();
+                    var nowLink = data.msg;
+                    var name_list = nowLink.split("/");
+                    var file_name = name_list[name_list.length - 1];
+                    $("#loading").hide();
+                    downloadFile(nowLink, file_name);
+                }
+            }
+        });
+    };
+
+    $('#quitBtn').click(function (e) {
+        $.ajax({
+            type: "GET",
+            url: "/quit",
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/";
+            }
+        });
+    });
+
+    // 音乐播放响应函数
+    function musicplay() {
+        if (apa==undefined) {
+            var ap1 = new APlayer({
+                container: document.getElementById('player_music'),
+                autoplay: true,
+                theme: '#FADFA3',
+                fixed:true,
+                audio: [{
+                    name: $("#FileName").text(),
+                    artist: username,
+                    url: downloadurl,
+                    cover: '/images/aplayer.png'
+                }]
+            });
+            apa = ap1;
+        }
+        else {
+            apa.list.clear();
+            apa.list.add([{
+                name: $("#FileName").text(),
+                artist: username,
+                url: downloadurl,
+                cover: '/images/aplayer.png'
+            }]);
+            apa.play();
+        }
+    }
+
+    // 视频播放响应函数
+    function videoplay(){
+        window.open(encodeURI(encodeURI("/onlineplayer?fileName=" + $("#FileName").text() + "&filePath=" + downloadurl)));
+    }
+
+    // 文件播放响应，根据不同的文件进行文件播放
+    function fileplay() {
+        var disNowFileName = $("#FileName").text();
+        var suffix = disNowFileName.substring(disNowFileName.lastIndexOf(".")+1).toLowerCase();
+        if(suffix=="mp3") {
+            musicplay();
+        }
+        else if(suffix=="mp4" || suffix=="flv" || suffix=="avi" || suffix=="wmv" || suffix=="mkv" || suffix=="rmvb" || suffix=="rm" || suffix=="3gp"){
+            videoplay();
+        }
+        else if(suffix=="jpg" || suffix=="jpeg" || suffix=="png" || suffix=="gif" || suffix=="bmp"){
+            document.getElementById("imgview").src=downloadurl;
+            $('#imgviewDlg').modal('show');
+        }else return;
+    }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,7909 @@
+{
+  "chinaDayList": [
+    {
+      "confirm": 41,
+      "suspect": 0,
+      "dead": 1,
+      "heal": 0,
+      "nowConfirm": 0,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "2.4",
+      "healRate": "0.0",
+      "date": "01.13",
+      "noInfect": 0
+    },
+    {
+      "confirm": 41,
+      "suspect": 0,
+      "dead": 1,
+      "heal": 0,
+      "nowConfirm": 0,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "2.4",
+      "healRate": "0.0",
+      "date": "01.14",
+      "noInfect": 0
+    },
+    {
+      "confirm": 41,
+      "suspect": 0,
+      "dead": 2,
+      "heal": 5,
+      "nowConfirm": 0,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "4.9",
+      "healRate": "12.2",
+      "date": "01.15",
+      "noInfect": 0
+    },
+    {
+      "confirm": 45,
+      "suspect": 0,
+      "dead": 2,
+      "heal": 8,
+      "nowConfirm": 0,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "4.4",
+      "healRate": "17.8",
+      "date": "01.16",
+      "noInfect": 0
+    },
+    {
+      "confirm": 62,
+      "suspect": 0,
+      "dead": 2,
+      "heal": 12,
+      "nowConfirm": 0,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "3.2",
+      "healRate": "19.4",
+      "date": "01.17",
+      "noInfect": 0
+    },
+    {
+      "confirm": 198,
+      "suspect": 0,
+      "dead": 3,
+      "heal": 17,
+      "nowConfirm": 0,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "1.5",
+      "healRate": "8.6",
+      "date": "01.18",
+      "noInfect": 0
+    },
+    {
+      "confirm": 275,
+      "suspect": 0,
+      "dead": 4,
+      "heal": 18,
+      "nowConfirm": 0,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "1.5",
+      "healRate": "6.5",
+      "date": "01.19",
+      "noInfect": 0
+    },
+    {
+      "confirm": 291,
+      "suspect": 54,
+      "dead": 6,
+      "heal": 25,
+      "nowConfirm": 291,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "2.1",
+      "healRate": "8.6",
+      "date": "01.20",
+      "noInfect": 0
+    },
+    {
+      "confirm": 440,
+      "suspect": 37,
+      "dead": 9,
+      "heal": 25,
+      "nowConfirm": 431,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "2.0",
+      "healRate": "5.7",
+      "date": "01.21",
+      "noInfect": 0
+    },
+    {
+      "confirm": 574,
+      "suspect": 393,
+      "dead": 17,
+      "heal": 25,
+      "nowConfirm": 557,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "3.0",
+      "healRate": "4.4",
+      "date": "01.22",
+      "noInfect": 0
+    },
+    {
+      "confirm": 835,
+      "suspect": 1072,
+      "dead": 25,
+      "heal": 34,
+      "nowConfirm": 776,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "3.0",
+      "healRate": "4.1",
+      "date": "01.23",
+      "noInfect": 0
+    },
+    {
+      "confirm": 1297,
+      "suspect": 1965,
+      "dead": 41,
+      "heal": 38,
+      "nowConfirm": 1218,
+      "nowSevere": 0,
+      "importedCase": 0,
+      "deadRate": "3.2",
+      "healRate": "2.9",
+      "date": "01.24",
+      "noInfect": 0
+    },
+    {
+      "confirm": 1985,
+      "suspect": 2684,
+      "dead": 56,
+      "heal": 49,
+      "nowConfirm": 1880,
+      "nowSevere": 324,
+      "importedCase": 0,
+      "deadRate": "2.8",
+      "healRate": "2.5",
+      "date": "01.25",
+      "noInfect": 0
+    },
+    {
+      "confirm": 2761,
+      "suspect": 5794,
+      "dead": 80,
+      "heal": 51,
+      "nowConfirm": 2630,
+      "nowSevere": 461,
+      "importedCase": 0,
+      "deadRate": "2.9",
+      "healRate": "1.8",
+      "date": "01.26",
+      "noInfect": 0
+    },
+    {
+      "confirm": 4535,
+      "suspect": 6973,
+      "dead": 106,
+      "heal": 60,
+      "nowConfirm": 4369,
+      "nowSevere": 976,
+      "importedCase": 0,
+      "deadRate": "2.3",
+      "healRate": "1.3",
+      "date": "01.27",
+      "noInfect": 0
+    },
+    {
+      "confirm": 5997,
+      "suspect": 9239,
+      "dead": 132,
+      "heal": 103,
+      "nowConfirm": 5762,
+      "nowSevere": 1239,
+      "importedCase": 0,
+      "deadRate": "2.2",
+      "healRate": "1.7",
+      "date": "01.28",
+      "noInfect": 0
+    },
+    {
+      "confirm": 7736,
+      "suspect": 12167,
+      "dead": 170,
+      "heal": 124,
+      "nowConfirm": 7442,
+      "nowSevere": 1370,
+      "importedCase": 0,
+      "deadRate": "2.2",
+      "healRate": "1.6",
+      "date": "01.29",
+      "noInfect": 0
+    },
+    {
+      "confirm": 9720,
+      "suspect": 15238,
+      "dead": 213,
+      "heal": 171,
+      "nowConfirm": 9336,
+      "nowSevere": 1527,
+      "importedCase": 0,
+      "deadRate": "2.2",
+      "healRate": "1.8",
+      "date": "01.30",
+      "noInfect": 0
+    },
+    {
+      "confirm": 11821,
+      "suspect": 17988,
+      "dead": 259,
+      "heal": 243,
+      "nowConfirm": 11319,
+      "nowSevere": 1795,
+      "importedCase": 0,
+      "deadRate": "2.2",
+      "healRate": "2.1",
+      "date": "01.31",
+      "noInfect": 0
+    },
+    {
+      "confirm": 14411,
+      "suspect": 19544,
+      "dead": 304,
+      "heal": 328,
+      "nowConfirm": 13779,
+      "nowSevere": 2110,
+      "importedCase": 0,
+      "deadRate": "2.1",
+      "healRate": "2.3",
+      "date": "02.01",
+      "noInfect": 0
+    },
+    {
+      "confirm": 17238,
+      "suspect": 21558,
+      "dead": 361,
+      "heal": 475,
+      "nowConfirm": 16402,
+      "nowSevere": 2296,
+      "importedCase": 0,
+      "deadRate": "2.1",
+      "healRate": "2.8",
+      "date": "02.02",
+      "noInfect": 0
+    },
+    {
+      "confirm": 20471,
+      "suspect": 23214,
+      "dead": 425,
+      "heal": 632,
+      "nowConfirm": 19414,
+      "nowSevere": 2788,
+      "importedCase": 0,
+      "deadRate": "2.1",
+      "healRate": "3.1",
+      "date": "02.03",
+      "noInfect": 0
+    },
+    {
+      "confirm": 24363,
+      "suspect": 23260,
+      "dead": 491,
+      "heal": 892,
+      "nowConfirm": 22980,
+      "nowSevere": 3219,
+      "importedCase": 0,
+      "deadRate": "2.0",
+      "healRate": "3.7",
+      "date": "02.04",
+      "noInfect": 0
+    },
+    {
+      "confirm": 28060,
+      "suspect": 24702,
+      "dead": 564,
+      "heal": 1153,
+      "nowConfirm": 26343,
+      "nowSevere": 3859,
+      "importedCase": 0,
+      "deadRate": "2.0",
+      "healRate": "4.1",
+      "date": "02.05",
+      "noInfect": 0
+    },
+    {
+      "confirm": 31211,
+      "suspect": 26359,
+      "dead": 637,
+      "heal": 1542,
+      "nowConfirm": 29032,
+      "nowSevere": 4821,
+      "importedCase": 0,
+      "deadRate": "2.0",
+      "healRate": "4.9",
+      "date": "02.06",
+      "noInfect": 0
+    },
+    {
+      "confirm": 34598,
+      "suspect": 27657,
+      "dead": 723,
+      "heal": 2052,
+      "nowConfirm": 31823,
+      "nowSevere": 6101,
+      "importedCase": 0,
+      "deadRate": "2.1",
+      "healRate": "5.9",
+      "date": "02.07",
+      "noInfect": 0
+    },
+    {
+      "confirm": 37251,
+      "suspect": 28942,
+      "dead": 812,
+      "heal": 2651,
+      "nowConfirm": 33788,
+      "nowSevere": 6188,
+      "importedCase": 0,
+      "deadRate": "2.2",
+      "healRate": "7.1",
+      "date": "02.08",
+      "noInfect": 0
+    },
+    {
+      "confirm": 40235,
+      "suspect": 23589,
+      "dead": 909,
+      "heal": 3283,
+      "nowConfirm": 36043,
+      "nowSevere": 6484,
+      "importedCase": 0,
+      "deadRate": "2.3",
+      "healRate": "8.2",
+      "date": "02.09",
+      "noInfect": 0
+    },
+    {
+      "confirm": 42708,
+      "suspect": 21675,
+      "dead": 1017,
+      "heal": 3998,
+      "nowConfirm": 37693,
+      "nowSevere": 7333,
+      "importedCase": 0,
+      "deadRate": "2.4",
+      "healRate": "9.4",
+      "date": "02.10",
+      "noInfect": 0
+    },
+    {
+      "confirm": 44730,
+      "suspect": 16067,
+      "dead": 1114,
+      "heal": 4742,
+      "nowConfirm": 38874,
+      "nowSevere": 8204,
+      "importedCase": 0,
+      "deadRate": "2.5",
+      "healRate": "10.6",
+      "date": "02.11",
+      "noInfect": 0
+    },
+    {
+      "confirm": 59882,
+      "suspect": 13435,
+      "dead": 1368,
+      "heal": 5915,
+      "nowConfirm": 52599,
+      "nowSevere": 8030,
+      "importedCase": 0,
+      "deadRate": "2.3",
+      "healRate": "9.9",
+      "date": "02.12",
+      "noInfect": 0
+    },
+    {
+      "confirm": 63932,
+      "suspect": 10109,
+      "dead": 1381,
+      "heal": 6728,
+      "nowConfirm": 55823,
+      "nowSevere": 10204,
+      "importedCase": 0,
+      "deadRate": "2.2",
+      "healRate": "10.5",
+      "date": "02.13",
+      "noInfect": 0
+    },
+    {
+      "confirm": 66576,
+      "suspect": 8969,
+      "dead": 1524,
+      "heal": 8101,
+      "nowConfirm": 56951,
+      "nowSevere": 11053,
+      "importedCase": 0,
+      "deadRate": "2.3",
+      "healRate": "12.2",
+      "date": "02.14",
+      "noInfect": 0
+    },
+    {
+      "confirm": 68584,
+      "suspect": 8228,
+      "dead": 1666,
+      "heal": 9425,
+      "nowConfirm": 57493,
+      "nowSevere": 11272,
+      "importedCase": 0,
+      "deadRate": "2.4",
+      "healRate": "13.7",
+      "date": "02.15",
+      "noInfect": 0
+    },
+    {
+      "confirm": 70635,
+      "suspect": 7264,
+      "dead": 1772,
+      "heal": 10853,
+      "nowConfirm": 58010,
+      "nowSevere": 10644,
+      "importedCase": 0,
+      "deadRate": "2.5",
+      "healRate": "15.4",
+      "date": "02.16",
+      "noInfect": 0
+    },
+    {
+      "confirm": 72528,
+      "suspect": 6242,
+      "dead": 1870,
+      "heal": 12561,
+      "nowConfirm": 58097,
+      "nowSevere": 11741,
+      "importedCase": 0,
+      "deadRate": "2.6",
+      "healRate": "17.3",
+      "date": "02.17",
+      "noInfect": 0
+    },
+    {
+      "confirm": 74279,
+      "suspect": 5248,
+      "dead": 2006,
+      "heal": 14387,
+      "nowConfirm": 57886,
+      "nowSevere": 11977,
+      "importedCase": 0,
+      "deadRate": "2.7",
+      "healRate": "19.4",
+      "date": "02.18",
+      "noInfect": 0
+    },
+    {
+      "confirm": 75002,
+      "suspect": 4922,
+      "dead": 2121,
+      "heal": 16157,
+      "nowConfirm": 56386,
+      "nowSevere": 11864,
+      "importedCase": 0,
+      "deadRate": "2.8",
+      "healRate": "21.5",
+      "date": "02.19",
+      "noInfect": 0
+    },
+    {
+      "confirm": 75993,
+      "suspect": 5206,
+      "dead": 2239,
+      "heal": 18266,
+      "nowConfirm": 55051,
+      "nowSevere": 11633,
+      "importedCase": 0,
+      "deadRate": "2.9",
+      "healRate": "24.0",
+      "date": "02.20",
+      "noInfect": 0
+    },
+    {
+      "confirm": 76392,
+      "suspect": 5365,
+      "dead": 2348,
+      "heal": 20673,
+      "nowConfirm": 53371,
+      "nowSevere": 11477,
+      "importedCase": 0,
+      "deadRate": "3.1",
+      "healRate": "27.1",
+      "date": "02.21",
+      "noInfect": 0
+    },
+    {
+      "confirm": 77041,
+      "suspect": 4148,
+      "dead": 2445,
+      "heal": 22907,
+      "nowConfirm": 51689,
+      "nowSevere": 10968,
+      "importedCase": 0,
+      "deadRate": "3.2",
+      "healRate": "29.7",
+      "date": "02.22",
+      "noInfect": 0
+    },
+    {
+      "confirm": 77262,
+      "suspect": 3434,
+      "dead": 2595,
+      "heal": 24757,
+      "nowConfirm": 49910,
+      "nowSevere": 9915,
+      "importedCase": 0,
+      "deadRate": "3.4",
+      "healRate": "32.0",
+      "date": "02.23",
+      "noInfect": 0
+    },
+    {
+      "confirm": 77779,
+      "suspect": 2824,
+      "dead": 2666,
+      "heal": 27353,
+      "nowConfirm": 47760,
+      "nowSevere": 9126,
+      "importedCase": 0,
+      "deadRate": "3.4",
+      "healRate": "35.2",
+      "date": "02.24",
+      "noInfect": 0
+    },
+    {
+      "confirm": 78190,
+      "suspect": 2491,
+      "dead": 2718,
+      "heal": 29775,
+      "nowConfirm": 45697,
+      "nowSevere": 8752,
+      "importedCase": 0,
+      "deadRate": "3.5",
+      "healRate": "38.1",
+      "date": "02.25",
+      "noInfect": 0
+    },
+    {
+      "confirm": 78630,
+      "suspect": 2358,
+      "dead": 2747,
+      "heal": 32531,
+      "nowConfirm": 43352,
+      "nowSevere": 8346,
+      "importedCase": 0,
+      "deadRate": "3.5",
+      "healRate": "41.4",
+      "date": "02.26",
+      "noInfect": 0
+    },
+    {
+      "confirm": 78959,
+      "suspect": 2308,
+      "dead": 2791,
+      "heal": 36157,
+      "nowConfirm": 40011,
+      "nowSevere": 7952,
+      "importedCase": 0,
+      "deadRate": "3.5",
+      "healRate": "45.8",
+      "date": "02.27",
+      "noInfect": 0
+    },
+    {
+      "confirm": 79389,
+      "suspect": 1418,
+      "dead": 2838,
+      "heal": 39049,
+      "nowConfirm": 37502,
+      "nowSevere": 7664,
+      "importedCase": 0,
+      "deadRate": "3.6",
+      "healRate": "49.2",
+      "date": "02.28",
+      "noInfect": 0
+    },
+    {
+      "confirm": 79968,
+      "suspect": 851,
+      "dead": 2873,
+      "heal": 41675,
+      "nowConfirm": 35420,
+      "nowSevere": 7365,
+      "importedCase": 0,
+      "deadRate": "3.6",
+      "healRate": "52.1",
+      "date": "02.29",
+      "noInfect": 0
+    },
+    {
+      "confirm": 80174,
+      "suspect": 715,
+      "dead": 2915,
+      "heal": 44518,
+      "nowConfirm": 32741,
+      "nowSevere": 7110,
+      "importedCase": 0,
+      "deadRate": "3.6",
+      "healRate": "55.5",
+      "date": "03.01",
+      "noInfect": 0
+    },
+    {
+      "confirm": 80302,
+      "suspect": 587,
+      "dead": 2946,
+      "heal": 47260,
+      "nowConfirm": 30096,
+      "nowSevere": 6806,
+      "importedCase": 0,
+      "deadRate": "3.7",
+      "healRate": "58.9",
+      "date": "03.02",
+      "noInfect": 0
+    },
+    {
+      "confirm": 80422,
+      "suspect": 520,
+      "dead": 2984,
+      "heal": 49914,
+      "nowConfirm": 27524,
+      "nowSevere": 6416,
+      "importedCase": 0,
+      "deadRate": "3.7",
+      "healRate": "62.1",
+      "date": "03.03",
+      "noInfect": 0
+    },
+    {
+      "confirm": 80565,
+      "suspect": 522,
+      "dead": 3015,
+      "heal": 52109,
+      "nowConfirm": 25441,
+      "nowSevere": 5952,
+      "importedCase": 20,
+      "deadRate": "3.7",
+      "healRate": "64.7",
+      "date": "03.04",
+      "noInfect": 0
+    },
+    {
+      "confirm": 80710,
+      "suspect": 482,
+      "dead": 3045,
+      "heal": 53793,
+      "nowConfirm": 23872,
+      "nowSevere": 5737,
+      "importedCase": 36,
+      "deadRate": "3.8",
+      "healRate": "66.6",
+      "date": "03.05",
+      "noInfect": 0
+    },
+    {
+      "confirm": 80813,
+      "suspect": 502,
+      "dead": 3073,
+      "heal": 55477,
+      "nowConfirm": 22263,
+      "nowSevere": 5489,
+      "importedCase": 60,
+      "deadRate": "3.8",
+      "healRate": "68.6",
+      "date": "03.06",
+      "noInfect": 0
+    },
+    {
+      "confirm": 80859,
+      "suspect": 458,
+      "dead": 3100,
+      "heal": 57143,
+      "nowConfirm": 20616,
+      "nowSevere": 5264,
+      "importedCase": 63,
+      "deadRate": "3.8",
+      "healRate": "70.7",
+      "date": "03.07",
+      "noInfect": 0
+    },
+    {
+      "confirm": 80904,
+      "suspect": 421,
+      "dead": 3123,
+      "heal": 58684,
+      "nowConfirm": 19097,
+      "nowSevere": 5111,
+      "importedCase": 67,
+      "deadRate": "3.9",
+      "healRate": "72.5",
+      "date": "03.08",
+      "noInfect": 0
+    },
+    {
+      "confirm": 80924,
+      "suspect": 349,
+      "dead": 3140,
+      "heal": 59982,
+      "nowConfirm": 17802,
+      "nowSevere": 4794,
+      "importedCase": 69,
+      "deadRate": "3.9",
+      "healRate": "74.1",
+      "date": "03.09",
+      "noInfect": 0
+    },
+    {
+      "confirm": 80955,
+      "suspect": 285,
+      "dead": 3162,
+      "heal": 61567,
+      "nowConfirm": 16226,
+      "nowSevere": 4492,
+      "importedCase": 79,
+      "deadRate": "3.9",
+      "healRate": "76.1",
+      "date": "03.10",
+      "noInfect": 0
+    },
+    {
+      "confirm": 80992,
+      "suspect": 253,
+      "dead": 3173,
+      "heal": 62887,
+      "nowConfirm": 14920,
+      "nowSevere": 4257,
+      "importedCase": 85,
+      "deadRate": "3.9",
+      "healRate": "77.6",
+      "date": "03.11",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81003,
+      "suspect": 147,
+      "dead": 3180,
+      "heal": 64216,
+      "nowConfirm": 13607,
+      "nowSevere": 4020,
+      "importedCase": 88,
+      "deadRate": "3.9",
+      "healRate": "79.3",
+      "date": "03.12",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81021,
+      "suspect": 115,
+      "dead": 3194,
+      "heal": 65649,
+      "nowConfirm": 12178,
+      "nowSevere": 3610,
+      "importedCase": 95,
+      "deadRate": "3.9",
+      "healRate": "81.0",
+      "date": "03.13",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81048,
+      "suspect": 113,
+      "dead": 3204,
+      "heal": 67022,
+      "nowConfirm": 10822,
+      "nowSevere": 3226,
+      "importedCase": 111,
+      "deadRate": "4.0",
+      "healRate": "82.7",
+      "date": "03.14",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81077,
+      "suspect": 134,
+      "dead": 3218,
+      "heal": 67863,
+      "nowConfirm": 9996,
+      "nowSevere": 3032,
+      "importedCase": 123,
+      "deadRate": "4.0",
+      "healRate": "83.7",
+      "date": "03.15",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81116,
+      "suspect": 128,
+      "dead": 3231,
+      "heal": 68799,
+      "nowConfirm": 9086,
+      "nowSevere": 2830,
+      "importedCase": 143,
+      "deadRate": "4.0",
+      "healRate": "84.8",
+      "date": "03.16",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81151,
+      "suspect": 119,
+      "dead": 3242,
+      "heal": 69725,
+      "nowConfirm": 8184,
+      "nowSevere": 2622,
+      "importedCase": 155,
+      "deadRate": "4.0",
+      "healRate": "85.9",
+      "date": "03.17",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81235,
+      "suspect": 105,
+      "dead": 3250,
+      "heal": 70547,
+      "nowConfirm": 7438,
+      "nowSevere": 2314,
+      "importedCase": 189,
+      "deadRate": "4.0",
+      "healRate": "86.8",
+      "date": "03.18",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81300,
+      "suspect": 104,
+      "dead": 3253,
+      "heal": 71284,
+      "nowConfirm": 6763,
+      "nowSevere": 2136,
+      "importedCase": 228,
+      "deadRate": "4.0",
+      "healRate": "87.7",
+      "date": "03.19",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81416,
+      "suspect": 106,
+      "dead": 3261,
+      "heal": 71876,
+      "nowConfirm": 6013,
+      "nowSevere": 1963,
+      "importedCase": 269,
+      "deadRate": "4.0",
+      "healRate": "88.3",
+      "date": "03.20",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81498,
+      "suspect": 118,
+      "dead": 3267,
+      "heal": 72382,
+      "nowConfirm": 5849,
+      "nowSevere": 1845,
+      "importedCase": 314,
+      "deadRate": "4.0",
+      "healRate": "88.8",
+      "date": "03.21",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81600,
+      "suspect": 136,
+      "dead": 3276,
+      "heal": 72841,
+      "nowConfirm": 5483,
+      "nowSevere": 1749,
+      "importedCase": 353,
+      "deadRate": "4.0",
+      "healRate": "89.3",
+      "date": "03.22",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81747,
+      "suspect": 132,
+      "dead": 3283,
+      "heal": 73299,
+      "nowConfirm": 5165,
+      "nowSevere": 1573,
+      "importedCase": 427,
+      "deadRate": "4.0",
+      "healRate": "89.7",
+      "date": "03.23",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81846,
+      "suspect": 134,
+      "dead": 3287,
+      "heal": 73791,
+      "nowConfirm": 4768,
+      "nowSevere": 1399,
+      "importedCase": 474,
+      "deadRate": "4.0",
+      "healRate": "90.2",
+      "date": "03.24",
+      "noInfect": 0
+    },
+    {
+      "confirm": 81960,
+      "suspect": 159,
+      "dead": 3293,
+      "heal": 74196,
+      "nowConfirm": 4471,
+      "nowSevere": 1235,
+      "importedCase": 541,
+      "deadRate": "4.0",
+      "healRate": "90.5",
+      "date": "03.25",
+      "noInfect": 0
+    },
+    {
+      "confirm": 82078,
+      "suspect": 189,
+      "dead": 3298,
+      "heal": 74737,
+      "nowConfirm": 4043,
+      "nowSevere": 1034,
+      "importedCase": 595,
+      "deadRate": "4.0",
+      "healRate": "91.1",
+      "date": "03.26",
+      "noInfect": 0
+    },
+    {
+      "confirm": 82213,
+      "suspect": 184,
+      "dead": 3301,
+      "heal": 75122,
+      "nowConfirm": 3790,
+      "nowSevere": 921,
+      "importedCase": 649,
+      "deadRate": "4.0",
+      "healRate": "91.4",
+      "date": "03.27",
+      "noInfect": 0
+    },
+    {
+      "confirm": 82341,
+      "suspect": 174,
+      "dead": 3306,
+      "heal": 75600,
+      "nowConfirm": 3435,
+      "nowSevere": 742,
+      "importedCase": 693,
+      "deadRate": "4.0",
+      "healRate": "91.8",
+      "date": "03.28",
+      "noInfect": 0
+    },
+    {
+      "confirm": 82447,
+      "suspect": 168,
+      "dead": 3311,
+      "heal": 75937,
+      "nowConfirm": 3199,
+      "nowSevere": 633,
+      "importedCase": 723,
+      "deadRate": "4.0",
+      "healRate": "92.1",
+      "date": "03.29",
+      "noInfect": 0
+    },
+    {
+      "confirm": 82545,
+      "suspect": 183,
+      "dead": 3314,
+      "heal": 76225,
+      "nowConfirm": 3006,
+      "nowSevere": 528,
+      "importedCase": 771,
+      "deadRate": "4.0",
+      "healRate": "92.3",
+      "date": "03.30",
+      "noInfect": 0
+    },
+    {
+      "confirm": 82631,
+      "suspect": 172,
+      "dead": 3321,
+      "heal": 76415,
+      "nowConfirm": 2895,
+      "nowSevere": 466,
+      "importedCase": 806,
+      "deadRate": "4.0",
+      "healRate": "92.5",
+      "date": "03.31",
+      "noInfect": 1367
+    },
+    {
+      "confirm": 82724,
+      "suspect": 153,
+      "dead": 3327,
+      "heal": 76610,
+      "nowConfirm": 2787,
+      "nowSevere": 429,
+      "importedCase": 841,
+      "deadRate": "4.0",
+      "healRate": "92.6",
+      "date": "04.01",
+      "noInfect": 1075
+    },
+    {
+      "confirm": 82802,
+      "suspect": 135,
+      "dead": 3331,
+      "heal": 76785,
+      "nowConfirm": 2686,
+      "nowSevere": 379,
+      "importedCase": 870,
+      "deadRate": "4.0",
+      "healRate": "92.7",
+      "date": "04.02",
+      "noInfect": 1027
+    },
+    {
+      "confirm": 82861,
+      "suspect": 114,
+      "dead": 3335,
+      "heal": 76984,
+      "nowConfirm": 2556,
+      "nowSevere": 331,
+      "importedCase": 888,
+      "deadRate": "4.0",
+      "healRate": "92.9",
+      "date": "04.03",
+      "noInfect": 1030
+    },
+    {
+      "confirm": 82930,
+      "suspect": 107,
+      "dead": 3338,
+      "heal": 77210,
+      "nowConfirm": 2382,
+      "nowSevere": 295,
+      "importedCase": 913,
+      "deadRate": "4.0",
+      "healRate": "93.1",
+      "date": "04.04",
+      "noInfect": 1024
+    },
+    {
+      "confirm": 83005,
+      "suspect": 88,
+      "dead": 3340,
+      "heal": 77348,
+      "nowConfirm": 2317,
+      "nowSevere": 265,
+      "importedCase": 951,
+      "deadRate": "4.0",
+      "healRate": "93.2",
+      "date": "04.05",
+      "noInfect": 1047
+    },
+    {
+      "confirm": 83071,
+      "suspect": 89,
+      "dead": 3340,
+      "heal": 77450,
+      "nowConfirm": 2281,
+      "nowSevere": 211,
+      "importedCase": 983,
+      "deadRate": "4.0",
+      "healRate": "93.2",
+      "date": "04.06",
+      "noInfect": 1033
+    },
+    {
+      "confirm": 83157,
+      "suspect": 83,
+      "dead": 3342,
+      "heal": 77586,
+      "nowConfirm": 2229,
+      "nowSevere": 189,
+      "importedCase": 1042,
+      "deadRate": "4.0",
+      "healRate": "93.3",
+      "date": "04.07",
+      "noInfect": 1095
+    },
+    {
+      "confirm": 83249,
+      "suspect": 73,
+      "dead": 3344,
+      "heal": 77711,
+      "nowConfirm": 2194,
+      "nowSevere": 176,
+      "importedCase": 1103,
+      "deadRate": "4.0",
+      "healRate": "93.3",
+      "date": "04.08",
+      "noInfect": 1104
+    },
+    {
+      "confirm": 83305,
+      "suspect": 53,
+      "dead": 3345,
+      "heal": 77838,
+      "nowConfirm": 2122,
+      "nowSevere": 144,
+      "importedCase": 1141,
+      "deadRate": "4.0",
+      "healRate": "93.4",
+      "date": "04.09",
+      "noInfect": 1097
+    },
+    {
+      "confirm": 83369,
+      "suspect": 44,
+      "dead": 3349,
+      "heal": 77935,
+      "nowConfirm": 2085,
+      "nowSevere": 141,
+      "importedCase": 1183,
+      "deadRate": "4.0",
+      "healRate": "93.5",
+      "date": "04.10",
+      "noInfect": 1092
+    },
+    {
+      "confirm": 83482,
+      "suspect": 82,
+      "dead": 3349,
+      "heal": 78020,
+      "nowConfirm": 2113,
+      "nowSevere": 139,
+      "importedCase": 1280,
+      "deadRate": "4.0",
+      "healRate": "93.5",
+      "date": "04.11",
+      "noInfect": 1086
+    },
+    {
+      "confirm": 83602,
+      "suspect": 72,
+      "dead": 3351,
+      "heal": 78145,
+      "nowConfirm": 2106,
+      "nowSevere": 121,
+      "importedCase": 1378,
+      "deadRate": "4.0",
+      "healRate": "93.5",
+      "date": "04.12",
+      "noInfect": 1064
+    },
+    {
+      "confirm": 83696,
+      "suspect": 72,
+      "dead": 3351,
+      "heal": 78262,
+      "nowConfirm": 2083,
+      "nowSevere": 116,
+      "importedCase": 1464,
+      "deadRate": "4.0",
+      "healRate": "93.5",
+      "date": "04.13",
+      "noInfect": 1005
+    },
+    {
+      "confirm": 83745,
+      "suspect": 73,
+      "dead": 3352,
+      "heal": 78389,
+      "nowConfirm": 2004,
+      "nowSevere": 113,
+      "importedCase": 1500,
+      "deadRate": "4.0",
+      "healRate": "93.6",
+      "date": "04.14",
+      "noInfect": 1023
+    },
+    {
+      "confirm": 83797,
+      "suspect": 63,
+      "dead": 3352,
+      "heal": 78504,
+      "nowConfirm": 1941,
+      "nowSevere": 95,
+      "importedCase": 1534,
+      "deadRate": "4.0",
+      "healRate": "93.7",
+      "date": "04.15",
+      "noInfect": 1032
+    },
+    {
+      "confirm": 83824,
+      "suspect": 62,
+      "dead": 3352,
+      "heal": 78600,
+      "nowConfirm": 1872,
+      "nowSevere": 89,
+      "importedCase": 1549,
+      "deadRate": "4.0",
+      "healRate": "93.8",
+      "date": "04.16",
+      "noInfect": 1038
+    },
+    {
+      "confirm": 84180,
+      "suspect": 63,
+      "dead": 4642,
+      "heal": 77744,
+      "nowConfirm": 1794,
+      "nowSevere": 85,
+      "importedCase": 1566,
+      "deadRate": "5.5",
+      "healRate": "92.4",
+      "date": "04.17",
+      "noInfect": 1017
+    },
+    {
+      "confirm": 84201,
+      "suspect": 48,
+      "dead": 4642,
+      "heal": 77825,
+      "nowConfirm": 1734,
+      "nowSevere": 85,
+      "importedCase": 1575,
+      "deadRate": "5.5",
+      "healRate": "92.4",
+      "date": "04.18",
+      "noInfect": 999
+    },
+    {
+      "confirm": 84237,
+      "suspect": 43,
+      "dead": 4642,
+      "heal": 77895,
+      "nowConfirm": 1700,
+      "nowSevere": 81,
+      "importedCase": 1583,
+      "deadRate": "5.5",
+      "healRate": "92.5",
+      "date": "04.19",
+      "noInfect": 990
+    },
+    {
+      "confirm": 84250,
+      "suspect": 37,
+      "dead": 4642,
+      "heal": 77978,
+      "nowConfirm": 1630,
+      "nowSevere": 82,
+      "importedCase": 1587,
+      "deadRate": "5.5",
+      "healRate": "92.6",
+      "date": "04.20",
+      "noInfect": 992
+    },
+    {
+      "confirm": 84287,
+      "suspect": 35,
+      "dead": 4642,
+      "heal": 78042,
+      "nowConfirm": 1603,
+      "nowSevere": 78,
+      "importedCase": 1610,
+      "deadRate": "5.5",
+      "healRate": "92.6",
+      "date": "04.21",
+      "noInfect": 991
+    },
+    {
+      "confirm": 84302,
+      "suspect": 20,
+      "dead": 4642,
+      "heal": 78147,
+      "nowConfirm": 1513,
+      "nowSevere": 63,
+      "importedCase": 1616,
+      "deadRate": "5.5",
+      "healRate": "92.7",
+      "date": "04.22",
+      "noInfect": 984
+    },
+    {
+      "confirm": 84311,
+      "suspect": 20,
+      "dead": 4642,
+      "heal": 78236,
+      "nowConfirm": 1433,
+      "nowSevere": 57,
+      "importedCase": 1618,
+      "deadRate": "5.5",
+      "healRate": "92.8",
+      "date": "04.23",
+      "noInfect": 979
+    },
+    {
+      "confirm": 84324,
+      "suspect": 17,
+      "dead": 4642,
+      "heal": 78362,
+      "nowConfirm": 1320,
+      "nowSevere": 49,
+      "importedCase": 1629,
+      "deadRate": "5.5",
+      "healRate": "92.9",
+      "date": "04.24",
+      "noInfect": 983
+    },
+    {
+      "confirm": 84338,
+      "suspect": 12,
+      "dead": 4642,
+      "heal": 78450,
+      "nowConfirm": 1246,
+      "nowSevere": 51,
+      "importedCase": 1634,
+      "deadRate": "5.5",
+      "healRate": "93.0",
+      "date": "04.25",
+      "noInfect": 1000
+    },
+    {
+      "confirm": 84341,
+      "suspect": 10,
+      "dead": 4643,
+      "heal": 78558,
+      "nowConfirm": 1140,
+      "nowSevere": 52,
+      "importedCase": 1636,
+      "deadRate": "5.5",
+      "healRate": "93.1",
+      "date": "04.26",
+      "noInfect": 974
+    },
+    {
+      "confirm": 84347,
+      "suspect": 9,
+      "dead": 4643,
+      "heal": 78664,
+      "nowConfirm": 1040,
+      "nowSevere": 50,
+      "importedCase": 1639,
+      "deadRate": "5.5",
+      "healRate": "93.3",
+      "date": "04.27",
+      "noInfect": 997
+    },
+    {
+      "confirm": 84369,
+      "suspect": 10,
+      "dead": 4643,
+      "heal": 78729,
+      "nowConfirm": 997,
+      "nowSevere": 50,
+      "importedCase": 1660,
+      "deadRate": "5.5",
+      "healRate": "93.3",
+      "date": "04.28",
+      "noInfect": 993
+    },
+    {
+      "confirm": 84373,
+      "suspect": 10,
+      "dead": 4643,
+      "heal": 78785,
+      "nowConfirm": 945,
+      "nowSevere": 41,
+      "importedCase": 1664,
+      "deadRate": "5.5",
+      "healRate": "93.4",
+      "date": "04.29",
+      "noInfect": 998
+    },
+    {
+      "confirm": 84385,
+      "suspect": 9,
+      "dead": 4643,
+      "heal": 78845,
+      "nowConfirm": 897,
+      "nowSevere": 38,
+      "importedCase": 1670,
+      "deadRate": "5.5",
+      "healRate": "93.4",
+      "date": "04.30",
+      "noInfect": 981
+    },
+    {
+      "confirm": 84388,
+      "suspect": 11,
+      "dead": 4643,
+      "heal": 78905,
+      "nowConfirm": 840,
+      "nowSevere": 37,
+      "importedCase": 1671,
+      "deadRate": "5.5",
+      "healRate": "93.5",
+      "date": "05.01",
+      "noInfect": 989
+    },
+    {
+      "confirm": 84393,
+      "suspect": 10,
+      "dead": 4643,
+      "heal": 78939,
+      "nowConfirm": 811,
+      "nowSevere": 34,
+      "importedCase": 1672,
+      "deadRate": "5.5",
+      "healRate": "93.5",
+      "date": "05.02",
+      "noInfect": 968
+    },
+    {
+      "confirm": 84400,
+      "suspect": 3,
+      "dead": 4643,
+      "heal": 79016,
+      "nowConfirm": 741,
+      "nowSevere": 33,
+      "importedCase": 1675,
+      "deadRate": "5.5",
+      "healRate": "93.6",
+      "date": "05.03",
+      "noInfect": 962
+    },
+    {
+      "confirm": 84404,
+      "suspect": 2,
+      "dead": 4643,
+      "heal": 79126,
+      "nowConfirm": 635,
+      "nowSevere": 29,
+      "importedCase": 1676,
+      "deadRate": "5.5",
+      "healRate": "93.7",
+      "date": "05.04",
+      "noInfect": 947
+    },
+    {
+      "confirm": 84406,
+      "suspect": 5,
+      "dead": 4643,
+      "heal": 79204,
+      "nowConfirm": 559,
+      "nowSevere": 26,
+      "importedCase": 1678,
+      "deadRate": "5.5",
+      "healRate": "93.8",
+      "date": "05.05",
+      "noInfect": 903
+    },
+    {
+      "confirm": 84409,
+      "suspect": 4,
+      "dead": 4643,
+      "heal": 79268,
+      "nowConfirm": 498,
+      "nowSevere": 23,
+      "importedCase": 1680,
+      "deadRate": "5.5",
+      "healRate": "93.9",
+      "date": "05.06",
+      "noInfect": 880
+    },
+    {
+      "confirm": 84415,
+      "suspect": 6,
+      "dead": 4643,
+      "heal": 79324,
+      "nowConfirm": 448,
+      "nowSevere": 18,
+      "importedCase": 1680,
+      "deadRate": "5.5",
+      "healRate": "94.0",
+      "date": "05.07",
+      "noInfect": 854
+    },
+    {
+      "confirm": 84416,
+      "suspect": 8,
+      "dead": 4643,
+      "heal": 79401,
+      "nowConfirm": 372,
+      "nowSevere": 15,
+      "importedCase": 1681,
+      "deadRate": "5.5",
+      "healRate": "94.1",
+      "date": "05.08",
+      "noInfect": 836
+    },
+    {
+      "confirm": 84430,
+      "suspect": 4,
+      "dead": 4643,
+      "heal": 79488,
+      "nowConfirm": 299,
+      "nowSevere": 13,
+      "importedCase": 1683,
+      "deadRate": "5.5",
+      "healRate": "94.1",
+      "date": "05.09",
+      "noInfect": 794
+    },
+    {
+      "confirm": 84450,
+      "suspect": 3,
+      "dead": 4643,
+      "heal": 79533,
+      "nowConfirm": 274,
+      "nowSevere": 9,
+      "importedCase": 1690,
+      "deadRate": "5.5",
+      "healRate": "94.2",
+      "date": "05.10",
+      "noInfect": 780
+    },
+    {
+      "confirm": 84451,
+      "suspect": 3,
+      "dead": 4644,
+      "heal": 79566,
+      "nowConfirm": 241,
+      "nowSevere": 10,
+      "importedCase": 1691,
+      "deadRate": "5.5",
+      "healRate": "94.2",
+      "date": "05.11",
+      "noInfect": 760
+    },
+    {
+      "confirm": 84458,
+      "suspect": 4,
+      "dead": 4644,
+      "heal": 79594,
+      "nowConfirm": 220,
+      "nowSevere": 10,
+      "importedCase": 1692,
+      "deadRate": "5.5",
+      "healRate": "94.2",
+      "date": "05.12",
+      "noInfect": 750
+    },
+    {
+      "confirm": 84464,
+      "suspect": 4,
+      "dead": 4644,
+      "heal": 79621,
+      "nowConfirm": 199,
+      "nowSevere": 9,
+      "importedCase": 1692,
+      "deadRate": "5.5",
+      "healRate": "94.3",
+      "date": "05.13",
+      "noInfect": 712
+    }
+  ],
+  "chinaDayAddList": [
+    {
+      "confirm": 77,
+      "suspect": 27,
+      "dead": 0,
+      "heal": 0,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "0.0",
+      "healRate": "0.0",
+      "date": "01.20"
+    },
+    {
+      "confirm": 149,
+      "suspect": 53,
+      "dead": 3,
+      "heal": 0,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "2.0",
+      "healRate": "0.0",
+      "date": "01.21"
+    },
+    {
+      "confirm": 131,
+      "suspect": 257,
+      "dead": 8,
+      "heal": 0,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "6.1",
+      "healRate": "0.0",
+      "date": "01.22"
+    },
+    {
+      "confirm": 259,
+      "suspect": 680,
+      "dead": 8,
+      "heal": 6,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "3.1",
+      "healRate": "2.3",
+      "date": "01.23"
+    },
+    {
+      "confirm": 444,
+      "suspect": 1118,
+      "dead": 16,
+      "heal": 3,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "3.6",
+      "healRate": "0.7",
+      "date": "01.24"
+    },
+    {
+      "confirm": 688,
+      "suspect": 1309,
+      "dead": 15,
+      "heal": 11,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "2.2",
+      "healRate": "1.6",
+      "date": "01.25"
+    },
+    {
+      "confirm": 769,
+      "suspect": 3806,
+      "dead": 24,
+      "heal": 2,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "3.1",
+      "healRate": "0.3",
+      "date": "01.26"
+    },
+    {
+      "confirm": 1771,
+      "suspect": 2077,
+      "dead": 26,
+      "heal": 9,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "1.5",
+      "healRate": "0.5",
+      "date": "01.27"
+    },
+    {
+      "confirm": 1459,
+      "suspect": 3248,
+      "dead": 26,
+      "heal": 43,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "1.8",
+      "healRate": "2.9",
+      "date": "01.28"
+    },
+    {
+      "confirm": 1737,
+      "suspect": 4148,
+      "dead": 38,
+      "heal": 21,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "2.2",
+      "healRate": "1.2",
+      "date": "01.29"
+    },
+    {
+      "confirm": 1982,
+      "suspect": 4812,
+      "dead": 43,
+      "heal": 47,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "2.2",
+      "healRate": "2.4",
+      "date": "01.30"
+    },
+    {
+      "confirm": 2102,
+      "suspect": 5019,
+      "dead": 46,
+      "heal": 72,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "2.2",
+      "healRate": "3.4",
+      "date": "01.31"
+    },
+    {
+      "confirm": 2590,
+      "suspect": 4562,
+      "dead": 45,
+      "heal": 85,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "1.7",
+      "healRate": "3.3",
+      "date": "02.01"
+    },
+    {
+      "confirm": 2829,
+      "suspect": 5173,
+      "dead": 57,
+      "heal": 147,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "2.0",
+      "healRate": "5.2",
+      "date": "02.02"
+    },
+    {
+      "confirm": 3235,
+      "suspect": 5072,
+      "dead": 64,
+      "heal": 157,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "2.0",
+      "healRate": "4.9",
+      "date": "02.03"
+    },
+    {
+      "confirm": 3893,
+      "suspect": 3971,
+      "dead": 65,
+      "heal": 262,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "1.7",
+      "healRate": "6.7",
+      "date": "02.04"
+    },
+    {
+      "confirm": 3697,
+      "suspect": 5328,
+      "dead": 73,
+      "heal": 261,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "2.0",
+      "healRate": "7.1",
+      "date": "02.05"
+    },
+    {
+      "confirm": 3143,
+      "suspect": 4833,
+      "dead": 73,
+      "heal": 387,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "2.3",
+      "healRate": "12.3",
+      "date": "02.06"
+    },
+    {
+      "confirm": 3401,
+      "suspect": 4214,
+      "dead": 86,
+      "heal": 510,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "2.5",
+      "healRate": "15.0",
+      "date": "02.07"
+    },
+    {
+      "confirm": 2656,
+      "suspect": 3916,
+      "dead": 89,
+      "heal": 600,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "3.4",
+      "healRate": "22.6",
+      "date": "02.08"
+    },
+    {
+      "confirm": 3062,
+      "suspect": 4008,
+      "dead": 97,
+      "heal": 632,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "3.2",
+      "healRate": "20.6",
+      "date": "02.09"
+    },
+    {
+      "confirm": 2484,
+      "suspect": 3536,
+      "dead": 108,
+      "heal": 716,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "4.3",
+      "healRate": "28.8",
+      "date": "02.10"
+    },
+    {
+      "confirm": 2022,
+      "suspect": 3342,
+      "dead": 97,
+      "heal": 744,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "4.8",
+      "healRate": "36.8",
+      "date": "02.11"
+    },
+    {
+      "confirm": 15153,
+      "suspect": 2807,
+      "dead": 254,
+      "heal": 1173,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "1.7",
+      "healRate": "7.7",
+      "date": "02.12"
+    },
+    {
+      "confirm": 5093,
+      "suspect": 2450,
+      "dead": 121,
+      "heal": 1083,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "2.4",
+      "healRate": "21.3",
+      "date": "02.13"
+    },
+    {
+      "confirm": 2644,
+      "suspect": 2277,
+      "dead": 143,
+      "heal": 1373,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "5.4",
+      "healRate": "51.9",
+      "date": "02.14"
+    },
+    {
+      "confirm": 2009,
+      "suspect": 1918,
+      "dead": 142,
+      "heal": 1324,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "7.1",
+      "healRate": "65.9",
+      "date": "02.15"
+    },
+    {
+      "confirm": 2051,
+      "suspect": 1563,
+      "dead": 105,
+      "heal": 1425,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "5.1",
+      "healRate": "69.5",
+      "date": "02.16"
+    },
+    {
+      "confirm": 1891,
+      "suspect": 1432,
+      "dead": 98,
+      "heal": 1701,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "5.2",
+      "healRate": "90.0",
+      "date": "02.17"
+    },
+    {
+      "confirm": 1751,
+      "suspect": 1185,
+      "dead": 136,
+      "heal": 1826,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "7.8",
+      "healRate": "104.3",
+      "date": "02.18"
+    },
+    {
+      "confirm": 820,
+      "suspect": 1277,
+      "dead": 115,
+      "heal": 1781,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "14.0",
+      "healRate": "217.2",
+      "date": "02.19"
+    },
+    {
+      "confirm": 892,
+      "suspect": 1614,
+      "dead": 118,
+      "heal": 2109,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "13.2",
+      "healRate": "236.4",
+      "date": "02.20"
+    },
+    {
+      "confirm": 399,
+      "suspect": 1361,
+      "dead": 109,
+      "heal": 2394,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "27.3",
+      "healRate": "600.0",
+      "date": "02.21"
+    },
+    {
+      "confirm": 649,
+      "suspect": 882,
+      "dead": 97,
+      "heal": 2235,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "14.9",
+      "healRate": "344.4",
+      "date": "02.22"
+    },
+    {
+      "confirm": 416,
+      "suspect": 620,
+      "dead": 150,
+      "heal": 1850,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "36.1",
+      "healRate": "444.7",
+      "date": "02.23"
+    },
+    {
+      "confirm": 517,
+      "suspect": 530,
+      "dead": 71,
+      "heal": 2596,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "13.7",
+      "healRate": "502.1",
+      "date": "02.24"
+    },
+    {
+      "confirm": 411,
+      "suspect": 439,
+      "dead": 52,
+      "heal": 2422,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "12.7",
+      "healRate": "589.3",
+      "date": "02.25"
+    },
+    {
+      "confirm": 440,
+      "suspect": 508,
+      "dead": 29,
+      "heal": 2756,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "6.6",
+      "healRate": "626.4",
+      "date": "02.26"
+    },
+    {
+      "confirm": 329,
+      "suspect": 452,
+      "dead": 44,
+      "heal": 3626,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "13.4",
+      "healRate": "1102.1",
+      "date": "02.27"
+    },
+    {
+      "confirm": 430,
+      "suspect": 248,
+      "dead": 47,
+      "heal": 2892,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "10.9",
+      "healRate": "672.6",
+      "date": "02.28"
+    },
+    {
+      "confirm": 579,
+      "suspect": 132,
+      "dead": 35,
+      "heal": 2626,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "6.0",
+      "healRate": "453.5",
+      "date": "02.29"
+    },
+    {
+      "confirm": 206,
+      "suspect": 141,
+      "dead": 42,
+      "heal": 2843,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "20.4",
+      "healRate": "1380.1",
+      "date": "03.01"
+    },
+    {
+      "confirm": 128,
+      "suspect": 129,
+      "dead": 31,
+      "heal": 2742,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "24.2",
+      "healRate": "2142.2",
+      "date": "03.02"
+    },
+    {
+      "confirm": 120,
+      "suspect": 143,
+      "dead": 38,
+      "heal": 2654,
+      "importedCase": 0,
+      "infect": 0,
+      "deadRate": "31.7",
+      "healRate": "2211.7",
+      "date": "03.03"
+    },
+    {
+      "confirm": 143,
+      "suspect": 143,
+      "dead": 31,
+      "heal": 2195,
+      "importedCase": 2,
+      "infect": 0,
+      "deadRate": "21.7",
+      "healRate": "1535.0",
+      "date": "03.04"
+    },
+    {
+      "confirm": 145,
+      "suspect": 102,
+      "dead": 30,
+      "heal": 1684,
+      "importedCase": 16,
+      "infect": 0,
+      "deadRate": "20.7",
+      "healRate": "1161.4",
+      "date": "03.05"
+    },
+    {
+      "confirm": 103,
+      "suspect": 99,
+      "dead": 28,
+      "heal": 1684,
+      "importedCase": 24,
+      "infect": 0,
+      "deadRate": "27.2",
+      "healRate": "1635.0",
+      "date": "03.06"
+    },
+    {
+      "confirm": 46,
+      "suspect": 84,
+      "dead": 27,
+      "heal": 1666,
+      "importedCase": 3,
+      "infect": 0,
+      "deadRate": "58.7",
+      "healRate": "3621.7",
+      "date": "03.07"
+    },
+    {
+      "confirm": 45,
+      "suspect": 60,
+      "dead": 23,
+      "heal": 1541,
+      "importedCase": 4,
+      "infect": 0,
+      "deadRate": "51.1",
+      "healRate": "3424.4",
+      "date": "03.08"
+    },
+    {
+      "confirm": 20,
+      "suspect": 36,
+      "dead": 17,
+      "heal": 1298,
+      "importedCase": 2,
+      "infect": 0,
+      "deadRate": "85.0",
+      "healRate": "6490.0",
+      "date": "03.09"
+    },
+    {
+      "confirm": 31,
+      "suspect": 31,
+      "dead": 22,
+      "heal": 1585,
+      "importedCase": 10,
+      "infect": 0,
+      "deadRate": "71.0",
+      "healRate": "5112.9",
+      "date": "03.10"
+    },
+    {
+      "confirm": 25,
+      "suspect": 33,
+      "dead": 11,
+      "heal": 1320,
+      "importedCase": 6,
+      "infect": 0,
+      "deadRate": "44.0",
+      "healRate": "5280.0",
+      "date": "03.11"
+    },
+    {
+      "confirm": 11,
+      "suspect": 33,
+      "dead": 7,
+      "heal": 1329,
+      "importedCase": 3,
+      "infect": 0,
+      "deadRate": "63.6",
+      "healRate": "12081.8",
+      "date": "03.12"
+    },
+    {
+      "confirm": 18,
+      "suspect": 17,
+      "dead": 14,
+      "heal": 1433,
+      "importedCase": 7,
+      "infect": 0,
+      "deadRate": "77.8",
+      "healRate": "7961.1",
+      "date": "03.13"
+    },
+    {
+      "confirm": 27,
+      "suspect": 39,
+      "dead": 10,
+      "heal": 1373,
+      "importedCase": 16,
+      "infect": 0,
+      "deadRate": "37.0",
+      "healRate": "5085.2",
+      "date": "03.14"
+    },
+    {
+      "confirm": 29,
+      "suspect": 41,
+      "dead": 14,
+      "heal": 841,
+      "importedCase": 12,
+      "infect": 0,
+      "deadRate": "48.3",
+      "healRate": "2900.0",
+      "date": "03.15"
+    },
+    {
+      "confirm": 39,
+      "suspect": 45,
+      "dead": 13,
+      "heal": 936,
+      "importedCase": 20,
+      "infect": 0,
+      "deadRate": "33.3",
+      "healRate": "2400.0",
+      "date": "03.16"
+    },
+    {
+      "confirm": 35,
+      "suspect": 21,
+      "dead": 11,
+      "heal": 926,
+      "importedCase": 12,
+      "infect": 0,
+      "deadRate": "31.4",
+      "healRate": "2645.7",
+      "date": "03.17"
+    },
+    {
+      "confirm": 84,
+      "suspect": 23,
+      "dead": 8,
+      "heal": 822,
+      "importedCase": 34,
+      "infect": 0,
+      "deadRate": "9.5",
+      "healRate": "978.6",
+      "date": "03.18"
+    },
+    {
+      "confirm": 65,
+      "suspect": 31,
+      "dead": 3,
+      "heal": 737,
+      "importedCase": 39,
+      "infect": 0,
+      "deadRate": "4.6",
+      "healRate": "1133.8",
+      "date": "03.19"
+    },
+    {
+      "confirm": 116,
+      "suspect": 36,
+      "dead": 8,
+      "heal": 592,
+      "importedCase": 41,
+      "infect": 0,
+      "deadRate": "6.9",
+      "healRate": "510.3",
+      "date": "03.20"
+    },
+    {
+      "confirm": 82,
+      "suspect": 45,
+      "dead": 6,
+      "heal": 506,
+      "importedCase": 45,
+      "infect": 0,
+      "deadRate": "7.3",
+      "healRate": "617.1",
+      "date": "03.21"
+    },
+    {
+      "confirm": 102,
+      "suspect": 47,
+      "dead": 9,
+      "heal": 459,
+      "importedCase": 39,
+      "infect": 0,
+      "deadRate": "8.8",
+      "healRate": "450.0",
+      "date": "03.22"
+    },
+    {
+      "confirm": 147,
+      "suspect": 35,
+      "dead": 7,
+      "heal": 458,
+      "importedCase": 74,
+      "infect": 0,
+      "deadRate": "4.8",
+      "healRate": "311.6",
+      "date": "03.23"
+    },
+    {
+      "confirm": 99,
+      "suspect": 33,
+      "dead": 4,
+      "heal": 492,
+      "importedCase": 47,
+      "infect": 0,
+      "deadRate": "4.0",
+      "healRate": "497.0",
+      "date": "03.24"
+    },
+    {
+      "confirm": 114,
+      "suspect": 58,
+      "dead": 6,
+      "heal": 405,
+      "importedCase": 67,
+      "infect": 0,
+      "deadRate": "5.3",
+      "healRate": "355.3",
+      "date": "03.25"
+    },
+    {
+      "confirm": 118,
+      "suspect": 49,
+      "dead": 5,
+      "heal": 541,
+      "importedCase": 54,
+      "infect": 0,
+      "deadRate": "4.2",
+      "healRate": "458.5",
+      "date": "03.26"
+    },
+    {
+      "confirm": 135,
+      "suspect": 29,
+      "dead": 3,
+      "heal": 385,
+      "importedCase": 54,
+      "infect": 0,
+      "deadRate": "2.2",
+      "healRate": "285.2",
+      "date": "03.27"
+    },
+    {
+      "confirm": 128,
+      "suspect": 28,
+      "dead": 5,
+      "heal": 478,
+      "importedCase": 44,
+      "infect": 0,
+      "deadRate": "3.9",
+      "healRate": "373.4",
+      "date": "03.28"
+    },
+    {
+      "confirm": 106,
+      "suspect": 17,
+      "dead": 5,
+      "heal": 337,
+      "importedCase": 30,
+      "infect": 0,
+      "deadRate": "4.7",
+      "healRate": "317.9",
+      "date": "03.29"
+    },
+    {
+      "confirm": 98,
+      "suspect": 44,
+      "dead": 3,
+      "heal": 288,
+      "importedCase": 48,
+      "infect": 0,
+      "deadRate": "3.1",
+      "healRate": "293.9",
+      "date": "03.30"
+    },
+    {
+      "confirm": 86,
+      "suspect": 26,
+      "dead": 7,
+      "heal": 190,
+      "importedCase": 35,
+      "infect": 130,
+      "deadRate": "8.1",
+      "healRate": "220.9",
+      "date": "03.31"
+    },
+    {
+      "confirm": 93,
+      "suspect": 20,
+      "dead": 6,
+      "heal": 195,
+      "importedCase": 35,
+      "infect": 55,
+      "deadRate": "6.5",
+      "healRate": "209.7",
+      "date": "04.01"
+    },
+    {
+      "confirm": 78,
+      "suspect": 12,
+      "dead": 4,
+      "heal": 175,
+      "importedCase": 29,
+      "infect": 60,
+      "deadRate": "5.1",
+      "healRate": "224.4",
+      "date": "04.02"
+    },
+    {
+      "confirm": 73,
+      "suspect": 11,
+      "dead": 4,
+      "heal": 199,
+      "importedCase": 18,
+      "infect": 64,
+      "deadRate": "5.5",
+      "healRate": "272.6",
+      "date": "04.03"
+    },
+    {
+      "confirm": 55,
+      "suspect": 11,
+      "dead": 3,
+      "heal": 226,
+      "importedCase": 25,
+      "infect": 47,
+      "deadRate": "5.5",
+      "healRate": "410.9",
+      "date": "04.04"
+    },
+    {
+      "confirm": 75,
+      "suspect": 10,
+      "dead": 1,
+      "heal": 138,
+      "importedCase": 38,
+      "infect": 78,
+      "deadRate": "1.3",
+      "healRate": "184.0",
+      "date": "04.05"
+    },
+    {
+      "confirm": 66,
+      "suspect": 12,
+      "dead": 0,
+      "heal": 102,
+      "importedCase": 32,
+      "infect": 30,
+      "deadRate": "0.0",
+      "healRate": "154.5",
+      "date": "04.06"
+    },
+    {
+      "confirm": 86,
+      "suspect": 12,
+      "dead": 2,
+      "heal": 136,
+      "importedCase": 59,
+      "infect": 137,
+      "deadRate": "2.3",
+      "healRate": "158.1",
+      "date": "04.07"
+    },
+    {
+      "confirm": 92,
+      "suspect": 17,
+      "dead": 2,
+      "heal": 125,
+      "importedCase": 61,
+      "infect": 56,
+      "deadRate": "2.2",
+      "healRate": "135.9",
+      "date": "04.08"
+    },
+    {
+      "confirm": 56,
+      "suspect": 3,
+      "dead": 1,
+      "heal": 127,
+      "importedCase": 38,
+      "infect": 47,
+      "deadRate": "1.8",
+      "healRate": "226.8",
+      "date": "04.09"
+    },
+    {
+      "confirm": 64,
+      "suspect": 8,
+      "dead": 4,
+      "heal": 97,
+      "importedCase": 42,
+      "infect": 34,
+      "deadRate": "6.2",
+      "healRate": "151.6",
+      "date": "04.10"
+    },
+    {
+      "confirm": 113,
+      "suspect": 49,
+      "dead": 0,
+      "heal": 85,
+      "importedCase": 97,
+      "infect": 63,
+      "deadRate": "0.0",
+      "healRate": "75.2",
+      "date": "04.11"
+    },
+    {
+      "confirm": 115,
+      "suspect": 6,
+      "dead": 2,
+      "heal": 125,
+      "importedCase": 98,
+      "infect": 61,
+      "deadRate": "1.7",
+      "healRate": "108.7",
+      "date": "04.12"
+    },
+    {
+      "confirm": 99,
+      "suspect": 3,
+      "dead": 0,
+      "heal": 117,
+      "importedCase": 86,
+      "infect": 54,
+      "deadRate": "0.0",
+      "healRate": "118.2",
+      "date": "04.13"
+    },
+    {
+      "confirm": 49,
+      "suspect": 11,
+      "dead": 1,
+      "heal": 127,
+      "importedCase": 36,
+      "infect": 57,
+      "deadRate": "2.0",
+      "healRate": "259.2",
+      "date": "04.14"
+    },
+    {
+      "confirm": 52,
+      "suspect": 4,
+      "dead": 0,
+      "heal": 115,
+      "importedCase": 34,
+      "infect": 64,
+      "deadRate": "0.0",
+      "healRate": "221.2",
+      "date": "04.15"
+    },
+    {
+      "confirm": 27,
+      "suspect": 3,
+      "dead": 0,
+      "heal": 96,
+      "importedCase": 15,
+      "infect": 66,
+      "deadRate": "0.0",
+      "healRate": "355.6",
+      "date": "04.16"
+    },
+    {
+      "confirm": 31,
+      "suspect": 5,
+      "dead": 0,
+      "heal": 109,
+      "importedCase": 17,
+      "infect": 54,
+      "deadRate": "0.0",
+      "healRate": "351.6",
+      "date": "04.17"
+    },
+    {
+      "confirm": 21,
+      "suspect": 2,
+      "dead": 0,
+      "heal": 81,
+      "importedCase": 9,
+      "infect": 44,
+      "deadRate": "0.0",
+      "healRate": "385.7",
+      "date": "04.18"
+    },
+    {
+      "confirm": 36,
+      "suspect": 2,
+      "dead": 0,
+      "heal": 70,
+      "importedCase": 8,
+      "infect": 49,
+      "deadRate": "0.0",
+      "healRate": "194.4",
+      "date": "04.19"
+    },
+    {
+      "confirm": 13,
+      "suspect": 3,
+      "dead": 0,
+      "heal": 131,
+      "importedCase": 4,
+      "infect": 37,
+      "deadRate": "0.0",
+      "healRate": "1007.7",
+      "date": "04.20"
+    },
+    {
+      "confirm": 37,
+      "suspect": 3,
+      "dead": 0,
+      "heal": 156,
+      "importedCase": 23,
+      "infect": 42,
+      "deadRate": "0.0",
+      "healRate": "421.6",
+      "date": "04.21"
+    },
+    {
+      "confirm": 15,
+      "suspect": 0,
+      "dead": 0,
+      "heal": 105,
+      "importedCase": 6,
+      "infect": 27,
+      "deadRate": "0.0",
+      "healRate": "700.0",
+      "date": "04.22"
+    },
+    {
+      "confirm": 9,
+      "suspect": 2,
+      "dead": 0,
+      "heal": 89,
+      "importedCase": 2,
+      "infect": 34,
+      "deadRate": "0.0",
+      "healRate": "988.9",
+      "date": "04.23"
+    },
+    {
+      "confirm": 13,
+      "suspect": 3,
+      "dead": 0,
+      "heal": 126,
+      "importedCase": 11,
+      "infect": 29,
+      "deadRate": "0.0",
+      "healRate": "969.2",
+      "date": "04.24"
+    },
+    {
+      "confirm": 14,
+      "suspect": 0,
+      "dead": 0,
+      "heal": 88,
+      "importedCase": 5,
+      "infect": 30,
+      "deadRate": "0.0",
+      "healRate": "628.6",
+      "date": "04.25"
+    },
+    {
+      "confirm": 3,
+      "suspect": 5,
+      "dead": 0,
+      "heal": 108,
+      "importedCase": 2,
+      "infect": 25,
+      "deadRate": "0.0",
+      "healRate": "3600.0",
+      "date": "04.26"
+    },
+    {
+      "confirm": 6,
+      "suspect": 1,
+      "dead": 0,
+      "heal": 106,
+      "importedCase": 3,
+      "infect": 40,
+      "deadRate": "0.0",
+      "healRate": "1766.7",
+      "date": "04.27"
+    },
+    {
+      "confirm": 22,
+      "suspect": 2,
+      "dead": 0,
+      "heal": 65,
+      "importedCase": 21,
+      "infect": 26,
+      "deadRate": "0.0",
+      "healRate": "295.5",
+      "date": "04.28"
+    },
+    {
+      "confirm": 4,
+      "suspect": 3,
+      "dead": 0,
+      "heal": 56,
+      "importedCase": 4,
+      "infect": 33,
+      "deadRate": "0.0",
+      "healRate": "1400.0",
+      "date": "04.29"
+    },
+    {
+      "confirm": 12,
+      "suspect": 3,
+      "dead": 0,
+      "heal": 60,
+      "importedCase": 6,
+      "infect": 25,
+      "deadRate": "0.0",
+      "healRate": "500.0",
+      "date": "04.30"
+    },
+    {
+      "confirm": 3,
+      "suspect": 2,
+      "dead": 0,
+      "heal": 60,
+      "importedCase": 1,
+      "infect": 20,
+      "deadRate": "0.0",
+      "healRate": "2000.0",
+      "date": "05.01"
+    },
+    {
+      "confirm": 5,
+      "suspect": 0,
+      "dead": 0,
+      "heal": 34,
+      "importedCase": 1,
+      "infect": 12,
+      "deadRate": "0.0",
+      "healRate": "680.0",
+      "date": "05.02"
+    },
+    {
+      "confirm": 7,
+      "suspect": 1,
+      "dead": 0,
+      "heal": 77,
+      "importedCase": 3,
+      "infect": 13,
+      "deadRate": "0.0",
+      "healRate": "1100.0",
+      "date": "05.03"
+    },
+    {
+      "confirm": 4,
+      "suspect": 0,
+      "dead": 0,
+      "heal": 110,
+      "importedCase": 1,
+      "infect": 15,
+      "deadRate": "0.0",
+      "healRate": "2750.0",
+      "date": "05.04"
+    },
+    {
+      "confirm": 2,
+      "suspect": 3,
+      "dead": 0,
+      "heal": 78,
+      "importedCase": 2,
+      "infect": 20,
+      "deadRate": "0.0",
+      "healRate": "3900.0",
+      "date": "05.05"
+    },
+    {
+      "confirm": 3,
+      "suspect": 2,
+      "dead": 0,
+      "heal": 64,
+      "importedCase": 2,
+      "infect": 6,
+      "deadRate": "0.0",
+      "healRate": "2133.3",
+      "date": "05.06"
+    },
+    {
+      "confirm": 6,
+      "suspect": 3,
+      "dead": 0,
+      "heal": 56,
+      "importedCase": 0,
+      "infect": 16,
+      "deadRate": "0.0",
+      "healRate": "933.3",
+      "date": "05.07"
+    },
+    {
+      "confirm": 1,
+      "suspect": 2,
+      "dead": 0,
+      "heal": 77,
+      "importedCase": 1,
+      "infect": 15,
+      "deadRate": "0.0",
+      "healRate": "7700.0",
+      "date": "05.08"
+    },
+    {
+      "confirm": 14,
+      "suspect": 1,
+      "dead": 0,
+      "heal": 87,
+      "importedCase": 2,
+      "infect": 20,
+      "deadRate": "0.0",
+      "healRate": "621.4",
+      "date": "05.09"
+    },
+    {
+      "confirm": 20,
+      "suspect": 0,
+      "dead": 0,
+      "heal": 45,
+      "importedCase": 7,
+      "infect": 12,
+      "deadRate": "0.0",
+      "healRate": "225.0",
+      "date": "05.10"
+    },
+    {
+      "confirm": 1,
+      "suspect": 1,
+      "dead": 0,
+      "heal": 33,
+      "importedCase": 1,
+      "infect": 15,
+      "deadRate": "0.0",
+      "healRate": "3300.0",
+      "date": "05.11"
+    },
+    {
+      "confirm": 7,
+      "suspect": 1,
+      "dead": 0,
+      "heal": 28,
+      "importedCase": 1,
+      "infect": 8,
+      "deadRate": "0.0",
+      "healRate": "400.0",
+      "date": "05.12"
+    },
+    {
+      "confirm": 6,
+      "suspect": 0,
+      "dead": 0,
+      "heal": 27,
+      "importedCase": 0,
+      "infect": 12,
+      "deadRate": "0.0",
+      "healRate": "450.0",
+      "date": "05.13"
+    }
+  ],
+  "dailyNewAddHistory": [
+    {
+      "date": "01.20",
+      "hubei": 72,
+      "country": 77,
+      "notHubei": 5
+    },
+    {
+      "date": "01.21",
+      "hubei": 105,
+      "country": 149,
+      "notHubei": 44
+    },
+    {
+      "date": "01.22",
+      "hubei": 69,
+      "country": 131,
+      "notHubei": 62
+    },
+    {
+      "date": "01.23",
+      "hubei": 105,
+      "country": 259,
+      "notHubei": 154
+    },
+    {
+      "date": "01.24",
+      "hubei": 180,
+      "country": 444,
+      "notHubei": 264
+    },
+    {
+      "date": "01.25",
+      "hubei": 323,
+      "country": 688,
+      "notHubei": 365
+    },
+    {
+      "date": "01.26",
+      "hubei": 371,
+      "country": 769,
+      "notHubei": 398
+    },
+    {
+      "date": "01.27",
+      "hubei": 1291,
+      "country": 1771,
+      "notHubei": 480
+    },
+    {
+      "date": "01.28",
+      "hubei": 840,
+      "country": 1459,
+      "notHubei": 619
+    },
+    {
+      "date": "01.29",
+      "hubei": 1032,
+      "country": 1737,
+      "notHubei": 705
+    },
+    {
+      "date": "01.30",
+      "hubei": 1220,
+      "country": 1982,
+      "notHubei": 762
+    },
+    {
+      "date": "01.31",
+      "hubei": 1347,
+      "country": 2102,
+      "notHubei": 755
+    },
+    {
+      "date": "02.01",
+      "hubei": 1921,
+      "country": 2590,
+      "notHubei": 669
+    },
+    {
+      "date": "02.02",
+      "hubei": 2103,
+      "country": 2829,
+      "notHubei": 726
+    },
+    {
+      "date": "02.03",
+      "hubei": 2345,
+      "country": 3235,
+      "notHubei": 890
+    },
+    {
+      "date": "02.04",
+      "hubei": 3156,
+      "country": 3893,
+      "notHubei": 737
+    },
+    {
+      "date": "02.05",
+      "hubei": 2987,
+      "country": 3697,
+      "notHubei": 710
+    },
+    {
+      "date": "02.06",
+      "hubei": 2447,
+      "country": 3143,
+      "notHubei": 696
+    },
+    {
+      "date": "02.07",
+      "hubei": 2841,
+      "country": 3401,
+      "notHubei": 560
+    },
+    {
+      "date": "02.08",
+      "hubei": 2147,
+      "country": 2656,
+      "notHubei": 509
+    },
+    {
+      "date": "02.09",
+      "hubei": 2618,
+      "country": 3062,
+      "notHubei": 444
+    },
+    {
+      "date": "02.10",
+      "hubei": 2097,
+      "country": 2484,
+      "notHubei": 387
+    },
+    {
+      "date": "02.11",
+      "hubei": 1638,
+      "country": 2022,
+      "notHubei": 384
+    },
+    {
+      "date": "02.12",
+      "hubei": 14840,
+      "country": 15153,
+      "notHubei": 313
+    },
+    {
+      "date": "02.13",
+      "hubei": 4823,
+      "country": 5093,
+      "notHubei": 270
+    },
+    {
+      "date": "02.14",
+      "hubei": 2420,
+      "country": 2644,
+      "notHubei": 224
+    },
+    {
+      "date": "02.15",
+      "hubei": 1843,
+      "country": 2009,
+      "notHubei": 166
+    },
+    {
+      "date": "02.16",
+      "hubei": 1933,
+      "country": 2051,
+      "notHubei": 118
+    },
+    {
+      "date": "02.17",
+      "hubei": 1807,
+      "country": 1891,
+      "notHubei": 84
+    },
+    {
+      "date": "02.18",
+      "hubei": 1693,
+      "country": 1751,
+      "notHubei": 58
+    },
+    {
+      "date": "02.19",
+      "hubei": 775,
+      "country": 820,
+      "notHubei": 45
+    },
+    {
+      "date": "02.20",
+      "hubei": 631,
+      "country": 892,
+      "notHubei": 261
+    },
+    {
+      "date": "02.21",
+      "hubei": 366,
+      "country": 399,
+      "notHubei": 33
+    },
+    {
+      "date": "02.22",
+      "hubei": 630,
+      "country": 649,
+      "notHubei": 19
+    },
+    {
+      "date": "02.23",
+      "hubei": 398,
+      "country": 416,
+      "notHubei": 18
+    },
+    {
+      "date": "02.24",
+      "hubei": 499,
+      "country": 517,
+      "notHubei": 18
+    },
+    {
+      "date": "02.25",
+      "hubei": 401,
+      "country": 411,
+      "notHubei": 10
+    },
+    {
+      "date": "02.26",
+      "hubei": 409,
+      "country": 440,
+      "notHubei": 31
+    },
+    {
+      "date": "02.27",
+      "hubei": 318,
+      "country": 329,
+      "notHubei": 11
+    },
+    {
+      "date": "02.28",
+      "hubei": 423,
+      "country": 430,
+      "notHubei": 7
+    },
+    {
+      "date": "02.29",
+      "hubei": 570,
+      "country": 579,
+      "notHubei": 9
+    },
+    {
+      "date": "03.01",
+      "hubei": 196,
+      "country": 206,
+      "notHubei": 10
+    },
+    {
+      "date": "03.02",
+      "hubei": 114,
+      "country": 128,
+      "notHubei": 14
+    },
+    {
+      "date": "03.03",
+      "hubei": 115,
+      "country": 120,
+      "notHubei": 5
+    },
+    {
+      "date": "03.04",
+      "hubei": 134,
+      "country": 143,
+      "notHubei": 9
+    },
+    {
+      "date": "03.05",
+      "hubei": 126,
+      "country": 145,
+      "notHubei": 19
+    },
+    {
+      "date": "03.06",
+      "hubei": 74,
+      "country": 103,
+      "notHubei": 29
+    },
+    {
+      "date": "03.07",
+      "hubei": 41,
+      "country": 46,
+      "notHubei": 5
+    },
+    {
+      "date": "03.08",
+      "hubei": 36,
+      "country": 45,
+      "notHubei": 9
+    },
+    {
+      "date": "03.09",
+      "hubei": 17,
+      "country": 20,
+      "notHubei": 3
+    },
+    {
+      "date": "03.10",
+      "hubei": 13,
+      "country": 31,
+      "notHubei": 18
+    },
+    {
+      "date": "03.11",
+      "hubei": 8,
+      "country": 25,
+      "notHubei": 17
+    },
+    {
+      "date": "03.12",
+      "hubei": 5,
+      "country": 11,
+      "notHubei": 6
+    },
+    {
+      "date": "03.13",
+      "hubei": 4,
+      "country": 18,
+      "notHubei": 14
+    },
+    {
+      "date": "03.14",
+      "hubei": 4,
+      "country": 27,
+      "notHubei": 23
+    },
+    {
+      "date": "03.15",
+      "hubei": 4,
+      "country": 29,
+      "notHubei": 25
+    },
+    {
+      "date": "03.16",
+      "hubei": 4,
+      "country": 39,
+      "notHubei": 35
+    },
+    {
+      "date": "03.17",
+      "hubei": 1,
+      "country": 35,
+      "notHubei": 34
+    },
+    {
+      "date": "03.18",
+      "hubei": 0,
+      "country": 84,
+      "notHubei": 84
+    },
+    {
+      "date": "03.19",
+      "hubei": 0,
+      "country": 65,
+      "notHubei": 65
+    },
+    {
+      "date": "03.20",
+      "hubei": 0,
+      "country": 116,
+      "notHubei": 116
+    },
+    {
+      "date": "03.21",
+      "hubei": 0,
+      "country": 82,
+      "notHubei": 82
+    },
+    {
+      "date": "03.22",
+      "hubei": 0,
+      "country": 102,
+      "notHubei": 102
+    },
+    {
+      "date": "03.23",
+      "hubei": 1,
+      "country": 147,
+      "notHubei": 146
+    },
+    {
+      "date": "03.24",
+      "hubei": 0,
+      "country": 99,
+      "notHubei": 99
+    },
+    {
+      "date": "03.25",
+      "hubei": 0,
+      "country": 114,
+      "notHubei": 114
+    },
+    {
+      "date": "03.26",
+      "hubei": 0,
+      "country": 118,
+      "notHubei": 118
+    },
+    {
+      "date": "03.27",
+      "hubei": 0,
+      "country": 135,
+      "notHubei": 135
+    },
+    {
+      "date": "03.28",
+      "hubei": 0,
+      "country": 128,
+      "notHubei": 128
+    },
+    {
+      "date": "03.29",
+      "hubei": 0,
+      "country": 106,
+      "notHubei": 106
+    },
+    {
+      "date": "03.30",
+      "hubei": 0,
+      "country": 98,
+      "notHubei": 98
+    },
+    {
+      "date": "03.31",
+      "hubei": 1,
+      "country": 86,
+      "notHubei": 85
+    },
+    {
+      "date": "04.01",
+      "hubei": 0,
+      "country": 93,
+      "notHubei": 93
+    },
+    {
+      "date": "04.02",
+      "hubei": 0,
+      "country": 78,
+      "notHubei": 78
+    },
+    {
+      "date": "04.03",
+      "hubei": 1,
+      "country": 73,
+      "notHubei": 72
+    },
+    {
+      "date": "04.04",
+      "hubei": 0,
+      "country": 55,
+      "notHubei": 55
+    },
+    {
+      "date": "04.05",
+      "hubei": 0,
+      "country": 75,
+      "notHubei": 75
+    },
+    {
+      "date": "04.06",
+      "hubei": 0,
+      "country": 66,
+      "notHubei": 66
+    },
+    {
+      "date": "04.07",
+      "hubei": 0,
+      "country": 86,
+      "notHubei": 86
+    },
+    {
+      "date": "04.08",
+      "hubei": 0,
+      "country": 92,
+      "notHubei": 92
+    },
+    {
+      "date": "04.09",
+      "hubei": 0,
+      "country": 56,
+      "notHubei": 56
+    },
+    {
+      "date": "04.10",
+      "hubei": 0,
+      "country": 64,
+      "notHubei": 64
+    },
+    {
+      "date": "04.11",
+      "hubei": 0,
+      "country": 113,
+      "notHubei": 113
+    },
+    {
+      "date": "04.12",
+      "hubei": 0,
+      "country": 115,
+      "notHubei": 115
+    },
+    {
+      "date": "04.13",
+      "hubei": 0,
+      "country": 99,
+      "notHubei": 99
+    },
+    {
+      "date": "04.14",
+      "hubei": 0,
+      "country": 49,
+      "notHubei": 49
+    },
+    {
+      "date": "04.15",
+      "hubei": 0,
+      "country": 52,
+      "notHubei": 52
+    },
+    {
+      "date": "04.16",
+      "hubei": 0,
+      "country": 27,
+      "notHubei": 27
+    },
+    {
+      "date": "04.17",
+      "hubei": 0,
+      "country": 31,
+      "notHubei": 31
+    },
+    {
+      "date": "04.18",
+      "hubei": 0,
+      "country": 21,
+      "notHubei": 21
+    },
+    {
+      "date": "04.19",
+      "hubei": 0,
+      "country": 36,
+      "notHubei": 36
+    },
+    {
+      "date": "04.20",
+      "hubei": 0,
+      "country": 13,
+      "notHubei": 13
+    },
+    {
+      "date": "04.21",
+      "hubei": 0,
+      "country": 37,
+      "notHubei": 37
+    },
+    {
+      "date": "04.22",
+      "hubei": 0,
+      "country": 15,
+      "notHubei": 15
+    },
+    {
+      "date": "04.23",
+      "hubei": 0,
+      "country": 9,
+      "notHubei": 9
+    },
+    {
+      "date": "04.24",
+      "hubei": 0,
+      "country": 13,
+      "notHubei": 13
+    },
+    {
+      "date": "04.25",
+      "hubei": 0,
+      "country": 14,
+      "notHubei": 14
+    },
+    {
+      "date": "04.26",
+      "hubei": 0,
+      "country": 3,
+      "notHubei": 3
+    },
+    {
+      "date": "04.27",
+      "hubei": 0,
+      "country": 6,
+      "notHubei": 6
+    },
+    {
+      "date": "04.28",
+      "hubei": 0,
+      "country": 22,
+      "notHubei": 22
+    },
+    {
+      "date": "04.29",
+      "hubei": 0,
+      "country": 4,
+      "notHubei": 4
+    },
+    {
+      "date": "04.30",
+      "hubei": 0,
+      "country": 12,
+      "notHubei": 12
+    },
+    {
+      "date": "05.01",
+      "hubei": 0,
+      "country": 3,
+      "notHubei": 3
+    },
+    {
+      "date": "05.02",
+      "hubei": 0,
+      "country": 5,
+      "notHubei": 5
+    },
+    {
+      "date": "05.03",
+      "hubei": 0,
+      "country": 7,
+      "notHubei": 7
+    },
+    {
+      "date": "05.04",
+      "hubei": 0,
+      "country": 4,
+      "notHubei": 4
+    },
+    {
+      "date": "05.05",
+      "hubei": 0,
+      "country": 2,
+      "notHubei": 2
+    },
+    {
+      "date": "05.06",
+      "hubei": 0,
+      "country": 3,
+      "notHubei": 3
+    },
+    {
+      "date": "05.07",
+      "hubei": 0,
+      "country": 6,
+      "notHubei": 6
+    },
+    {
+      "date": "05.08",
+      "hubei": 0,
+      "country": 1,
+      "notHubei": 1
+    },
+    {
+      "date": "05.09",
+      "hubei": 1,
+      "country": 14,
+      "notHubei": 13
+    },
+    {
+      "date": "05.10",
+      "hubei": 5,
+      "country": 20,
+      "notHubei": 15
+    },
+    {
+      "date": "05.11",
+      "hubei": 0,
+      "country": 1,
+      "notHubei": 1
+    },
+    {
+      "date": "05.12",
+      "hubei": 0,
+      "country": 7,
+      "notHubei": 7
+    },
+    {
+      "date": "05.13",
+      "hubei": 0,
+      "country": 6,
+      "notHubei": 6
+    }
+  ],
+  "dailyHistory": [
+    {
+      "date": "01.20",
+      "hubei": {
+        "dead": 6,
+        "heal": 25,
+        "nowConfirm": 239,
+        "deadRate": "2.22",
+        "healRate": "9.26"
+      },
+      "notHubei": {
+        "dead": 0,
+        "heal": 0,
+        "nowConfirm": 52,
+        "deadRate": "0.00",
+        "healRate": "0.00"
+      },
+      "country": {
+        "dead": 6,
+        "heal": 25,
+        "nowConfirm": 291,
+        "deadRate": "2.06",
+        "healRate": "8.59"
+      }
+    },
+    {
+      "date": "01.23",
+      "hubei": {
+        "dead": 24,
+        "heal": 31,
+        "nowConfirm": 494,
+        "deadRate": "4.37",
+        "healRate": "5.65"
+      },
+      "notHubei": {
+        "dead": 1,
+        "heal": 3,
+        "nowConfirm": 282,
+        "deadRate": "0.35",
+        "healRate": "1.05"
+      },
+      "country": {
+        "dead": 25,
+        "heal": 34,
+        "nowConfirm": 776,
+        "deadRate": "2.99",
+        "healRate": "4.07"
+      }
+    },
+    {
+      "date": "01.24",
+      "hubei": {
+        "dead": 39,
+        "heal": 32,
+        "nowConfirm": 658,
+        "deadRate": "5.35",
+        "healRate": "4.39"
+      },
+      "notHubei": {
+        "dead": 2,
+        "heal": 6,
+        "nowConfirm": 560,
+        "deadRate": "0.35",
+        "healRate": "1.06"
+      },
+      "country": {
+        "dead": 41,
+        "heal": 38,
+        "nowConfirm": 1218,
+        "deadRate": "3.16",
+        "healRate": "2.93"
+      }
+    },
+    {
+      "date": "01.25",
+      "hubei": {
+        "dead": 52,
+        "heal": 42,
+        "nowConfirm": 958,
+        "deadRate": "4.94",
+        "healRate": "3.99"
+      },
+      "notHubei": {
+        "dead": 4,
+        "heal": 7,
+        "nowConfirm": 922,
+        "deadRate": "0.43",
+        "healRate": "0.75"
+      },
+      "country": {
+        "dead": 56,
+        "heal": 49,
+        "nowConfirm": 1880,
+        "deadRate": "2.82",
+        "healRate": "2.47"
+      }
+    },
+    {
+      "date": "01.26",
+      "hubei": {
+        "dead": 76,
+        "heal": 44,
+        "nowConfirm": 1303,
+        "deadRate": "5.34",
+        "healRate": "3.09"
+      },
+      "notHubei": {
+        "dead": 4,
+        "heal": 7,
+        "nowConfirm": 1327,
+        "deadRate": "0.30",
+        "healRate": "0.52"
+      },
+      "country": {
+        "dead": 80,
+        "heal": 51,
+        "nowConfirm": 2630,
+        "deadRate": "2.90",
+        "healRate": "1.85"
+      }
+    },
+    {
+      "date": "01.27",
+      "hubei": {
+        "dead": 100,
+        "heal": 47,
+        "nowConfirm": 2567,
+        "deadRate": "3.68",
+        "healRate": "1.73"
+      },
+      "notHubei": {
+        "dead": 6,
+        "heal": 13,
+        "nowConfirm": 1802,
+        "deadRate": "0.33",
+        "healRate": "0.71"
+      },
+      "country": {
+        "dead": 106,
+        "heal": 60,
+        "nowConfirm": 4369,
+        "deadRate": "2.34",
+        "healRate": "1.32"
+      }
+    },
+    {
+      "date": "01.28",
+      "hubei": {
+        "dead": 125,
+        "heal": 80,
+        "nowConfirm": 3349,
+        "deadRate": "3.52",
+        "healRate": "2.25"
+      },
+      "notHubei": {
+        "dead": 7,
+        "heal": 23,
+        "nowConfirm": 2413,
+        "deadRate": "0.29",
+        "healRate": "0.94"
+      },
+      "country": {
+        "dead": 132,
+        "heal": 103,
+        "nowConfirm": 5762,
+        "deadRate": "2.20",
+        "healRate": "1.72"
+      }
+    },
+    {
+      "date": "01.29",
+      "hubei": {
+        "dead": 162,
+        "heal": 90,
+        "nowConfirm": 4334,
+        "deadRate": "3.53",
+        "healRate": "1.96"
+      },
+      "notHubei": {
+        "dead": 8,
+        "heal": 34,
+        "nowConfirm": 3108,
+        "deadRate": "0.25",
+        "healRate": "1.08"
+      },
+      "country": {
+        "dead": 170,
+        "heal": 124,
+        "nowConfirm": 7442,
+        "deadRate": "2.20",
+        "healRate": "1.60"
+      }
+    },
+    {
+      "date": "01.30",
+      "hubei": {
+        "dead": 204,
+        "heal": 116,
+        "nowConfirm": 5486,
+        "deadRate": "3.51",
+        "healRate": "2.00"
+      },
+      "notHubei": {
+        "dead": 9,
+        "heal": 55,
+        "nowConfirm": 3850,
+        "deadRate": "0.23",
+        "healRate": "1.41"
+      },
+      "country": {
+        "dead": 213,
+        "heal": 171,
+        "nowConfirm": 9336,
+        "deadRate": "2.19",
+        "healRate": "1.76"
+      }
+    },
+    {
+      "date": "01.31",
+      "hubei": {
+        "dead": 249,
+        "heal": 166,
+        "nowConfirm": 6738,
+        "deadRate": "3.48",
+        "healRate": "2.32"
+      },
+      "notHubei": {
+        "dead": 10,
+        "heal": 77,
+        "nowConfirm": 4581,
+        "deadRate": "0.21",
+        "healRate": "1.65"
+      },
+      "country": {
+        "dead": 259,
+        "heal": 243,
+        "nowConfirm": 11319,
+        "deadRate": "2.19",
+        "healRate": "2.06"
+      }
+    },
+    {
+      "date": "02.01",
+      "hubei": {
+        "dead": 294,
+        "heal": 215,
+        "nowConfirm": 8565,
+        "deadRate": "3.24",
+        "healRate": "2.37"
+      },
+      "notHubei": {
+        "dead": 10,
+        "heal": 113,
+        "nowConfirm": 5214,
+        "deadRate": "0.19",
+        "healRate": "2.12"
+      },
+      "country": {
+        "dead": 304,
+        "heal": 328,
+        "nowConfirm": 13779,
+        "deadRate": "2.11",
+        "healRate": "2.28"
+      }
+    },
+    {
+      "date": "02.02",
+      "hubei": {
+        "dead": 350,
+        "heal": 295,
+        "nowConfirm": 10532,
+        "deadRate": "3.13",
+        "healRate": "2.64"
+      },
+      "notHubei": {
+        "dead": 11,
+        "heal": 180,
+        "nowConfirm": 5870,
+        "deadRate": "0.18",
+        "healRate": "2.97"
+      },
+      "country": {
+        "dead": 361,
+        "heal": 475,
+        "nowConfirm": 16402,
+        "deadRate": "2.09",
+        "healRate": "2.76"
+      }
+    },
+    {
+      "date": "02.03",
+      "hubei": {
+        "dead": 414,
+        "heal": 396,
+        "nowConfirm": 12712,
+        "deadRate": "3.06",
+        "healRate": "2.93"
+      },
+      "notHubei": {
+        "dead": 11,
+        "heal": 236,
+        "nowConfirm": 6702,
+        "deadRate": "0.16",
+        "healRate": "3.40"
+      },
+      "country": {
+        "dead": 425,
+        "heal": 632,
+        "nowConfirm": 19414,
+        "deadRate": "2.08",
+        "healRate": "3.09"
+      }
+    },
+    {
+      "date": "02.04",
+      "hubei": {
+        "dead": 479,
+        "heal": 520,
+        "nowConfirm": 15679,
+        "deadRate": "2.87",
+        "healRate": "3.12"
+      },
+      "notHubei": {
+        "dead": 12,
+        "heal": 372,
+        "nowConfirm": 7301,
+        "deadRate": "0.16",
+        "healRate": "4.84"
+      },
+      "country": {
+        "dead": 491,
+        "heal": 892,
+        "nowConfirm": 22980,
+        "deadRate": "2.02",
+        "healRate": "3.66"
+      }
+    },
+    {
+      "date": "02.05",
+      "hubei": {
+        "dead": 549,
+        "heal": 633,
+        "nowConfirm": 18473,
+        "deadRate": "2.79",
+        "healRate": "3.22"
+      },
+      "notHubei": {
+        "dead": 15,
+        "heal": 520,
+        "nowConfirm": 7870,
+        "deadRate": "0.18",
+        "healRate": "6.19"
+      },
+      "country": {
+        "dead": 564,
+        "heal": 1153,
+        "nowConfirm": 26343,
+        "deadRate": "2.01",
+        "healRate": "4.11"
+      }
+    },
+    {
+      "date": "02.06",
+      "hubei": {
+        "dead": 618,
+        "heal": 817,
+        "nowConfirm": 20677,
+        "deadRate": "2.79",
+        "healRate": "3.69"
+      },
+      "notHubei": {
+        "dead": 19,
+        "heal": 725,
+        "nowConfirm": 8355,
+        "deadRate": "0.21",
+        "healRate": "7.97"
+      },
+      "country": {
+        "dead": 637,
+        "heal": 1542,
+        "nowConfirm": 29032,
+        "deadRate": "2.04",
+        "healRate": "4.94"
+      }
+    },
+    {
+      "date": "02.07",
+      "hubei": {
+        "dead": 699,
+        "heal": 1115,
+        "nowConfirm": 23139,
+        "deadRate": "2.80",
+        "healRate": "4.47"
+      },
+      "notHubei": {
+        "dead": 24,
+        "heal": 937,
+        "nowConfirm": 8684,
+        "deadRate": "0.25",
+        "healRate": "9.71"
+      },
+      "country": {
+        "dead": 723,
+        "heal": 2052,
+        "nowConfirm": 31823,
+        "deadRate": "2.09",
+        "healRate": "5.93"
+      }
+    },
+    {
+      "date": "02.08",
+      "hubei": {
+        "dead": 780,
+        "heal": 1439,
+        "nowConfirm": 24881,
+        "deadRate": "2.88",
+        "healRate": "5.31"
+      },
+      "notHubei": {
+        "dead": 32,
+        "heal": 1212,
+        "nowConfirm": 8907,
+        "deadRate": "0.32",
+        "healRate": "11.94"
+      },
+      "country": {
+        "dead": 812,
+        "heal": 2651,
+        "nowConfirm": 33788,
+        "deadRate": "2.18",
+        "healRate": "7.12"
+      }
+    },
+    {
+      "date": "02.09",
+      "hubei": {
+        "dead": 871,
+        "heal": 1795,
+        "nowConfirm": 26965,
+        "deadRate": "2.94",
+        "healRate": "6.06"
+      },
+      "notHubei": {
+        "dead": 38,
+        "heal": 1488,
+        "nowConfirm": 9078,
+        "deadRate": "0.36",
+        "healRate": "14.03"
+      },
+      "country": {
+        "dead": 909,
+        "heal": 3283,
+        "nowConfirm": 36043,
+        "deadRate": "2.26",
+        "healRate": "8.16"
+      }
+    },
+    {
+      "date": "02.10",
+      "hubei": {
+        "dead": 974,
+        "heal": 2222,
+        "nowConfirm": 28532,
+        "deadRate": "3.07",
+        "healRate": "7.00"
+      },
+      "notHubei": {
+        "dead": 43,
+        "heal": 1776,
+        "nowConfirm": 9161,
+        "deadRate": "0.39",
+        "healRate": "16.17"
+      },
+      "country": {
+        "dead": 1017,
+        "heal": 3998,
+        "nowConfirm": 37693,
+        "deadRate": "2.38",
+        "healRate": "9.36"
+      }
+    },
+    {
+      "date": "02.11",
+      "hubei": {
+        "dead": 1068,
+        "heal": 2639,
+        "nowConfirm": 29659,
+        "deadRate": "3.20",
+        "healRate": "7.91"
+      },
+      "notHubei": {
+        "dead": 46,
+        "heal": 2103,
+        "nowConfirm": 9215,
+        "deadRate": "0.40",
+        "healRate": "18.51"
+      },
+      "country": {
+        "dead": 1114,
+        "heal": 4742,
+        "nowConfirm": 38874,
+        "deadRate": "2.49",
+        "healRate": "10.60"
+      }
+    },
+    {
+      "date": "02.12",
+      "hubei": {
+        "dead": 1310,
+        "heal": 3441,
+        "nowConfirm": 43455,
+        "deadRate": "2.72",
+        "healRate": "7.14"
+      },
+      "notHubei": {
+        "dead": 58,
+        "heal": 2474,
+        "nowConfirm": 9144,
+        "deadRate": "0.50",
+        "healRate": "21.19"
+      },
+      "country": {
+        "dead": 1368,
+        "heal": 5915,
+        "nowConfirm": 52599,
+        "deadRate": "2.28",
+        "healRate": "9.88"
+      }
+    },
+    {
+      "date": "02.13",
+      "hubei": {
+        "dead": 1318,
+        "heal": 4131,
+        "nowConfirm": 46537,
+        "deadRate": "2.54",
+        "healRate": "7.95"
+      },
+      "notHubei": {
+        "dead": 63,
+        "heal": 2597,
+        "nowConfirm": 9286,
+        "deadRate": "0.53",
+        "healRate": "21.74"
+      },
+      "country": {
+        "dead": 1381,
+        "heal": 6728,
+        "nowConfirm": 55823,
+        "deadRate": "2.16",
+        "healRate": "10.52"
+      }
+    },
+    {
+      "date": "02.14",
+      "hubei": {
+        "dead": 1457,
+        "heal": 4774,
+        "nowConfirm": 48175,
+        "deadRate": "2.68",
+        "healRate": "8.77"
+      },
+      "notHubei": {
+        "dead": 67,
+        "heal": 3327,
+        "nowConfirm": 8776,
+        "deadRate": "0.55",
+        "healRate": "27.34"
+      },
+      "country": {
+        "dead": 1524,
+        "heal": 8101,
+        "nowConfirm": 56951,
+        "deadRate": "2.29",
+        "healRate": "12.17"
+      }
+    },
+    {
+      "date": "02.15",
+      "hubei": {
+        "dead": 1596,
+        "heal": 5623,
+        "nowConfirm": 49030,
+        "deadRate": "2.84",
+        "healRate": "10.00"
+      },
+      "notHubei": {
+        "dead": 70,
+        "heal": 3802,
+        "nowConfirm": 8463,
+        "deadRate": "0.57",
+        "healRate": "30.82"
+      },
+      "country": {
+        "dead": 1666,
+        "heal": 9425,
+        "nowConfirm": 57493,
+        "deadRate": "2.43",
+        "healRate": "13.74"
+      }
+    },
+    {
+      "date": "02.16",
+      "hubei": {
+        "dead": 1696,
+        "heal": 6639,
+        "nowConfirm": 49847,
+        "deadRate": "2.91",
+        "healRate": "11.41"
+      },
+      "notHubei": {
+        "dead": 76,
+        "heal": 4214,
+        "nowConfirm": 8163,
+        "deadRate": "0.61",
+        "healRate": "33.84"
+      },
+      "country": {
+        "dead": 1772,
+        "heal": 10853,
+        "nowConfirm": 58010,
+        "deadRate": "2.51",
+        "healRate": "15.36"
+      }
+    },
+    {
+      "date": "02.17",
+      "hubei": {
+        "dead": 1789,
+        "heal": 7862,
+        "nowConfirm": 50338,
+        "deadRate": "2.98",
+        "healRate": "13.11"
+      },
+      "notHubei": {
+        "dead": 81,
+        "heal": 4699,
+        "nowConfirm": 7759,
+        "deadRate": "0.65",
+        "healRate": "37.48"
+      },
+      "country": {
+        "dead": 1870,
+        "heal": 12561,
+        "nowConfirm": 58097,
+        "deadRate": "2.58",
+        "healRate": "17.32"
+      }
+    },
+    {
+      "date": "02.18",
+      "hubei": {
+        "dead": 1921,
+        "heal": 9128,
+        "nowConfirm": 50633,
+        "deadRate": "3.11",
+        "healRate": "14.80"
+      },
+      "notHubei": {
+        "dead": 85,
+        "heal": 5259,
+        "nowConfirm": 7253,
+        "deadRate": "0.67",
+        "healRate": "41.75"
+      },
+      "country": {
+        "dead": 2006,
+        "heal": 14387,
+        "nowConfirm": 57886,
+        "deadRate": "2.70",
+        "healRate": "19.37"
+      }
+    },
+    {
+      "date": "02.19",
+      "hubei": {
+        "dead": 2029,
+        "heal": 10337,
+        "nowConfirm": 50091,
+        "deadRate": "3.25",
+        "healRate": "16.55"
+      },
+      "notHubei": {
+        "dead": 92,
+        "heal": 5820,
+        "nowConfirm": 6295,
+        "deadRate": "0.73",
+        "healRate": "46.39"
+      },
+      "country": {
+        "dead": 2121,
+        "heal": 16157,
+        "nowConfirm": 56386,
+        "deadRate": "2.83",
+        "healRate": "21.54"
+      }
+    },
+    {
+      "date": "02.20",
+      "hubei": {
+        "dead": 2144,
+        "heal": 11788,
+        "nowConfirm": 49156,
+        "deadRate": "3.40",
+        "healRate": "18.69"
+      },
+      "notHubei": {
+        "dead": 95,
+        "heal": 6478,
+        "nowConfirm": 5895,
+        "deadRate": "0.74",
+        "healRate": "50.20"
+      },
+      "country": {
+        "dead": 2239,
+        "heal": 18266,
+        "nowConfirm": 55051,
+        "deadRate": "2.95",
+        "healRate": "24.04"
+      }
+    },
+    {
+      "date": "02.21",
+      "hubei": {
+        "dead": 2250,
+        "heal": 13557,
+        "nowConfirm": 47647,
+        "deadRate": "3.55",
+        "healRate": "21.37"
+      },
+      "notHubei": {
+        "dead": 98,
+        "heal": 7116,
+        "nowConfirm": 5724,
+        "deadRate": "0.76",
+        "healRate": "55.00"
+      },
+      "country": {
+        "dead": 2348,
+        "heal": 20673,
+        "nowConfirm": 53371,
+        "deadRate": "3.07",
+        "healRate": "27.06"
+      }
+    },
+    {
+      "date": "02.22",
+      "hubei": {
+        "dead": 2346,
+        "heal": 15299,
+        "nowConfirm": 46439,
+        "deadRate": "3.66",
+        "healRate": "23.87"
+      },
+      "notHubei": {
+        "dead": 99,
+        "heal": 7608,
+        "nowConfirm": 5250,
+        "deadRate": "0.76",
+        "healRate": "58.72"
+      },
+      "country": {
+        "dead": 2445,
+        "heal": 22907,
+        "nowConfirm": 51689,
+        "deadRate": "3.17",
+        "healRate": "29.73"
+      }
+    },
+    {
+      "date": "02.23",
+      "hubei": {
+        "dead": 2495,
+        "heal": 16738,
+        "nowConfirm": 45054,
+        "deadRate": "3.88",
+        "healRate": "26.04"
+      },
+      "notHubei": {
+        "dead": 100,
+        "heal": 8019,
+        "nowConfirm": 4856,
+        "deadRate": "0.77",
+        "healRate": "61.80"
+      },
+      "country": {
+        "dead": 2595,
+        "heal": 24757,
+        "nowConfirm": 49910,
+        "deadRate": "3.36",
+        "healRate": "32.04"
+      }
+    },
+    {
+      "date": "02.24",
+      "hubei": {
+        "dead": 2563,
+        "heal": 18854,
+        "nowConfirm": 43369,
+        "deadRate": "3.96",
+        "healRate": "29.10"
+      },
+      "notHubei": {
+        "dead": 103,
+        "heal": 8499,
+        "nowConfirm": 4391,
+        "deadRate": "0.79",
+        "healRate": "65.41"
+      },
+      "country": {
+        "dead": 2666,
+        "heal": 27353,
+        "nowConfirm": 47760,
+        "deadRate": "3.43",
+        "healRate": "35.17"
+      }
+    },
+    {
+      "date": "02.25",
+      "hubei": {
+        "dead": 2615,
+        "heal": 20912,
+        "nowConfirm": 41660,
+        "deadRate": "4.01",
+        "healRate": "32.08"
+      },
+      "notHubei": {
+        "dead": 103,
+        "heal": 8863,
+        "nowConfirm": 4037,
+        "deadRate": "0.79",
+        "healRate": "68.16"
+      },
+      "country": {
+        "dead": 2718,
+        "heal": 29775,
+        "nowConfirm": 45697,
+        "deadRate": "3.48",
+        "healRate": "38.08"
+      }
+    },
+    {
+      "date": "02.26",
+      "hubei": {
+        "dead": 2641,
+        "heal": 23200,
+        "nowConfirm": 39755,
+        "deadRate": "4.03",
+        "healRate": "35.37"
+      },
+      "notHubei": {
+        "dead": 106,
+        "heal": 9331,
+        "nowConfirm": 3597,
+        "deadRate": "0.81",
+        "healRate": "71.59"
+      },
+      "country": {
+        "dead": 2747,
+        "heal": 32531,
+        "nowConfirm": 43352,
+        "deadRate": "3.49",
+        "healRate": "41.37"
+      }
+    },
+    {
+      "date": "02.27",
+      "hubei": {
+        "dead": 2682,
+        "heal": 26403,
+        "nowConfirm": 36829,
+        "deadRate": "4.07",
+        "healRate": "40.06"
+      },
+      "notHubei": {
+        "dead": 109,
+        "heal": 9754,
+        "nowConfirm": 3182,
+        "deadRate": "0.84",
+        "healRate": "74.77"
+      },
+      "country": {
+        "dead": 2791,
+        "heal": 36157,
+        "nowConfirm": 40011,
+        "deadRate": "3.53",
+        "healRate": "45.79"
+      }
+    },
+    {
+      "date": "02.28",
+      "hubei": {
+        "dead": 2727,
+        "heal": 28895,
+        "nowConfirm": 34715,
+        "deadRate": "4.11",
+        "healRate": "43.56"
+      },
+      "notHubei": {
+        "dead": 111,
+        "heal": 10154,
+        "nowConfirm": 2787,
+        "deadRate": "0.85",
+        "healRate": "77.80"
+      },
+      "country": {
+        "dead": 2838,
+        "heal": 39049,
+        "nowConfirm": 37502,
+        "deadRate": "3.57",
+        "healRate": "49.19"
+      }
+    },
+    {
+      "date": "02.29",
+      "hubei": {
+        "dead": 2761,
+        "heal": 31187,
+        "nowConfirm": 32959,
+        "deadRate": "4.13",
+        "healRate": "46.61"
+      },
+      "notHubei": {
+        "dead": 112,
+        "heal": 10488,
+        "nowConfirm": 2461,
+        "deadRate": "0.86",
+        "healRate": "80.30"
+      },
+      "country": {
+        "dead": 2873,
+        "heal": 41675,
+        "nowConfirm": 35420,
+        "deadRate": "3.59",
+        "healRate": "52.11"
+      }
+    },
+    {
+      "date": "03.01",
+      "hubei": {
+        "dead": 2803,
+        "heal": 33757,
+        "nowConfirm": 30543,
+        "deadRate": "4.18",
+        "healRate": "50.31"
+      },
+      "notHubei": {
+        "dead": 112,
+        "heal": 10761,
+        "nowConfirm": 2198,
+        "deadRate": "0.86",
+        "healRate": "82.33"
+      },
+      "country": {
+        "dead": 2915,
+        "heal": 44518,
+        "nowConfirm": 32741,
+        "deadRate": "3.64",
+        "healRate": "55.53"
+      }
+    },
+    {
+      "date": "03.02",
+      "hubei": {
+        "dead": 2834,
+        "heal": 36167,
+        "nowConfirm": 28216,
+        "deadRate": "4.22",
+        "healRate": "53.81"
+      },
+      "notHubei": {
+        "dead": 112,
+        "heal": 11093,
+        "nowConfirm": 1880,
+        "deadRate": "0.86",
+        "healRate": "84.78"
+      },
+      "country": {
+        "dead": 2946,
+        "heal": 47260,
+        "nowConfirm": 30096,
+        "deadRate": "3.67",
+        "healRate": "58.85"
+      }
+    },
+    {
+      "date": "03.03",
+      "hubei": {
+        "dead": 2871,
+        "heal": 38556,
+        "nowConfirm": 25905,
+        "deadRate": "4.26",
+        "healRate": "57.26"
+      },
+      "notHubei": {
+        "dead": 113,
+        "heal": 11358,
+        "nowConfirm": 1619,
+        "deadRate": "0.86",
+        "healRate": "86.77"
+      },
+      "country": {
+        "dead": 2984,
+        "heal": 49914,
+        "nowConfirm": 27524,
+        "deadRate": "3.71",
+        "healRate": "62.07"
+      }
+    },
+    {
+      "date": "03.04",
+      "hubei": {
+        "dead": 2902,
+        "heal": 40479,
+        "nowConfirm": 24085,
+        "deadRate": "4.30",
+        "healRate": "60.00"
+      },
+      "notHubei": {
+        "dead": 113,
+        "heal": 11630,
+        "nowConfirm": 1356,
+        "deadRate": "0.86",
+        "healRate": "88.79"
+      },
+      "country": {
+        "dead": 3015,
+        "heal": 52109,
+        "nowConfirm": 25441,
+        "deadRate": "3.74",
+        "healRate": "64.68"
+      }
+    },
+    {
+      "date": "03.05",
+      "hubei": {
+        "dead": 2931,
+        "heal": 41966,
+        "nowConfirm": 22695,
+        "deadRate": "4.34",
+        "healRate": "62.09"
+      },
+      "notHubei": {
+        "dead": 114,
+        "heal": 11827,
+        "nowConfirm": 1177,
+        "deadRate": "0.87",
+        "healRate": "90.16"
+      },
+      "country": {
+        "dead": 3045,
+        "heal": 53793,
+        "nowConfirm": 23872,
+        "deadRate": "3.77",
+        "healRate": "66.65"
+      }
+    },
+    {
+      "date": "03.06",
+      "hubei": {
+        "dead": 2959,
+        "heal": 43468,
+        "nowConfirm": 21239,
+        "deadRate": "4.37",
+        "healRate": "64.24"
+      },
+      "notHubei": {
+        "dead": 114,
+        "heal": 12009,
+        "nowConfirm": 1024,
+        "deadRate": "0.87",
+        "healRate": "91.34"
+      },
+      "country": {
+        "dead": 3073,
+        "heal": 55477,
+        "nowConfirm": 22263,
+        "deadRate": "3.80",
+        "healRate": "68.65"
+      }
+    },
+    {
+      "date": "03.07",
+      "hubei": {
+        "dead": 2986,
+        "heal": 45011,
+        "nowConfirm": 19710,
+        "deadRate": "4.41",
+        "healRate": "66.48"
+      },
+      "notHubei": {
+        "dead": 114,
+        "heal": 12132,
+        "nowConfirm": 906,
+        "deadRate": "0.87",
+        "healRate": "92.24"
+      },
+      "country": {
+        "dead": 3100,
+        "heal": 57143,
+        "nowConfirm": 20616,
+        "deadRate": "3.83",
+        "healRate": "70.67"
+      }
+    },
+    {
+      "date": "03.08",
+      "hubei": {
+        "dead": 3007,
+        "heal": 46433,
+        "nowConfirm": 18303,
+        "deadRate": "4.44",
+        "healRate": "68.54"
+      },
+      "notHubei": {
+        "dead": 116,
+        "heal": 12251,
+        "nowConfirm": 794,
+        "deadRate": "0.88",
+        "healRate": "93.09"
+      },
+      "country": {
+        "dead": 3123,
+        "heal": 58684,
+        "nowConfirm": 19097,
+        "deadRate": "3.86",
+        "healRate": "72.54"
+      }
+    },
+    {
+      "date": "03.09",
+      "hubei": {
+        "dead": 3024,
+        "heal": 47585,
+        "nowConfirm": 17151,
+        "deadRate": "4.46",
+        "healRate": "70.23"
+      },
+      "notHubei": {
+        "dead": 116,
+        "heal": 12397,
+        "nowConfirm": 651,
+        "deadRate": "0.88",
+        "healRate": "94.17"
+      },
+      "country": {
+        "dead": 3140,
+        "heal": 59982,
+        "nowConfirm": 17802,
+        "deadRate": "3.88",
+        "healRate": "74.12"
+      }
+    },
+    {
+      "date": "03.10",
+      "hubei": {
+        "dead": 3046,
+        "heal": 49056,
+        "nowConfirm": 15671,
+        "deadRate": "4.49",
+        "healRate": "72.38"
+      },
+      "notHubei": {
+        "dead": 116,
+        "heal": 12511,
+        "nowConfirm": 555,
+        "deadRate": "0.88",
+        "healRate": "94.91"
+      },
+      "country": {
+        "dead": 3162,
+        "heal": 61567,
+        "nowConfirm": 16226,
+        "deadRate": "3.91",
+        "healRate": "76.05"
+      }
+    },
+    {
+      "date": "03.11",
+      "hubei": {
+        "dead": 3056,
+        "heal": 50298,
+        "nowConfirm": 14427,
+        "deadRate": "4.51",
+        "healRate": "74.21"
+      },
+      "notHubei": {
+        "dead": 117,
+        "heal": 12589,
+        "nowConfirm": 493,
+        "deadRate": "0.89",
+        "healRate": "95.29"
+      },
+      "country": {
+        "dead": 3173,
+        "heal": 62887,
+        "nowConfirm": 14920,
+        "deadRate": "3.92",
+        "healRate": "77.65"
+      }
+    },
+    {
+      "date": "03.12",
+      "hubei": {
+        "dead": 3062,
+        "heal": 51553,
+        "nowConfirm": 13171,
+        "deadRate": "4.52",
+        "healRate": "76.05"
+      },
+      "notHubei": {
+        "dead": 118,
+        "heal": 12663,
+        "nowConfirm": 436,
+        "deadRate": "0.89",
+        "healRate": "95.81"
+      },
+      "country": {
+        "dead": 3180,
+        "heal": 64216,
+        "nowConfirm": 13607,
+        "deadRate": "3.93",
+        "healRate": "79.28"
+      }
+    },
+    {
+      "date": "03.13",
+      "hubei": {
+        "dead": 3075,
+        "heal": 52943,
+        "nowConfirm": 11772,
+        "deadRate": "4.54",
+        "healRate": "78.10"
+      },
+      "notHubei": {
+        "dead": 119,
+        "heal": 12706,
+        "nowConfirm": 406,
+        "deadRate": "0.90",
+        "healRate": "96.03"
+      },
+      "country": {
+        "dead": 3194,
+        "heal": 65649,
+        "nowConfirm": 12178,
+        "deadRate": "3.94",
+        "healRate": "81.03"
+      }
+    },
+    {
+      "date": "03.14",
+      "hubei": {
+        "dead": 3085,
+        "heal": 54278,
+        "nowConfirm": 10431,
+        "deadRate": "4.55",
+        "healRate": "80.06"
+      },
+      "notHubei": {
+        "dead": 119,
+        "heal": 12744,
+        "nowConfirm": 391,
+        "deadRate": "0.90",
+        "healRate": "96.15"
+      },
+      "country": {
+        "dead": 3204,
+        "heal": 67022,
+        "nowConfirm": 10822,
+        "deadRate": "3.95",
+        "healRate": "82.69"
+      }
+    },
+    {
+      "date": "03.15",
+      "hubei": {
+        "dead": 3099,
+        "heal": 55094,
+        "nowConfirm": 9605,
+        "deadRate": "4.57",
+        "healRate": "81.26"
+      },
+      "notHubei": {
+        "dead": 119,
+        "heal": 12769,
+        "nowConfirm": 391,
+        "deadRate": "0.90",
+        "healRate": "96.16"
+      },
+      "country": {
+        "dead": 3218,
+        "heal": 67863,
+        "nowConfirm": 9996,
+        "deadRate": "3.97",
+        "healRate": "83.70"
+      }
+    },
+    {
+      "date": "03.16",
+      "hubei": {
+        "dead": 3111,
+        "heal": 55987,
+        "nowConfirm": 8700,
+        "deadRate": "4.59",
+        "healRate": "82.58"
+      },
+      "notHubei": {
+        "dead": 120,
+        "heal": 12812,
+        "nowConfirm": 386,
+        "deadRate": "0.90",
+        "healRate": "96.20"
+      },
+      "country": {
+        "dead": 3231,
+        "heal": 68799,
+        "nowConfirm": 9086,
+        "deadRate": "3.98",
+        "healRate": "84.82"
+      }
+    },
+    {
+      "date": "03.17",
+      "hubei": {
+        "dead": 3122,
+        "heal": 56883,
+        "nowConfirm": 7795,
+        "deadRate": "4.60",
+        "healRate": "83.90"
+      },
+      "notHubei": {
+        "dead": 120,
+        "heal": 12842,
+        "nowConfirm": 389,
+        "deadRate": "0.90",
+        "healRate": "96.19"
+      },
+      "country": {
+        "dead": 3242,
+        "heal": 69725,
+        "nowConfirm": 8184,
+        "deadRate": "4.00",
+        "healRate": "85.92"
+      }
+    },
+    {
+      "date": "03.18",
+      "hubei": {
+        "dead": 3130,
+        "heal": 57678,
+        "nowConfirm": 6992,
+        "deadRate": "4.62",
+        "healRate": "85.07"
+      },
+      "notHubei": {
+        "dead": 120,
+        "heal": 12869,
+        "nowConfirm": 446,
+        "deadRate": "0.89",
+        "healRate": "95.79"
+      },
+      "country": {
+        "dead": 3250,
+        "heal": 70547,
+        "nowConfirm": 7438,
+        "deadRate": "4.00",
+        "healRate": "86.84"
+      }
+    },
+    {
+      "date": "03.19",
+      "hubei": {
+        "dead": 3132,
+        "heal": 58381,
+        "nowConfirm": 6287,
+        "deadRate": "4.62",
+        "healRate": "86.11"
+      },
+      "notHubei": {
+        "dead": 121,
+        "heal": 12903,
+        "nowConfirm": 476,
+        "deadRate": "0.90",
+        "healRate": "95.58"
+      },
+      "country": {
+        "dead": 3253,
+        "heal": 71284,
+        "nowConfirm": 6763,
+        "deadRate": "4.00",
+        "healRate": "87.68"
+      }
+    },
+    {
+      "date": "03.20",
+      "hubei": {
+        "dead": 3139,
+        "heal": 58942,
+        "nowConfirm": 5719,
+        "deadRate": "4.63",
+        "healRate": "86.94"
+      },
+      "notHubei": {
+        "dead": 122,
+        "heal": 12934,
+        "nowConfirm": 294,
+        "deadRate": "0.90",
+        "healRate": "94.99"
+      },
+      "country": {
+        "dead": 3261,
+        "heal": 71876,
+        "nowConfirm": 6013,
+        "deadRate": "4.01",
+        "healRate": "88.28"
+      }
+    },
+    {
+      "date": "03.21",
+      "hubei": {
+        "dead": 3144,
+        "heal": 59432,
+        "nowConfirm": 5224,
+        "deadRate": "4.64",
+        "healRate": "87.66"
+      },
+      "notHubei": {
+        "dead": 123,
+        "heal": 12950,
+        "nowConfirm": 625,
+        "deadRate": "0.90",
+        "healRate": "94.54"
+      },
+      "country": {
+        "dead": 3267,
+        "heal": 72382,
+        "nowConfirm": 5849,
+        "deadRate": "4.01",
+        "healRate": "88.81"
+      }
+    },
+    {
+      "date": "03.22",
+      "hubei": {
+        "dead": 3153,
+        "heal": 59879,
+        "nowConfirm": 4768,
+        "deadRate": "4.65",
+        "healRate": "88.32"
+      },
+      "notHubei": {
+        "dead": 123,
+        "heal": 12962,
+        "nowConfirm": 715,
+        "deadRate": "0.89",
+        "healRate": "93.93"
+      },
+      "country": {
+        "dead": 3276,
+        "heal": 72841,
+        "nowConfirm": 5483,
+        "deadRate": "4.01",
+        "healRate": "89.27"
+      }
+    },
+    {
+      "date": "03.23",
+      "hubei": {
+        "dead": 3160,
+        "heal": 60323,
+        "nowConfirm": 4318,
+        "deadRate": "4.66",
+        "healRate": "88.97"
+      },
+      "notHubei": {
+        "dead": 123,
+        "heal": 12976,
+        "nowConfirm": 847,
+        "deadRate": "0.88",
+        "healRate": "93.04"
+      },
+      "country": {
+        "dead": 3283,
+        "heal": 73299,
+        "nowConfirm": 5165,
+        "deadRate": "4.02",
+        "healRate": "89.67"
+      }
+    },
+    {
+      "date": "03.24",
+      "hubei": {
+        "dead": 3163,
+        "heal": 60810,
+        "nowConfirm": 3828,
+        "deadRate": "4.67",
+        "healRate": "89.69"
+      },
+      "notHubei": {
+        "dead": 124,
+        "heal": 12981,
+        "nowConfirm": 940,
+        "deadRate": "0.88",
+        "healRate": "92.42"
+      },
+      "country": {
+        "dead": 3287,
+        "heal": 73791,
+        "nowConfirm": 4768,
+        "deadRate": "4.02",
+        "healRate": "90.16"
+      }
+    },
+    {
+      "date": "03.25",
+      "hubei": {
+        "dead": 3169,
+        "heal": 61201,
+        "nowConfirm": 3431,
+        "deadRate": "4.67",
+        "healRate": "90.27"
+      },
+      "notHubei": {
+        "dead": 124,
+        "heal": 12995,
+        "nowConfirm": 1040,
+        "deadRate": "0.88",
+        "healRate": "91.78"
+      },
+      "country": {
+        "dead": 3293,
+        "heal": 74196,
+        "nowConfirm": 4471,
+        "deadRate": "4.02",
+        "healRate": "90.53"
+      }
+    },
+    {
+      "date": "03.26",
+      "hubei": {
+        "dead": 3174,
+        "heal": 61731,
+        "nowConfirm": 2896,
+        "deadRate": "4.68",
+        "healRate": "91.05"
+      },
+      "notHubei": {
+        "dead": 124,
+        "heal": 13006,
+        "nowConfirm": 1147,
+        "deadRate": "0.87",
+        "healRate": "91.10"
+      },
+      "country": {
+        "dead": 3298,
+        "heal": 74737,
+        "nowConfirm": 4043,
+        "deadRate": "4.02",
+        "healRate": "91.06"
+      }
+    },
+    {
+      "date": "03.27",
+      "hubei": {
+        "dead": 3177,
+        "heal": 62098,
+        "nowConfirm": 2526,
+        "deadRate": "4.69",
+        "healRate": "91.59"
+      },
+      "notHubei": {
+        "dead": 124,
+        "heal": 13024,
+        "nowConfirm": 1264,
+        "deadRate": "0.86",
+        "healRate": "90.37"
+      },
+      "country": {
+        "dead": 3301,
+        "heal": 75122,
+        "nowConfirm": 3790,
+        "deadRate": "4.02",
+        "healRate": "91.37"
+      }
+    },
+    {
+      "date": "03.28",
+      "hubei": {
+        "dead": 3177,
+        "heal": 62565,
+        "nowConfirm": 2059,
+        "deadRate": "4.69",
+        "healRate": "92.28"
+      },
+      "notHubei": {
+        "dead": 129,
+        "heal": 13035,
+        "nowConfirm": 1376,
+        "deadRate": "0.89",
+        "healRate": "89.65"
+      },
+      "country": {
+        "dead": 3306,
+        "heal": 75600,
+        "nowConfirm": 3435,
+        "deadRate": "4.02",
+        "healRate": "91.81"
+      }
+    },
+    {
+      "date": "03.29",
+      "hubei": {
+        "dead": 3186,
+        "heal": 62882,
+        "nowConfirm": 1733,
+        "deadRate": "4.70",
+        "healRate": "92.74"
+      },
+      "notHubei": {
+        "dead": 125,
+        "heal": 13055,
+        "nowConfirm": 1466,
+        "deadRate": "0.85",
+        "healRate": "89.14"
+      },
+      "country": {
+        "dead": 3311,
+        "heal": 75937,
+        "nowConfirm": 3199,
+        "deadRate": "4.02",
+        "healRate": "92.10"
+      }
+    },
+    {
+      "date": "03.30",
+      "hubei": {
+        "dead": 3187,
+        "heal": 63153,
+        "nowConfirm": 1461,
+        "deadRate": "4.70",
+        "healRate": "93.14"
+      },
+      "notHubei": {
+        "dead": 127,
+        "heal": 13072,
+        "nowConfirm": 1545,
+        "deadRate": "0.86",
+        "healRate": "88.66"
+      },
+      "country": {
+        "dead": 3314,
+        "heal": 76225,
+        "nowConfirm": 3006,
+        "deadRate": "4.01",
+        "healRate": "92.34"
+      }
+    },
+    {
+      "date": "03.31",
+      "hubei": {
+        "dead": 3193,
+        "heal": 63326,
+        "nowConfirm": 1283,
+        "deadRate": "4.71",
+        "healRate": "93.40"
+      },
+      "notHubei": {
+        "dead": 128,
+        "heal": 13089,
+        "nowConfirm": 1612,
+        "deadRate": "0.86",
+        "healRate": "88.27"
+      },
+      "country": {
+        "dead": 3321,
+        "heal": 76415,
+        "nowConfirm": 2895,
+        "deadRate": "4.02",
+        "healRate": "92.48"
+      }
+    },
+    {
+      "date": "04.01",
+      "hubei": {
+        "dead": 3199,
+        "heal": 63471,
+        "nowConfirm": 1132,
+        "deadRate": "4.72",
+        "healRate": "93.61"
+      },
+      "notHubei": {
+        "dead": 128,
+        "heal": 13139,
+        "nowConfirm": 1655,
+        "deadRate": "0.86",
+        "healRate": "88.05"
+      },
+      "country": {
+        "dead": 3327,
+        "heal": 76610,
+        "nowConfirm": 2787,
+        "deadRate": "4.02",
+        "healRate": "92.61"
+      }
+    },
+    {
+      "date": "04.02",
+      "hubei": {
+        "dead": 3203,
+        "heal": 63612,
+        "nowConfirm": 987,
+        "deadRate": "4.72",
+        "healRate": "93.82"
+      },
+      "notHubei": {
+        "dead": 128,
+        "heal": 13173,
+        "nowConfirm": 1699,
+        "deadRate": "0.85",
+        "healRate": "87.82"
+      },
+      "country": {
+        "dead": 3331,
+        "heal": 76785,
+        "nowConfirm": 2686,
+        "deadRate": "4.02",
+        "healRate": "92.73"
+      }
+    },
+    {
+      "date": "04.03",
+      "hubei": {
+        "dead": 3207,
+        "heal": 63762,
+        "nowConfirm": 834,
+        "deadRate": "4.73",
+        "healRate": "94.04"
+      },
+      "notHubei": {
+        "dead": 128,
+        "heal": 13222,
+        "nowConfirm": 1722,
+        "deadRate": "0.85",
+        "healRate": "87.81"
+      },
+      "country": {
+        "dead": 3335,
+        "heal": 76984,
+        "nowConfirm": 2556,
+        "deadRate": "4.02",
+        "healRate": "92.91"
+      }
+    },
+    {
+      "date": "04.04",
+      "hubei": {
+        "dead": 3210,
+        "heal": 63945,
+        "nowConfirm": 648,
+        "deadRate": "4.73",
+        "healRate": "94.31"
+      },
+      "notHubei": {
+        "dead": 128,
+        "heal": 13265,
+        "nowConfirm": 1734,
+        "deadRate": "0.85",
+        "healRate": "87.69"
+      },
+      "country": {
+        "dead": 3338,
+        "heal": 77210,
+        "nowConfirm": 2382,
+        "deadRate": "4.03",
+        "healRate": "93.10"
+      }
+    },
+    {
+      "date": "04.05",
+      "hubei": {
+        "dead": 3212,
+        "heal": 64014,
+        "nowConfirm": 577,
+        "deadRate": "4.74",
+        "healRate": "94.41"
+      },
+      "notHubei": {
+        "dead": 128,
+        "heal": 13334,
+        "nowConfirm": 1740,
+        "deadRate": "0.84",
+        "healRate": "87.71"
+      },
+      "country": {
+        "dead": 3340,
+        "heal": 77348,
+        "nowConfirm": 2317,
+        "deadRate": "4.02",
+        "healRate": "93.18"
+      }
+    },
+    {
+      "date": "04.06",
+      "hubei": {
+        "dead": 3212,
+        "heal": 64073,
+        "nowConfirm": 518,
+        "deadRate": "4.74",
+        "healRate": "94.50"
+      },
+      "notHubei": {
+        "dead": 128,
+        "heal": 13377,
+        "nowConfirm": 1763,
+        "deadRate": "0.84",
+        "healRate": "87.61"
+      },
+      "country": {
+        "dead": 3340,
+        "heal": 77450,
+        "nowConfirm": 2281,
+        "deadRate": "4.02",
+        "healRate": "93.23"
+      }
+    },
+    {
+      "date": "04.07",
+      "hubei": {
+        "dead": 3213,
+        "heal": 64142,
+        "nowConfirm": 448,
+        "deadRate": "4.74",
+        "healRate": "94.60"
+      },
+      "notHubei": {
+        "dead": 129,
+        "heal": 13444,
+        "nowConfirm": 1781,
+        "deadRate": "0.84",
+        "healRate": "87.56"
+      },
+      "country": {
+        "dead": 3342,
+        "heal": 77586,
+        "nowConfirm": 2229,
+        "deadRate": "4.02",
+        "healRate": "93.30"
+      }
+    },
+    {
+      "date": "04.08",
+      "hubei": {
+        "dead": 3215,
+        "heal": 64187,
+        "nowConfirm": 401,
+        "deadRate": "4.74",
+        "healRate": "94.67"
+      },
+      "notHubei": {
+        "dead": 129,
+        "heal": 13524,
+        "nowConfirm": 1793,
+        "deadRate": "0.84",
+        "healRate": "87.56"
+      },
+      "country": {
+        "dead": 3344,
+        "heal": 77711,
+        "nowConfirm": 2194,
+        "deadRate": "4.02",
+        "healRate": "93.35"
+      }
+    },
+    {
+      "date": "04.09",
+      "hubei": {
+        "dead": 3216,
+        "heal": 64236,
+        "nowConfirm": 351,
+        "deadRate": "4.74",
+        "healRate": "94.74"
+      },
+      "notHubei": {
+        "dead": 129,
+        "heal": 13602,
+        "nowConfirm": 1771,
+        "deadRate": "0.83",
+        "healRate": "87.74"
+      },
+      "country": {
+        "dead": 3345,
+        "heal": 77838,
+        "nowConfirm": 2122,
+        "deadRate": "4.02",
+        "healRate": "93.44"
+      }
+    },
+    {
+      "date": "04.10",
+      "hubei": {
+        "dead": 3219,
+        "heal": 64264,
+        "nowConfirm": 320,
+        "deadRate": "4.75",
+        "healRate": "94.78"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 13671,
+        "nowConfirm": 1765,
+        "deadRate": "0.84",
+        "healRate": "87.83"
+      },
+      "country": {
+        "dead": 3349,
+        "heal": 77935,
+        "nowConfirm": 2085,
+        "deadRate": "4.02",
+        "healRate": "93.48"
+      }
+    },
+    {
+      "date": "04.11",
+      "hubei": {
+        "dead": 3219,
+        "heal": 64281,
+        "nowConfirm": 303,
+        "deadRate": "4.75",
+        "healRate": "94.81"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 13739,
+        "nowConfirm": 1810,
+        "deadRate": "0.83",
+        "healRate": "87.63"
+      },
+      "country": {
+        "dead": 3349,
+        "heal": 78020,
+        "nowConfirm": 2113,
+        "deadRate": "4.01",
+        "healRate": "93.46"
+      }
+    },
+    {
+      "date": "04.12",
+      "hubei": {
+        "dead": 3221,
+        "heal": 64338,
+        "nowConfirm": 244,
+        "deadRate": "4.75",
+        "healRate": "94.89"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 13807,
+        "nowConfirm": 1862,
+        "deadRate": "0.82",
+        "healRate": "87.39"
+      },
+      "country": {
+        "dead": 3351,
+        "heal": 78145,
+        "nowConfirm": 2106,
+        "deadRate": "4.01",
+        "healRate": "93.47"
+      }
+    },
+    {
+      "date": "04.13",
+      "hubei": {
+        "dead": 3221,
+        "heal": 64363,
+        "nowConfirm": 219,
+        "deadRate": "4.75",
+        "healRate": "94.93"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 13899,
+        "nowConfirm": 1864,
+        "deadRate": "0.82",
+        "healRate": "87.45"
+      },
+      "country": {
+        "dead": 3351,
+        "heal": 78262,
+        "nowConfirm": 2083,
+        "deadRate": "4.00",
+        "healRate": "93.51"
+      }
+    },
+    {
+      "date": "04.14",
+      "hubei": {
+        "dead": 3222,
+        "heal": 64402,
+        "nowConfirm": 179,
+        "deadRate": "4.75",
+        "healRate": "94.98"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 13987,
+        "nowConfirm": 1825,
+        "deadRate": "0.82",
+        "healRate": "87.74"
+      },
+      "country": {
+        "dead": 3352,
+        "heal": 78389,
+        "nowConfirm": 2004,
+        "deadRate": "4.00",
+        "healRate": "93.60"
+      }
+    },
+    {
+      "date": "04.15",
+      "hubei": {
+        "dead": 3222,
+        "heal": 64435,
+        "nowConfirm": 146,
+        "deadRate": "4.75",
+        "healRate": "95.03"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 14069,
+        "nowConfirm": 1795,
+        "deadRate": "0.81",
+        "healRate": "87.96"
+      },
+      "country": {
+        "dead": 3352,
+        "heal": 78504,
+        "nowConfirm": 1941,
+        "deadRate": "4.00",
+        "healRate": "93.68"
+      }
+    },
+    {
+      "date": "04.17",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63494,
+        "nowConfirm": 122,
+        "deadRate": "6.62",
+        "healRate": "93.20"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 14250,
+        "nowConfirm": 1672,
+        "deadRate": "0.81",
+        "healRate": "88.77"
+      },
+      "country": {
+        "dead": 4642,
+        "heal": 77744,
+        "nowConfirm": 1794,
+        "deadRate": "5.51",
+        "healRate": "92.35"
+      }
+    },
+    {
+      "date": "04.18",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63507,
+        "nowConfirm": 109,
+        "deadRate": "6.62",
+        "healRate": "93.22"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 14318,
+        "nowConfirm": 1625,
+        "deadRate": "0.81",
+        "healRate": "89.08"
+      },
+      "country": {
+        "dead": 4642,
+        "heal": 77825,
+        "nowConfirm": 1734,
+        "deadRate": "5.51",
+        "healRate": "92.43"
+      }
+    },
+    {
+      "date": "04.19",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63511,
+        "nowConfirm": 105,
+        "deadRate": "6.62",
+        "healRate": "93.22"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 14384,
+        "nowConfirm": 1595,
+        "deadRate": "0.81",
+        "healRate": "89.29"
+      },
+      "country": {
+        "dead": 4642,
+        "heal": 77895,
+        "nowConfirm": 1700,
+        "deadRate": "5.51",
+        "healRate": "92.47"
+      }
+    },
+    {
+      "date": "04.20",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63511,
+        "nowConfirm": 105,
+        "deadRate": "6.62",
+        "healRate": "93.22"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 14467,
+        "nowConfirm": 1525,
+        "deadRate": "0.81",
+        "healRate": "89.73"
+      },
+      "country": {
+        "dead": 4642,
+        "heal": 77978,
+        "nowConfirm": 1630,
+        "deadRate": "5.51",
+        "healRate": "92.56"
+      }
+    },
+    {
+      "date": "04.21",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63519,
+        "nowConfirm": 97,
+        "deadRate": "6.62",
+        "healRate": "93.23"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 14523,
+        "nowConfirm": 1506,
+        "deadRate": "0.80",
+        "healRate": "89.88"
+      },
+      "country": {
+        "dead": 4642,
+        "heal": 78042,
+        "nowConfirm": 1603,
+        "deadRate": "5.51",
+        "healRate": "92.59"
+      }
+    },
+    {
+      "date": "04.22",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63547,
+        "nowConfirm": 69,
+        "deadRate": "6.62",
+        "healRate": "93.28"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 14600,
+        "nowConfirm": 1444,
+        "deadRate": "0.80",
+        "healRate": "90.27"
+      },
+      "country": {
+        "dead": 4642,
+        "heal": 78147,
+        "nowConfirm": 1513,
+        "deadRate": "5.51",
+        "healRate": "92.70"
+      }
+    },
+    {
+      "date": "04.23",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63569,
+        "nowConfirm": 47,
+        "deadRate": "6.62",
+        "healRate": "93.31"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 14667,
+        "nowConfirm": 1386,
+        "deadRate": "0.80",
+        "healRate": "90.63"
+      },
+      "country": {
+        "dead": 4642,
+        "heal": 78236,
+        "nowConfirm": 1433,
+        "deadRate": "5.51",
+        "healRate": "92.79"
+      }
+    },
+    {
+      "date": "04.24",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63593,
+        "nowConfirm": 23,
+        "deadRate": "6.62",
+        "healRate": "93.34"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 14769,
+        "nowConfirm": 1297,
+        "deadRate": "0.80",
+        "healRate": "91.19"
+      },
+      "country": {
+        "dead": 4642,
+        "heal": 78362,
+        "nowConfirm": 1320,
+        "deadRate": "5.50",
+        "healRate": "92.93"
+      }
+    },
+    {
+      "date": "04.25",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63604,
+        "nowConfirm": 12,
+        "deadRate": "6.62",
+        "healRate": "93.36"
+      },
+      "notHubei": {
+        "dead": 130,
+        "heal": 14846,
+        "nowConfirm": 1234,
+        "deadRate": "0.80",
+        "healRate": "91.59"
+      },
+      "country": {
+        "dead": 4642,
+        "heal": 78450,
+        "nowConfirm": 1246,
+        "deadRate": "5.50",
+        "healRate": "93.02"
+      }
+    },
+    {
+      "date": "04.26",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 14942,
+        "nowConfirm": 1140,
+        "deadRate": "0.81",
+        "healRate": "92.16"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 78558,
+        "nowConfirm": 1140,
+        "deadRate": "5.51",
+        "healRate": "93.14"
+      }
+    },
+    {
+      "date": "04.27",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15048,
+        "nowConfirm": 1040,
+        "deadRate": "0.81",
+        "healRate": "92.78"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 78664,
+        "nowConfirm": 1040,
+        "deadRate": "5.50",
+        "healRate": "93.26"
+      }
+    },
+    {
+      "date": "04.28",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15113,
+        "nowConfirm": 997,
+        "deadRate": "0.81",
+        "healRate": "93.05"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 78729,
+        "nowConfirm": 997,
+        "deadRate": "5.50",
+        "healRate": "93.32"
+      }
+    },
+    {
+      "date": "04.29",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15169,
+        "nowConfirm": 945,
+        "deadRate": "0.81",
+        "healRate": "93.38"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 78785,
+        "nowConfirm": 945,
+        "deadRate": "5.50",
+        "healRate": "93.38"
+      }
+    },
+    {
+      "date": "04.30",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15229,
+        "nowConfirm": 897,
+        "deadRate": "0.81",
+        "healRate": "93.68"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 78845,
+        "nowConfirm": 897,
+        "deadRate": "5.50",
+        "healRate": "93.43"
+      }
+    },
+    {
+      "date": "05.01",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15289,
+        "nowConfirm": 840,
+        "deadRate": "0.81",
+        "healRate": "94.03"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 78905,
+        "nowConfirm": 840,
+        "deadRate": "5.50",
+        "healRate": "93.50"
+      }
+    },
+    {
+      "date": "05.02",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15323,
+        "nowConfirm": 811,
+        "deadRate": "0.81",
+        "healRate": "94.21"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 78939,
+        "nowConfirm": 811,
+        "deadRate": "5.50",
+        "healRate": "93.54"
+      }
+    },
+    {
+      "date": "05.03",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15400,
+        "nowConfirm": 741,
+        "deadRate": "0.81",
+        "healRate": "94.64"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 79016,
+        "nowConfirm": 741,
+        "deadRate": "5.50",
+        "healRate": "93.62"
+      }
+    },
+    {
+      "date": "05.04",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15510,
+        "nowConfirm": 635,
+        "deadRate": "0.80",
+        "healRate": "95.29"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 79126,
+        "nowConfirm": 635,
+        "deadRate": "5.50",
+        "healRate": "93.75"
+      }
+    },
+    {
+      "date": "05.05",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15588,
+        "nowConfirm": 559,
+        "deadRate": "0.80",
+        "healRate": "95.76"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 79204,
+        "nowConfirm": 559,
+        "deadRate": "5.50",
+        "healRate": "93.84"
+      }
+    },
+    {
+      "date": "05.06",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15652,
+        "nowConfirm": 498,
+        "deadRate": "0.80",
+        "healRate": "96.14"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 79268,
+        "nowConfirm": 498,
+        "deadRate": "5.50",
+        "healRate": "93.91"
+      }
+    },
+    {
+      "date": "05.07",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15708,
+        "nowConfirm": 448,
+        "deadRate": "0.80",
+        "healRate": "96.45"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 79324,
+        "nowConfirm": 448,
+        "deadRate": "5.50",
+        "healRate": "93.97"
+      }
+    },
+    {
+      "date": "05.08",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 0,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15785,
+        "nowConfirm": 372,
+        "deadRate": "0.80",
+        "healRate": "96.91"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 79401,
+        "nowConfirm": 372,
+        "deadRate": "5.50",
+        "healRate": "94.06"
+      }
+    },
+    {
+      "date": "05.09",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 1,
+        "deadRate": "6.62",
+        "healRate": "93.38"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15872,
+        "nowConfirm": 298,
+        "deadRate": "0.80",
+        "healRate": "97.37"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 79488,
+        "nowConfirm": 299,
+        "deadRate": "5.50",
+        "healRate": "94.15"
+      }
+    },
+    {
+      "date": "05.10",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 6,
+        "deadRate": "6.62",
+        "healRate": "93.37"
+      },
+      "notHubei": {
+        "dead": 131,
+        "heal": 15917,
+        "nowConfirm": 268,
+        "deadRate": "0.80",
+        "healRate": "97.55"
+      },
+      "country": {
+        "dead": 4643,
+        "heal": 79533,
+        "nowConfirm": 274,
+        "deadRate": "5.50",
+        "healRate": "94.18"
+      }
+    },
+    {
+      "date": "05.11",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 6,
+        "deadRate": "6.62",
+        "healRate": "93.37"
+      },
+      "notHubei": {
+        "dead": 132,
+        "heal": 15950,
+        "nowConfirm": 235,
+        "deadRate": "0.81",
+        "healRate": "97.75"
+      },
+      "country": {
+        "dead": 4644,
+        "heal": 79566,
+        "nowConfirm": 241,
+        "deadRate": "5.50",
+        "healRate": "94.22"
+      }
+    },
+    {
+      "date": "05.12",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 6,
+        "deadRate": "6.62",
+        "healRate": "93.37"
+      },
+      "notHubei": {
+        "dead": 132,
+        "heal": 15978,
+        "nowConfirm": 214,
+        "deadRate": "0.81",
+        "healRate": "97.88"
+      },
+      "country": {
+        "dead": 4644,
+        "heal": 79594,
+        "nowConfirm": 220,
+        "deadRate": "5.50",
+        "healRate": "94.24"
+      }
+    },
+    {
+      "date": "05.13",
+      "hubei": {
+        "dead": 4512,
+        "heal": 63616,
+        "nowConfirm": 6,
+        "deadRate": "6.62",
+        "healRate": "93.37"
+      },
+      "notHubei": {
+        "dead": 132,
+        "heal": 16005,
+        "nowConfirm": 193,
+        "deadRate": "0.81",
+        "healRate": "98.01"
+      },
+      "country": {
+        "dead": 4644,
+        "heal": 79621,
+        "nowConfirm": 199,
+        "deadRate": "5.50",
+        "healRate": "94.27"
+      }
+    }
+  ],
+  "wuhanDayList": [
+    {
+      "date": "01.21",
+      "wuhan": {
+        "confirmAdd": 60
+      },
+      "notWuhan": {
+        "confirmAdd": 12
+      },
+      "notHubei": {
+        "confirmAdd": 44
+      }
+    },
+    {
+      "date": "01.22",
+      "wuhan": {
+        "confirmAdd": 105
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 62
+      }
+    },
+    {
+      "date": "01.23",
+      "wuhan": {
+        "confirmAdd": 62
+      },
+      "notWuhan": {
+        "confirmAdd": 7
+      },
+      "notHubei": {
+        "confirmAdd": 154
+      }
+    },
+    {
+      "date": "01.24",
+      "wuhan": {
+        "confirmAdd": 70
+      },
+      "notWuhan": {
+        "confirmAdd": 35
+      },
+      "notHubei": {
+        "confirmAdd": 264
+      }
+    },
+    {
+      "date": "01.25",
+      "wuhan": {
+        "confirmAdd": 77
+      },
+      "notWuhan": {
+        "confirmAdd": 102
+      },
+      "notHubei": {
+        "confirmAdd": 365
+      }
+    },
+    {
+      "date": "01.26",
+      "wuhan": {
+        "confirmAdd": 46
+      },
+      "notWuhan": {
+        "confirmAdd": 278
+      },
+      "notHubei": {
+        "confirmAdd": 398
+      }
+    },
+    {
+      "date": "01.27",
+      "wuhan": {
+        "confirmAdd": 80
+      },
+      "notWuhan": {
+        "confirmAdd": 291
+      },
+      "notHubei": {
+        "confirmAdd": 480
+      }
+    },
+    {
+      "date": "01.28",
+      "wuhan": {
+        "confirmAdd": 892
+      },
+      "notWuhan": {
+        "confirmAdd": 399
+      },
+      "notHubei": {
+        "confirmAdd": 619
+      }
+    },
+    {
+      "date": "01.29",
+      "wuhan": {
+        "confirmAdd": 315
+      },
+      "notWuhan": {
+        "confirmAdd": 525
+      },
+      "notHubei": {
+        "confirmAdd": 705
+      }
+    },
+    {
+      "date": "01.30",
+      "wuhan": {
+        "confirmAdd": 356
+      },
+      "notWuhan": {
+        "confirmAdd": 676
+      },
+      "notHubei": {
+        "confirmAdd": 762
+      }
+    },
+    {
+      "date": "01.31",
+      "wuhan": {
+        "confirmAdd": 378
+      },
+      "notWuhan": {
+        "confirmAdd": 842
+      },
+      "notHubei": {
+        "confirmAdd": 755
+      }
+    },
+    {
+      "date": "02.01",
+      "wuhan": {
+        "confirmAdd": 576
+      },
+      "notWuhan": {
+        "confirmAdd": 771
+      },
+      "notHubei": {
+        "confirmAdd": 669
+      }
+    },
+    {
+      "date": "02.02",
+      "wuhan": {
+        "confirmAdd": 894
+      },
+      "notWuhan": {
+        "confirmAdd": 1027
+      },
+      "notHubei": {
+        "confirmAdd": 726
+      }
+    },
+    {
+      "date": "02.03",
+      "wuhan": {
+        "confirmAdd": 1033
+      },
+      "notWuhan": {
+        "confirmAdd": 1070
+      },
+      "notHubei": {
+        "confirmAdd": 890
+      }
+    },
+    {
+      "date": "02.04",
+      "wuhan": {
+        "confirmAdd": 1242
+      },
+      "notWuhan": {
+        "confirmAdd": 1103
+      },
+      "notHubei": {
+        "confirmAdd": 737
+      }
+    },
+    {
+      "date": "02.05",
+      "wuhan": {
+        "confirmAdd": 1967
+      },
+      "notWuhan": {
+        "confirmAdd": 1189
+      },
+      "notHubei": {
+        "confirmAdd": 710
+      }
+    },
+    {
+      "date": "02.06",
+      "wuhan": {
+        "confirmAdd": 1766
+      },
+      "notWuhan": {
+        "confirmAdd": 1221
+      },
+      "notHubei": {
+        "confirmAdd": 696
+      }
+    },
+    {
+      "date": "02.07",
+      "wuhan": {
+        "confirmAdd": 1501
+      },
+      "notWuhan": {
+        "confirmAdd": 946
+      },
+      "notHubei": {
+        "confirmAdd": 560
+      }
+    },
+    {
+      "date": "02.08",
+      "wuhan": {
+        "confirmAdd": 1985
+      },
+      "notWuhan": {
+        "confirmAdd": 856
+      },
+      "notHubei": {
+        "confirmAdd": 509
+      }
+    },
+    {
+      "date": "02.09",
+      "wuhan": {
+        "confirmAdd": 1379
+      },
+      "notWuhan": {
+        "confirmAdd": 768
+      },
+      "notHubei": {
+        "confirmAdd": 444
+      }
+    },
+    {
+      "date": "02.10",
+      "wuhan": {
+        "confirmAdd": 1921
+      },
+      "notWuhan": {
+        "confirmAdd": 697
+      },
+      "notHubei": {
+        "confirmAdd": 387
+      }
+    },
+    {
+      "date": "02.11",
+      "wuhan": {
+        "confirmAdd": 1552
+      },
+      "notWuhan": {
+        "confirmAdd": 545
+      },
+      "notHubei": {
+        "confirmAdd": 384
+      }
+    },
+    {
+      "date": "02.12",
+      "wuhan": {
+        "confirmAdd": 1104
+      },
+      "notWuhan": {
+        "confirmAdd": 534
+      },
+      "notHubei": {
+        "confirmAdd": 313
+      }
+    },
+    {
+      "date": "02.13",
+      "wuhan": {
+        "confirmAdd": 13436
+      },
+      "notWuhan": {
+        "confirmAdd": 1404
+      },
+      "notHubei": {
+        "confirmAdd": 270
+      }
+    },
+    {
+      "date": "02.14",
+      "wuhan": {
+        "confirmAdd": 3910
+      },
+      "notWuhan": {
+        "confirmAdd": 913
+      },
+      "notHubei": {
+        "confirmAdd": 224
+      }
+    },
+    {
+      "date": "02.15",
+      "wuhan": {
+        "confirmAdd": 1923
+      },
+      "notWuhan": {
+        "confirmAdd": 519
+      },
+      "notHubei": {
+        "confirmAdd": 166
+      }
+    },
+    {
+      "date": "02.16",
+      "wuhan": {
+        "confirmAdd": 1548
+      },
+      "notWuhan": {
+        "confirmAdd": 300
+      },
+      "notHubei": {
+        "confirmAdd": 118
+      }
+    },
+    {
+      "date": "02.17",
+      "wuhan": {
+        "confirmAdd": 1690
+      },
+      "notWuhan": {
+        "confirmAdd": 254
+      },
+      "notHubei": {
+        "confirmAdd": 84
+      }
+    },
+    {
+      "date": "02.18",
+      "wuhan": {
+        "confirmAdd": 1600
+      },
+      "notWuhan": {
+        "confirmAdd": 225
+      },
+      "notHubei": {
+        "confirmAdd": 58
+      }
+    },
+    {
+      "date": "02.19",
+      "wuhan": {
+        "confirmAdd": 1660
+      },
+      "notWuhan": {
+        "confirmAdd": 86
+      },
+      "notHubei": {
+        "confirmAdd": 45
+      }
+    },
+    {
+      "date": "02.20",
+      "wuhan": {
+        "confirmAdd": 615
+      },
+      "notWuhan": {
+        "confirmAdd": 152
+      },
+      "notHubei": {
+        "confirmAdd": 261
+      }
+    },
+    {
+      "date": "02.21",
+      "wuhan": {
+        "confirmAdd": 319
+      },
+      "notWuhan": {
+        "confirmAdd": 92
+      },
+      "notHubei": {
+        "confirmAdd": 33
+      }
+    },
+    {
+      "date": "02.22",
+      "wuhan": {
+        "confirmAdd": 314
+      },
+      "notWuhan": {
+        "confirmAdd": 51
+      },
+      "notHubei": {
+        "confirmAdd": 19
+      }
+    },
+    {
+      "date": "02.23",
+      "wuhan": {
+        "confirmAdd": 541
+      },
+      "notWuhan": {
+        "confirmAdd": 57
+      },
+      "notHubei": {
+        "confirmAdd": 18
+      }
+    },
+    {
+      "date": "02.24",
+      "wuhan": {
+        "confirmAdd": 348
+      },
+      "notWuhan": {
+        "confirmAdd": 53
+      },
+      "notHubei": {
+        "confirmAdd": 18
+      }
+    },
+    {
+      "date": "02.25",
+      "wuhan": {
+        "confirmAdd": 464
+      },
+      "notWuhan": {
+        "confirmAdd": 35
+      },
+      "notHubei": {
+        "confirmAdd": 10
+      }
+    },
+    {
+      "date": "02.26",
+      "wuhan": {
+        "confirmAdd": 370
+      },
+      "notWuhan": {
+        "confirmAdd": 31
+      },
+      "notHubei": {
+        "confirmAdd": 31
+      }
+    },
+    {
+      "date": "02.27",
+      "wuhan": {
+        "confirmAdd": 383
+      },
+      "notWuhan": {
+        "confirmAdd": 26
+      },
+      "notHubei": {
+        "confirmAdd": 11
+      }
+    },
+    {
+      "date": "02.28",
+      "wuhan": {
+        "confirmAdd": 313
+      },
+      "notWuhan": {
+        "confirmAdd": 5
+      },
+      "notHubei": {
+        "confirmAdd": 7
+      }
+    },
+    {
+      "date": "02.29",
+      "wuhan": {
+        "confirmAdd": 420
+      },
+      "notWuhan": {
+        "confirmAdd": 3
+      },
+      "notHubei": {
+        "confirmAdd": 9
+      }
+    },
+    {
+      "date": "03.01",
+      "wuhan": {
+        "confirmAdd": 565
+      },
+      "notWuhan": {
+        "confirmAdd": 5
+      },
+      "notHubei": {
+        "confirmAdd": 10
+      }
+    },
+    {
+      "date": "03.02",
+      "wuhan": {
+        "confirmAdd": 111
+      },
+      "notWuhan": {
+        "confirmAdd": 3
+      },
+      "notHubei": {
+        "confirmAdd": 14
+      }
+    },
+    {
+      "date": "03.03",
+      "wuhan": {
+        "confirmAdd": 114
+      },
+      "notWuhan": {
+        "confirmAdd": 3
+      },
+      "notHubei": {
+        "confirmAdd": 5
+      }
+    },
+    {
+      "date": "03.04",
+      "wuhan": {
+        "confirmAdd": 131
+      },
+      "notWuhan": {
+        "confirmAdd": 1
+      },
+      "notHubei": {
+        "confirmAdd": 9
+      }
+    },
+    {
+      "date": "03.05",
+      "wuhan": {
+        "confirmAdd": 126
+      },
+      "notWuhan": {
+        "confirmAdd": 3
+      },
+      "notHubei": {
+        "confirmAdd": 19
+      }
+    },
+    {
+      "date": "03.06",
+      "wuhan": {
+        "confirmAdd": 74
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 29
+      }
+    },
+    {
+      "date": "03.07",
+      "wuhan": {
+        "confirmAdd": 74
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 5
+      }
+    },
+    {
+      "date": "03.08",
+      "wuhan": {
+        "confirmAdd": 41
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 9
+      }
+    },
+    {
+      "date": "03.09",
+      "wuhan": {
+        "confirmAdd": 36
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 3
+      }
+    },
+    {
+      "date": "03.10",
+      "wuhan": {
+        "confirmAdd": 17
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 18
+      }
+    },
+    {
+      "date": "03.11",
+      "wuhan": {
+        "confirmAdd": 13
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 17
+      }
+    },
+    {
+      "date": "03.12",
+      "wuhan": {
+        "confirmAdd": 8
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 6
+      }
+    },
+    {
+      "date": "03.13",
+      "wuhan": {
+        "confirmAdd": 5
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 14
+      }
+    },
+    {
+      "date": "03.14",
+      "wuhan": {
+        "confirmAdd": 4
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 23
+      }
+    },
+    {
+      "date": "03.15",
+      "wuhan": {
+        "confirmAdd": 4
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 25
+      }
+    },
+    {
+      "date": "03.16",
+      "wuhan": {
+        "confirmAdd": 4
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 35
+      }
+    },
+    {
+      "date": "03.17",
+      "wuhan": {
+        "confirmAdd": 1
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 34
+      }
+    },
+    {
+      "date": "03.18",
+      "wuhan": {
+        "confirmAdd": 1
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 84
+      }
+    },
+    {
+      "date": "03.19",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 65
+      }
+    },
+    {
+      "date": "03.20",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 116
+      }
+    },
+    {
+      "date": "03.21",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 82
+      }
+    },
+    {
+      "date": "03.22",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 102
+      }
+    },
+    {
+      "date": "03.23",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 146
+      }
+    },
+    {
+      "date": "03.24",
+      "wuhan": {
+        "confirmAdd": 1
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 99
+      }
+    },
+    {
+      "date": "03.25",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 114
+      }
+    },
+    {
+      "date": "03.26",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 118
+      }
+    },
+    {
+      "date": "03.27",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 135
+      }
+    },
+    {
+      "date": "03.28",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 128
+      }
+    },
+    {
+      "date": "03.29",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 106
+      }
+    },
+    {
+      "date": "03.30",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 98
+      }
+    },
+    {
+      "date": "03.31",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 85
+      }
+    },
+    {
+      "date": "04.01",
+      "wuhan": {
+        "confirmAdd": 1
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 93
+      }
+    },
+    {
+      "date": "04.02",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 78
+      }
+    },
+    {
+      "date": "04.03",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 72
+      }
+    },
+    {
+      "date": "04.04",
+      "wuhan": {
+        "confirmAdd": 1
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 55
+      }
+    },
+    {
+      "date": "04.05",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 75
+      }
+    },
+    {
+      "date": "04.06",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 66
+      }
+    },
+    {
+      "date": "04.07",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 86
+      }
+    },
+    {
+      "date": "04.08",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 92
+      }
+    },
+    {
+      "date": "04.09",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 56
+      }
+    },
+    {
+      "date": "04.10",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 64
+      }
+    },
+    {
+      "date": "04.11",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 113
+      }
+    },
+    {
+      "date": "04.12",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 115
+      }
+    },
+    {
+      "date": "04.13",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 99
+      }
+    },
+    {
+      "date": "04.14",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 49
+      }
+    },
+    {
+      "date": "04.15",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 52
+      }
+    },
+    {
+      "date": "04.16",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 27
+      }
+    },
+    {
+      "date": "04.17",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 31
+      }
+    },
+    {
+      "date": "04.18",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 21
+      }
+    },
+    {
+      "date": "04.19",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 36
+      }
+    },
+    {
+      "date": "04.20",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 13
+      }
+    },
+    {
+      "date": "04.21",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 37
+      }
+    },
+    {
+      "date": "04.22",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 15
+      }
+    },
+    {
+      "date": "04.23",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 9
+      }
+    },
+    {
+      "date": "04.24",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 13
+      }
+    },
+    {
+      "date": "04.25",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 14
+      }
+    },
+    {
+      "date": "04.26",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 3
+      }
+    },
+    {
+      "date": "04.27",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 6
+      }
+    },
+    {
+      "date": "05.10",
+      "wuhan": {
+        "confirmAdd": 1
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 15
+      }
+    },
+    {
+      "date": "05.11",
+      "wuhan": {
+        "confirmAdd": 5
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 1
+      }
+    },
+    {
+      "date": "05.12",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 7
+      }
+    },
+    {
+      "date": "05.13",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 6
+      }
+    },
+    {
+      "date": "05.14",
+      "wuhan": {
+        "confirmAdd": 0
+      },
+      "notWuhan": {
+        "confirmAdd": 0
+      },
+      "notHubei": {
+        "confirmAdd": 0
+      }
+    }
+  ],
+  "articleList": [
+    {
+      "cmsId": "20200415A03RD900",
+      "source": "push",
+      "media": "海外网",
+      "publish_time": "2020-04-15 07:07:24",
+      "desc": "当地时间14日，特朗普宣布暂停资助世界卫生组织。此前，特朗普曾批评世卫组织应对新冠肺炎疫情的方式，并威胁停缴该组织的会费。",
+      "url": "https://view.inews.qq.com/a/20200415A03RD900",
+      "title": "特朗普宣布暂停资助世卫组织"
+    },
+    {
+      "cmsId": "20200414A0H1GK00",
+      "source": "push",
+      "media": "南方都市报",
+      "publish_time": "2020-04-14 15:33:41",
+      "desc": "国家卫健委新闻发言人米锋表示，近几日，个别省份连续出现本土确诊病例和无症状感染者，要始终做好个人防护和社区防控，突出做好无症状感染者及其密切接触者的流行病学调查和医学管理，将防控措施落实到户到人。",
+      "url": "https://view.inews.qq.com/a/20200414A0H1GK00?uid=2522979150\u0026shareto=wx\u0026devid=11F689A4-F6F0-4FA4-BDBA-06A31A4B7D08\u0026qimei=11f689a4-f6f0-4fa4-bdba-06a31a4b7d08",
+      "title": "近日个别省份连续出现本土病例，卫健委：防控措施落实到户到人"
+    },
+    {
+      "cmsId": "TWF202004140021930O",
+      "source": "push",
+      "media": "新华社",
+      "publish_time": "2020-04-14 11:53:35",
+      "desc": "中国两款新冠病毒灭活疫苗获国家药品监督管理局一二期合并的临床试验许可，为首批获临床研究批件的新冠病毒灭活疫苗。",
+      "url": "https://view.inews.qq.com/a/TWF202004140021930O?shareto=wx\u0026devid=11F689A4-F6F0-4FA4-BDBA-06A31A4B7D08\u0026qimei=11f689a4-f6f0-4fa4-bdba-06a31a4b7d08\u0026uid=2522979150",
+      "title": "新突破！我国新冠病毒灭活疫苗获批进入临床试验"
+    },
+    {
+      "cmsId": "20200414A058GB00",
+      "source": "manual",
+      "media": "观察者网",
+      "publish_time": "2020-04-14 09:28:48",
+      "desc": "7点15分数据显示，美国累计确诊数突增10万多例，达682619例。观察者网发现，“美国1个多小时内新增10万例”的背后，是约翰·霍普金斯大学在统计佛罗里达州数据时出现失误。",
+      "url": "http://view.inews.qq.com/a/20200414A058GB00",
+      "title": "错了！全球还没到200万例"
+    },
+    {
+      "cmsId": "20200413A0CF2C00",
+      "source": "manual",
+      "media": "南方都市报",
+      "publish_time": "2020-04-13 15:03:53",
+      "desc": "黑龙江自4月9日-12日，连续3天都通报有本土新增病例，共计11例本土确诊病例，源头是郭某，他直接或间接导致10人感染。但郭某是如何传染上新冠病毒目前尚在调查中。",
+      "url": "https://view.inews.qq.com/a/20200413A0CF2C00",
+      "title": "黑龙江一传十内情：聚餐致一家4口感染，住院传染同病区4人"
+    },
+    {
+      "cmsId": "20200413A0BO8J00",
+      "source": "manual",
+      "media": "中国新闻周刊",
+      "publish_time": "2020-04-13 12:52:39",
+      "desc": "来自俄罗斯的输入性病例，让中国的疫情又出现了一波“小高峰”。据统计，黑龙江绥芬河市报告243例，内蒙古满洲里71例，上海60例，山西35例。以上数字，是截至4月13日中午，来自俄罗斯的新冠肺炎输入性确诊病例，总共至少409例。",
+      "url": "https://view.inews.qq.com/a/20200413A0BO8J00",
+      "title": "俄罗斯输入性病例暴增，将中国拖入疫情“加时赛”"
+    },
+    {
+      "cmsId": "20200413A04CGW00",
+      "source": "push",
+      "media": "交汇点",
+      "publish_time": "2020-04-13 10:39:28",
+      "desc": "张文宏表示：11月份以后我们会面临巨大的挑战，我认为下一波的疫情可能就会在11月份左右到来。但是经过前面一段抗疫经验的积累，还有特别是对于诊断技术的广泛推广，我相信下一波疫情原则上来讲比第一波要低很多。但像非洲、南美等医疗资源不充分的国家，可能真的很难度过下一个冬季。",
+      "url": "https://view.inews.qq.com/a/20200413A04CGW00",
+      "title": "张文宏：下一波疫情可能11月来，这些国家很难度过下一个冬季"
+    },
+    {
+      "cmsId": "TWF2020041300029004",
+      "source": "manual",
+      "media": "央视新闻",
+      "publish_time": "2020-04-13 06:34:41",
+      "desc": "世界卫生组织和中国的联合专家组有一个基本的判断，“封城”措施最少可以减少数十万疾病的发生，有些学者研究可以减少几百万疾病的发生。可以肯定地说，这种措施它减少了大量的病人发生和死亡。",
+      "url": "https://view.inews.qq.com/a/TWF2020041300029004",
+      "title": "国家卫健委专家：“封城”措施减少数十万疾病发生"
+    },
+    {
+      "cmsId": "GDC2020041200188200",
+      "source": "push",
+      "media": "广东省卫健委",
+      "publish_time": "2020-04-12 09:14:35",
+      "desc": "4月11日0时-24时，广东新增4例境外输入确诊病例，均为广州报告，新增无症状感染者26例。",
+      "url": "https://view.inews.qq.com/a/GDC2020041200188200",
+      "title": "广东新增4例境外输入病例 26例无症状感染者"
+    },
+    {
+      "cmsId": "JSC2020041200146100",
+      "source": "push",
+      "media": "健康江苏",
+      "publish_time": "2020-04-12 08:52:06",
+      "desc": "江苏昨日新增1例境外输入确诊病例，新增2例境外输入无症状感染者；尚有298人正在接受医学观察。",
+      "url": "https://view.inews.qq.com/a/JSC2020041200146100",
+      "title": "江苏新增1例境外输入确诊病例"
+    },
+    {
+      "cmsId": "FJC2020041200140600",
+      "source": "push",
+      "media": "福建省卫生健康委员会",
+      "publish_time": "2020-04-12 08:41:16",
+      "desc": "4月11日0-24时，福建新增1例境外输入新冠肺炎确诊病例，新增无症状感染者2例。",
+      "url": "https://view.inews.qq.com/a/FJC2020041200140600",
+      "title": "福建新增1例境外输入确诊病例"
+    },
+    {
+      "cmsId": "TWF2020041200105300",
+      "source": "push",
+      "media": "国家卫生健康委员会官方网站",
+      "publish_time": "2020-04-12 08:10:11",
+      "desc": "国家卫健委：昨日新增确诊99例，97例为境外输入；新增无症状感染者63例。",
+      "url": "https://view.inews.qq.com/a/TWF2020041200105300",
+      "title": "全国新增境外输入97例 本土2例"
+    },
+    {
+      "cmsId": "CEG2020041200089400",
+      "source": "push",
+      "media": "黑龙江省卫生健康委员会",
+      "publish_time": "2020-04-12 08:04:27",
+      "desc": "2020年4月11日0-24时，黑龙江省省内新增新冠肺炎确诊病例2例，新增境外输入确诊病例21例，均为中国籍，从俄罗斯输入。",
+      "url": "https://view.inews.qq.com/a/CEG2020041200089400",
+      "title": "黑龙江新增本地2例 境外输入21例"
+    },
+    {
+      "cmsId": "20200412A044O600",
+      "source": "push",
+      "media": "上海发布",
+      "publish_time": "2020-04-12 07:57:22",
+      "desc": "上海昨天新增52例境外输入新冠肺炎确诊病例，无本地新增确诊病例。详情\u003e\u003e",
+      "url": "https://view.inews.qq.com/a/20200412A044O600",
+      "title": "沪新增52例境外输入新冠肺炎确诊病例"
+    },
+    {
+      "cmsId": "20200412A03R1W00",
+      "source": "push",
+      "media": "海外网",
+      "publish_time": "2020-04-12 07:11:15",
+      "desc": "全球累计确诊新冠肺炎病例1765030例；美国确诊、死亡病例数均为全球最高；机构评估称或有超160万法国人感染。详情\u003e\u003e",
+      "url": "https://view.inews.qq.com/a/20200412A03R1W00",
+      "title": "全球病例超176万 美国死亡病例数最高"
+    },
+    {
+      "cmsId": "20200411A0OETI00",
+      "source": "manual",
+      "media": "政知见",
+      "publish_time": "2020-04-11 22:07:23",
+      "desc": "在满洲里口岸宣布临时关闭的通报中，当地官方指出，目前满洲里公路口岸入境人员骤增，口岸检验检疫能力和市区隔离检测能力已超过极限。",
+      "url": "https://view.inews.qq.com/a/20200411A0OETI00",
+      "title": "又一北境口岸告急！中俄同时“出手”，援鄂医院再派骨干"
+    },
+    {
+      "cmsId": "20200411A0LP2W00",
+      "source": "manual",
+      "media": "成都商报红星新闻",
+      "publish_time": "2020-04-11 18:28:02",
+      "desc": "全国疾控系统要向逆行出征的援鄂、援汉防控队员们学习，慎终如始，再接再厉、善作善成，坚决打赢疫情防控的人民战争、总体战、阻击战。",
+      "url": "https://view.inews.qq.com/a/20200411A0LP2W00",
+      "title": "国家卫健委发布援鄂援汉疾控人员名单：向逆行出征者学习"
+    },
+    {
+      "cmsId": "20200411A06QW700",
+      "source": "manual",
+      "media": "新京报",
+      "publish_time": "2020-04-11 10:26:49",
+      "desc": "截至北京时间4月11日9点25分许，美国累计确诊病例500399例，累计死亡18693例。目前，美国是全球累计确诊病例数最多的国家，也是第一个单日死亡人数超过2000的国家。",
+      "url": "https://view.inews.qq.com/a/20200411A06QW700",
+      "title": "美国新冠肺炎确诊病例超50万 13个州均破万"
+    },
+    {
+      "cmsId": "CEI2020041100656200",
+      "source": "push",
+      "media": "内蒙古自治区卫生健康委员会",
+      "publish_time": "2020-04-11 09:50:21",
+      "desc": "累计80例！4月10日7时至4月11日9时，内蒙古新增境外输入新冠肺炎确诊病例27例、疑似1例，排除疑似病例8例。",
+      "url": "https://view.inews.qq.com/a/CEI2020041100656200",
+      "title": "内蒙古新增境外输入确诊病例27例"
+    },
+    {
+      "cmsId": "GDC2020041100526400",
+      "source": "push",
+      "media": "广东省卫健委",
+      "publish_time": "2020-04-11 09:02:10",
+      "desc": "4月10日0-24时，广东新增3例本土病例，为广州报告3例，新增境外输入病例1例。",
+      "url": "https://view.inews.qq.com/a/GDC2020041100526400",
+      "title": "广东新增3例本土病例"
+    }
+  ],
+  "provinceCompare": {
+    "上海": {
+      "nowConfirm": -7,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 7,
+      "zero": 1
+    },
+    "云南": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 19
+    },
+    "内蒙古": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 2
+    },
+    "北京": {
+      "nowConfirm": -1,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 1,
+      "zero": 28
+    },
+    "台湾": {
+      "nowConfirm": -11,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 11,
+      "zero": 6
+    },
+    "吉林": {
+      "nowConfirm": 1,
+      "confirmAdd": 1,
+      "dead": 0,
+      "heal": 0,
+      "zero": 0
+    },
+    "四川": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 26
+    },
+    "天津": {
+      "nowConfirm": -1,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 1,
+      "zero": 5
+    },
+    "宁夏": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 71
+    },
+    "安徽": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 35
+    },
+    "山东": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 10
+    },
+    "山西": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 11
+    },
+    "广东": {
+      "nowConfirm": -1,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 1,
+      "zero": 7
+    },
+    "广西": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 54
+    },
+    "新疆": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 86
+    },
+    "江苏": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 32
+    },
+    "江西": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 46
+    },
+    "河北": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 28
+    },
+    "河南": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 46
+    },
+    "浙江": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 29
+    },
+    "海南": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 84
+    },
+    "湖北": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 3
+    },
+    "湖南": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 42
+    },
+    "澳门": {
+      "nowConfirm": -1,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 1,
+      "zero": 35
+    },
+    "甘肃": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 36
+    },
+    "福建": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 13
+    },
+    "西藏": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 105
+    },
+    "贵州": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 46
+    },
+    "辽宁": {
+      "nowConfirm": 2,
+      "confirmAdd": 2,
+      "dead": 0,
+      "heal": 0,
+      "zero": 0
+    },
+    "重庆": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 46
+    },
+    "陕西": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 8
+    },
+    "青海": {
+      "nowConfirm": 0,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 0,
+      "zero": 98
+    },
+    "香港": {
+      "nowConfirm": -14,
+      "confirmAdd": 1,
+      "dead": 0,
+      "heal": 18,
+      "zero": 0
+    },
+    "黑龙江": {
+      "nowConfirm": -1,
+      "confirmAdd": 0,
+      "dead": 0,
+      "heal": 1,
+      "zero": 3
+    }
+  },
+  "cityStatis": {
+    "confirm": 338,
+    "zeroNowConfirm": 325,
+    "notZeroNowConfirm": 14
+  },
+  "nowConfirmStatis": {
+    "gat": 90,
+    "import": 55,
+    "province": 41
+  }
+}

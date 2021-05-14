@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>后台管理系统</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--弹出框样式-->
+    <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <div th:replace="admin/common/leftbar::#leftbaraside"></div>
+        <!--头部信息-->
+        <div th:replace="admin/common/topbar::#topbarheader"></div>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>银行卡管理</h4>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th class="info">序号</th>
+                                            <th class="info">所属用户</th>
+                                            <th class="info">所属银行</th>
+                                            <th class="info">类型</th>
+                                            <th class="info">银行卡号</th>
+                                            <th class="info">相关操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="bankcard:${bankcardList}">
+                                            <td th:text="${(bankcardPageInfo.pageNum - 1) * bankcardPageInfo.pageSize+bankcardStat.index+1}"></td>
+                                            <td th:text="${bankcard.user.username}"></td>
+                                            <td th:text="${bankcard.cardbank}"></td>
+                                            <td th:text="${bankcard.type==1?'借记卡':'信用卡'}"></td>
+                                            <td th:text="${bankcard.cardnum}"></td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm update_btn"
+                                                        th:attr="update-id=${bankcard.id}">
+															<span class="glyphicon glyphicon-pencil"
+                                                                  aria-hidden="true"></span> 编辑
+                                                </button>
+                                                <button class="btn btn-danger btn-sm delete_btn"
+                                                        th:attr="delete-id=${bankcard.id},delete-name=${bankcard.user.username}">
+															<span class="glyphicon glyphicon-trash"
+                                                                  aria-hidden="true"></span> 删除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- 显示分页信息 -->
+                            <div class="row">
+
+                                <div class="col-md-5 col-md-offset-1">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default">
+                                            <span>页次：</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span th:text="${bankcardPageInfo.pageNum}+'/'+${bankcardPageInfo.pages}+'页'"></span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span>每页显示：</span>
+                                        </button>
+                                        <div class="btn-group">
+                                            <button id="btnGroupDrop1"
+                                                    class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"><span
+                                                    th:text="${bankcardPageInfo.pageSize}"></span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li th:each="i:${#numbers.sequence(1,10)}">
+                                                    <a th:text="${i}"
+                                                       th:href="@{/admin/userinfo/toBankCard.html(pageNum=${bankcardPageInfo.pageNum},pageSize=${i})}"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-default">
+                                            <span>条</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span>总记录数：</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span th:text="${bankcardPageInfo.total}+'条'"></span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 分页条信息 -->
+                                <div class="col-md-5">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination pagination-lg pull-right"
+                                            style="margin-top: 0">
+                                            <li>
+                                                <a th:href="@{/admin/userinfo/toBankCard.html(pageNum=1,pageSize=${bankcardPageInfo.pageSize})}">首页</a>
+                                            </li>
+
+                                            <li th:if="${bankcardPageInfo.hasPreviousPage }"><a
+                                                    th:href="@{/admin/userinfo/toBankCard.html(pageNum=${bankcardPageInfo.pageNum}-1,pageSize=${bankcardPageInfo.pageSize})}"
+                                                    aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+                                            </a></li>
+
+                                            <li th:each="page_Num:${bankcardPageInfo.navigatepageNums }"
+                                                th:class="${page_Num == bankcardPageInfo.pageNum?'active':''}">
+                                                <a th:if="${page_Num == bankcardPageInfo.pageNum}"
+                                                   th:text="${page_Num}"
+                                                   th:href="@{#}">
+                                                </a>
+                                                <a th:text="${page_Num}"
+                                                   th:if="${page_Num != bankcardPageInfo.pageNum}"
+                                                   th:href="@{/admin/userinfo/toBankCard.html(pageNum=${page_Num},pageSize=${bankcardPageInfo.pageSize})}">
+                                                </a>
+                                            </li>
+
+                                            <li th:if="${bankcardPageInfo.hasNextPage }"><a
+                                                    th:href="@{/admin/userinfo/toBankCard.html(pageNum=${bankcardPageInfo.pageNum}+1,pageSize=${bankcardPageInfo.pageSize})}"
+                                                    aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+                                            </a></li>
+
+                                            <li><a
+                                                    th:href="@{/admin/userinfo/toBankCard.html(pageNum=${bankcardPageInfo.pages},pageSize=${bankcardPageInfo.pageSize})}">末页</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 修改银行卡的模态框 -->
+                    <div class="modal fade" id="bankcardUpdateModal" tabindex="-1"
+                         role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title">修改银行卡信息</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <!--要提交的表单 -->
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">所属用户：</label>
+                                            <div class="col-sm-6">
+                                                <p class="form-control-static"
+                                                   id="username_update_input">
+                                                </p>
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">所属银行：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control"
+                                                       id="cardbank_update_input" name="cardbank"
+                                                       placeholder="请输入所属银行：">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">类型：</label>
+                                            <div class="col-sm-6">
+                                                <label class="lyear-radio radio-inline">
+                                                    <input type="radio" name="type" id="type_update_input"
+                                                           value="1"><span>借记卡</span>
+                                                </label>
+                                                <label class="lyear-radio radio-inline">
+                                                    <input type="radio" name="type" value="2"
+                                                           id="type_update_input"><span>信用卡</span>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">银行卡号：</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control"
+                                                       id="cardnum_update_input" name="cardnum"
+                                                       placeholder="请输入银行卡号：">
+                                                <span class="help-block"></span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <em style="color: red">*</em>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">关闭
+                                    </button>
+                                    <button type="button" class="btn btn-primary"
+                                            id="bankcard_update_btn">更新
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<!--滚动条插件-->
+<script th:src="@{/lyear/js/perfect-scrollbar.min.js}"></script>
+<!--弹出框js-->
+<script th:src="@{/lyear/jconfirm/jquery-confirm.min.js}"></script>
+<!--自定义js脚本-->
+<script th:src="@{/lyear/js/main.min.js}"></script>
+<script type="text/javascript">
+
+    //点击编辑按钮时触发事件
+    $(document).on("click", ".update_btn", function () {
+
+        //根据用户id发送ajax请求，查出用户信息并显示
+        getBankcardInfo($(this).attr("update-id"));
+
+        //把用户的id传递给模态框的更新按钮
+        $("#bankcard_update_btn").attr("update-id", $(this).attr("update-id"));
+        $("#bankcardUpdateModal").modal({
+            backdrop: "static"
+        });
+    });
+
+    //根据id查出用户信息并显示
+    function getBankcardInfo(id) {
+        $.ajax({
+            url: "/user/getBankCardById/" + id,
+            type: "GET",
+            success: function (result) {
+                var bankcard = result.extend.bankcard;
+
+                //显示数据之前先清除一下校验样式，如果有的话
+                reset_form("#bankcardUpdateModal form");
+
+                $("#username_update_input").text(bankcard.user.username);
+                $("#cardbank_update_input").val(bankcard.cardbank);
+                $("#cardnum_update_input").val(bankcard.cardnum);
+                $("#bankcardUpdateModal input[name=type]").val(
+                    [ bankcard.type ]);
+            }
+        });
+    }
+
+    //点击更新，更新用户信息
+    $("#bankcard_update_btn").click(function () {
+        //清空表单样式
+        clean_form("#bankcardUpdateModal form");
+
+        var cardBank = $("#cardbank_update_input").val();
+        var cardNum = $("#cardnum_update_input").val();
+
+        //匹配汉字(银行名称)
+        var cardBankRegex = /^[\u4e00-\u9fa5]{0,}$/;
+        if (cardBank === "") {
+            show_validate_msg("#cardbank_update_input",
+                "error", "银行名称为空");
+            return false;
+        } else if (cardBankRegex.test(cardBank) === false) {
+            show_validate_msg("#cardbank_update_input",
+                "error", "银行名称不合法");
+            return false;
+        }
+
+        //匹配16-19位的数字
+        var cardNumRegex = /^\d{16,19}$/;
+        if (cardNum === "") {
+            show_validate_msg("#cardnum_update_input",
+                "error", "银行卡号为空");
+            return false;
+        } else if (cardNumRegex.test(cardNum) === false) {
+            show_validate_msg("#cardnum_update_input",
+                "error", "银行卡号不合法");
+            return false;
+        }
+
+        //2、发送ajax请求保存更新的银行卡数据
+        $.ajax({
+            url: "/user/updateBankCard/" + $(this).attr("update-id"),
+            type: "PUT",
+            data: $("#bankcardUpdateModal form").serialize(),
+            success: function (result) {
+                if (result.code === 100) {
+                    $("#bankcardUpdateModal").modal('hide');
+                    $.alert('银行卡信息修改成功！');
+                    setTimeout(function () {
+                        var pageNum = [[${bankcardPageInfo.pageNum}]];
+                        var pageSize = [[${bankcardPageInfo.pageSize}]];
+                        location.href = "/admin/userinfo/toBankCard.html?pageNum=" + pageNum + "&pageSize=" + pageSize;
+                    }, 1000);
+                } else {
+                    $.alert('银行卡信息修改失败！');
+                }
+            }
+        });
+    });
+
+    //单个删除
+    $(document).on("click", ".delete_btn", function () {
+        //1、弹出是否确认删除对话框
+        var id = $(this).attr("delete-id");
+        var username = $(this).attr("delete-name");
+        $.alert({
+            title: '提示：',
+            content: "确定删除用户 <strong>" + username + "</strong> 的这张银行卡吗？",
+            buttons: {
+                confirm: {
+                    text: '确认',
+                    btnClass: 'btn-primary',
+                    action: function () {
+                        $.ajax({
+                            url: "/user/deleteBankCard/" + id,
+                            type: "DELETE",
+                            success: function (result) {
+                                if (result.code === 100) {
+                                    $.alert('删除该银行卡成功！');
+                                    setTimeout(function () {
+                                        var pageNum = [[${bankcardPageInfo.pageNum}]];
+                                        var pageSize = [[${bankcardPageInfo.pageSize}]];
+                                        location.href = "/admin/userinfo/toBankCard.html?pageNum=" + pageNum + "&pageSize=" + pageSize;
+                                    }, 1000);
+                                } else {
+                                    $.alert('删除该银行卡失败!');
+                                }
+                            }
+                        });
+                    }
+                },
+                cancel: {
+                    text: '取消',
+                    action: function () {
+                        $.alert('已取消!');
+                    }
+                }
+            }
+        });
+
+    });
+
+    //清空表单样式及内容
+    function reset_form(ele) {
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
+    //清空表单样式
+    function clean_form(ele) {
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
+    //显示校验结果的提示信息
+    function show_validate_msg(ele, status, msg) {
+        //清除当前元素的校验状态
+        $(ele).parent().removeClass("has-success has-error");
+        $(ele).next("span").text("");
+        if ("success" === status) {
+            $(ele).parent().addClass("has-success");
+            $(ele).next("span").text(msg);
+        } else if ("error" === status) {
+            $(ele).parent().addClass("has-error");
+            $(ele).next("span").text(msg);
+        }
+    }
+
+</script>
+</body>
+</html>

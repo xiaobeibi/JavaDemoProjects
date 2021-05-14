@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>个人理财系统</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--弹出框样式-->
+    <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <div th:replace="user/common/leftbar::#leftbaraside"></div>
+        <!--头部信息-->
+        <div th:replace="user/common/topbar::#topbarheader"></div>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>我的理财</h4>
+                            </div>
+
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                                <!--零钱理财 -->
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapseOne"
+                                               aria-expanded="true" aria-controls="collapseOne">
+                                                零钱理财
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne"
+                                         th:class="${session.myFinanceActiveUrl=='changeMoneyActive'?'panel-collapse collapse in':'panel-collapse collapse'}"
+                                         class="panel-collapse collapse in" role="tabpanel"
+                                         aria-labelledby="headingOne">
+                                        <div th:if="${!userChangeMoneyList.isEmpty()}" class="panel-body">
+
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th class="info">序号</th>
+                                                    <th class="info">产品名称</th>
+                                                    <th class="info">起投金额</th>
+                                                    <th class="info">起投时间</th>
+                                                    <th class="info">投资期限</th>
+                                                    <th class="info">收益</th>
+                                                    <th class="info">平均收益率</th>
+                                                    <th class="info">投资状态</th>
+                                                    <th class="info">相关操作</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="ucm:${userChangeMoneyList}">
+                                                    <td th:text="${ucmStat.index+1}"></td>
+                                                    <td th:text="${ucm.changeMoney.name}"></td>
+                                                    <td th:text="${#numbers.formatDecimal(ucm.changeMoney.invesmoney,1,2)}+'元'"></td>
+                                                    <td th:text="${#dates.format(ucm.starttime, 'yyyy-MM-dd')}"></td>
+                                                    <td th:text="${ucm.changeMoney.investerm}"></td>
+                                                    <td th:text="${#numbers.formatDecimal(ucm.profit,1,2)}+'元'"></td>
+                                                    <td th:text="${#numbers.formatDecimal(ucm.averyield*100,1,2)}+'%'"></td>
+                                                    <td th:if="${ucm.status==1}" th:text="持有中"></td>
+                                                    <td th:if="${ucm.status==2}" th:text="已失效"></td>
+                                                    <td th:if="${ucm.status==3}" th:text="已撤销"></td>
+                                                    <td>
+                                                        <button class="btn btn-danger btn-sm ucm_btn"
+                                                                th:attr="ucmBtnStatus=${ucm.status},ucmBtnId=${ucm.id},ucmBtnName=${ucm.changeMoney.name}">
+															<span class="glyphicon glyphicon-remove"
+                                                                  aria-hidden="true"></span> 撤销
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                        <div th:if="${userChangeMoneyList.isEmpty()}" class="panel-body">
+                                            <h4>很抱歉！暂时还没有查询到您的零钱理财信息</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--工资理财 -->
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                               data-parent="#accordion"
+                                               href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                工资理财
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo"
+                                         th:class="${session.myFinanceActiveUrl=='payMoneyActive'?'panel-collapse collapse in':'panel-collapse collapse'}"
+                                         role="tabpanel"
+                                         aria-labelledby="headingTwo">
+                                        <div th:if="${!userPayMoneyList.isEmpty()}" class="panel-body">
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th class="info">序号</th>
+                                                    <th class="info">产品名称</th>
+                                                    <th class="info">起投金额</th>
+                                                    <th class="info">起投时间</th>
+                                                    <th class="info">投资期限</th>
+                                                    <th class="info">收益</th>
+                                                    <th class="info">平均收益率</th>
+                                                    <th class="info">投资状态</th>
+                                                    <th class="info">相关操作</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="upm:${userPayMoneyList}">
+                                                    <td th:text="${upmStat.index+1}"></td>
+                                                    <td th:if="${upm.payMoney.type==1}" th:text="国债"></td>
+                                                    <td th:if="${upm.payMoney.type==2}" th:text="期货"></td>
+                                                    <td th:text="${#numbers.formatDecimal(upm.payMoney.monthmoney,1,2)}+'元'"></td>
+                                                    <td th:text="${#dates.format(upm.starttime, 'yyyy-MM-dd')}"></td>
+                                                    <td th:text="${upm.payMoney.investerm}"></td>
+                                                    <td th:text="${#numbers.formatDecimal(upm.profit,1,2)}+'元'"></td>
+                                                    <td th:text="${#numbers.formatDecimal(upm.averyield*100,1,2)}+'%'"></td>
+                                                    <td th:if="${upm.status==1}" th:text="持有中"></td>
+                                                    <td th:if="${upm.status==2}" th:text="已失效"></td>
+                                                    <td th:if="${upm.status==3}" th:text="已撤销"></td>
+                                                    <td>
+                                                        <button class="btn btn-danger btn-sm upm_btn"
+                                                                th:attr="upmBtnStatus=${upm.status},upmBtnId=${upm.id},upmBtnName=${upm.payMoney.type}">
+															<span class="glyphicon glyphicon-remove"
+                                                                  aria-hidden="true"></span> 撤销
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div th:if="${userPayMoneyList.isEmpty()}" class="panel-body">
+                                            <h4>很抱歉！暂时还没有查询到您的工资理财信息</h4>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!--期限理财 -->
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                               data-parent="#accordion"
+                                               href="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                                                期限理财
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree"
+                                         th:class="${session.myFinanceActiveUrl=='termFinancialActive'?'panel-collapse collapse in':'panel-collapse collapse'}"
+                                         role="tabpanel"
+                                         aria-labelledby="headingThree">
+                                        <div th:if="${!userTermFinancialList.isEmpty()}" class="panel-body">
+
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th class="info">序号</th>
+                                                    <th class="info">产品名称</th>
+                                                    <th class="info">起投金额</th>
+                                                    <th class="info">起投时间</th>
+                                                    <th class="info">投资期限</th>
+                                                    <th class="info">收益</th>
+                                                    <th class="info">平均收益率</th>
+                                                    <th class="info">投资状态</th>
+                                                    <th class="info">相关操作</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="utf:${userTermFinancialList}">
+                                                    <td th:text="${utfStat.index+1}"></td>
+                                                    <td th:text="${utf.termFinancial.name}"></td>
+                                                    <td th:text="${#numbers.formatDecimal(utf.termFinancial.leastmoney,1,2)}+'元'"></td>
+                                                    <td th:text="${#dates.format(utf.starttime, 'yyyy-MM-dd')}"></td>
+                                                    <td th:text="${utf.termFinancial.investerm}"></td>
+                                                    <td th:text="${#numbers.formatDecimal(utf.profit,1,2)}+'元'"></td>
+                                                    <td th:text="${#numbers.formatDecimal(utf.averyield*100,1,2)}+'%'"></td>
+                                                    <td th:if="${utf.status==1}" th:text="持有中"></td>
+                                                    <td th:if="${utf.status==2}" th:text="已失效"></td>
+                                                    <td th:if="${utf.status==3}" th:text="已撤销"></td>
+                                                    <td>
+                                                        <button class="btn btn-danger btn-sm utf_btn"
+                                                                th:attr="utfBtnStatus=${utf.status},utfBtnId=${utf.id},utfBtnName=${utf.termFinancial.name}">
+															<span class="glyphicon glyphicon-remove"
+                                                                  aria-hidden="true"></span> 撤销
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                        <div th:if="${userTermFinancialList.isEmpty()}" class="panel-body">
+                                            <h4>很抱歉！暂时还没有查询到您的期限理财信息</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--基金理财 -->
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading" role="tab" id="headingFour">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                               data-parent="#accordion"
+                                               href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                                                基金理财
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFour"
+                                         th:class="${session.myFinanceActiveUrl=='fundProductActive'?'panel-collapse collapse in':'panel-collapse collapse'}"
+                                         role="tabpanel"
+                                         aria-labelledby="headingFour">
+                                        <div th:if="${!userFundProductList.isEmpty()}" class="panel-body">
+
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th class="info">序号</th>
+                                                    <th class="info">产品名称</th>
+                                                    <th class="info">起投金额</th>
+                                                    <th class="info">起投时间</th>
+                                                    <th class="info">投资期限</th>
+                                                    <th class="info">收益</th>
+                                                    <th class="info">平均收益率</th>
+                                                    <th class="info">投资状态</th>
+                                                    <th class="info">相关操作</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="ufp:${userFundProductList}">
+                                                    <td th:text="${ufpStat.index+1}"></td>
+                                                    <td th:text="${ufp.fundProduct.funddesc}"></td>
+                                                    <td th:text="${#numbers.formatDecimal(ufp.fundProduct.leastmoney,1,2)}+'元'"></td>
+                                                    <td th:text="${#dates.format(ufp.starttime, 'yyyy-MM-dd')}"></td>
+                                                    <td th:text="${ufp.fundProduct.investerm}"></td>
+                                                    <td th:text="${#numbers.formatDecimal(ufp.profit,1,2)}+'元'"></td>
+                                                    <td th:text="${#numbers.formatDecimal(ufp.averyield*100,1,2)}+'%'"></td>
+                                                    <td th:if="${ufp.status==1}" th:text="持有中"></td>
+                                                    <td th:if="${ufp.status==2}" th:text="已失效"></td>
+                                                    <td th:if="${ufp.status==3}" th:text="已撤销"></td>
+                                                    <td>
+                                                        <button class="btn btn-danger btn-sm ufp_btn"
+                                                                th:attr="ufpBtnStatus=${ufp.status},ufpBtnId=${ufp.id},ufpBtnName=${ufp.fundProduct.funddesc}">
+															<span class="glyphicon glyphicon-remove"
+                                                                  aria-hidden="true"></span> 撤销
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                        <div th:if="${userFundProductList.isEmpty()}" class="panel-body">
+                                            <h4>很抱歉！暂时还没有查询到您的基金理财信息</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<!--滚动条插件-->
+<script th:src="@{/lyear/js/perfect-scrollbar.min.js}"></script>
+<!--弹出框js-->
+<script th:src="@{/lyear/jconfirm/jquery-confirm.min.js}"></script>
+<!--自定义js脚本-->
+<script th:src="@{/lyear/js/main.min.js}"></script>
+<script type="text/javascript">
+
+    $(document).on("click", ".ucm_btn", function () {
+        var userChangeMoneyId = $(this).attr("ucmBtnId");
+
+        var status = $(this).attr("ucmBtnStatus");
+        if (status == 2) {
+            $.alert('已失效！无须撤销');
+        } else if (status == 3) {
+            $.alert('已撤销!');
+        } else if (status == 1) {
+            //var userId = [[${session.loginUser.id}]] ;
+            //alert(userId);
+            var name = $(this).attr("ucmBtnName");
+            $.alert({
+                title: '提示：',
+                content: "确定撤销 <strong>" + name + "</strong> 吗？",
+                buttons: {
+                    confirm: {
+                        text: '确认',
+                        btnClass: 'btn-primary',
+                        action: function () {
+                            $.ajax({
+                                url: "/user/revokeUserChangeMoney",
+                                type: "put",
+                                data: {
+                                    "userChangeMoneyId": userChangeMoneyId
+                                },
+                                success: function (result) {
+                                    if (result.code === 100) {
+                                        $.alert('撤销成功!');
+                                        setTimeout(function () {
+                                            location.href = "/user/personal/toMyFinance.html";
+                                        }, 1000);
+                                    } else {
+                                        $.alert('撤销失败!');
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    cancel: {
+                        text: '取消',
+                        action: function () {
+                            $.alert('已取消!');
+                        }
+                    }
+                }
+            });
+        }
+    });
+
+    $(document).on("click", ".upm_btn", function () {
+        var userPayMoneyId = $(this).attr("upmBtnId");
+
+        var status = $(this).attr("upmBtnStatus");
+        if (status == 2) {
+            $.alert('已失效！无须撤销');
+        } else if (status == 3) {
+            $.alert('已撤销!');
+        } else if (status == 1) {
+            var type = $(this).attr("upmBtnName");
+            var name;
+            if (type == 1) {
+                name = "国债"
+            } else {
+                name = "期货";
+            }
+            $.alert({
+                title: '提示：',
+                content: "确定撤销该 <strong>" + name + "</strong> 吗？",
+                buttons: {
+                    confirm: {
+                        text: '确认',
+                        btnClass: 'btn-primary',
+                        action: function () {
+                            $.ajax({
+                                url: "/user/revokeUserPayMoney",
+                                type: "put",
+                                data: {
+                                    "userPayMoneyId": userPayMoneyId
+                                },
+                                success: function (result) {
+                                    if (result.code === 100) {
+                                        $.alert('撤销成功!');
+                                        setTimeout(function () {
+                                            location.href = "/user/personal/toMyFinance.html";
+                                        }, 1000);
+                                    } else {
+                                        $.alert('撤销失败!');
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    cancel: {
+                        text: '取消',
+                        action: function () {
+                            $.alert('已取消!');
+                        }
+                    }
+                }
+            });
+        }
+    });
+
+    $(document).on("click", ".utf_btn", function () {
+        var status = $(this).attr("utfBtnStatus");
+        if (status == 2) {
+            $.alert('已失效！无须撤销');
+        } else if (status == 3) {
+            $.alert('已撤销!');
+        } else if (status == 1) {
+            var userTermFinancialId = $(this).attr("utfBtnId");
+            var name = $(this).attr("utfBtnName");
+            $.alert({
+                title: '提示：',
+                content: "确定撤销 <strong>" + name + "</strong> 吗？",
+                buttons: {
+                    confirm: {
+                        text: '确认',
+                        btnClass: 'btn-primary',
+                        action: function () {
+                            $.ajax({
+                                url: "/user/revokeUserTermFinancial",
+                                type: "put",
+                                data: {
+                                    "userTermFinancialId": userTermFinancialId
+                                },
+                                success: function (result) {
+                                    if (result.code === 100) {
+                                        $.alert('撤销成功!');
+                                        setTimeout(function () {
+                                            location.href = "/user/personal/toMyFinance.html";
+                                        }, 1000);
+                                    } else {
+                                        $.alert('撤销失败!');
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    cancel: {
+                        text: '取消',
+                        action: function () {
+                            $.alert('已取消!');
+                        }
+                    }
+                }
+            });
+        }
+    });
+
+    $(document).on("click", ".ufp_btn", function () {
+        var status = $(this).attr("ufpBtnStatus");
+        if (status == 2) {
+            $.alert('已失效！无须撤销');
+        } else if (status == 3) {
+            $.alert('已撤销!');
+        } else if (status == 1) {
+            var userFundProductId = $(this).attr("ufpBtnId");
+            var name = $(this).attr("ufpBtnName");
+            $.alert({
+                title: '提示：',
+                content: "确定撤销 <strong>" + name + "</strong> 吗？",
+                buttons: {
+                    confirm: {
+                        text: '确认',
+                        btnClass: 'btn-primary',
+                        action: function () {
+                            $.ajax({
+                                url: "/user/revokeUserFundProduct",
+                                type: "put",
+                                data: {
+                                    "userFundProductId": userFundProductId
+                                },
+                                success: function (result) {
+                                    if (result.code === 100) {
+                                        $.alert('撤销成功!');
+                                        setTimeout(function () {
+                                            location.href = "/user/personal/toMyFinance.html";
+                                        }, 1000);
+                                    } else {
+                                        $.alert('撤销失败!');
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    cancel: {
+                        text: '取消',
+                        action: function () {
+                            $.alert('已取消!');
+                        }
+                    }
+                }
+            });
+        }
+    });
+
+</script>
+</body>
+</html>

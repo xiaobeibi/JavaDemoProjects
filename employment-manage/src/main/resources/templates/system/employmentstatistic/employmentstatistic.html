@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head th:include="include/commoncss::commoncss(~{})">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div th:replace="include/header::header"></div>
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">按专业统计</li>
+            <li>按班级统计</li>
+            <li>按岗位统计</li>
+            <li>按企业统计</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table class="layui-hide" id="majorStaList" lay-filter="majorStaList"></table>
+            </div>
+            <div class="layui-tab-item">
+                <table class="layui-hide" id="classStaList" lay-filter="classStaList"></table>
+            </div>
+            <div class="layui-tab-item">
+                <table class="layui-hide" id="stationStaList" lay-filter="stationStaList"></table>
+            </div>
+            <div class="layui-tab-item">
+                <table class="layui-hide" id="companyStaList" lay-filter="companyStaList"></table>
+            </div>
+        </div>
+    </div>
+    <script type="text/html" id="statisticListOpt">
+        <a class="layui-btn layui-btn-xs" lay-event="">查看详情</a>
+    </script>
+    <div th:include="include/commonjs::commonjs(~{::script})">
+        <script type="text/javascript" src="/resources/js/common/header.js"></script>
+        <script type="text/javascript" src="/resources/js/system/employmentstatistic/employmentstatistic.js"></script>
+    </div>
+</div>
+</body>
+</html>

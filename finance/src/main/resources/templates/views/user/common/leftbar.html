@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>topbar</title>
+</head>
+<body>
+
+<!--左侧导航-->
+<aside class="lyear-layout-sidebar" id="leftbaraside">
+    <div id="logo" class="sidebar-header">
+        <a class="navbar-brand" style="font-size: 20px"
+           th:href="@{/user/index.html}">个人理财系统</a>
+    </div>
+    <div class="lyear-layout-sidebar-scroll">
+        <nav class="sidebar-main">
+            <ul class="nav nav-drawer">
+                <li class="nav-item" th:class="${activeUrl=='indexActive'?'nav-item active':'nav-item'}"><a
+                        th:href="@{/user/index.html}"><i
+                        class="mdi mdi-home"></i>系统首页</a></li>
+                <li shiro:hasPermission="user:finance" class="nav-item nav-item-has-subnav"
+                    th:class="${activeUrl1=='financeActive'?'nav-item nav-item-has-subnav active open':'nav-item nav-item-has-subnav'}">
+                    <a href="javascript:void(0)"><i class="mdi mdi-square-inc-cash"></i>
+                        个人理财</a>
+                    <ul class="nav nav-subnav">
+                        <li shiro:hasPermission="user:changeMoney" th:class="${activeUrl2=='changeMoneyActive'?'active':''}"><a
+                                th:href="@{/user/finance/toChangeMoney.html}">零钱理财</a></li>
+                        <li shiro:hasPermission="user:payMoney" th:class="${activeUrl2=='payMoneyActive'?'active':''}"><a
+                                th:href="@{/user/finance/toPayMoney.html}">工资理财</a></li>
+                        <li shiro:hasPermission="user:termFinancial" th:class="${activeUrl2=='termFinancialActive'?'active':''}"><a
+                                th:href="@{/user/finance/toTermFinancial.html}">期限理财</a></li>
+                        <li shiro:hasPermission="user:fundProduct" th:class="${activeUrl2=='fundProductActive'?'active':''}"><a
+                                th:href="@{/user/finance/toFundProduct.html}">基金理财</a></li>
+                        <li shiro:hasPermission="user:bank" th:class="${activeUrl2=='bankActive'?'active':''}"><a
+                                th:href="@{/user/finance/toBank.html}">银行推荐</a></li>
+                    </ul>
+                </li>
+                <li shiro:hasPermission="user:tools" class="nav-item nav-item-has-subnav"
+                    th:class="${activeUrl1=='toolsActive'?'nav-item nav-item-has-subnav active open':'nav-item nav-item-has-subnav'}"
+                ><a href="javascript:void(0)"><i class="mdi mdi-wrench"></i>金融工具</a>
+                    <ul class="nav nav-subnav">
+                        <li shiro:hasPermission="user:record" th:class="${activeUrl2=='recordActive'?'active':''}"><a
+                                th:href="@{/user/tools/toRecord.html}">资金记录</a></li>
+                        <li shiro:hasPermission="user:loan" th:class="${activeUrl2=='applyLoanActive'?'active':''}"><a
+                                th:href="@{/user/tools/toApplyLoan.html}">安全网贷</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-item-has-subnav"
+                    th:class="${activeUrl1=='personalActive'?'nav-item nav-item-has-subnav active open':'nav-item nav-item-has-subnav'}"
+                ><a href="javascript:void(0)"><i class="mdi mdi-account-location"></i> 个人中心</a>
+                    <ul class="nav nav-subnav">
+                        <li th:class="${activeUrl2=='myFinanceActive'?'active':''}"><a
+                                th:href="@{/user/personal/toMyFinance.html}">我的理财</a></li>
+                        <li th:class="${activeUrl2=='myLoanActive'?'active':''}"><a th:href="@{/user/personal/toMyLoan.html}">我的借贷</a></li>
+                        <li th:class="${activeUrl2=='bankCardActive'?'active':''}"><a th:href="@{/user/personal/toBankCard.html}">银行卡管理</a></li>
+                        <li th:class="${activeUrl2=='securityActive'?'active':''}"><a th:href="@{/user/personal/toSecurity.html}">账户安全</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+<!--End 左侧导航-->
+
+
+</body>
+</html>

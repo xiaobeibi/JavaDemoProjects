@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="layouts.public_layout"
+                template="/WEB-INF/pages/public/public_layout.jsp">
+        <put-attribute name="header" value="/WEB-INF/pages/public/nav.jsp"/>
+        <put-attribute name="main-container" value=""/>
+        <put-attribute name="bottom" value="/WEB-INF/pages/public/bottom.jsp"/>
+        <put-attribute name="dialog" value=""/>
+    </definition>
+
+    <!--登录页-->
+    <definition name="layouts.application_layout.login" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/login/login.jsp"/>
+    </definition>
+
+    <!--系统首页-->
+    <definition name="layouts.application_layout.home" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/home/home.jsp"/>
+    </definition>
+
+    <!--用户管理页-->
+    <definition name="layouts.application_layout.showAllUsers" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/users/showAllUsers.jsp"/>
+    </definition>
+    <!--用户管理-新建页-->
+    <definition name="layouts.application_layout.createUsers" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/users/createUser.jsp"/>
+    </definition>
+    <!--用户管理-修改页-->
+    <definition name="layouts.application_layout.updateUsers" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/users/updateUser.jsp"/>
+    </definition>
+
+
+    <!--招标首页-->
+    <definition name="layouts.application_layout.tender.showAllTenders" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/tender/showAllTenders.jsp"/>
+    </definition>
+    <!--招标管理-查看招标页-->
+    <definition name="layouts.application_layout.tender.showOneTender" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/tender/showOneTender.jsp"/>
+    </definition>
+    <!--招标管理-新建招标页-->
+    <definition name="layouts.application_layout.tender.createTender" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/tender/createTender.jsp"/>
+    </definition>
+    <!--招标管理-修改招标页-->
+    <definition name="layouts.application_layout.tender.updateTender" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/tender/updateTender.jsp"/>
+    </definition>
+
+    <!--招标首页-->
+    <definition name="layouts.application_layout.bid.showAllBids" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/bid/showAllBids.jsp"/>
+    </definition>
+    <!--招标管理-查看招标页-->
+    <definition name="layouts.application_layout.bid.showOneBid" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/bid/showOneBid.jsp"/>
+    </definition>
+    <!--招标管理-新建招标页-->
+    <definition name="layouts.application_layout.bid.createBid" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/bid/createBid.jsp"/>
+    </definition>
+    <!--招标管理-修改招标页-->
+    <definition name="layouts.application_layout.bid.updateBid" extends="layouts.public_layout">
+        <put-attribute name="main-container" value="/WEB-INF/pages/bid/updateBid.jsp"/>
+    </definition>
+
+</tiles-definitions>

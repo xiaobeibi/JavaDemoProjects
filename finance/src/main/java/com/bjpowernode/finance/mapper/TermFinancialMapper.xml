@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.finance.mapper.TermFinancialMapper">
+  <resultMap id="BaseResultMap" type="com.bjpowernode.finance.entity.TermFinancial">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="invesTerm" jdbcType="VARCHAR" property="investerm" />
+    <result column="leastMoney" jdbcType="DECIMAL" property="leastmoney" />
+    <result column="profit" jdbcType="INTEGER" property="profit" />
+    <result column="annualIncome" jdbcType="DECIMAL" property="annualincome" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, invesTerm, leastMoney, profit, annualIncome
+  </sql>
+  <select id="selectByExample" parameterType="com.bjpowernode.finance.entity.TermFinancialExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from term_financial
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from term_financial
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from term_financial
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bjpowernode.finance.entity.TermFinancialExample">
+    delete from term_financial
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bjpowernode.finance.entity.TermFinancial">
+    insert into term_financial (id, name, invesTerm, 
+      leastMoney, profit, annualIncome
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{investerm,jdbcType=VARCHAR}, 
+      #{leastmoney,jdbcType=DECIMAL}, #{profit,jdbcType=INTEGER}, #{annualincome,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bjpowernode.finance.entity.TermFinancial">
+    insert into term_financial
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="investerm != null">
+        invesTerm,
+      </if>
+      <if test="leastmoney != null">
+        leastMoney,
+      </if>
+      <if test="profit != null">
+        profit,
+      </if>
+      <if test="annualincome != null">
+        annualIncome,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="investerm != null">
+        #{investerm,jdbcType=VARCHAR},
+      </if>
+      <if test="leastmoney != null">
+        #{leastmoney,jdbcType=DECIMAL},
+      </if>
+      <if test="profit != null">
+        #{profit,jdbcType=INTEGER},
+      </if>
+      <if test="annualincome != null">
+        #{annualincome,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bjpowernode.finance.entity.TermFinancialExample" resultType="java.lang.Long">
+    select count(*) from term_financial
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update term_financial
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.investerm != null">
+        invesTerm = #{record.investerm,jdbcType=VARCHAR},
+      </if>
+      <if test="record.leastmoney != null">
+        leastMoney = #{record.leastmoney,jdbcType=DECIMAL},
+      </if>
+      <if test="record.profit != null">
+        profit = #{record.profit,jdbcType=INTEGER},
+      </if>
+      <if test="record.annualincome != null">
+        annualIncome = #{record.annualincome,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update term_financial
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      invesTerm = #{record.investerm,jdbcType=VARCHAR},
+      leastMoney = #{record.leastmoney,jdbcType=DECIMAL},
+      profit = #{record.profit,jdbcType=INTEGER},
+      annualIncome = #{record.annualincome,jdbcType=DECIMAL}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bjpowernode.finance.entity.TermFinancial">
+    update term_financial
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="investerm != null">
+        invesTerm = #{investerm,jdbcType=VARCHAR},
+      </if>
+      <if test="leastmoney != null">
+        leastMoney = #{leastmoney,jdbcType=DECIMAL},
+      </if>
+      <if test="profit != null">
+        profit = #{profit,jdbcType=INTEGER},
+      </if>
+      <if test="annualincome != null">
+        annualIncome = #{annualincome,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bjpowernode.finance.entity.TermFinancial">
+    update term_financial
+    set name = #{name,jdbcType=VARCHAR},
+      invesTerm = #{investerm,jdbcType=VARCHAR},
+      leastMoney = #{leastmoney,jdbcType=DECIMAL},
+      profit = #{profit,jdbcType=INTEGER},
+      annualIncome = #{annualincome,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

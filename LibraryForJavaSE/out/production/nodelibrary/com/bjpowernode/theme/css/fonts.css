@@ -1,0 +1,14 @@
+@font-face {
+    -fx-font-family : 'Roboto Regular';
+    src: url('/com/bjpowernode/theme/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    -fx-font-family : 'Roboto Thin';
+    src: url('/com/bjpowernode/theme/fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+    -fx-font-family : 'Roboto Bold';
+    src: url('/com/bjpowernode/theme/fonts/Roboto-Bold.ttf');
+}

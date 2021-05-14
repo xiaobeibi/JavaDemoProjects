@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>个人理财系统</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--弹出框样式-->
+    <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <div th:replace="user/common/leftbar::#leftbaraside"></div>
+        <!--头部信息-->
+        <div th:replace="user/common/topbar::#topbarheader"></div>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>资金记录</h4>
+                            </div>
+
+                            <div th:if="${!flowOfFundsList.isEmpty()}" class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th class="info">序号</th>
+                                            <th class="info">金额</th>
+                                            <th class="info">类型</th>
+                                            <th class="info">来源</th>
+                                            <th class="info">时间</th>
+                                            <th class="info">备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="fof:${flowOfFundsList}">
+                                            <td th:text="${(flowOfFundsPageInfo.pageNum - 1) * flowOfFundsPageInfo.pageSize+fofStat.index+1}"></td>
+                                            <td th:text="${#dates.format(fof.createtime, 'yyyy-MM-dd')}"></td>
+                                            <td th:if="${fof.type==1}" th:text="支出"></td>
+                                            <td th:if="${fof.type==2}" th:text="收入"></td>
+                                            <td th:text="${fof.source}"></td>
+                                            <td th:text="${#dates.format(fof.createtime, 'yyyy-MM-dd')}"></td>
+                                            <td th:text="${fof.funddesc}"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- 显示分页信息 -->
+                                <div class="row">
+
+                                    <div class="col-md-5 col-md-offset-1">
+                                        <div class="btn-group">
+                                            <button class="btn btn-default">
+                                                <span>页次：</span>
+                                            </button>
+                                            <button class="btn btn-default">
+                                                <span th:text="${flowOfFundsPageInfo.pageNum}+'/'+${flowOfFundsPageInfo.pages}+'页'"></span>
+                                            </button>
+                                            <button class="btn btn-default">
+                                                <span>每页显示：</span>
+                                            </button>
+                                            <div class="btn-group">
+                                                <button id="btnGroupDrop1"
+                                                        class="btn btn-default dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false"><span
+                                                        th:text="${flowOfFundsPageInfo.pageSize}"></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li th:each="i:${#numbers.sequence(1,10)}"><a th:text="${i}"
+                                                                                                  th:href="@{/user/tools/toRecord.html(pageNum=${flowOfFundsPageInfo.pageNum},pageSize=${i})}"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <button class="btn btn-default">
+                                                <span>条</span>
+                                            </button>
+                                            <button class="btn btn-default">
+                                                <span>总记录数：</span>
+                                            </button>
+                                            <button class="btn btn-default">
+                                                <span th:text="${flowOfFundsPageInfo.total}+'条'"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- 分页条信息 -->
+                                    <div class="col-md-5">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination pagination-lg pull-right"
+                                                style="margin-top: 0">
+                                                <li>
+                                                    <a th:href="@{/user/tools/toRecord.html(pageNum=1,pageSize=${flowOfFundsPageInfo.pageSize})}">首页</a>
+                                                </li>
+
+                                                <li th:if="${flowOfFundsPageInfo.hasPreviousPage }"><a
+                                                        th:href="@{/user/tools/toRecord.html(pageNum=${flowOfFundsPageInfo.pageNum}-1,pageSize=${flowOfFundsPageInfo.pageSize})}"
+                                                        aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+                                                </a></li>
+
+                                                <li th:each="page_Num:${flowOfFundsPageInfo.navigatepageNums }"
+                                                    th:class="${page_Num == flowOfFundsPageInfo.pageNum?'active':''}">
+                                                    <a th:if="${page_Num == flowOfFundsPageInfo.pageNum}"
+                                                       th:text="${page_Num}"
+                                                       th:href="@{#}">
+                                                    </a>
+                                                    <a th:text="${page_Num}"
+                                                       th:if="${page_Num != flowOfFundsPageInfo.pageNum}"
+                                                       th:href="@{/user/tools/toRecord.html(pageNum=${page_Num},pageSize=${flowOfFundsPageInfo.pageSize})}">
+                                                    </a>
+                                                </li>
+
+                                                <li th:if="${flowOfFundsPageInfo.hasNextPage }"><a
+                                                        th:href="@{/user/tools/toRecord.html(pageNum=${flowOfFundsPageInfo.pageNum}+1,pageSize=${flowOfFundsPageInfo.pageSize})}"
+                                                        aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+                                                </a></li>
+
+                                                <li><a
+                                                        th:href="@{/user/tools/toRecord.html(pageNum=${flowOfFundsPageInfo.pages},pageSize=${flowOfFundsPageInfo.pageSize})}">末页</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div th:if="${flowOfFundsList.isEmpty()}" class="card-body">
+                                <div class="table-responsive">
+                                    <h4>很抱歉！暂时还没有您的资金记录信息</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<!--滚动条插件-->
+<script th:src="@{/lyear/js/perfect-scrollbar.min.js}"></script>
+<!--弹出框js-->
+<script th:src="@{/lyear/jconfirm/jquery-confirm.min.js}"></script>
+<!--自定义js脚本-->
+<script th:src="@{/lyear/js/main.min.js}"></script>
+<script th:inline="javascript">
+
+</script>
+</body>
+</html>

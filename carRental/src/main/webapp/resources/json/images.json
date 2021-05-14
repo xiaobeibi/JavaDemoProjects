@@ -1,0 +1,13 @@
+{
+	"title": "图片管理",
+	"id": "Images",
+	"start": 0,
+	"data": [
+		{
+			"src": "images/bjpowernode.jpg",
+			"thumb": "images/bjpowernode.jpg",
+			"alt": "powernode",
+			"pid":"1"
+		}
+	]
+}

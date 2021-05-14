@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>理财管理系统</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--弹出框样式-->
+    <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <div th:replace="admin/common/leftbar::#leftbaraside"></div>
+        <!--头部信息-->
+        <div th:replace="admin/common/topbar::#topbarheader"></div>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>用户在线状态</h4>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th class="info">序号</th>
+                                            <th class="info">用户名</th>
+                                            <th class="info">真实姓名</th>
+                                            <th class="info">手机号</th>
+                                            <th class="info">邮箱</th>
+                                            <th class="info">用户状态</th>
+                                            <th class="info">相关操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="user:${userList}">
+                                            <td th:text="${(userPageInfo.pageNum - 1) * userPageInfo.pageSize+userStat.index+1}"></td>
+                                            <td th:text="${user.username}"></td>
+                                            <td th:text="${user.realname}==null?'未填写':${user.realname}"></td>
+                                            <td th:text="${user.phone}==null?'未填写':${user.phone}"></td>
+                                            <td th:text="${user.email}==null?'未填写':${user.email}"></td>
+                                            <td th:if="${user.status==0}" th:text="离线"></td>
+                                            <td th:if="${user.status==1}" th:text="在线"></td>
+                                            <td>
+                                                <button class="btn btn-danger btn-sm edit_btn"
+                                                        th:attr="edit-id=${user.id},edit-name=${user.username},edit-status=${user.status}">
+															<span class="glyphicon glyphicon-log-out"
+                                                                  aria-hidden="true"></span> 强制下线
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- 显示分页信息 -->
+                            <div class="row">
+
+                                <div class="col-md-5 col-md-offset-1">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default">
+                                            <span>页次：</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span th:text="${userPageInfo.pageNum}+'/'+${userPageInfo.pages}+'页'"></span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span>每页显示：</span>
+                                        </button>
+                                        <div class="btn-group">
+                                            <button id="btnGroupDrop1"
+                                                    class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"><span
+                                                    th:text="${userPageInfo.pageSize}"></span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li th:each="i:${#numbers.sequence(1,10)}"><a th:text="${i}"
+                                                                                              th:href="@{/admin/index.html(pageNum=${userPageInfo.pageNum},pageSize=${i})}"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-default">
+                                            <span>条</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span>总记录数：</span>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <span th:text="${userPageInfo.total}+'条'"></span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 分页条信息 -->
+                                <div class="col-md-5">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination pagination-lg pull-right"
+                                            style="margin-top: 0">
+                                            <li>
+                                                <a th:href="@{/admin/index.html(pageNum=1,pageSize=${userPageInfo.pageSize})}">首页</a>
+                                            </li>
+
+                                            <li th:if="${userPageInfo.hasPreviousPage }"><a
+                                                    th:href="@{/admin/index.html(pageNum=${userPageInfo.pageNum}-1,pageSize=${userPageInfo.pageSize})}"
+                                                    aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+                                            </a></li>
+
+                                            <li th:each="page_Num:${userPageInfo.navigatepageNums }"
+                                                th:class="${page_Num == userPageInfo.pageNum?'active':''}">
+                                                <a th:if="${page_Num == userPageInfo.pageNum}"
+                                                   th:text="${page_Num}"
+                                                   th:href="@{#}">
+                                                </a>
+                                                <a th:text="${page_Num}"
+                                                   th:if="${page_Num != userPageInfo.pageNum}"
+                                                   th:href="@{/admin/index.html(pageNum=${page_Num},pageSize=${userPageInfo.pageSize})}">
+                                                </a>
+                                            </li>
+
+                                            <li th:if="${userPageInfo.hasNextPage }"><a
+                                                    th:href="@{/admin/index.html(pageNum=${userPageInfo.pageNum}+1,pageSize=${userPageInfo.pageSize})}"
+                                                    aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+                                            </a></li>
+
+                                            <li><a
+                                                    th:href="@{/admin/index.html(pageNum=${userPageInfo.pages},pageSize=${userPageInfo.pageSize})}">末页</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<!--滚动条插件-->
+<script th:src="@{/lyear/js/perfect-scrollbar.min.js}"></script>
+<!--弹出框js-->
+<script th:src="@{/lyear/jconfirm/jquery-confirm.min.js}"></script>
+<!--自定义js脚本-->
+<script th:src="@{/lyear/js/main.min.js}"></script>
+<script type="text/javascript">
+
+    //强制下线
+    $(document).on("click", ".edit_btn", function () {
+        var id = $(this).attr("edit-id");
+        var username = $(this).attr("edit-name");
+        var status = $(this).attr("edit-status");
+        if (status == 0) {
+            $.alert("用户 <strong>" + username + "</strong> 已离线")
+        } else if (status == 1) {
+            $.alert({
+                title: '提示：',
+                content: "确定让 <strong>" + username + "</strong> 强制下线吗？",
+                buttons: {
+                    confirm: {
+                        text: '确认',
+                        btnClass: 'btn-primary',
+                        action: function () {
+                            $.ajax({
+                                url: "/user/updateUserStatus/" + id,
+                                type: "PUT",
+                                success: function (result) {
+                                    if (result.code === 100) {
+                                        var pageNum = [[${userPageInfo.pageNum}]];
+                                        var pageSize = [[${userPageInfo.pageSize}]];
+                                        location.href = "/admin/index.html?pageNum=" + pageNum + "&pageSize=" + pageSize;
+                                    } else {
+                                        $.alert('用户强制下线操作失败!');
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    cancel: {
+                        text: '取消',
+                        action: function () {
+                            $.alert('已取消!');
+                        }
+                    }
+                }
+            });
+        }
+    })
+
+</script>
+</body>
+</html>

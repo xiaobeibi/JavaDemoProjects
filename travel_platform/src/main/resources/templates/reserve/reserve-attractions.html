@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{base/layout}">
+
+<div layout:fragment="content">
+
+    <!--med_tittle_section-->
+    <div class="med_tittle_section">
+        <div class="med_img_overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="med_tittle_cont_wrapper">
+                        <div class="med_tittle_cont">
+                            <ol class="breadcrumb">
+                                <li><a th:href="@{/}">系统首页</a></li>
+                                <li>景点列表</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- med_tittle_section End -->
+    <!--service section start-->
+    <div class="page-container">
+        <div class="container">
+            <div class="row med_toppadder50 med_bottompadder50">
+                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                    <div class="filter-type-box cy-tabs">
+                        <ul class="nav nav-tabs mb-10">
+                            <li class="active">
+                                <a href="javascript:void(0);"><i class="fa"></i>景点列表</a>
+                            </li>
+                            <li class="pull-right">
+                                <div class="search-tags">
+                                    <form th:action="@{/reserve/reserveAttractionsListUI}" methed="post" name="search-form"  id="search-form" class="form-inline">
+                                        <div class="input-group">
+                                            <input type="text" name="searchName" th:value="${searchName}" class="form-control">
+                                            <span class="input-group-btn">
+                                                <input class="btn btn-info" type="submit" value="名称搜索"><i class="fa fa-search"></i>  </input>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div th:each="attractions:${page.content}" class="cy-news-grid-item">
+                        <div class="cy-news-thumbnail pull-left">
+                            <a th:href="@{/reserve/attractionsDetailsUI(id=${attractions.id})}">
+                                <img th:src="@{'/images/'+ ${attractions.image} +'.jpg'}"  class="image_fade" alt="">
+                            </a>
+                        </div>
+                        <div class="cy-media-body">
+                            <div class="cy-grid-body">
+                                <h5><a th:href="@{/reserve/attractionsDetailsUI(id=${attractions.id})}" th:text="${attractions.name}"></a></h5>
+                                <small th:text="${attractions.describe}">
+                                </small>
+                            </div>
+                            <div class="cy-btm-info">
+                                <div class="cy-btm-date" th:text="${attractions.address}"></div>
+                                <div class="cy-btm-tags"><a href="javascript:void(0);">南京</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div th:insert="~{base/pageable}"></div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                    <div class="sider-card">
+                        <div class="sider-card-header">
+                            <h3>热门景点</h3>
+                        </div>
+                        <ul class="sider-list-model-a">
+                            <li th:each="attractions:${top10Attractions}">
+                                <a th:href="@{/reserve/attractionsDetailsUI(id=${attractions.id})}" th:text="${attractions.name}"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sider-card">
+                        <div class="sider-card-header">
+                            <h3>热门酒店</h3>
+                        </div>
+                        <ul class="sider-list-model-b">
+                            <li th:each="hotel:${top10Hotel}">
+                                <a th:href="@{/reserve/hotelDetailsUI(id=${hotel.id})}" th:text="${hotel.name}"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--service section end-->
+
+    <script>
+        $('.filter-type-box span a').click(function () {
+            if ($(this).hasClass('active'))
+                $(this).removeClass('active')
+            else
+                $(this).addClass('active')
+        });
+    </script>
+</div>
+
+</html>

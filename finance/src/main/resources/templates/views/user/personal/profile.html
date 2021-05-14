@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>个人理财系统</title>
+    <!-- 引入bootstrap样式 -->
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <!--图标库-->
+    <link th:href="@{/lyear/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+    <!--弹出框样式-->
+    <link th:href="@{/lyear/jconfirm/jquery-confirm.min.css}" rel="stylesheet" type="text/css"/>
+    <!--自定义样式-->
+    <link href="../lyear/css/style.min.css" th:href="@{/lyear/css/style.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <div th:replace="user/common/leftbar::#leftbaraside"></div>
+        <!--头部信息-->
+        <div th:replace="user/common/topbar::#topbarheader"></div>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>个人信息</h4>
+                            </div>
+                            <div class="card-body">
+                                <form id="profileForm" class="site-form">
+                                    <div class="form-group">
+                                        <label>用户名</label>
+                                        <input type="text"
+                                               class="form-control" name="username" id="username"
+                                               th:value="${user.username}" disabled="disabled"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>真实姓名</label>
+                                        <input type="text" class="form-control" name="realname"
+                                               id="realname" placeholder="您的真实姓名还未填写"
+                                               th:value="${user.realname}">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>身份证号</label>
+                                        <input type="text" class="form-control" name="idcard"
+                                               id="idcard" placeholder="您的身份证号码还未填写"
+                                               th:value="${user.idcard}">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>交易密码</label>
+                                        <input type="email" class="form-control" name="paypwd"
+                                               id="paypwd" placeholder="您的交易密码（6位数字）还未设置"
+                                               th:value="${user.paypwd}">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>手机号</label>
+                                        <input type="text" class="form-control" name="phone"
+                                               id="phone" placeholder="您的手机号还未填写"
+                                               th:value="${user.phone}">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>电子邮箱</label>
+                                        <input type="email" class="form-control" name="email"
+                                               id="email" placeholder="您的邮箱地址还未填写"
+                                               th:value="${user.email}">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <button id="updateUserBtn" type="button"
+                                            class="btn btn-primary">保存
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<!-- 引入jQuery和bootstrap的js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<!--滚动条插件-->
+<script th:src="@{/lyear/js/perfect-scrollbar.min.js}"></script>
+<!--弹出框js-->
+<script th:src="@{/lyear/jconfirm/jquery-confirm.min.js}"></script>
+<!--自定义js脚本-->
+<script th:src="@{/lyear/js/main.min.js}"></script>
+<script th:inline="javascript">
+
+    $(function () {
+        $("#realname").blur(checkRealname);
+        $("#idcard").blur(checkIdCard);
+        $("#paypwd").blur(checkPaypwd);
+        $("#phone").blur(checkPhone);
+        $("#email").blur(checkEmail);
+        $("#updateUserBtn").mousedown(function () {
+            if (checkRealname() && checkIdCard() && checkPaypwd() && checkPhone() && checkEmail()) {
+                updateUser();
+            }
+        });
+    });
+
+    //校验用户真实姓名
+    function checkRealname() {
+        var realname = $("#realname").val();
+        if (realname.length === 0) {
+            show_validate_msg("#realname", "error", "Hello！这里还没填呢");
+            return false;
+        }
+        //匹配汉字
+        var realnameReg = /^[\u4e00-\u9fa5]{0,}$/;
+        if (realnameReg.test(realname) === false) {
+            show_validate_msg("#realname", "error", "我猜也没有宁这号人呐");
+            return false;
+        }
+        show_validate_msg("#realname", "success", "宁这名字真不错");
+        return true;
+    }
+
+    //校验用户身份证号
+    function checkIdCard() {
+        var idcard = $("#idcard").val();
+        if (idcard.length === 0) {
+            show_validate_msg("#idcard", "error", "Hello！这里还没填呢");
+            return false;
+        }
+        //匹配身份证号
+        var idcardReg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+        if (idcardReg.test(idcard) === false) {
+            show_validate_msg("#idcard", "error", "我猜宁这身份证号也不对呐");
+            return false;
+        }
+        show_validate_msg("#idcard", "success", "宁这身份证号真不错");
+        return true;
+    }
+
+    //校验用户支付密码
+    function checkPaypwd() {
+        var paypwd = $("#paypwd").val();
+        if (paypwd.length === 0) {
+            show_validate_msg("#paypwd", "error", "Hello！这里还没填呢");
+            return false;
+        }
+        //匹配6位正整数
+        var paypwdReg = /^\d{6}$/;
+        if (paypwdReg.test(paypwd) === false) {
+            show_validate_msg("#paypwd", "error", "我猜宁这交易密码不对呐");
+            return false;
+        }
+        show_validate_msg("#paypwd", "success", "宁这密码真不错");
+        return true;
+    }
+
+    //校验用户支手机号
+    function checkPhone() {
+        var phone = $("#phone").val();
+        if (phone.length === 0) {
+            show_validate_msg("#phone", "error", "Hello！这里还没填呢");
+            return false;
+        }
+        //匹配手机号
+        var phoneReg = /^1[3,5,8]\d{9}$/;
+        if (phoneReg.test(phone) === false) {
+            show_validate_msg("#phone", "error", "我猜没有宁这手机号呐");
+            return false;
+        }
+        show_validate_msg("#phone", "success", "宁这手机号真不错");
+        return true;
+    }
+
+    //校验用户邮箱
+    function checkEmail() {
+        var email = $("#email").val();
+        if (email.length === 0) {
+            show_validate_msg("#email", "error", "Hello！这里还没填呢");
+            return false;
+        }
+        //匹配邮箱
+        var emailReg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+        if (emailReg.test(email) === false) {
+            show_validate_msg("#email", "error", "我猜没有宁这邮箱呐");
+            return false;
+        }
+        show_validate_msg("#email", "success", "宁这邮箱真不错");
+        return true;
+    }
+
+    //更新用户信息
+    function updateUser() {
+        var userId = [[${session.loginUser.id}]];
+        $.ajax({
+            url: "/user/updateUserProfile/" + userId,
+            type: "PUT",
+            data: $("#profileForm").serialize(),
+            success: function (result) {
+                if (result.code === 100) {
+                    $.alert('个人信息修改成功！');
+                    setTimeout(function () {
+                        location.href = "/user/personal/toProfile.html";
+                    }, 1000);
+                } else {
+                    $.alert('抱歉！哪里好像出现了问题？');
+                }
+            }
+        })
+    }
+
+    //显示校验结果的提示信息
+    function show_validate_msg(ele, status, msg) {
+        //清除当前元素的校验状态
+        $(ele).parent().removeClass("has-success has-error");
+        $(ele).next("span").text("");
+        if ("success" == status) {
+            $(ele).parent().addClass("has-success");
+            $(ele).next("span").text(msg);
+        } else if ("error" == status) {
+            $(ele).parent().addClass("has-error");
+            $(ele).next("span").text(msg);
+        }
+    }
+
+</script>
+</body>
+</html>

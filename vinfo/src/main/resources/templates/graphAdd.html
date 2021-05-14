@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>全国新增和疑似折线图</title>
+    <script type="text/javascript" src="echarts/echarts.min.js"></script>
+</head>
+<body>
+
+
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div id="main" style="width: 600px;height:400px;"></div>
+
+<!--在js中接收服务端返回数据-->
+<script th:inline="javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    var dateStr = [[${dateList}]];
+    var addConfirmStr = [[${addConfirmList}]];
+    var addSuspectStr = [[${addSuspectList}]];
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {  // 标题组件
+            text: '全国疫情新增趋势'
+        },
+        tooltip: {  // 提示框组件
+            trigger: 'axis'
+        },
+        legend: {  // 曲线含义说明
+            data: ['新增确诊', '新增疑似']
+        },
+        xAxis: {
+            // 转化为json对象
+            data: JSON.parse(dateStr)
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            name: '新增确诊',
+            data: JSON.parse(addConfirmStr),
+            type: 'line'
+        }, {
+            name: '新增疑似',
+            data: JSON.parse(addSuspectStr),
+            type: 'line'
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+</body>
+</html>

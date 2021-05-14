@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/GNCalendar-1.0-alpha.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/controlsfx-8.40.14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/scenicView.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/animatefx-1.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/fontawesomefx-8.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/jfoenix-8.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/GNDecorator-2.1.2-alpha.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/GNButton-1.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/colors-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/GNCarousel-2.1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/tilesfx-1.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibraryForJavaSE/nodelibrary/lib/GNAvatarView-1.0-rc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

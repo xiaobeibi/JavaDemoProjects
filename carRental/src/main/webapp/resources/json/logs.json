@@ -1,0 +1,27 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 15,
+	"data": [
+		{
+			"logId": "1",
+			"url": "http://www.bjpowernode.com/",
+			"method" : "GET",
+			"ip": "192.169.39.11",
+			"timeConsuming":"125",
+			"isAbnormal": "正常",
+			"operator": "动力 节点",
+			"operatingTime": "2020-04-14 00:00:00"
+		},
+		{
+			"logId": "2",
+			"url": "http://www.bjpowernode.com/",
+			"method" : "POST",
+			"ip": "192.169.39.11",
+			"timeConsuming":"89",
+			"isAbnormal": "异常",
+			"operator": "动力节点",
+			"operatingTime": "2017-04-14 00:00:00"
+		}
+	]
+}

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.finance.mapper.UserFundProductMapper">
+  <resultMap id="BaseResultMap" type="com.bjpowernode.finance.entity.UserFundProduct">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="fundId" jdbcType="INTEGER" property="fundid" />
+    <result column="startTime" jdbcType="DATE" property="starttime" />
+    <result column="averYield" jdbcType="DECIMAL" property="averyield" />
+    <result column="profit" jdbcType="DECIMAL" property="profit" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <resultMap id="BaseResultMapWithUserAndFundProduct" type="com.bjpowernode.finance.entity.UserFundProduct">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="fundId" jdbcType="INTEGER" property="fundid" />
+    <result column="startTime" jdbcType="DATE" property="starttime" />
+    <result column="averYield" jdbcType="DECIMAL" property="averyield" />
+    <result column="profit" jdbcType="DECIMAL" property="profit" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <!-- 指定联合查询用户字段的封装 -->
+    <association property="user"
+                 javaType="com.bjpowernode.finance.entity.User">
+      <id column="id" jdbcType="INTEGER" property="id" />
+      <result column="username" jdbcType="VARCHAR" property="username" />
+      <result column="realname" jdbcType="VARCHAR" property="realname" />
+      <result column="password" jdbcType="VARCHAR" property="password" />
+      <result column="IDcard" jdbcType="VARCHAR" property="idcard" />
+      <result column="phone" jdbcType="VARCHAR" property="phone" />
+      <result column="email" jdbcType="VARCHAR" property="email" />
+      <result column="paypwd" jdbcType="INTEGER" property="paypwd" />
+      <result column="status" jdbcType="INTEGER" property="status" />
+      <result column="reputation" jdbcType="VARCHAR" property="reputation" />
+    </association>
+    <!-- 指定联合查询基金理财产品字段的封装 -->
+    <association property="fundProduct"
+                 javaType="com.bjpowernode.finance.entity.FundProduct">
+      <id column="id" jdbcType="INTEGER" property="id" />
+      <result column="type" jdbcType="INTEGER" property="type" />
+      <result column="code" jdbcType="INTEGER" property="code" />
+      <result column="fundDesc" jdbcType="VARCHAR" property="funddesc" />
+      <result column="dailyGrowth" jdbcType="DECIMAL" property="dailygrowth" />
+      <result column="monthlyGrowth" jdbcType="DECIMAL" property="monthlygrowth" />
+      <result column="annualGrowth" jdbcType="DECIMAL" property="annualgrowth" />
+      <result column="leastMoney" jdbcType="DECIMAL" property="leastmoney" />
+      <result column="invesTerm" jdbcType="VARCHAR" property="investerm" />
+    </association>
+  </resultMap>
+
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, userId, fundId, startTime, averYield, profit, status
+  </sql>
+  <sql id="Base_Column_List_With_User_And_FundProduct">
+    ufp.id, ufp.userId, ufp.fundId, ufp.startTime, ufp.averYield, ufp.profit, ufp.status,
+    u.id, u.username, u.realname, u.password, u.IDcard, u.phone, u.email, u.paypwd, u.status, u.reputation,
+    fp.id, fp.type, fp.code, fp.fundDesc, fp.dailyGrowth, fp.monthlyGrowth, fp.annualGrowth, fp.leastMoney, fp.invesTerm
+  </sql>
+
+  <select id="selectByExampleWithUserAndFundProduct" parameterType="com.bjpowernode.finance.entity.UserFundProductExample" resultMap="BaseResultMapWithUserAndFundProduct">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List_With_User_And_FundProduct" />
+    from user_fund_product ufp left join user u on ufp.userId=u.id left join fund_product fp on ufp.fundId=fp.id
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKeyWithUserAndFundProduct" parameterType="java.lang.Integer" resultMap="BaseResultMapWithUserAndFundProduct">
+    select
+    <include refid="Base_Column_List_With_User_And_FundProduct" />
+    from user_fund_product ufp left join user u on ufp.userId=u.id left join fund_product fp on ufp.fundId=fp.id
+    where ufp.id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByExample" parameterType="com.bjpowernode.finance.entity.UserFundProductExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List_With_User_And_FundProduct" />
+    from user_fund_product
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_fund_product
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_fund_product
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bjpowernode.finance.entity.UserFundProductExample">
+    delete from user_fund_product
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bjpowernode.finance.entity.UserFundProduct">
+    insert into user_fund_product (id, userId, fundId, 
+      startTime, averYield, profit, 
+      status)
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{fundid,jdbcType=INTEGER}, 
+      #{starttime,jdbcType=DATE}, #{averyield,jdbcType=DECIMAL}, #{profit,jdbcType=DECIMAL}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bjpowernode.finance.entity.UserFundProduct">
+    insert into user_fund_product
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="fundid != null">
+        fundId,
+      </if>
+      <if test="starttime != null">
+        startTime,
+      </if>
+      <if test="averyield != null">
+        averYield,
+      </if>
+      <if test="profit != null">
+        profit,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="fundid != null">
+        #{fundid,jdbcType=INTEGER},
+      </if>
+      <if test="starttime != null">
+        #{starttime,jdbcType=DATE},
+      </if>
+      <if test="averyield != null">
+        #{averyield,jdbcType=DECIMAL},
+      </if>
+      <if test="profit != null">
+        #{profit,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bjpowernode.finance.entity.UserFundProductExample" resultType="java.lang.Long">
+    select count(*) from user_fund_product
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update user_fund_product
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null">
+        userId = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.fundid != null">
+        fundId = #{record.fundid,jdbcType=INTEGER},
+      </if>
+      <if test="record.starttime != null">
+        startTime = #{record.starttime,jdbcType=DATE},
+      </if>
+      <if test="record.averyield != null">
+        averYield = #{record.averyield,jdbcType=DECIMAL},
+      </if>
+      <if test="record.profit != null">
+        profit = #{record.profit,jdbcType=DECIMAL},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update user_fund_product
+    set id = #{record.id,jdbcType=INTEGER},
+      userId = #{record.userid,jdbcType=INTEGER},
+      fundId = #{record.fundid,jdbcType=INTEGER},
+      startTime = #{record.starttime,jdbcType=DATE},
+      averYield = #{record.averyield,jdbcType=DECIMAL},
+      profit = #{record.profit,jdbcType=DECIMAL},
+      status = #{record.status,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bjpowernode.finance.entity.UserFundProduct">
+    update user_fund_product
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="fundid != null">
+        fundId = #{fundid,jdbcType=INTEGER},
+      </if>
+      <if test="starttime != null">
+        startTime = #{starttime,jdbcType=DATE},
+      </if>
+      <if test="averyield != null">
+        averYield = #{averyield,jdbcType=DECIMAL},
+      </if>
+      <if test="profit != null">
+        profit = #{profit,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bjpowernode.finance.entity.UserFundProduct">
+    update user_fund_product
+    set userId = #{userid,jdbcType=INTEGER},
+      fundId = #{fundid,jdbcType=INTEGER},
+      startTime = #{starttime,jdbcType=DATE},
+      averYield = #{averyield,jdbcType=DECIMAL},
+      profit = #{profit,jdbcType=DECIMAL},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
