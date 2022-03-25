@@ -44,7 +44,7 @@
           <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.11" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.20" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
-          <element id="library" level="project" name="Maven: org.jetbrains:annotations-java5:20.1.0" />
+          <element id="library" level="project" name="Maven: org.jetbrains:annotations-java5:23.0.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

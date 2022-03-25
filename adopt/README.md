@@ -4,7 +4,7 @@
 
 基于SSM整合的流浪猫狗管理救助demo，分为前后端两个系统，前端显示用户领养猫狗界面，后端为管理员管理页面。
 
-![QQ截图20210513135355](https://gitee.com/tytokongjian/image/raw/master/images/20210513141816.png)
+![QQ截图20210513135355](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513141816.png)
 
 ### 1.1 技术应用
 
@@ -19,7 +19,7 @@
 
 登入分为管理员后台登入。用户前台登入。
 
-![QQ截图20210513135152](https://gitee.com/tytokongjian/image/raw/master/images/20210513142943.png)
+![QQ截图20210513135152](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513142943.png)
 
 ## 2. 系统内容
 
@@ -27,69 +27,69 @@
 
 用户登入前台界面
 
-![QQ截图20210513135243](https://gitee.com/tytokongjian/image/raw/master/images/20210513143100.png)
+![QQ截图20210513135243](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143100.png)
 
-![QQ截图20210513135308](https://gitee.com/tytokongjian/image/raw/master/images/20210513143117.png)
+![QQ截图20210513135308](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143117.png)
 
-![QQ截图20210513135335](https://gitee.com/tytokongjian/image/raw/master/images/20210513143250.png)
+![QQ截图20210513135335](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143250.png)
 
 领养中心
 
-![QQ截图20210513135415](https://gitee.com/tytokongjian/image/raw/master/images/20210513143421.png)
+![QQ截图20210513135415](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143421.png)
 
 志愿者团队申请：申请后会收到短信提醒。
 
-![QQ截图20210513135522](https://gitee.com/tytokongjian/image/raw/master/images/20210513143449.png)
+![QQ截图20210513135522](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143449.png)
 
 志愿者活动
 
-![QQ截图20210513135540](https://gitee.com/tytokongjian/image/raw/master/images/20210513143607.png)
+![QQ截图20210513135540](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143607.png)
 
 猫狗领养
 
-![QQ截图20210513135641](https://gitee.com/tytokongjian/image/raw/master/images/20210513143645.png)
+![QQ截图20210513135641](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143645.png)
 
 ### 2.2 管理员后台
 
 登入
 
-![QQ截图20210513135750](https://gitee.com/tytokongjian/image/raw/master/images/20210513143709.png)
+![QQ截图20210513135750](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143709.png)
 
 管理员信息
 
-![QQ截图20210513135856](https://gitee.com/tytokongjian/image/raw/master/images/20210513143740.png)
+![QQ截图20210513135856](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143740.png)
 
 用户信息
 
-![QQ截图20210513135930](https://gitee.com/tytokongjian/image/raw/master/images/20210513143753.png)
+![QQ截图20210513135930](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143753.png)
 
 流浪猫狗管理
 
-![QQ截图20210513140022](https://gitee.com/tytokongjian/image/raw/master/images/20210513143849.png)
+![QQ截图20210513140022](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143849.png)
 
 领养管理
 
-![QQ截图20210513140043](https://gitee.com/tytokongjian/image/raw/master/images/20210513143922.png)
+![QQ截图20210513140043](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143922.png)
 
 评论管理
 
-![QQ截图20210513140055](https://gitee.com/tytokongjian/image/raw/master/images/20210513144053.png)
+![QQ截图20210513140055](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513144053.png)
 
 团队活动管理
 
-![QQ截图20210513140105](https://gitee.com/tytokongjian/image/raw/master/images/20210513144110.png)
+![QQ截图20210513140105](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513144110.png)
 
 志愿者申请管理
 
-![QQ截图20210513140148](https://gitee.com/tytokongjian/image/raw/master/images/20210513144130.png)
+![QQ截图20210513140148](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513144130.png)
 
 同意领养列表
 
-![QQ截图20210513140203](https://gitee.com/tytokongjian/image/raw/master/images/20210513144154.png)
+![QQ截图20210513140203](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513144154.png)
 
 不同意领养列表
 
-![QQ截图20210513140213](https://gitee.com/tytokongjian/image/raw/master/images/20210513144213.png)
+![QQ截图20210513140213](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513144213.png)
 
 ## 3. 重点程序
 

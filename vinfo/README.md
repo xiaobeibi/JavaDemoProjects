@@ -25,33 +25,33 @@ public void updateData() {
 }
 ```
 
-![QQ截图20210511103748](https://gitee.com/tytokongjian/image/raw/master/images/20210511111514.png)
+![QQ截图20210511103748](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210511111514.png)
 
 ## 2. 界面内容
 
 ### 2.1 全国疫情地图
 
-![QQ截图20210511103845](https://gitee.com/tytokongjian/image/raw/master/images/20210511111816.png)
+![QQ截图20210511103845](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210511111816.png)
 
 ### 2.2 境外输入省市TOP10
 
-![QQ截图20210511103858](https://gitee.com/tytokongjian/image/raw/master/images/20210511111904.png)
+![QQ截图20210511103858](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210511111904.png)
 
 ### 2.3 全国现有确诊趋势
 
-![QQ截图20210511103916](https://gitee.com/tytokongjian/image/raw/master/images/20210511112009.png)
+![QQ截图20210511103916](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210511112009.png)
 
 ### 2.4 全国疫情新增趋势
 
-![QQ截图20210511103935](https://gitee.com/tytokongjian/image/raw/master/images/20210511112051.png)
+![QQ截图20210511103935](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210511112051.png)
 
 ### 2.5 全国现有确诊构成
 
-![QQ截图20210511103952](https://gitee.com/tytokongjian/image/raw/master/images/20210511112126.png)
+![QQ截图20210511103952](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210511112126.png)
 
 ### 2.6 疫情数据统计列表
 
-![QQ截图20210511104020](https://gitee.com/tytokongjian/image/raw/master/images/20210511112227.png)
+![QQ截图20210511104020](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210511112227.png)
 
 ## 3. 程序实现
 

@@ -4,7 +4,7 @@
 
 本demo仿制了一个魂斗罗小游戏，纯JavaSE实现。
 
-![QQ截图20210514133806](https://gitee.com/tytokongjian/image/raw/master/images/20210514134300.jpg)
+![QQ截图20210514133806](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210514134300.jpg)
 
 ### 1.1 技术应用
 
@@ -23,7 +23,7 @@ public static void main(String[] args) {
 }
 ```
 
-![QQ截图20210514133835](https://gitee.com/tytokongjian/image/raw/master/images/20210514135027.jpg)
+![QQ截图20210514133835](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210514135027.jpg)
 
 按照右侧使用说明控制，无限生命。
 
@@ -31,5 +31,5 @@ public static void main(String[] args) {
 
 简单的JavaSE小demo，需要练手的同学拿去看看。
 
-![QQ截图20210514133858](https://gitee.com/tytokongjian/image/raw/master/images/20210514135205.jpg)
+![QQ截图20210514133858](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210514135205.jpg)
 

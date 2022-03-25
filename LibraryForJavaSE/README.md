@@ -28,7 +28,7 @@
 
 通过学习本项目，可以巩固 JavaSE 的知识，对于后续的学习来说可以起到很好的衔接。项目首页
 
-![QQ截图20210506161337](https://gitee.com/tytokongjian/image/raw/master/images/20210506162521.png)
+![QQ截图20210506161337](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210506162521.png)
 
 ### 1.1 基本信息
 
@@ -68,7 +68,7 @@ JDK版本：8
 
 * App：主类
 
-![QQ截图20210506161358](https://gitee.com/tytokongjian/image/raw/master/images/20210506162952.png)
+![QQ截图20210506161358](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210506162952.png)
 
 ## 2 项目功能
 
@@ -76,41 +76,41 @@ JDK版本：8
 
 在项目启动时，会加载所有界面对应的fxml文件，然后将这些对象放入到map中，此map由ViewManager类进行管理。用户登录后，会根据输入的用户名从properties文件中查找数据，如果查询出来的数据跟用户输入的用户名和密码匹配的话，则登录成功，跳转至main页面中。
 
-![QQ截图20210506161220](https://gitee.com/tytokongjian/image/raw/master/images/20210506163355.png)
+![QQ截图20210506161220](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210506163355.png)
 
 同时可创建账户信息
 
-![QQ截图20210506161249](https://gitee.com/tytokongjian/image/raw/master/images/20210506163426.png)
+![QQ截图20210506161249](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210506163426.png)
 
 ### 2.2 用户信息
 
 此界面可由登录管理员添加改动
 
-![QQ截图20210506162029](https://gitee.com/tytokongjian/image/raw/master/images/20210506163613.png)
+![QQ截图20210506162029](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210506163613.png)
 
 ### 2.3 用户相关功能
 
 此界面提供用户信息的增删改查功能包括余额修改和冻结操作
 
-![QQ截图20210506161903](https://gitee.com/tytokongjian/image/raw/master/images/20210506163847.png)
+![QQ截图20210506161903](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210506163847.png)
 
 ### 2.4 图书相关功能
 
 此界面提供图书信息的增删改查功能包括借阅操作
 
-![QQ截图20210506161839](https://gitee.com/tytokongjian/image/raw/master/images/20210506164005.png)
+![QQ截图20210506161839](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210506164005.png)
 
 ### 2.5 借阅相关功能
 
 此界面提供图书和借阅者的信息功能包括还书和逾期扣款操作
 
-![QQ截图20210506161854](https://gitee.com/tytokongjian/image/raw/master/images/20210506164135.png)
+![QQ截图20210506161854](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210506164135.png)
 
 ### 2.6 图书分类可视化功能
 
 此界面提供一个饼图显示图书分类数量
 
-![QQ截图20210506161912](https://gitee.com/tytokongjian/image/raw/master/images/20210506164239.png)
+![QQ截图20210506161912](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210506164239.png)
 
 ## 3 技术运用
 
@@ -170,7 +170,7 @@ JDK版本：8
 
 * PathConstant：持久化信息路径
 
-  ![QQ截图20210507113639](https://gitee.com/tytokongjian/image/raw/master/images/20210507113658.png)
+  ![QQ截图20210507113639](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507113658.png)
 
 Dao持久层创建：
 
@@ -184,7 +184,7 @@ Dao持久层创建：
 
 * impl：Dao对应的实现类
 
-  ![QQ截图20210507114029](https://gitee.com/tytokongjian/image/raw/master/images/20210507114050.png)
+  ![QQ截图20210507114029](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507114050.png)
 
 Service服务层创建：
 
@@ -200,7 +200,7 @@ Service服务层创建：
 
 * impl：Service层对应的实现类
 
-  ![QQ截图20210507114402](https://gitee.com/tytokongjian/image/raw/master/images/20210507114414.png)
+  ![QQ截图20210507114402](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507114414.png)
 
 Controller控制层创建
 

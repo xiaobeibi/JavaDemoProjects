@@ -6,7 +6,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/carRental)
 
-![QQ截图20210512140433](https://gitee.com/tytokongjian/image/raw/master/images/20210512150334.png)
+![QQ截图20210512140433](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210512150334.png)
 
 ---
 
@@ -14,7 +14,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/exam)
 
-![QQ截图20210512094940](https://gitee.com/tytokongjian/image/raw/master/images/20210512102703.png)
+![QQ截图20210512094940](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210512102703.png)
 
 ---
 
@@ -22,7 +22,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/employment-manage)
 
-![QQ截图20210508141804](https://gitee.com/tytokongjian/image/raw/master/images/20210508142252.png)
+![QQ截图20210508141804](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210508142252.png)
 
 ---
 
@@ -30,7 +30,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/vinfo)
 
-![QQ截图20210511103845](https://gitee.com/tytokongjian/image/raw/master/images/20210511111816.png)
+![QQ截图20210511103845](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210511111816.png)
 
 ---
 
@@ -38,7 +38,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/finance)
 
-![QQ截图20210507155226](https://gitee.com/tytokongjian/image/raw/master/images/20210507155311.png)
+![QQ截图20210507155226](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507155311.png)
 
 ---
 
@@ -46,7 +46,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/hr)
 
-![QQ截图20210514152326](https://gitee.com/tytokongjian/image/raw/master/images/20210514153951.jpg)
+![QQ截图20210514152326](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210514153951.jpg)
 
 ---
 
@@ -54,7 +54,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/house)
 
-![QQ截图20210513201822](https://gitee.com/tytokongjian/image/raw/master/images/20210513203659.jpg)
+![QQ截图20210513201822](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513203659.jpg)
 
 ---
 
@@ -62,7 +62,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/LibraryForJavaSE)
 
-![QQ截图20210506161337](https://gitee.com/tytokongjian/image/raw/master/images/20210506162521.png)
+![QQ截图20210506161337](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210506162521.png)
 
 ---
 
@@ -70,7 +70,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/music)
 
-![QQ截图20210513182953](https://gitee.com/tytokongjian/image/raw/master/images/20210513184437.png)
+![QQ截图20210513182953](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184437.png)
 
 ---
 
@@ -78,7 +78,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/OnlineBiddingSystem)
 
-![QQ截图20210511153834](https://gitee.com/tytokongjian/image/raw/master/images/20210511161056.png)
+![QQ截图20210511153834](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210511161056.png)
 
 ---
 
@@ -86,7 +86,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/pan)
 
-![QQ截图20210513191405](https://gitee.com/tytokongjian/image/raw/master/images/20210513194808.jpg)
+![QQ截图20210513191405](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513194808.jpg)
 
 ---
 
@@ -94,7 +94,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/hdl)
 
-![QQ截图20210514133806](https://gitee.com/tytokongjian/image/raw/master/images/20210514134300.jpg)
+![QQ截图20210514133806](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210514134300.jpg)
 
 ---
 
@@ -102,7 +102,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/adopt)
 
-![QQ截图20210513135415](https://gitee.com/tytokongjian/image/raw/master/images/20210513143421.png)
+![QQ截图20210513135415](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513143421.png)
 
 ---
 
@@ -110,7 +110,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/fangkuai)
 
-![QQ截图20210514141115](https://gitee.com/tytokongjian/image/raw/master/images/20210514141746.jpg)
+![QQ截图20210514141115](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210514141746.jpg)
 
 ---
 
@@ -118,7 +118,7 @@
 
 [快速链接](https://github.com/xiaobeibi/JavaDemoProjects/tree/master/travel_platform)
 
-![QQ截图20210513153030](https://gitee.com/tytokongjian/image/raw/master/images/20210513154936.png)
+![QQ截图20210513153030](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513154936.png)
 
 ---
 

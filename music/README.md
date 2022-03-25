@@ -4,7 +4,7 @@
 
 本demo基于SpringBoot+MySQL的数据库读取音乐播放的网站。
 
-![QQ截图20210513182905](https://gitee.com/tytokongjian/image/raw/master/images/20210513184012.png)
+![QQ截图20210513182905](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184012.png)
 
 ### 1.1 技术应用
 
@@ -20,31 +20,31 @@
 
 ## 2. Demo演示
 
-<img src="https://gitee.com/tytokongjian/image/raw/master/images/20210513184403.png" alt="QQ截图20210513182926" style="zoom:60%;" />
+<img src="https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184403.png" alt="QQ截图20210513182926" style="zoom:60%;" />
 
 界面展示
 
-![QQ截图20210513182953](https://gitee.com/tytokongjian/image/raw/master/images/20210513184437.png)
+![QQ截图20210513182953](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184437.png)
 
-![QQ截图20210513183205](https://gitee.com/tytokongjian/image/raw/master/images/20210513184457.jpg)
+![QQ截图20210513183205](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184457.jpg)
 
-![QQ截图20210513183256](https://gitee.com/tytokongjian/image/raw/master/images/20210513184513.jpg)
+![QQ截图20210513183256](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184513.jpg)
 
-![QQ截图20210513183317](https://gitee.com/tytokongjian/image/raw/master/images/20210513184525.jpg)
+![QQ截图20210513183317](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184525.jpg)
 
-![QQ截图20210513183335](https://gitee.com/tytokongjian/image/raw/master/images/20210513184544.jpg)
+![QQ截图20210513183335](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184544.jpg)
 
-![QQ截图20210513183500](https://gitee.com/tytokongjian/image/raw/master/images/20210513184603.jpg)
+![QQ截图20210513183500](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184603.jpg)
 
-![QQ截图20210513183520](https://gitee.com/tytokongjian/image/raw/master/images/20210513184615.jpg)
+![QQ截图20210513183520](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184615.jpg)
 
-![QQ截图20210513183602](https://gitee.com/tytokongjian/image/raw/master/images/20210513184622.jpg)
+![QQ截图20210513183602](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184622.jpg)
 
 播放音乐
 
-![QQ截图20210513183351](https://gitee.com/tytokongjian/image/raw/master/images/20210513184646.jpg)
+![QQ截图20210513183351](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184646.jpg)
 
-![QQ截图20210513183426](https://gitee.com/tytokongjian/image/raw/master/images/20210513184704.jpg)
+![QQ截图20210513183426](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210513184704.jpg)
 
 ## 3. 总结
 

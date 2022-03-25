@@ -1,6 +1,6 @@
 # 简易理财管理系统
 
-![QQ截图20210507155226](https://gitee.com/tytokongjian/image/raw/master/images/20210507155311.png)
+![QQ截图20210507155226](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507155311.png)
 
 ## 1. 简介
 
@@ -105,75 +105,75 @@ pom.xml
 
 数据库端采用MySQL，提供 sql 文件，直接导入生成即可使用，数据库表如下：
 
-![QQ截图20210507152610](https://gitee.com/tytokongjian/image/raw/master/images/20210507160619.png)
+![QQ截图20210507152610](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507160619.png)
 
 其中用户表信息如下：
 
-![QQ截图20210507153731](https://gitee.com/tytokongjian/image/raw/master/images/20210507160704.png)
+![QQ截图20210507153731](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507160704.png)
 
 数据库关系图如下：
 
-![QQ截图20210507153458](https://gitee.com/tytokongjian/image/raw/master/images/20210507160740.png)
+![QQ截图20210507153458](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507160740.png)
 
 ### 2.2 登入注册界面
 
 登入及注册界面如下图：分为管理员登入和用户登入，具体分类看下文。
 
-![QQ截图20210507154630](https://gitee.com/tytokongjian/image/raw/master/images/20210507160945.png)
+![QQ截图20210507154630](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507160945.png)
 
-![QQ截图20210507154647](https://gitee.com/tytokongjian/image/raw/master/images/20210507160957.png)
+![QQ截图20210507154647](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507160957.png)
 
 ### 2.3 管理员登入界面
 
 用户信息界面
 
-![QQ截图20210507161103](https://gitee.com/tytokongjian/image/raw/master/images/20210507161153.png)
+![QQ截图20210507161103](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507161153.png)
 
 用户银行卡信息界面
 
-![QQ截图20210507161216](https://gitee.com/tytokongjian/image/raw/master/images/20210507161257.png)
+![QQ截图20210507161216](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507161257.png)
 
 用户个人征信界面
 
-![QQ截图20210507161331](https://gitee.com/tytokongjian/image/raw/master/images/20210507161358.png)
+![QQ截图20210507161331](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507161358.png)
 
 理财产品管理界面
 
-![QQ截图20210507161451](https://gitee.com/tytokongjian/image/raw/master/images/20210507161512.png)
+![QQ截图20210507161451](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507161512.png)
 
 管理员权限管理界面
 
-![QQ截图20210507161628](https://gitee.com/tytokongjian/image/raw/master/images/20210507161718.png)
+![QQ截图20210507161628](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507161718.png)
 
 网贷审核界面
 
-![QQ截图20210507161744](https://gitee.com/tytokongjian/image/raw/master/images/20210507161814.png)
+![QQ截图20210507161744](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507161814.png)
 
 网贷信息界面
 
-![QQ截图20210507161840](https://gitee.com/tytokongjian/image/raw/master/images/20210507161855.png)
+![QQ截图20210507161840](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507161855.png)
 
 ### 2.4 用户登入界面
 
 用户登入首页
 
-![QQ截图20210507161942](https://gitee.com/tytokongjian/image/raw/master/images/20210507162004.png)
+![QQ截图20210507161942](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507162004.png)
 
 用户个人理财界面
 
-![QQ截图20210507162454](https://gitee.com/tytokongjian/image/raw/master/images/20210507162526.png)
+![QQ截图20210507162454](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507162526.png)
 
 用户个人资金记录
 
-![QQ截图20210507162551](https://gitee.com/tytokongjian/image/raw/master/images/20210507162618.png)
+![QQ截图20210507162551](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507162618.png)
 
 用户个人中心
 
-![QQ截图20210507162655](https://gitee.com/tytokongjian/image/raw/master/images/20210507162720.png)
+![QQ截图20210507162655](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507162720.png)
 
 用户个人信息修改界面
 
-![QQ截图20210507162812](https://gitee.com/tytokongjian/image/raw/master/images/20210507162832.png)
+![QQ截图20210507162812](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507162832.png)
 
 ## 3. 项目程序介绍
 
@@ -246,7 +246,7 @@ server:
 
 ### 3.2 项目文件介绍
 
-![QQ截图20210507163443](https://gitee.com/tytokongjian/image/raw/master/images/20210507163515.png)
+![QQ截图20210507163443](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210507163515.png)
 
 * common：相关权限管理、配置类、过滤器类、拦截器类等
 * Controller：控制视图层

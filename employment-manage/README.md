@@ -1,6 +1,6 @@
 <center><h2>简易就业信息管理系统</h2></center>
 
-![QQ截图20210508141804](https://gitee.com/tytokongjian/image/raw/master/images/20210508142252.png)
+![QQ截图20210508141804](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210508142252.png)
 
 ## 1. 应用技术
 
@@ -60,11 +60,11 @@ pom依赖：
 
 ## 2. 登入界面
 
-![QQ截图20210508141346](https://gitee.com/tytokongjian/image/raw/master/images/20210508143536.png)
+![QQ截图20210508141346](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210508143536.png)
 
 ## 3. 数据库
 
-![QQ截图20210508141056](https://gitee.com/tytokongjian/image/raw/master/images/20210508143636.png)
+![QQ截图20210508141056](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210508143636.png)
 
 登入用户分为管理员和测试用户：
 
@@ -72,21 +72,21 @@ pom依赖：
 
 测试用户：用户名——test	密码——123456
 
-![QQ截图20210508141015](https://gitee.com/tytokongjian/image/raw/master/images/20210508143756.png)
+![QQ截图20210508141015](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210508143756.png)
 
 ## 4. 项目功能
 
 * 用户管理界面
 
-![QQ截图20210508141838](https://gitee.com/tytokongjian/image/raw/master/images/20210508143956.png)
+![QQ截图20210508141838](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210508143956.png)
 
 * 就业信息按专业统计界面
 
-![QQ截图20210508141853](https://gitee.com/tytokongjian/image/raw/master/images/20210508144043.png)
+![QQ截图20210508141853](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210508144043.png)
 
 * 就业信息按岗位统计界面
 
-![QQ截图20210508141912](https://gitee.com/tytokongjian/image/raw/master/images/20210508144151.png)
+![QQ截图20210508141912](https://tuyong.oss-cn-hangzhou.aliyuncs.com/img/20210508144151.png)
 
 其他：CRUD功能全部实现
 
